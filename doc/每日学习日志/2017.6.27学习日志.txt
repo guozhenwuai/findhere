@@ -1,0 +1,10 @@
+安装unity 熟悉了解vuforia-unity的用法，
+创建database 
+尝试设置target和model
+安装android-stutio
+初步了解android和vuforia的api 
+
+学习android开发基础知识
+学习使用github、sourceTree
+调试android studio gradle，运行sample
+了解vuforia的应用

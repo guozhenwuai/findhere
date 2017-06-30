@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<items version="2" >
+
+    <item
+        is-multidex="false"
+        jar="D:\GitHub\SJTU-ar-platform\code\FindHere-Unity\libs\Vuforia.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="26.0.0"
+        sha1="be3db5d282d7094986c342631085ca4d84c02603">
+        <dex dex="D:\GitHub\SJTU-ar-platform\code\FindHere-Unity\build\intermediates\pre-dexed\debug\Vuforia_9f288941fc78b9934ecb1905dc840c92fc800019.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="D:\GitHub\SJTU-ar-platform\code\FindHere-Unity\libs\unity-classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="26.0.0"
+        sha1="51f46611e716600d0a9d36ff5f7c2dddde43688c">
+        <dex dex="D:\GitHub\SJTU-ar-platform\code\FindHere-Unity\build\intermediates\pre-dexed\debug\unity-classes_e977f18a443e2e1878a43a27ec39b6c3f3f406c7.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="D:\GitHub\SJTU-ar-platform\code\FindHere-Unity\libs\VuforiaUnityPlayer.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="26.0.0"
+        sha1="95f5205a17a7546c265d4a27d1e6f8be7b6f3f03">
+        <dex dex="D:\GitHub\SJTU-ar-platform\code\FindHere-Unity\build\intermediates\pre-dexed\debug\VuforiaUnityPlayer_5c0206ed1cacd9d478500f0f08cb096ebb3ea49b.jar" />
+    </item>
+
+</items>

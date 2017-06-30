@@ -1,0 +1,4 @@
+#Fri Jun 30 14:21:58 CST 2017
+base.0=D\:\\GitHub\\SJTU-ar-platform\\code\\FindHere-Unity\\build\\intermediates\\transforms\\dex\\debug\\folders\\1000\\1f\\main
+renamed.0=classes.dex
+file.0=D\:\\GitHub\\SJTU-ar-platform\\code\\FindHere-Unity\\build\\intermediates\\transforms\\dex\\debug\\folders\\1000\\1f\\main\\classes.dex
