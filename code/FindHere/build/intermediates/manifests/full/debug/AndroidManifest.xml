@@ -53,7 +53,7 @@
         android:label="@string/app_name"
         android:theme="@android:style/Theme.NoTitleBar.Fullscreen" >
         <activity
-            android:name="com.sjtu.FindHere.UnityPlayerNativeActivity"
+            android:name="com.FindHere.cloudReco.MainActivity"
             android:configChanges="mcc|mnc|locale|touchscreen|keyboard|keyboardHidden|navigation|orientation|screenLayout|uiMode|screenSize|smallestScreenSize|fontScale|layoutDirection"
             android:label="@string/app_name"
             android:launchMode="singleTask"
