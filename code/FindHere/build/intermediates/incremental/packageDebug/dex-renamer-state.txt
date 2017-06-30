@@ -1,4 +1,4 @@
-#Fri Jun 30 18:55:18 CST 2017
-base.0=D\:\\FindHere-Unity\\FindHere-Unity\\build\\intermediates\\transforms\\dex\\debug\\folders\\1000\\1f\\main
+#Fri Jun 30 20:18:31 CST 2017
+base.0=D\:\\GitHub\\FindHere\\code\\FindHere\\build\\intermediates\\transforms\\dex\\debug\\folders\\1000\\1f\\main
 renamed.0=classes.dex
-file.0=D\:\\FindHere-Unity\\FindHere-Unity\\build\\intermediates\\transforms\\dex\\debug\\folders\\1000\\1f\\main\\classes.dex
+file.0=D\:\\GitHub\\FindHere\\code\\FindHere\\build\\intermediates\\transforms\\dex\\debug\\folders\\1000\\1f\\main\\classes.dex

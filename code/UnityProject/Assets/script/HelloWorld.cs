@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class HelloWorld : MonoBehaviour {
 
+    private bool hello = false;
+
 	// Use this for initialization
 	void Start () {
 		
@@ -14,7 +16,14 @@ public class HelloWorld : MonoBehaviour {
 		
 	}
 
-    void sayHello() {
-        Debug.Log("Hello World!");
+    public void sayHello() {
+        hello = true;
     }
+
+    public void OnGUI() {
+        if (hello) {
+            GUI.Box(new Rect(300, 300, 200, 200), "Hello World!");
+        }
+    }
+
 }

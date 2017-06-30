@@ -6,5 +6,9 @@
     {
         "merged": "D:\\GitHub\\SJTU-ar-platform\\code\\FindHere-Unity\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi\\app_icon.png",
         "source": "D:\\GitHub\\SJTU-ar-platform\\code\\FindHere-Unity\\src\\main\\res\\drawable-mdpi\\app_icon.png"
+    },
+    {
+        "merged": "D:\\GitHub\\FindHere\\code\\FindHere\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi\\app_icon.png",
+        "source": "D:\\GitHub\\FindHere\\code\\FindHere\\src\\main\\res\\drawable-mdpi\\app_icon.png"
     }
 ]
