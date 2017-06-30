@@ -1,0 +1,10 @@
+[
+    {
+        "merged": "F:\\2017.7AR\\vuforia-sdk-android-6-2-10\\samples\\VuforiaSamples-6-2-10\\app\\build\\intermediates\\res\\merged\\debug\\anim\\bottom_down.xml",
+        "source": "F:\\2017.7AR\\vuforia-sdk-android-6-2-10\\samples\\VuforiaSamples-6-2-10\\app\\src\\main\\res\\anim\\bottom_down.xml"
+    },
+    {
+        "merged": "F:\\2017.7AR\\vuforia-sdk-android-6-2-10\\samples\\VuforiaSamples-6-2-10\\app\\build\\intermediates\\res\\merged\\debug\\anim\\bottom_up.xml",
+        "source": "F:\\2017.7AR\\vuforia-sdk-android-6-2-10\\samples\\VuforiaSamples-6-2-10\\app\\src\\main\\res\\anim\\bottom_up.xml"
+    }
+]

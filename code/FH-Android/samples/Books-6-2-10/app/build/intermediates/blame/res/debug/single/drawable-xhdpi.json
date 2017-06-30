@@ -1,0 +1,38 @@
+[
+    {
+        "merged": "F:\\2017.7AR\\vuforia-sdk-android-6-2-10\\samples\\Books-6-2-10\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi\\custom_view_background.png",
+        "source": "F:\\2017.7AR\\vuforia-sdk-android-6-2-10\\samples\\Books-6-2-10\\app\\src\\main\\res\\drawable-xhdpi\\custom_view_background.png"
+    },
+    {
+        "merged": "F:\\2017.7AR\\vuforia-sdk-android-6-2-10\\samples\\Books-6-2-10\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi\\rating_empty.png",
+        "source": "F:\\2017.7AR\\vuforia-sdk-android-6-2-10\\samples\\Books-6-2-10\\app\\src\\main\\res\\drawable-xhdpi\\rating_empty.png"
+    },
+    {
+        "merged": "F:\\2017.7AR\\vuforia-sdk-android-6-2-10\\samples\\Books-6-2-10\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi\\button_close_normal.png",
+        "source": "F:\\2017.7AR\\vuforia-sdk-android-6-2-10\\samples\\Books-6-2-10\\app\\src\\main\\res\\drawable-xhdpi\\button_close_normal.png"
+    },
+    {
+        "merged": "F:\\2017.7AR\\vuforia-sdk-android-6-2-10\\samples\\Books-6-2-10\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi\\custom_view_strikethrough.png",
+        "source": "F:\\2017.7AR\\vuforia-sdk-android-6-2-10\\samples\\Books-6-2-10\\app\\src\\main\\res\\drawable-xhdpi\\custom_view_strikethrough.png"
+    },
+    {
+        "merged": "F:\\2017.7AR\\vuforia-sdk-android-6-2-10\\samples\\Books-6-2-10\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi\\rating_full.png",
+        "source": "F:\\2017.7AR\\vuforia-sdk-android-6-2-10\\samples\\Books-6-2-10\\app\\src\\main\\res\\drawable-xhdpi\\rating_full.png"
+    },
+    {
+        "merged": "F:\\2017.7AR\\vuforia-sdk-android-6-2-10\\samples\\Books-6-2-10\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi\\icon.png",
+        "source": "F:\\2017.7AR\\vuforia-sdk-android-6-2-10\\samples\\Books-6-2-10\\app\\src\\main\\res\\drawable-xhdpi\\icon.png"
+    },
+    {
+        "merged": "F:\\2017.7AR\\vuforia-sdk-android-6-2-10\\samples\\Books-6-2-10\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi\\badge_background.png",
+        "source": "F:\\2017.7AR\\vuforia-sdk-android-6-2-10\\samples\\Books-6-2-10\\app\\src\\main\\res\\drawable-xhdpi\\badge_background.png"
+    },
+    {
+        "merged": "F:\\2017.7AR\\vuforia-sdk-android-6-2-10\\samples\\Books-6-2-10\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi\\button_close_pressed.png",
+        "source": "F:\\2017.7AR\\vuforia-sdk-android-6-2-10\\samples\\Books-6-2-10\\app\\src\\main\\res\\drawable-xhdpi\\button_close_pressed.png"
+    },
+    {
+        "merged": "F:\\2017.7AR\\vuforia-sdk-android-6-2-10\\samples\\Books-6-2-10\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi\\logo.png",
+        "source": "F:\\2017.7AR\\vuforia-sdk-android-6-2-10\\samples\\Books-6-2-10\\app\\src\\main\\res\\drawable-xhdpi\\logo.png"
+    }
+]
