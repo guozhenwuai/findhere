@@ -51,9 +51,9 @@ public class ActivitySplashScreen extends Activity
             {
                 
                 Intent intent = new Intent(ActivitySplashScreen.this,
-                    AboutScreen.class);
+                    MainActivity.class);
                 intent.putExtra("ACTIVITY_TO_LAUNCH",
-                    "com.FindHere.cloudReco.MainActicity");
+                    "com.FindHere.activity.MainActivity");
                 intent.putExtra("ABOUT_TEXT_TITLE", "FindHere");
                 intent.putExtra("ABOUT_TEXT", "Hello.html");
                 startActivity(intent);

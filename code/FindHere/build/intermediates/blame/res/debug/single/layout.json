@@ -1,14 +1,10 @@
 [
     {
-        "merged": "C:\\Users\\msi\\Documents\\20176.30\\code\\FindHere\\build\\intermediates\\res\\merged\\debug\\layout\\about_screen.xml",
-        "source": "C:\\Users\\msi\\Documents\\20176.30\\code\\FindHere\\src\\main\\res\\layout\\about_screen.xml"
+        "merged": "D:\\FindHere-Unity\\FindHere-Unity\\build\\intermediates\\res\\merged\\debug\\layout\\main_activity.xml",
+        "source": "D:\\FindHere-Unity\\FindHere-Unity\\src\\main\\res\\layout\\main_activity.xml"
     },
     {
-        "merged": "C:\\Users\\msi\\Documents\\20176.30\\code\\FindHere\\build\\intermediates\\res\\merged\\debug\\layout\\splash_screen.xml",
-        "source": "C:\\Users\\msi\\Documents\\20176.30\\code\\FindHere\\src\\main\\res\\layout\\splash_screen.xml"
-    },
-    {
-        "merged": "C:\\Users\\msi\\Documents\\20176.30\\code\\FindHere\\build\\intermediates\\res\\merged\\debug\\layout\\camera_overlay.xml",
-        "source": "C:\\Users\\msi\\Documents\\20176.30\\code\\FindHere\\src\\main\\res\\layout\\camera_overlay.xml"
+        "merged": "D:\\FindHere-Unity\\FindHere-Unity\\build\\intermediates\\res\\merged\\debug\\layout\\splash_screen.xml",
+        "source": "D:\\FindHere-Unity\\FindHere-Unity\\src\\main\\res\\layout\\splash_screen.xml"
     }
 ]

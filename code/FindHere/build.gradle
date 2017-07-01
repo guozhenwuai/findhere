@@ -30,6 +30,8 @@ android {
 	defaultConfig {
 		targetSdkVersion 26
 		applicationId 'com.sjtu.FindHere'
+		aaptOptions.cruncherEnabled = false
+		aaptOptions.useNewCruncher = false
 	}
 
 	lintOptions {
