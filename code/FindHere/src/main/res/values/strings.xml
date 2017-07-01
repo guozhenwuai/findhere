@@ -1,4 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
   <string name="app_name">New Unity Project</string>
+  <string name="button_start">Start</string>
+  <string name="splash_screen_description">Vuforia Splash</string>
 </resources>

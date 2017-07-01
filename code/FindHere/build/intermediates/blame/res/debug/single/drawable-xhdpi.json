@@ -1,14 +1,14 @@
 [
     {
-        "merged": "D:\\GitHub\\SJTU-ar-platform\\code\\FindHere-Unity\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi\\app_banner.png",
-        "source": "D:\\GitHub\\SJTU-ar-platform\\code\\FindHere-Unity\\src\\main\\res\\drawable-xhdpi\\app_banner.png"
+        "merged": "C:\\Users\\msi\\Documents\\20176.30\\code\\FindHere\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi\\scanline.png",
+        "source": "C:\\Users\\msi\\Documents\\20176.30\\code\\FindHere\\src\\main\\res\\drawable-xhdpi\\scanline.png"
     },
     {
-        "merged": "D:\\FindHere-Unity\\FindHere-Unity\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi\\app_banner.png",
-        "source": "D:\\FindHere-Unity\\FindHere-Unity\\src\\main\\res\\drawable-xhdpi\\app_banner.png"
+        "merged": "C:\\Users\\msi\\Documents\\20176.30\\code\\FindHere\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi\\app_banner.png",
+        "source": "C:\\Users\\msi\\Documents\\20176.30\\code\\FindHere\\src\\main\\res\\drawable-xhdpi\\app_banner.png"
     },
     {
-        "merged": "D:\\GitHub\\FindHere\\code\\FindHere\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi\\app_banner.png",
-        "source": "D:\\GitHub\\FindHere\\code\\FindHere\\src\\main\\res\\drawable-xhdpi\\app_banner.png"
+        "merged": "C:\\Users\\msi\\Documents\\20176.30\\code\\FindHere\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi\\vuforia_splash.png",
+        "source": "C:\\Users\\msi\\Documents\\20176.30\\code\\FindHere\\src\\main\\res\\drawable-xhdpi\\vuforia_splash.png"
     }
 ]

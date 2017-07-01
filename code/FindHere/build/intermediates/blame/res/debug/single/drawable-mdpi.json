@@ -1,14 +1,6 @@
 [
     {
-        "merged": "D:\\FindHere-Unity\\FindHere-Unity\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi\\app_icon.png",
-        "source": "D:\\FindHere-Unity\\FindHere-Unity\\src\\main\\res\\drawable-mdpi\\app_icon.png"
-    },
-    {
-        "merged": "D:\\GitHub\\SJTU-ar-platform\\code\\FindHere-Unity\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi\\app_icon.png",
-        "source": "D:\\GitHub\\SJTU-ar-platform\\code\\FindHere-Unity\\src\\main\\res\\drawable-mdpi\\app_icon.png"
-    },
-    {
-        "merged": "D:\\GitHub\\FindHere\\code\\FindHere\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi\\app_icon.png",
-        "source": "D:\\GitHub\\FindHere\\code\\FindHere\\src\\main\\res\\drawable-mdpi\\app_icon.png"
+        "merged": "C:\\Users\\msi\\Documents\\20176.30\\code\\FindHere\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi\\app_icon.png",
+        "source": "C:\\Users\\msi\\Documents\\20176.30\\code\\FindHere\\src\\main\\res\\drawable-mdpi\\app_icon.png"
     }
 ]

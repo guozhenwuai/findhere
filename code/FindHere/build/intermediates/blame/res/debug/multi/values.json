@@ -1,17 +1,340 @@
 [
     {
-        "outputFile": "D:\\FindHere-Unity\\FindHere-Unity\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values\\values.xml",
+        "outputFile": "C:\\Users\\msi\\Documents\\20176.30\\code\\FindHere\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values\\values.xml",
         "map": [
             {
                 "to": {
                     "startLine": 2,
                     "startColumn": 4,
                     "startOffset": 55,
-                    "endColumn": 54,
-                    "endOffset": 105
+                    "endColumn": 39,
+                    "endOffset": 90
                 },
                 "from": {
-                    "file": "D:\\FindHere-Unity\\FindHere-Unity\\src\\main\\res\\values\\strings.xml",
+                    "file": "C:\\Users\\msi\\Documents\\20176.30\\code\\FindHere\\src\\main\\res\\values\\colors.xml",
+                    "position": {
+                        "startLine": 4,
+                        "startColumn": 4,
+                        "startOffset": 106,
+                        "endColumn": 39,
+                        "endOffset": 141
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 3,
+                    "startColumn": 4,
+                    "startOffset": 95,
+                    "endColumn": 38,
+                    "endOffset": 129
+                },
+                "from": {
+                    "file": "C:\\Users\\msi\\Documents\\20176.30\\code\\FindHere\\src\\main\\res\\values\\colors.xml",
+                    "position": {
+                        "startLine": 6,
+                        "startColumn": 4,
+                        "startOffset": 186,
+                        "endColumn": 38,
+                        "endOffset": 220
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 4,
+                    "startColumn": 4,
+                    "startOffset": 134,
+                    "endColumn": 49,
+                    "endOffset": 179
+                },
+                "from": {
+                    "file": "C:\\Users\\msi\\Documents\\20176.30\\code\\FindHere\\src\\main\\res\\values\\colors.xml",
+                    "position": {
+                        "startLine": 3,
+                        "startColumn": 4,
+                        "startOffset": 56,
+                        "endColumn": 49,
+                        "endOffset": 101
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 5,
+                    "startColumn": 4,
+                    "startOffset": 184,
+                    "endColumn": 44,
+                    "endOffset": 224
+                },
+                "from": {
+                    "file": "C:\\Users\\msi\\Documents\\20176.30\\code\\FindHere\\src\\main\\res\\values\\colors.xml",
+                    "position": {
+                        "startLine": 7,
+                        "startColumn": 4,
+                        "startOffset": 225,
+                        "endColumn": 44,
+                        "endOffset": 265
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 6,
+                    "startColumn": 4,
+                    "startOffset": 229,
+                    "endColumn": 58,
+                    "endOffset": 283
+                },
+                "from": {
+                    "file": "C:\\Users\\msi\\Documents\\20176.30\\code\\FindHere\\src\\main\\res\\values\\colors.xml",
+                    "position": {
+                        "startLine": 8,
+                        "startColumn": 4,
+                        "startOffset": 270,
+                        "endColumn": 58,
+                        "endOffset": 324
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 7,
+                    "startColumn": 4,
+                    "startOffset": 288,
+                    "endColumn": 39,
+                    "endOffset": 323
+                },
+                "from": {
+                    "file": "C:\\Users\\msi\\Documents\\20176.30\\code\\FindHere\\src\\main\\res\\values\\colors.xml",
+                    "position": {
+                        "startLine": 5,
+                        "startColumn": 4,
+                        "startOffset": 146,
+                        "endColumn": 39,
+                        "endOffset": 181
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 8,
+                    "startColumn": 4,
+                    "startOffset": 328,
+                    "endColumn": 42,
+                    "endOffset": 366
+                },
+                "from": {
+                    "file": "C:\\Users\\msi\\Documents\\20176.30\\code\\FindHere\\src\\main\\res\\values\\dimens.xml",
+                    "position": {
+                        "startLine": 3,
+                        "startColumn": 4,
+                        "startOffset": 56,
+                        "endColumn": 42,
+                        "endOffset": 94
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 9,
+                    "startColumn": 4,
+                    "startOffset": 371,
+                    "endColumn": 41,
+                    "endOffset": 408
+                },
+                "from": {
+                    "file": "C:\\Users\\msi\\Documents\\20176.30\\code\\FindHere\\src\\main\\res\\values\\dimens.xml",
+                    "position": {
+                        "startLine": 14,
+                        "startColumn": 4,
+                        "startOffset": 499,
+                        "endColumn": 41,
+                        "endOffset": 536
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 10,
+                    "startColumn": 4,
+                    "startOffset": 413,
+                    "endColumn": 49,
+                    "endOffset": 458
+                },
+                "from": {
+                    "file": "C:\\Users\\msi\\Documents\\20176.30\\code\\FindHere\\src\\main\\res\\values\\dimens.xml",
+                    "position": {
+                        "startLine": 15,
+                        "startColumn": 4,
+                        "startOffset": 541,
+                        "endColumn": 49,
+                        "endOffset": 586
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 11,
+                    "startColumn": 4,
+                    "startOffset": 463,
+                    "endColumn": 45,
+                    "endOffset": 504
+                },
+                "from": {
+                    "file": "C:\\Users\\msi\\Documents\\20176.30\\code\\FindHere\\src\\main\\res\\values\\dimens.xml",
+                    "position": {
+                        "startLine": 6,
+                        "startColumn": 4,
+                        "startOffset": 149,
+                        "endColumn": 45,
+                        "endOffset": 190
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 12,
+                    "startColumn": 4,
+                    "startOffset": 509,
+                    "endColumn": 48,
+                    "endOffset": 553
+                },
+                "from": {
+                    "file": "C:\\Users\\msi\\Documents\\20176.30\\code\\FindHere\\src\\main\\res\\values\\dimens.xml",
+                    "position": {
+                        "startLine": 8,
+                        "startColumn": 4,
+                        "startOffset": 246,
+                        "endColumn": 48,
+                        "endOffset": 290
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 13,
+                    "startColumn": 4,
+                    "startOffset": 558,
+                    "endColumn": 52,
+                    "endOffset": 606
+                },
+                "from": {
+                    "file": "C:\\Users\\msi\\Documents\\20176.30\\code\\FindHere\\src\\main\\res\\values\\dimens.xml",
+                    "position": {
+                        "startLine": 10,
+                        "startColumn": 4,
+                        "startOffset": 348,
+                        "endColumn": 52,
+                        "endOffset": 396
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 14,
+                    "startColumn": 4,
+                    "startOffset": 611,
+                    "endColumn": 50,
+                    "endOffset": 657
+                },
+                "from": {
+                    "file": "C:\\Users\\msi\\Documents\\20176.30\\code\\FindHere\\src\\main\\res\\values\\dimens.xml",
+                    "position": {
+                        "startLine": 11,
+                        "startColumn": 4,
+                        "startOffset": 401,
+                        "endColumn": 50,
+                        "endOffset": 447
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 15,
+                    "startColumn": 4,
+                    "startOffset": 662,
+                    "endColumn": 50,
+                    "endOffset": 708
+                },
+                "from": {
+                    "file": "C:\\Users\\msi\\Documents\\20176.30\\code\\FindHere\\src\\main\\res\\values\\dimens.xml",
+                    "position": {
+                        "startLine": 7,
+                        "startColumn": 4,
+                        "startOffset": 195,
+                        "endColumn": 50,
+                        "endOffset": 241
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 16,
+                    "startColumn": 4,
+                    "startOffset": 713,
+                    "endColumn": 45,
+                    "endOffset": 754
+                },
+                "from": {
+                    "file": "C:\\Users\\msi\\Documents\\20176.30\\code\\FindHere\\src\\main\\res\\values\\dimens.xml",
+                    "position": {
+                        "startLine": 12,
+                        "startColumn": 4,
+                        "startOffset": 452,
+                        "endColumn": 45,
+                        "endOffset": 493
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 17,
+                    "startColumn": 4,
+                    "startOffset": 759,
+                    "endColumn": 44,
+                    "endOffset": 799
+                },
+                "from": {
+                    "file": "C:\\Users\\msi\\Documents\\20176.30\\code\\FindHere\\src\\main\\res\\values\\dimens.xml",
+                    "position": {
+                        "startLine": 5,
+                        "startColumn": 4,
+                        "startOffset": 104,
+                        "endColumn": 44,
+                        "endOffset": 144
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 18,
+                    "startColumn": 4,
+                    "startOffset": 804,
+                    "endColumn": 52,
+                    "endOffset": 852
+                },
+                "from": {
+                    "file": "C:\\Users\\msi\\Documents\\20176.30\\code\\FindHere\\src\\main\\res\\values\\dimens.xml",
+                    "position": {
+                        "startLine": 9,
+                        "startColumn": 4,
+                        "startOffset": 295,
+                        "endColumn": 52,
+                        "endOffset": 343
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 19,
+                    "startColumn": 4,
+                    "startOffset": 857,
+                    "endColumn": 54,
+                    "endOffset": 907
+                },
+                "from": {
+                    "file": "C:\\Users\\msi\\Documents\\20176.30\\code\\FindHere\\src\\main\\res\\values\\strings.xml",
                     "position": {
                         "startLine": 2,
                         "startColumn": 2,
@@ -23,105 +346,53 @@
             },
             {
                 "to": {
-                    "startLine": 3,
+                    "startLine": 20,
                     "startColumn": 4,
-                    "startOffset": 110,
-                    "endLine": 4,
-                    "endColumn": 8,
-                    "endOffset": 203
+                    "startOffset": 912,
+                    "endColumn": 46,
+                    "endOffset": 954
                 },
                 "from": {
-                    "file": "D:\\FindHere-Unity\\FindHere-Unity\\src\\main\\res\\values\\styles.xml",
+                    "file": "C:\\Users\\msi\\Documents\\20176.30\\code\\FindHere\\src\\main\\res\\values\\strings.xml",
                     "position": {
-                        "startLine": 2,
-                        "startColumn": 0,
-                        "startOffset": 53,
-                        "endLine": 3,
-                        "endColumn": 8,
-                        "endOffset": 147
-                    }
-                }
-            }
-        ]
-    },
-    {
-        "outputFile": "D:\\GitHub\\FindHere\\code\\FindHere\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values\\values.xml",
-        "map": [
-            {
-                "to": {
-                    "startLine": 2,
-                    "startColumn": 4,
-                    "startOffset": 55,
-                    "endColumn": 54,
-                    "endOffset": 105
-                },
-                "from": {
-                    "file": "D:\\GitHub\\FindHere\\code\\FindHere\\src\\main\\res\\values\\strings.xml",
-                    "position": {
-                        "startLine": 2,
+                        "startLine": 3,
                         "startColumn": 2,
-                        "startOffset": 55,
-                        "endColumn": 52,
-                        "endOffset": 105
+                        "startOffset": 109,
+                        "endColumn": 44,
+                        "endOffset": 151
                     }
                 }
             },
             {
                 "to": {
-                    "startLine": 3,
+                    "startLine": 21,
                     "startColumn": 4,
-                    "startOffset": 110,
-                    "endLine": 4,
-                    "endColumn": 8,
-                    "endOffset": 203
+                    "startOffset": 959,
+                    "endColumn": 68,
+                    "endOffset": 1023
                 },
                 "from": {
-                    "file": "D:\\GitHub\\FindHere\\code\\FindHere\\src\\main\\res\\values\\styles.xml",
+                    "file": "C:\\Users\\msi\\Documents\\20176.30\\code\\FindHere\\src\\main\\res\\values\\strings.xml",
                     "position": {
-                        "startLine": 2,
-                        "startColumn": 0,
-                        "startOffset": 53,
-                        "endLine": 3,
-                        "endColumn": 8,
-                        "endOffset": 147
-                    }
-                }
-            }
-        ]
-    },
-    {
-        "outputFile": "D:\\GitHub\\SJTU-ar-platform\\code\\FindHere-Unity\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values\\values.xml",
-        "map": [
-            {
-                "to": {
-                    "startLine": 2,
-                    "startColumn": 4,
-                    "startOffset": 55,
-                    "endColumn": 54,
-                    "endOffset": 105
-                },
-                "from": {
-                    "file": "D:\\GitHub\\SJTU-ar-platform\\code\\FindHere-Unity\\src\\main\\res\\values\\strings.xml",
-                    "position": {
-                        "startLine": 2,
+                        "startLine": 4,
                         "startColumn": 2,
-                        "startOffset": 55,
-                        "endColumn": 52,
-                        "endOffset": 105
+                        "startOffset": 155,
+                        "endColumn": 66,
+                        "endOffset": 219
                     }
                 }
             },
             {
                 "to": {
-                    "startLine": 3,
+                    "startLine": 22,
                     "startColumn": 4,
-                    "startOffset": 110,
-                    "endLine": 4,
+                    "startOffset": 1028,
+                    "endLine": 23,
                     "endColumn": 8,
-                    "endOffset": 203
+                    "endOffset": 1121
                 },
                 "from": {
-                    "file": "D:\\GitHub\\SJTU-ar-platform\\code\\FindHere-Unity\\src\\main\\res\\values\\styles.xml",
+                    "file": "C:\\Users\\msi\\Documents\\20176.30\\code\\FindHere\\src\\main\\res\\values\\styles.xml",
                     "position": {
                         "startLine": 2,
                         "startColumn": 0,

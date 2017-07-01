@@ -3,30 +3,30 @@
 
     <item
         is-multidex="false"
-        jar="D:\GitHub\FindHere\code\FindHere\libs\VuforiaUnityPlayer.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="26.0.0"
-        sha1="95f5205a17a7546c265d4a27d1e6f8be7b6f3f03">
-        <dex dex="D:\GitHub\FindHere\code\FindHere\build\intermediates\pre-dexed\debug\VuforiaUnityPlayer_a0d267e2ba6e439c0e50ab0f418e4819e75e3821.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="D:\GitHub\FindHere\code\FindHere\libs\Vuforia.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="26.0.0"
-        sha1="be3db5d282d7094986c342631085ca4d84c02603">
-        <dex dex="D:\GitHub\FindHere\code\FindHere\build\intermediates\pre-dexed\debug\Vuforia_077703567566432aaa5a104abfba644aaa8d11de.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="D:\GitHub\FindHere\code\FindHere\libs\unity-classes.jar"
+        jar="C:\Users\msi\Documents\20176.30\code\FindHere\libs\unity-classes.jar"
         jumboMode="false"
         optimize="true"
         revision="26.0.0"
         sha1="51f46611e716600d0a9d36ff5f7c2dddde43688c">
-        <dex dex="D:\GitHub\FindHere\code\FindHere\build\intermediates\pre-dexed\debug\unity-classes_2d91d2c145b959f454844f574cb45b2a370cc914.jar" />
+        <dex dex="C:\Users\msi\Documents\20176.30\code\FindHere\build\intermediates\pre-dexed\debug\unity-classes_315a1b1ec155239b37823afbf3e6397ec5730ee0.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\msi\Documents\20176.30\code\FindHere\libs\Vuforia.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="26.0.0"
+        sha1="be3db5d282d7094986c342631085ca4d84c02603">
+        <dex dex="C:\Users\msi\Documents\20176.30\code\FindHere\build\intermediates\pre-dexed\debug\Vuforia_6aa07a93aa1f18557eb2a4b1c5722d5c61134e64.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\msi\Documents\20176.30\code\FindHere\libs\VuforiaUnityPlayer.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="26.0.0"
+        sha1="95f5205a17a7546c265d4a27d1e6f8be7b6f3f03">
+        <dex dex="C:\Users\msi\Documents\20176.30\code\FindHere\build\intermediates\pre-dexed\debug\VuforiaUnityPlayer_1df73a2ea574315775ae2ee2dd8b5cf6f1cae923.jar" />
     </item>
 
 </items>
