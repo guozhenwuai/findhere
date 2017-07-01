@@ -6,7 +6,7 @@ using Vuforia;
 public class CloudRecoHandler : MonoBehaviour, ICloudRecoEventHandler
 {
     private ObjectTracker mObjectTracker;
-    //private ContentManager mContentManager;
+    private ContentManager mContentManager;
     private CloudRecoBehaviour mCloudRecoBehaviour;
     private bool mIsScanning = false;
     private string mTargetName = "";
@@ -38,13 +38,18 @@ public class CloudRecoHandler : MonoBehaviour, ICloudRecoEventHandler
         mObjectTracker.TargetFinder.ClearTrackables(false);
         // enable the new result with the same ImageTargetBehaviour:
         ImageTargetBehaviour imageTargetBehaviour = mObjectTracker.TargetFinder.EnableTracking(result, mParentOfImageTargetTemplate) as ImageTargetBehaviour;
+
+        if (imageTargetBehaviour != null)
+        {
+            mContentManager.TargetCreated(result.UniqueTargetId);
+        }
     }
 
     public void OnStateChanged(bool scanning) {
         mIsScanning = scanning;
         if (scanning) {
             mObjectTracker.TargetFinder.ClearTrackables(false);
-            //mContentManager.ShowObject(false);
+            mContentManager.ShowObject(false);
         }
     }
 
@@ -65,7 +70,7 @@ public class CloudRecoHandler : MonoBehaviour, ICloudRecoEventHandler
 
         // get a reference to the Object Tracker, remember it
         mObjectTracker = TrackerManager.Instance.GetTracker<ObjectTracker>();
-        //mContentManager = FindObjectOfType<ContentManager>();
+        mContentManager = FindObjectOfType<ContentManager>();
     }
 
     public void OnInitError(TargetFinder.InitState initError) {
