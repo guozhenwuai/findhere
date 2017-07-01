@@ -7,6 +7,8 @@
     <color name="semi_transparent_black">#C8000000</color>
     <color name="white">#FFFFFF</color>
     <dimen name="about_title">18sp</dimen>
+    <dimen name="activity_horizontal_margin">16dp</dimen>
+    <dimen name="activity_vertical_margin">16dp</dimen>
     <dimen name="menu_title">22sp</dimen>
     <dimen name="menu_title_padding">14sp</dimen>
     <dimen name="overlay_author">13sp</dimen>
@@ -17,9 +19,21 @@
     <dimen name="overlay_status">14sp</dimen>
     <dimen name="overlay_title">15sp</dimen>
     <dimen name="overlay_touch_for_more">9sp</dimen>
-    <string name="app_name">New Unity Project</string>
+    <string name="action_sign_in">Sign in or register</string>
+    <string name="action_sign_in_short">Sign in</string>
+    <string name="app_name">Find Here</string>
     <string name="button_start">Start</string>
+    <string name="error_field_required">This field is required</string>
+    <string name="error_incorrect_password">This password is incorrect</string>
+    <string name="error_invalid_email">This email address is invalid</string>
+    <string name="error_invalid_password">This password is too short</string>
+    <string name="permission_rationale">"Contacts permissions are needed for providing email
+        completions."
+    </string>
+    <string name="prompt_email">Email</string>
+    <string name="prompt_password">Password (optional)</string>
     <string name="splash_screen_description">Vuforia Splash</string>
+    <string name="title_activity_login">Sign in</string>
     <style name="UnityThemeSelector" parent="android:Theme.Light.NoTitleBar.Fullscreen">
 </style>
 </resources>

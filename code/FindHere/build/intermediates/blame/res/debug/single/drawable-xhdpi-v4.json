@@ -1,0 +1,30 @@
+[
+    {
+        "merged": "D:\\FindHere-Unity\\FindHere-Unity\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\add.png",
+        "source": "D:\\FindHere-Unity\\FindHere-Unity\\src\\main\\res\\drawable-xhdpi\\add.png"
+    },
+    {
+        "merged": "D:\\FindHere-Unity\\FindHere-Unity\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\baoman.png",
+        "source": "D:\\FindHere-Unity\\FindHere-Unity\\src\\main\\res\\drawable-xhdpi\\baoman.png"
+    },
+    {
+        "merged": "D:\\FindHere-Unity\\FindHere-Unity\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\user.png",
+        "source": "D:\\FindHere-Unity\\FindHere-Unity\\src\\main\\res\\drawable-xhdpi\\user.png"
+    },
+    {
+        "merged": "D:\\FindHere-Unity\\FindHere-Unity\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\app_banner.png",
+        "source": "D:\\FindHere-Unity\\FindHere-Unity\\src\\main\\res\\drawable-xhdpi\\app_banner.png"
+    },
+    {
+        "merged": "D:\\FindHere-Unity\\FindHere-Unity\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\scanline.png",
+        "source": "D:\\FindHere-Unity\\FindHere-Unity\\src\\main\\res\\drawable-xhdpi\\scanline.png"
+    },
+    {
+        "merged": "D:\\FindHere-Unity\\FindHere-Unity\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\vuforia_splash.png",
+        "source": "D:\\FindHere-Unity\\FindHere-Unity\\src\\main\\res\\drawable-xhdpi\\vuforia_splash.png"
+    },
+    {
+        "merged": "D:\\FindHere-Unity\\FindHere-Unity\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\camera.png",
+        "source": "D:\\FindHere-Unity\\FindHere-Unity\\src\\main\\res\\drawable-xhdpi\\camera.png"
+    }
+]

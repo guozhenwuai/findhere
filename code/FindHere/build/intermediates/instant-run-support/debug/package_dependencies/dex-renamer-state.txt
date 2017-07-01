@@ -1,0 +1,10 @@
+#Sat Jul 01 16:17:33 CST 2017
+renamed.2=classes2.dex
+renamed.1=classes.dex
+renamed.0=classes3.dex
+base.2=D\:\\FindHere-Unity\\FindHere-Unity\\build\\intermediates\\transforms\\dex\\debug\\folders\\1000\\2\\VuforiaUnityPlayer_df2008fc92495098c1cbf201d39dc7ab7b84bcba
+base.1=D\:\\FindHere-Unity\\FindHere-Unity\\build\\intermediates\\transforms\\dex\\debug\\folders\\1000\\2\\unity-classes_31d52177952c5753af6091bf23238e2aad54d59d
+base.0=D\:\\FindHere-Unity\\FindHere-Unity\\build\\intermediates\\transforms\\dex\\debug\\folders\\1000\\2\\Vuforia_7d5d72764edea2afc1ff5db11a6d3c2680e8ec9a
+file.2=D\:\\FindHere-Unity\\FindHere-Unity\\build\\intermediates\\transforms\\dex\\debug\\folders\\1000\\2\\VuforiaUnityPlayer_df2008fc92495098c1cbf201d39dc7ab7b84bcba\\classes.dex
+file.1=D\:\\FindHere-Unity\\FindHere-Unity\\build\\intermediates\\transforms\\dex\\debug\\folders\\1000\\2\\unity-classes_31d52177952c5753af6091bf23238e2aad54d59d\\classes.dex
+file.0=D\:\\FindHere-Unity\\FindHere-Unity\\build\\intermediates\\transforms\\dex\\debug\\folders\\1000\\2\\Vuforia_7d5d72764edea2afc1ff5db11a6d3c2680e8ec9a\\classes.dex
