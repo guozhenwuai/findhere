@@ -5,9 +5,10 @@ using UnityEngine;
 
 public class InfoButtonTriggerListener : MonoBehaviour
 {
+    private string message;
     private void OnMouseDown()
     {
-        string text = this.name;
-        Debug.Log("Click:"+text);
+        message = this.transform.parent.name;
+        Debug.Log("Click:"+message);
     }
 }

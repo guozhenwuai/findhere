@@ -10,10 +10,13 @@ public class CloudRecoHandler : MonoBehaviour, ICloudRecoEventHandler
     private CloudRecoBehaviour mCloudRecoBehaviour;
     private bool mIsScanning = false;
     private string mTargetName = "";
-
+    private float touchduration;
+    private Touch touch;
     // the parent gameobject of the referenced ImageTargetTemplate - reused for all target search results
     private GameObject mParentOfImageTargetTemplate;
+
     public ImageTargetBehaviour ImageTargetTemplate;
+    public ScanLine scanLine;
 
     // Use this for initialization
     void Start () {
@@ -28,8 +31,28 @@ public class CloudRecoHandler : MonoBehaviour, ICloudRecoEventHandler
 	
 	// Update is called once per frame
 	void Update () {
-		
-	}
+        if (Input.touchCount > 0)
+        {
+            touchduration += Time.deltaTime;
+            touch = Input.GetTouch(0);
+            // 单击
+            if (touch.phase == TouchPhase.Ended && touchduration < 0.2f &&touch.tapCount==2)
+            {
+                StartCoroutine(TriggerAutoFocusAndEnableContinuousFocusIfSet());
+            }
+        }
+        else
+        {
+            touchduration = 0;
+        }
+    }
+
+    private IEnumerator TriggerAutoFocusAndEnableContinuousFocusIfSet()
+    {
+        CameraDevice.Instance.SetFocusMode(CameraDevice.FocusMode.FOCUS_MODE_TRIGGERAUTO);
+        yield return new WaitForSeconds(1.0f);
+        CameraDevice.Instance.SetFocusMode(CameraDevice.FocusMode.FOCUS_MODE_CONTINUOUSAUTO);
+    }
 
     public void OnNewSearchResult(TargetFinder.TargetSearchResult result) {
         mTargetName = result.TargetName;
@@ -41,6 +64,12 @@ public class CloudRecoHandler : MonoBehaviour, ICloudRecoEventHandler
 
         if (imageTargetBehaviour != null)
         {
+            // Stop the target finder
+            mCloudRecoBehaviour.CloudRecoEnabled = false;
+
+            // Stop showing the scan-line
+            ShowScanLine(false);
+
             mContentManager.TargetCreated(result.UniqueTargetId);
         }
     }
@@ -51,16 +80,40 @@ public class CloudRecoHandler : MonoBehaviour, ICloudRecoEventHandler
             mObjectTracker.TargetFinder.ClearTrackables(false);
             mContentManager.ShowObject(false);
         }
+
+        ShowScanLine(scanning);
     }
 
     public void OnGUI() {
         GUI.Box(new Rect(100, 100, 200, 50), mIsScanning ? "scanning" : "Not scanning");
-        GUI.Box(new Rect(100, 200, 200, 50), "Name:" + mTargetName);
         if (!mIsScanning)
         {
             if (GUI.Button(new Rect(100, 300, 200, 50), "Restart Scanning"))
             {
                 mCloudRecoBehaviour.CloudRecoEnabled = true;
+            }
+        }
+    }
+
+    private void ShowScanLine(bool show)
+    {
+        // Toggle scanline rendering
+        if (scanLine != null)
+        {
+            Renderer scanLineRenderer = scanLine.GetComponent<Renderer>();
+            if (show)
+            {
+                // Enable scan line rendering
+                if (!scanLineRenderer.enabled)
+                    scanLineRenderer.enabled = true;
+
+                scanLine.ResetAnimation();
+            }
+            else
+            {
+                // Disable scanline rendering
+                if (scanLineRenderer.enabled)
+                    scanLineRenderer.enabled = false;
             }
         }
     }
