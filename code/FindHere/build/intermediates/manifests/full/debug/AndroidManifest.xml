@@ -52,6 +52,10 @@
     <uses-permission android:name="android.permission.READ_PHONE_STATE" />
     <uses-permission android:name="android.permission.READ_CALL_LOG" />
 
+    <meta-data
+        android:name="android.support.VERSION"
+        android:value="26.0.0-alpha1" />
+
     <application
         android:banner="@drawable/app_banner"
         android:icon="@drawable/app_icon"
@@ -59,34 +63,8 @@
         android:label="@string/app_name"
         android:theme="@android:style/Theme.NoTitleBar.Fullscreen" >
         <activity
-            android:name="com.FindHere.activity.MainActivity"
-            android:configChanges="mcc|mnc|locale|touchscreen|keyboard|keyboardHidden|navigation|orientation|screenLayout|uiMode|screenSize|smallestScreenSize|fontScale|layoutDirection"
-            android:label="@string/app_name"
-            android:launchMode="singleTask"
-            android:screenOrientation="portrait" >
-
-            <!--
-          <intent-filter>
-            <action android:name="android.intent.action.MAIN" />
-            <category android:name="android.intent.category.LAUNCHER" />
-          </intent-filter>
-
-            <meta-data
-                android:name="unityplayer.UnityActivity"
-                android:value="true" />
-            <meta-data
-                android:name="unityplayer.ForwardNativeEventsToDalvik"
-                android:value="false" />
-            -->
-        </activity>
-        <activity
-            android:name="com.unity3d.player.VideoPlayer"
-            android:configChanges="fontScale|keyboard|keyboardHidden|locale|mnc|mcc|navigation|orientation|screenLayout|screenSize|smallestScreenSize|uiMode|touchscreen"
-            android:label="@string/app_name"
-            android:screenOrientation="portrait" />
-        <activity
             android:name="com.FindHere.activity.ActivitySplashScreen"
-            android:configChanges="orientation|keyboardHidden"
+            android:configChanges="orientation|keyboardHidden|screenSize|smallestScreenSize"
             android:noHistory="true"
             android:screenOrientation="portrait" >
             <intent-filter>
@@ -95,18 +73,53 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity
+            android:name="com.FindHere.activity.MainActivity"
+            android:configChanges="mcc|mnc|locale|touchscreen|keyboard|keyboardHidden|navigation|orientation|screenLayout|uiMode|screenSize|smallestScreenSize|fontScale|layoutDirection"
+            android:label="@string/app_name"
+            android:screenOrientation="portrait" >
+            <meta-data
+                android:name="unityplayer.UnityActivity"
+                android:value="true" />
+            <meta-data
+                android:name="unityplayer.ForwardNativeEventsToDalvik"
+                android:value="true" />
+        </activity>
+        <activity
+            android:name="com.unity3d.player.VideoPlayer"
+            android:configChanges="fontScale|keyboard|keyboardHidden|locale|mnc|mcc|navigation|orientation|screenLayout|screenSize|smallestScreenSize|uiMode|touchscreen"
+            android:label="@string/app_name"
+            android:screenOrientation="portrait" />
+
         <!--
             To support devices using the TI S3D library for stereo mode we must 
-            add the following library.
+            add_activity the following library.
             Devices that require this are: ODG X6 
         -->
         <uses-library
             android:name="com.ti.s3d"
             android:required="false" />
-        <!-- To support the ODG R7 in stereo mode we must add the following library. -->
+        <!-- To support the ODG R7 in stereo mode we must add_activity the following library. -->
         <uses-library
             android:name="com.osterhoutgroup.api.ext"
             android:required="false" />
+
+        <activity
+            android:name="com.FindHere.activity.LoginActivity"
+            android:label="@string/title_activity_login" >
+        </activity>
+        <activity
+            android:name="com.FindHere.activity.AddActivity"
+            android:label="@string/title_activity_login" >
+        </activity>
+        <activity
+            android:name="com.FindHere.activity.SeekActivity"
+            android:label="@string/title_activity_login" >
+        </activity>
+        <activity
+            android:name="com.FindHere.activity.SettingsActivity"
+            android:label="@string/title_activity_login" >
+        </activity>
     </application>
 
 </manifest> <!-- android:installLocation="preferExternal" -->
