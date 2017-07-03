@@ -1,11 +1,14 @@
 package controller;
 
-import com.opensymphony.xwork2.ActionSupport;
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.RequestMapping;
 
-public class GetComments extends ActionSupport {
+@Controller
+public class GetComments {
 	private static final long serialVersionUID = 1L;
 	
+	@RequestMapping("/GetComments")
 	public String execute(){
-		return SUCCESS;
+		return null;
 	}
 }
