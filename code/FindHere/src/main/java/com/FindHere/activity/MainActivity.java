@@ -1,6 +1,7 @@
 package com.FindHere.activity;
 
 import android.app.Activity;
+import android.app.Application;
 import android.content.Intent;
 import android.content.res.Configuration;
 import android.graphics.PixelFormat;
@@ -21,7 +22,7 @@ import com.unity3d.player.UnityPlayer;
 public class MainActivity extends Activity{
     protected UnityPlayer mUnityPlayer; // don't change the name of this variable; referenced from native code
     private LinearLayout u3dLayout;
-    private ImageButton userBtn,cameraBtn,addBtn;
+    private ImageButton userBtn,cameraBtn,addBtn,seekBtn,setBtn;
     private RelativeLayout loadLayout;
     private View scanLine;
     private ImageView cameraClose;
@@ -32,8 +33,8 @@ public class MainActivity extends Activity{
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.main_activity);
-        mUnityPlayer = new UnityPlayer(this);
 
+        mUnityPlayer = new UnityPlayer(this);
         cameraClose = new ImageView(this);
         cameraClose.setImageResource(R.drawable.baoman);
         u3dLayout =  findViewById(R.id.unity3d);
@@ -41,13 +42,17 @@ public class MainActivity extends Activity{
         userBtn =  findViewById(R.id.user_btn);
         cameraBtn =  findViewById(R.id.camera_btn);
         addBtn =  findViewById(R.id.add_btn);
+        seekBtn = findViewById(R.id.seek_btn);
+        setBtn = findViewById(R.id.set_btn);
         loadLayout =  findViewById(R.id.loading_layout);
         scanLine = findViewById(R.id.scan_line);
 
         userBtn.setOnClickListener(new OnClickListener() {
             @Override
             public void onClick(View v) {
-                UnityPlayer.UnitySendMessage("ForAndroid", "sayHello", "");
+                Intent intent = new Intent();
+                intent.setClass(MainActivity.this, LoginActivity.class);
+                startActivity(intent);
             }
         });
         cameraBtn.setOnClickListener(new OnClickListener() {
@@ -64,14 +69,32 @@ public class MainActivity extends Activity{
                     mUnityPlayer.resume();
                     mUnityPlayer.requestFocus();
                     camera_on = true;
-                    //UnityPlayer.UnitySendMessage("Manager", "ZoomOut", "");
                 }
             }
         });
         addBtn.setOnClickListener(new OnClickListener() {
             @Override
             public void onClick(View v) {
-                UnityPlayer.UnitySendMessage("Manager", "ZoomOut", "");
+                Intent intent = new Intent();
+                intent.setClass(MainActivity.this, AddActivity.class);
+                startActivity(intent);
+               // UnityPlayer.UnitySendMessage("ForAndroid", "sayHello", "");
+            }
+        });
+        seekBtn.setOnClickListener(new OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent();
+                intent.setClass(MainActivity.this, SeekActivity.class);
+                startActivity(intent);
+            }
+        });
+        setBtn.setOnClickListener(new OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent();
+                intent.setClass(MainActivity.this, SettingsActivity.class);
+                startActivity(intent);
             }
         });
     }
@@ -151,7 +174,11 @@ public class MainActivity extends Activity{
 
     // Pass any events not handled by (unfocused) views straight to UnityPlayer
     @Override public boolean onKeyUp(int keyCode, KeyEvent event)     { return mUnityPlayer.injectEvent(event); }
-    @Override public boolean onKeyDown(int keyCode, KeyEvent event)   { return mUnityPlayer.injectEvent(event); }
+    @Override public boolean onKeyDown(int keyCode, KeyEvent event)   {
+        if (keyCode == KeyEvent.KEYCODE_BACK) {
+            onDestroy();
+            return true;}
+        else{return mUnityPlayer.injectEvent(event);} }
     @Override public boolean onTouchEvent(MotionEvent event)          { return mUnityPlayer.injectEvent(event); }
     /*API12*/ public boolean onGenericMotionEvent(MotionEvent event)  { return mUnityPlayer.injectEvent(event); }
 
@@ -177,29 +204,27 @@ public class MainActivity extends Activity{
     @Override
     public void onBackPressed() {
         super.onBackPressed();
-        // mUnityPlayer.quit();
-        // this.finish();
     }
 
-  /**  @Override
-    public void onWindowFocusChanged(boolean hasFocus) {
-        super.onWindowFocusChanged(hasFocus);
+    /**  @Override
+      public void onWindowFocusChanged(boolean hasFocus) {
+          super.onWindowFocusChanged(hasFocus);
 
-        int[] location = new int[2];
+          int[] location = new int[2];
 
-        scanLine.getLocationInWindow(location);
+          scanLine.getLocationInWindow(location);
 
-        int left = scanLine.getLeft();
-        int top = scanLine.getTop();
-        int bottom = scanLine.getBottom();
+          int left = scanLine.getLeft();
+          int top = scanLine.getTop();
+          int bottom = scanLine.getBottom();
 
-        // 从上到下的平移动画
-        Animation verticalAnimation = new TranslateAnimation(left, left, top, bottom);
-        verticalAnimation.setDuration(3000); // 动画持续时间
-        verticalAnimation.setRepeatCount(Animation.INFINITE); // 无限循环
+          // 从上到下的平移动画
+          Animation verticalAnimation = new TranslateAnimation(left, left, top, bottom);
+          verticalAnimation.setDuration(3000); // 动画持续时间
+          verticalAnimation.setRepeatCount(Animation.INFINITE); // 无限循环
 
-        // 播放动画
-        scanLine.setAnimation(verticalAnimation);
-        verticalAnimation.startNow();
-    }*/
+          // 播放动画
+          scanLine.setAnimation(verticalAnimation);
+          verticalAnimation.startNow();
+      }*/
 }
