@@ -23,6 +23,7 @@ db.contents.insertOne({
 db.comments.insertOne({
 	"_id":1,
 	"user_id":1,
+	"type":"text",
 	"target_id":1,
 	"content_id":1,
 	"text":"Hey!",
