@@ -9,7 +9,6 @@ public class CloudRecoHandler : MonoBehaviour, ICloudRecoEventHandler
     private ContentManager mContentManager;
     private CloudRecoBehaviour mCloudRecoBehaviour;
     private bool mIsScanning = false;
-    private string mTargetName = "";
     private float touchduration;
     private Touch touch;
     // the parent gameobject of the referenced ImageTargetTemplate - reused for all target search results
@@ -35,7 +34,6 @@ public class CloudRecoHandler : MonoBehaviour, ICloudRecoEventHandler
         {
             touchduration += Time.deltaTime;
             touch = Input.GetTouch(0);
-            // 单击
             if (touch.phase == TouchPhase.Ended && touchduration < 0.2f &&touch.tapCount==2)
             {
                 StartCoroutine(TriggerAutoFocusAndEnableContinuousFocusIfSet());
@@ -49,14 +47,13 @@ public class CloudRecoHandler : MonoBehaviour, ICloudRecoEventHandler
 
     private IEnumerator TriggerAutoFocusAndEnableContinuousFocusIfSet()
     {
+        Debug.Log("Double-click: auto focus.");
         CameraDevice.Instance.SetFocusMode(CameraDevice.FocusMode.FOCUS_MODE_TRIGGERAUTO);
         yield return new WaitForSeconds(1.0f);
         CameraDevice.Instance.SetFocusMode(CameraDevice.FocusMode.FOCUS_MODE_CONTINUOUSAUTO);
     }
 
     public void OnNewSearchResult(TargetFinder.TargetSearchResult result) {
-        mTargetName = result.TargetName;
-        mCloudRecoBehaviour.CloudRecoEnabled = false;
         // First clear all trackables
         mObjectTracker.TargetFinder.ClearTrackables(false);
         // enable the new result with the same ImageTargetBehaviour:
@@ -78,21 +75,10 @@ public class CloudRecoHandler : MonoBehaviour, ICloudRecoEventHandler
         mIsScanning = scanning;
         if (scanning) {
             mObjectTracker.TargetFinder.ClearTrackables(false);
-            mContentManager.ShowObject(false);
+            mContentManager.ShowInfoPoint(false);
         }
 
         ShowScanLine(scanning);
-    }
-
-    public void OnGUI() {
-        GUI.Box(new Rect(100, 100, 200, 50), mIsScanning ? "scanning" : "Not scanning");
-        if (!mIsScanning)
-        {
-            if (GUI.Button(new Rect(100, 300, 200, 50), "Restart Scanning"))
-            {
-                mCloudRecoBehaviour.CloudRecoEnabled = true;
-            }
-        }
     }
 
     private void ShowScanLine(bool show)

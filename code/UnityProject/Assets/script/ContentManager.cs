@@ -1,20 +1,46 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 using Vuforia;
 
 public class ContentManager : MonoBehaviour,ITrackableEventHandler {
-    private GameObject targetImage;
+    private GameObject infoPoint;
+    private CloudRecoBehaviour mCloudRecoBehaviour;
+    private string status;
+
     public GameObject AugmentationObject;
+    public GameObject TextField;
+    public Button CancelButton;
+    public AnimationsManager AnimationsManager;
 
     // Use this for initialization
     void Start () {
-        targetImage = AugmentationObject.transform.parent.gameObject;
+        infoPoint = AugmentationObject.transform.parent.gameObject;
 
-        TrackableBehaviour trackableBehaviour = AugmentationObject.transform.parent.GetComponent<TrackableBehaviour>();
+        TrackableBehaviour trackableBehaviour = infoPoint.transform.parent.GetComponent<TrackableBehaviour>();
         if (trackableBehaviour)
         {
             trackableBehaviour.RegisterTrackableEventHandler(this);
+        }
+        mCloudRecoBehaviour = FindObjectOfType<CloudRecoBehaviour>();
+        SetCancelButtonVisible(false);
+        ShowInfoPoint(false);
+        ShowTextField(false);
+        status = "infoPoint";
+    }
+
+    public void Show(bool tf)
+    {
+        if (status == "infoPoint")
+        {
+            ShowInfoPoint(tf);
+        }
+        else if (status== "textField")
+        {
+            if(tf)AnimationsManager.PlayAnimationTo3D(TextField);
+            else AnimationsManager.PlayAnimationTo2D(TextField);
+            ShowTextField(tf);
         }
     }
 
@@ -23,22 +49,24 @@ public class ContentManager : MonoBehaviour,ITrackableEventHandler {
                                     TrackableBehaviour.Status newStatus)
     {
         if (newStatus == TrackableBehaviour.Status.DETECTED ||
-            newStatus == TrackableBehaviour.Status.TRACKED ||
-            newStatus == TrackableBehaviour.Status.EXTENDED_TRACKED)
+                newStatus == TrackableBehaviour.Status.TRACKED ||
+                newStatus == TrackableBehaviour.Status.EXTENDED_TRACKED)
         {
-            ShowObject(true);
+            Show(true);
+            Debug.Log("content manager show: true");
         }
         else
         {
-            ShowObject(false);
+            Show(false);
+            Debug.Log("content manager show: false");
         }
     }
 
     public void TargetCreated(string targetId)
     {
-        Vector3 parentPosition = targetImage.transform.position;
+        Vector3 parentPosition = infoPoint.transform.position;
 
-        for(int i = 0; i < 10; i++)
+        for(int i = 0; i < 20; i++)
         {
             GameObject sphere = Instantiate(AugmentationObject);
             sphere.transform.parent = AugmentationObject.transform.parent;
@@ -51,10 +79,10 @@ public class ContentManager : MonoBehaviour,ITrackableEventHandler {
         AugmentationObject.SetActive(false);
     }
 
-    public void ShowObject(bool tf)
+    public void ShowInfoPoint(bool tf)
     {
-        Renderer[] rendererComponents = targetImage.GetComponentsInChildren<Renderer>();
-        Collider[] colliderComponents = targetImage.GetComponentsInChildren<Collider>();
+        Renderer[] rendererComponents = infoPoint.GetComponentsInChildren<Renderer>();
+        Collider[] colliderComponents = infoPoint.GetComponentsInChildren<Collider>();
 
         // Enable rendering:
         foreach (Renderer component in rendererComponents)
@@ -68,4 +96,50 @@ public class ContentManager : MonoBehaviour,ITrackableEventHandler {
             component.enabled = tf;
         }
     }
+
+    public void OnCancel()
+    {
+        status = "infoPoint";
+        SetCancelButtonVisible(false);
+        ShowInfoPoint(true);
+        ShowTextField(false);
+    }
+
+    public void OnDisplay()
+    {
+        status = "textField";
+        SetCancelButtonVisible(true);
+        ShowInfoPoint(false);
+        ShowTextField(true);
+    }
+
+    private void ShowTextField(bool visible)
+    {
+        Renderer[] rendererComponents = TextField.GetComponentsInChildren<Renderer>();
+        Collider[] colliderComponents = TextField.GetComponentsInChildren<Collider>();
+
+        // Enable rendering:
+        foreach (Renderer component in rendererComponents)
+        {
+            component.enabled = visible;
+        }
+
+        // Enable colliders:
+        foreach (Collider component in colliderComponents)
+        {
+            component.enabled = visible;
+        }
+    }
+
+    private void SetCancelButtonVisible(bool visible)
+    {
+        if (CancelButton == null) return;
+
+        if (CancelButton.enabled != visible)
+        {
+            CancelButton.enabled = visible;
+            CancelButton.image.enabled = visible;
+        }
+    }
+
 }
