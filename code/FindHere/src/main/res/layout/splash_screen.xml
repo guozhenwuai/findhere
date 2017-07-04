@@ -37,11 +37,7 @@
 				android:layout_width="match_parent"
 				android:layout_height="match_parent"
 				android:scaleType="centerInside"
-<<<<<<< HEAD:code/FindHere/src/main/res/layout/splash_screen.xml
-				android:src="@drawable/app_icon"
-=======
 				android:src="@drawable/baoman"
->>>>>>> 68028bf0dc5ba85af7750a62f98d0d19d6ce0cc4:code/FindHere/src/main/res/layout/splash_screen.xml
 				android:contentDescription="@string/splash_screen_description"
 				/>
 

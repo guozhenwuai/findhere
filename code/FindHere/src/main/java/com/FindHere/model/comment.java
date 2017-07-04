@@ -2,17 +2,35 @@ package com.FindHere.model;
 
 import java.util.Map;
 
-/**
- * Created by msi on 2017/7/1.
- */
 
-public class comment {
-    private boolean hasImage;
-    private boolean hastText;
-    private boolean hasMusic;
-    private  String text;
+public class Comment {
+    private int id;
+    private int userId;
+    private int targetId;
+    private int contentId;
+    private String text;
     private Map<Integer,String> images;
     private Map<Integer,String> sounds;
+
+    public int getId(){return id;}
+
+    public void setId(int id){this.id = id;}
+
+    public int getUserId(){return userId;}
+
+    public void setUserId(int userId){this.userId = userId;}
+
+    public int getTargetId(){return targetId;}
+
+    public void setTargetId(int targetId){this.targetId = targetId;}
+
+    public int getContentId(){return contentId;}
+
+    public void setContentId(int contentId){this.contentId = contentId;}
+
+    public String getText(){return text;}
+
+    public void setText(String text){this.text = text;}
 
     public Map<Integer, String> getImages() {
         return images;
@@ -29,5 +47,11 @@ public class comment {
     public void setSounds(Map<Integer, String> sounds) {
         this.sounds = sounds;
     }
+
+    public boolean hasImage(){return !(images==null);}
+
+    public boolean hasText(){return !(text==null);}
+
+    public boolean hasMusic(){return !(sounds==null);}
 
 }
