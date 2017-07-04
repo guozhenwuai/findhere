@@ -45,8 +45,8 @@
 
 
     <ImageButton
-        android:id="@+id/seek_btn"
-        android:src="@drawable/add"
+        android:id="@+id/user_btn"
+        android:src="@drawable/user"
         android:layout_width="40dp"
         android:layout_height="40dp"
         android:layout_alignParentLeft="true"
@@ -74,28 +74,6 @@
         android:layout_alignParentBottom="true"
         android:layout_marginRight="20dp"
         android:layout_marginBottom="5dp"
-        />
-
-    <ImageButton
-        android:id="@+id/user_btn"
-        android:src="@drawable/user"
-        android:layout_width="40dp"
-        android:layout_height="40dp"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentTop="true"
-        android:layout_marginLeft="20dp"
-        android:layout_marginTop="5dp"
-        />
-
-    <ImageButton
-        android:id="@+id/set_btn"
-        android:src="@drawable/add"
-        android:layout_width="40dp"
-        android:layout_height="40dp"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentTop="true"
-        android:layout_marginRight="20dp"
-        android:layout_marginTop="5dp"
         />
 
 
