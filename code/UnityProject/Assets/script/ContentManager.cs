@@ -41,14 +41,14 @@ public class ContentManager : MonoBehaviour,ITrackableEventHandler {
         for(int i = 0; i < 10; i++)
         {
             GameObject sphere = Instantiate(AugmentationObject);
-            sphere.transform.parent = targetImage.transform;
+            sphere.transform.parent = AugmentationObject.transform.parent;
             sphere.transform.position = new Vector3(
-                parentPosition.x + Random.Range(-1.2f, 1.2f), 
-                parentPosition.y + Random.Range(0, 1.5f), 
-                parentPosition.z + Random.Range(-1.2f, 1.2f));
-            sphere.name = targetId + i;
+                parentPosition.x + Random.Range(-1f, 1f), 
+                parentPosition.y + Random.Range(0, 0.5f), 
+                parentPosition.z + Random.Range(-1f, 1f));
+            sphere.transform.name = targetId + i;
         }
-        Destroy(AugmentationObject, 0);
+        AugmentationObject.SetActive(false);
     }
 
     public void ShowObject(bool tf)
