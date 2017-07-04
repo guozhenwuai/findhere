@@ -27,4 +27,15 @@ db.comments.insertOne({
 	"targetID":"1",
 	"contentID":"1",
 	"text":"Hey!",
-	"soundID":"1"});
+	"soundID":"1",
+	"pictureID":"1"});
+	
+db.comments.insertOne({
+	"_id":"2",
+	"userID":"1",
+	"type":"picture",
+	"targetID":"1",
+	"contentID":"1",
+	"text":"Hey!",
+	"soundID":"1",
+	"pictureID":"595b61032f5443085caabe0a"});

@@ -21,4 +21,13 @@ public class CommentDaoImpl implements CommentDao {
 		if (comment == null) comment = new Comment();
 		return comment;
 	}
+	
+	/*GET and SET*/
+	public MongoTemplate getMongoTemplate() {
+		return mongoTemplate;
+	}
+	
+	public void setMongoTemplate(MongoTemplate mongo) {
+		mongoTemplate = mongo;
+	}
 }

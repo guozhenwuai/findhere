@@ -19,14 +19,11 @@ public class GetComments {
 	
 	@Resource
 	private MongoDBService mongoDBService;
-	
+
 	@RequestMapping("/GetComments")
 	public String execute(@RequestParam("commentID")String commentID, HttpServletRequest request, HttpServletResponse response) 
 			throws IOException{
-		String text = mongoDBService.getCommentText(commentID);
-		ServletOutputStream outStream = response.getOutputStream();
-		outStream.print(text);
-		outStream.close();
+		mongoDBService.returnComment(commentID, response);
 		return null;
 	}
 	

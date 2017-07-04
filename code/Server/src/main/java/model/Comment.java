@@ -24,6 +24,8 @@ public class Comment implements Serializable {
 	private String text;
 	@Field("soundID")
 	private String soundID;
+	@Field("pictureID")
+	private String pictureID;
 	
 	public Comment(){}
 	
@@ -82,5 +84,13 @@ public class Comment implements Serializable {
 	
 	public void setSoundID(String s) {
 		this.soundID = s;
+	}
+	
+	public String getPictureID() {
+		return pictureID;
+	}
+	
+	public void setPictureID(String s) {
+		this.pictureID = s;
 	}
 }

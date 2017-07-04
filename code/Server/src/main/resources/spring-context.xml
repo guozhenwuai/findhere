@@ -46,4 +46,7 @@
 	<bean id="commentDao" class="dao.Impl.CommentDaoImpl">
 	</bean>
 	
+	<bean id="FileDao" class="dao.Impl.FileDaoImpl">
+	</bean>
+	
 </beans>
