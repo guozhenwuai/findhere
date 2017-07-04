@@ -48,7 +48,7 @@
     <color name="gray">#575757</color>
     <color name="highlighted_text_material_dark">#6680cbc4</color>
     <color name="highlighted_text_material_light">#66009688</color>
-    <color name="holo_light_blue">#33B5E5</color>
+    <color name="light_blue">#3ddef2</color>
     <color name="light_gray">#D3D3D3</color>
     <color name="material_blue_grey_800">#ff37474f</color>
     <color name="material_blue_grey_900">#ff263238</color>
@@ -80,6 +80,7 @@
     <color name="secondary_text_disabled_material_dark">#36ffffff</color>
     <color name="secondary_text_disabled_material_light">#24000000</color>
     <color name="semi_transparent_black">#C8000000</color>
+    <color name="soft_blue">#67cfe2</color>
     <color name="switch_thumb_disabled_material_dark">#ff616161</color>
     <color name="switch_thumb_disabled_material_light">#ffbdbdbd</color>
     <color name="switch_thumb_normal_material_dark">#ffbdbdbd</color>

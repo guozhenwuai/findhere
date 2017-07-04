@@ -13,6 +13,7 @@
         android:layout_height="match_parent"
         android:orientation="vertical">
 
+
     </LinearLayout>
 
     <RelativeLayout
@@ -20,7 +21,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerInParent="true"
-        android:background="@color/semi_transparent_black"
+        android:background="@android:color/transparent"
         android:padding="30dip"
         android:visibility="gone" >
 
@@ -43,23 +44,12 @@
         android:visibility="gone"/>
 
 
-
-    <ImageButton
-        android:id="@+id/seek_btn"
-        android:src="@drawable/add"
-        android:layout_width="40dp"
-        android:layout_height="40dp"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentBottom="true"
-        android:layout_marginLeft="20dp"
-        android:layout_marginBottom="5dp"
-       />
-
     <ImageButton
         android:id="@+id/camera_btn"
-        android:src="@drawable/camera"
-        android:layout_width="40dp"
-        android:layout_height="40dp"
+        android:src="@drawable/camera_b"
+        android:background="@android:color/transparent"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
         android:layout_marginBottom="5dp"
@@ -67,36 +57,45 @@
 
     <ImageButton
         android:id="@+id/add_btn"
-        android:src="@drawable/add"
+        android:src="@drawable/add1"
+        android:background="@android:color/transparent"
         android:layout_width="40dp"
         android:layout_height="40dp"
         android:layout_alignParentRight="true"
         android:layout_alignParentBottom="true"
         android:layout_marginRight="20dp"
-        android:layout_marginBottom="5dp"
+        android:layout_marginBottom="15dp"
         />
-
+    <ImageButton
+        android:id="@+id/showcom_btn"
+        android:src="@drawable/comments"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:background="@android:color/transparent"
+        android:layout_alignParentBottom="true"
+        android:layout_marginLeft="20dp"
+        android:layout_marginBottom="12dp"
+        />
     <ImageButton
         android:id="@+id/user_btn"
-        android:src="@drawable/user"
-        android:layout_width="40dp"
+        android:src="@drawable/user1"
+        android:background="@android:color/transparent"
         android:layout_height="40dp"
-        android:layout_alignParentLeft="true"
+        android:layout_width="40dp"
         android:layout_alignParentTop="true"
         android:layout_marginLeft="20dp"
-        android:layout_marginTop="5dp"
+        android:layout_marginTop="28dp"
         />
-
     <ImageButton
         android:id="@+id/set_btn"
-        android:src="@drawable/add"
-        android:layout_width="40dp"
+        android:src="@drawable/setting_64"
+        android:background="@android:color/transparent"
         android:layout_height="40dp"
-        android:layout_alignParentRight="true"
+        android:layout_width="40dp"
         android:layout_alignParentTop="true"
+        android:layout_alignParentRight="true"
         android:layout_marginRight="20dp"
-        android:layout_marginTop="5dp"
+        android:layout_marginTop="28dp"
         />
-
 
 </RelativeLayout>

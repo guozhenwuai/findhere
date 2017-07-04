@@ -1,22 +1,18 @@
 package com.FindHere.activity;
 
 import android.app.Activity;
-import android.app.Application;
 import android.content.Intent;
 import android.content.res.Configuration;
-import android.graphics.PixelFormat;
 import android.os.Bundle;
 import android.view.KeyEvent;
 import android.view.MotionEvent;
 import android.view.View;
 import android.view.View.OnClickListener;
-import android.view.Window;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
-import android.view.animation.Animation;
-import android.view.animation.TranslateAnimation;
+
 import com.unity3d.player.UnityPlayer;
 
 public class MainActivity extends Activity{
@@ -42,7 +38,7 @@ public class MainActivity extends Activity{
         userBtn =  findViewById(R.id.user_btn);
         cameraBtn =  findViewById(R.id.camera_btn);
         addBtn =  findViewById(R.id.add_btn);
-        seekBtn = findViewById(R.id.seek_btn);
+        seekBtn = findViewById(R.id.showcom_btn);
         setBtn = findViewById(R.id.set_btn);
         loadLayout =  findViewById(R.id.loading_layout);
         scanLine = findViewById(R.id.scan_line);
