@@ -17,14 +17,14 @@ import com.unity3d.player.UnityPlayer;
 
 public class MainActivity extends Activity{
     protected UnityPlayer mUnityPlayer; // don't change the name of this variable; referenced from native code
-    private LinearLayout u3dLayout;
-    private ImageButton userBtn,cameraBtn,addBtn,seekBtn,setBtn;
+    private LinearLayout u3dLayout,addMenu;
+    private ImageButton userBtn,cameraBtn,addBtn,seekBtn,setBtn,textBtn,musicBtn,voiceBtn,imageBtn;
     private RelativeLayout loadLayout;
     private View scanLine;
     private ImageView cameraClose;
 
     private boolean camera_on = false;
-
+    private boolean addflag=false;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -42,6 +42,13 @@ public class MainActivity extends Activity{
         setBtn = findViewById(R.id.set_btn);
         loadLayout =  findViewById(R.id.loading_layout);
         scanLine = findViewById(R.id.scan_line);
+
+        addMenu=findViewById(R.id.add_menu);
+        textBtn=findViewById(R.id.text);
+        musicBtn=findViewById(R.id.music);
+        voiceBtn=findViewById(R.id.sound);
+        imageBtn=findViewById(R.id.image);
+
 
         userBtn.setOnClickListener(new OnClickListener() {
             @Override
@@ -71,10 +78,23 @@ public class MainActivity extends Activity{
         addBtn.setOnClickListener(new OnClickListener() {
             @Override
             public void onClick(View v) {
+                if(addMenu.getVisibility() == View.GONE){
+                    addMenu.setVisibility(View.VISIBLE);
+                }
+                else{
+                    addMenu.setVisibility(View.GONE);
+                }
+               // UnityPlayer.UnitySendMessage("ForAndroid", "sayHello", "");
+            }
+        });
+        textBtn.setOnClickListener(new OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
                 Intent intent = new Intent();
                 intent.setClass(MainActivity.this, AddActivity.class);
                 startActivity(intent);
-               // UnityPlayer.UnitySendMessage("ForAndroid", "sayHello", "");
+                // UnityPlayer.UnitySendMessage("ForAndroid", "sayHello", "");
             }
         });
         seekBtn.setOnClickListener(new OnClickListener() {
