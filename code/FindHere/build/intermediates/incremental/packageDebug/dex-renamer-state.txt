@@ -1,7 +1,0 @@
-#Tue Jul 04 17:25:50 CST 2017
-base.0=D\:\\FindHere-Unity\\FindHere-Unity\\build\\intermediates\\transforms\\dex\\debug\\folders\\1000\\10000\\instant-run_bbbc936d474b92943bc26967229fc7bbf9b49503
-renamed.1=classes.dex
-renamed.0=classes2.dex
-file.1=D\:\\FindHere-Unity\\FindHere-Unity\\build\\intermediates\\transforms\\dex\\debug\\folders\\1000\\10000\\instant-run-bootstrap_53273ddb6bf508f7418793594b684b4d1a55a09f\\classes.dex
-base.1=D\:\\FindHere-Unity\\FindHere-Unity\\build\\intermediates\\transforms\\dex\\debug\\folders\\1000\\10000\\instant-run-bootstrap_53273ddb6bf508f7418793594b684b4d1a55a09f
-file.0=D\:\\FindHere-Unity\\FindHere-Unity\\build\\intermediates\\transforms\\dex\\debug\\folders\\1000\\10000\\instant-run_bbbc936d474b92943bc26967229fc7bbf9b49503\\classes.dex

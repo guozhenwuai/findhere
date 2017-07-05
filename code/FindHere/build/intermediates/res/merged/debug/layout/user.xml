@@ -1,0 +1,552 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+
+    android:background="@color/grey_blue">
+
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="214dp"
+            android:background="@color/soft_blue"
+            android:id="@+id/background"
+            >
+
+            <ImageView
+                android:id="@+id/userhead"
+                android:layout_width="98dp"
+                android:layout_height="98dp"
+                android:src="@drawable/baoman"
+                android:layout_marginTop="60dp"
+                android:layout_gravity="center"/>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="25dp"
+
+
+                >
+                <TextView
+                    android:id="@+id/username"
+                    android:text="username"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="6dp"
+                    android:layout_centerHorizontal="true"
+                    android:layout_centerVertical="true"
+                    android:textColor="@color/white"
+                    android:fontFamily="sans-serif"
+                    android:textAllCaps="false"
+                    android:textSize="@dimen/about_title"
+                    />
+                <ImageView
+                    android:id="@+id/gender"
+                    android:layout_width="15dp"
+                    android:layout_height="15dp"
+
+                    android:src="@drawable/female"
+                    android:scaleType="fitXY"
+                    android:layout_marginLeft="6dp"
+
+                    android:layout_toRightOf="@+id/username"
+                    android:layout_centerVertical="true"
+                    />
+
+            </RelativeLayout>
+
+            <LinearLayout
+
+                android:layout_width="300dp"
+                android:layout_height="30dp"
+                android:layout_marginTop="0dp"
+                android:layout_gravity="center_horizontal"
+                android:gravity="center">
+
+                <ImageView
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"
+                    android:scaleType="fitXY"
+                    android:src="@drawable/qq"/>
+                <ImageView
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"
+                    android:layout_marginLeft="8dp"
+                    android:scaleType="fitXY"
+                    android:src="@drawable/github"/>
+                <ImageView
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"
+                    android:layout_marginLeft="8dp"
+                    android:scaleType="fitXY"
+                    android:src="@drawable/email"/>
+            </LinearLayout>
+        </LinearLayout>
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <LinearLayout
+                android:id="@+id/history_scan"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical" >
+
+                <LinearLayout
+                    android:orientation="horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:layout_marginTop="20dp"
+                    android:background="@color/white">
+                    <ImageView
+                        android:layout_width="35dp"
+                        android:layout_height="35dp"
+                        android:scaleType="fitXY"
+                        android:src="@drawable/history2"
+
+                        android:layout_marginLeft="10dp"
+                        android:layout_gravity="center_vertical"/>
+                    <TextView
+                        android:text="历史扫描"
+                        android:textSize="@dimen/about_title"
+                        android:textColor="@color/gray"
+                        android:fontFamily="serif"
+
+                        android:layout_marginLeft="6dp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"/>
+                </LinearLayout>
+                <LinearLayout
+                    android:id="@+id/my_comment"
+                    android:orientation="horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:layout_marginTop="1dp"
+                    android:background="@color/white">
+                    <ImageView
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
+                        android:scaleType="fitXY"
+                        android:src="@drawable/comment_line1"
+
+                        android:layout_marginLeft="13dp"
+                        android:layout_gravity="center_vertical"/>
+                    <TextView
+                        android:text="我的评论"
+                        android:textSize="@dimen/about_title"
+                        android:textColor="@color/gray"
+                        android:fontFamily="serif"
+
+                        android:layout_marginLeft="8dp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"/>
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+
+                        android:src="@drawable/right02"
+                        android:layout_gravity="right|center_vertical"
+                        android:layout_marginRight="@+0
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                        .
+
+                        ..1"
+                        />
+
+                </LinearLayout>
+                <LinearLayout
+                    android:id="@+id/my_like"
+                    android:orientation="horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:layout_marginTop="1dp"
+                    android:background="@color/white">
+                    <ImageView
+                        android:layout_width="32dp"
+                        android:layout_height="32dp"
+                        android:scaleType="fitXY"
+                        android:src="@drawable/star"
+
+                        android:layout_marginLeft="13dp"
+                        android:layout_gravity="center_vertical"/>
+                    <TextView
+                        android:text="我的收藏"
+                        android:textSize="@dimen/about_title"
+                        android:textColor="@color/gray"
+                        android:fontFamily="serif"
+
+                        android:layout_marginLeft="6dp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"/>
+                </LinearLayout>
+                <LinearLayout
+                    android:id="@+id/my_targets"
+                    android:orientation="horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:layout_marginTop="1dp"
+                    android:background="@color/white">
+                    <ImageView
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
+                        android:scaleType="fitXY"
+                        android:src="@drawable/target"
+
+                        android:layout_marginLeft="13dp"
+                        android:layout_gravity="center_vertical"/>
+                    <TextView
+                        android:text="我的目标"
+                        android:textSize="@dimen/about_title"
+                        android:textColor="@color/gray"
+                        android:fontFamily="serif"
+
+                        android:layout_marginLeft="8dp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"/>
+                </LinearLayout>
+            </LinearLayout>
+
+        </ScrollView>
+    </LinearLayout>
+
+    <RelativeLayout
+
+        android:id="@+id/tabbar"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:background="@color/soft_blue">
+        <ImageButton
+            android:id="@+id/back"
+            android:layout_width="27dp"
+            android:layout_height="29dp"
+            android:src="@drawable/back_w"
+            android:scaleType="fitXY"
+
+            android:background="@android:color/transparent"
+            android:layout_alignParentLeft="true"
+            android:layout_marginLeft="12dp"
+            android:layout_marginTop="16dp"
+           />
+
+        <ImageButton
+            android:layout_width="27dp"
+            android:layout_height="27dp"
+            android:src="@drawable/edit"
+            android:scaleType="fitXY"
+           android:layout_alignParentRight="true"
+            android:layout_marginRight="16dp"
+            android:layout_marginTop="16dp"
+            android:background="@android:color/transparent"
+            />
+    </RelativeLayout>
+
+</RelativeLayout>

@@ -26,12 +26,12 @@
                 android:layout_width="98dp"
                 android:layout_height="98dp"
                 android:src="@drawable/baoman"
-                android:layout_marginTop="50dp"
+                android:layout_marginTop="60dp"
                 android:layout_gravity="center"/>
 
             <RelativeLayout
                 android:layout_width="match_parent"
-                android:layout_height="29dp"
+                android:layout_height="25dp"
 
 
                 >
@@ -126,6 +126,7 @@
                         android:layout_height="wrap_content"
                         android:layout_gravity="center_vertical"/>
                 </LinearLayout>
+
                 <LinearLayout
                     android:id="@+id/my_comment"
                     android:orientation="horizontal"
@@ -147,12 +148,18 @@
                         android:textColor="@color/gray"
                         android:fontFamily="serif"
 
-                        android:layout_marginLeft="6dp"
+                        android:layout_marginLeft="8dp"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_gravity="center_vertical"/>
+                    <TextView
+                        android:id="@+id/comment_num"
+                        and
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" />
 
                 </LinearLayout>
+
                 <LinearLayout
                     android:id="@+id/my_like"
                     android:orientation="horizontal"
@@ -200,7 +207,7 @@
                         android:textColor="@color/gray"
                         android:fontFamily="serif"
 
-                        android:layout_marginLeft="6dp"
+                        android:layout_marginLeft="8dp"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_gravity="center_vertical"/>
