@@ -14,6 +14,16 @@
     android:background="@color/soft_blue">
 
     <!-- Login progress -->
+    <ImageButton
+        android:id="@+id/back"
+        android:layout_width="33dp"
+        android:layout_height="33dp"
+        android:src="@drawable/back_w"
+        android:scaleType="fitXY"
+        android:background="@android:color/transparent"
+        android:layout_marginTop="18dp"
+        android:layout_marginLeft="8dp" />
+
     <ProgressBar
         android:id="@+id/login_progress"
         style="?android:attr/progressBarStyleLarge"
@@ -22,35 +32,27 @@
         android:layout_marginBottom="8dp"
         android:visibility="gone" />
 
-    <ImageView
-        android:id="@+id/back"
-        android:layout_width="33dp"
-        android:layout_height="33dp"
-        android:src="@drawable/back_w"
-        android:layout_marginTop="18dp"
-        android:layout_marginLeft="8dp" />
-
     <ScrollView
         android:id="@+id/login_form"
-        android:layout_width="250dp"
-        android:layout_height="350dp"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
         android:layout_gravity="center"
         android:orientation="vertical">
         <LinearLayout
             android:id="@+id/email_login_form"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_width="250dp"
+            android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
             android:orientation="vertical">
 
 
             <ImageView
-                android:layout_width="300dp"
-                android:layout_height="wrap_content"
-                app:srcCompat="@drawable/user_w"
-                android:layout_marginTop="60dp"
-                android:layout_gravity="center"
-                android:id="@+id/imageView" />
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:src="@drawable/user_w"
+                android:layout_gravity="center_horizontal"
+                android:id="@+id/imageView"
+                android:layout_marginTop="60dp"/>
 
             <AutoCompleteTextView
                 android:id="@+id/email"
@@ -58,7 +60,6 @@
                 android:layout_height="wrap_content"
                 android:hint="@string/prompt_email"
                 android:inputType="textEmailAddress"
-
                 android:maxLines="1"
                 android:layout_marginTop="6dp"
                 android:background="@drawable/shape_input"
@@ -68,14 +69,12 @@
                 android:id="@+id/password"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-
                 android:hint="@string/prompt_password"
                 android:imeActionId="@+id/login"
                 android:imeActionLabel="@string/action_sign_in_short"
                 android:imeOptions="actionUnspecified"
                 android:inputType="textPassword"
                 android:maxLines="1"
-
                 android:layout_marginTop="6dp"
                 android:background="@drawable/shape_input"
                 android:singleLine="true" />
@@ -83,11 +82,11 @@
             <Button
                 android:id="@+id/email_sign_in_button"
                 android:layout_width="120dp"
-                android:layout_height="38dp"
+                android:layout_height="40dp"
                 android:layout_marginTop="6dp"
                 android:text="@string/title_activity_login"
+                android:gravity="center"
                 android:textColor="@color/white"
-
                 android:background="@drawable/shape_handin"
                 android:layout_gravity="center"
                 android:textSize="16dp"
