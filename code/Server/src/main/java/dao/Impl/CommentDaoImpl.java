@@ -22,6 +22,10 @@ public class CommentDaoImpl implements CommentDao {
 		return comment;
 	}
 	
+	public void insert(Comment comment) {
+		mongoTemplate.insert(comment);
+	}
+	
 	/*GET and SET*/
 	public MongoTemplate getMongoTemplate() {
 		return mongoTemplate;
