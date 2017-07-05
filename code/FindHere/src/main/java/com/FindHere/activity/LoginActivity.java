@@ -28,6 +28,8 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 
+import com.FindHere.model.User;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -47,12 +49,14 @@ public class LoginActivity extends Activity implements LoaderCallbacks<Cursor> {
      * A dummy authentication store containing known user names and passwords.
      * TODO: remove after connecting to a real authentication system.
      */
-    private static final String[] DUMMY_CREDENTIALS = new String[]{
+     private static final String[] DUMMY_CREDENTIALS = new String[]{
             "foo@example.com:hello", "bar@example.com:world"
-    };
+     };
+
     /**
      * Keep track of the login task to ensure we can cancel it if requested.
      */
+    private User myUser;
     private UserLoginTask mAuthTask = null;
 
     // UI references.
@@ -290,6 +294,14 @@ public class LoginActivity extends Activity implements LoaderCallbacks<Cursor> {
         int IS_PRIMARY = 1;
     }
 
+ /**   public Handler mHandler = new Handler(){
+   *     public void handleMessage(Message msg) {
+   *         if(msg.what==1) {
+   *             ((EditText)findViewById(R.id.upload)).setText("");
+   *         }
+   *     }
+   * };
+   */
     /**
      * Represents an asynchronous login/registration task used to authenticate
      * the user.
@@ -298,6 +310,8 @@ public class LoginActivity extends Activity implements LoaderCallbacks<Cursor> {
 
         private final String mEmail;
         private final String mPassword;
+        private String returnStr;
+        private String ip="...";
 
         UserLoginTask(String email, String password) {
             mEmail = email;
@@ -309,8 +323,17 @@ public class LoginActivity extends Activity implements LoaderCallbacks<Cursor> {
             // TODO: attempt authentication against a network service.
 
             try {
-                // Simulate network access.
                 Thread.sleep(2000);
+  /**              new Thread(new Runnable(){
+  *@Override
+   *                 public void run() {
+   *                     Connect myConnect = new Connect();
+   *                     returnStr=myConnect.sendHttpGet("http://"+ip+"/rest/logIn",mEmail);
+   *                     Message msg = mHandler.obtainMessage();
+   *                    msg.what = 1;
+   *                     mHandler.sendMessage(msg);
+   *                }}).start();
+   */
             } catch (InterruptedException e) {
                 return false;
             }

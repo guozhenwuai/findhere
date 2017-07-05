@@ -12,19 +12,14 @@ import android.widget.EditText;
 import android.widget.ImageButton;
 import com.FindHere.model.Comment;
 import com.google.gson.Gson;
-import java.io.BufferedReader;
-import java.io.BufferedWriter;
-import java.io.InputStream;
-import java.io.InputStreamReader;
-import java.io.OutputStream;
-import java.io.OutputStreamWriter;
-import java.net.HttpURLConnection;
-import java.net.URL;
+import com.FindHere.connect.Connect;
 
 public class AddActivity extends Activity {
     private ImageButton commitBtn;
     public static Comment thiscomment;
-    public static String ip="...";
+    public static String ip="115.159.184.211:8080";
+    private String jsonStr;
+    private String returnStr;
 
     @Override
     public Intent getIntent() {
@@ -36,65 +31,20 @@ public class AddActivity extends Activity {
         super.setIntent(newIntent);
     }
 
-    public void sendHttpPost(String getUrl, Comment comment) {
-        HttpURLConnection urlConnection = null;
-        URL url = null;
-        try {
-            url = new URL(getUrl);
-            urlConnection = (HttpURLConnection) url.openConnection();
-            urlConnection.setConnectTimeout(3000);
-            urlConnection.setUseCaches(false);
-            urlConnection.setInstanceFollowRedirects(true);
-            urlConnection.setReadTimeout(3000);
-            urlConnection.setDoInput(true);
-            urlConnection.setDoOutput(true);
-            urlConnection.setRequestMethod("POST");
-            urlConnection.setRequestProperty("Content-Type", "application/json;charset=UTF-8");
-            urlConnection.connect();
-            Gson gson = new Gson();
-            String jsonstr = gson.toJson(comment);
-
-            OutputStream out = urlConnection.getOutputStream();
-            BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(out));
-            bw.write(jsonstr);
-            bw.flush();
-            out.close();
-            bw.close();
-
-            if (urlConnection.getResponseCode() == HttpURLConnection.HTTP_OK) {
-                InputStream in = urlConnection.getInputStream();
-                BufferedReader br = new BufferedReader(new InputStreamReader(in));
-                String str = null;
-                StringBuffer buffer = new StringBuffer();
-                while ((str = br.readLine()) != null) {
-                    buffer.append(str);
-                }
-                in.close();
-                br.close();
-            }
-        } catch (Exception e) {
-
-        } finally {
-            Message msg = mHandler.obtainMessage();
-            msg.what = 1;
-            mHandler.sendMessage(msg);
-            urlConnection.disconnect();
-        }
-
-    }
-
     public  Handler mHandler = new Handler(){
         public void handleMessage(Message msg) {
             if(msg.what==1) {
                 ((EditText)findViewById(R.id.upload)).setText("");
-                nmsgbox("添加成功");
+                //nmsgbox(getString(R.string.add_finished));
+                nmsgbox(returnStr);
             }
         }
     };
+
     public void nmsgbox(String msg)
     {
-        new AlertDialog.Builder(this).setTitle("提示").setMessage(msg)
-                .setNeutralButton("确定", new DialogInterface.OnClickListener() {
+        new AlertDialog.Builder(this).setTitle(getString(R.string.prompt)).setMessage(msg)
+                .setNeutralButton(getString(R.string.ok), new DialogInterface.OnClickListener() {
                     public void onClick(DialogInterface dialog, int which) {
                         Intent intent = new Intent();
                         intent.setClass(AddActivity.this,MainActivity.class);
@@ -105,8 +55,8 @@ public class AddActivity extends Activity {
 
     public void msgbox(String msg)
     {
-        new AlertDialog.Builder(this).setTitle("提示").setMessage(msg)
-                .setNeutralButton("确定", new DialogInterface.OnClickListener() {
+        new AlertDialog.Builder(this).setTitle(getString(R.string.prompt)).setMessage(msg)
+                .setNeutralButton(getString(R.string.ok), new DialogInterface.OnClickListener() {
                     public void onClick(DialogInterface dialog, int which) {
                     }
                 }).show();
@@ -124,7 +74,7 @@ public class AddActivity extends Activity {
                 String text=((EditText)findViewById(R.id.upload)).getText().toString();
                 if(text.equals(""))
                 {
-                    msgbox("不能为空");
+                    msgbox(getString(R.string.not_empty));
                     return;
                 }
                 thiscomment=new Comment();
@@ -134,10 +84,16 @@ public class AddActivity extends Activity {
                 thiscomment.setText(text);
                 thiscomment.setImages(null);
                 thiscomment.setSounds(null);
+                Gson gson = new Gson();
+                jsonStr = gson.toJson(thiscomment);
                 new Thread(new Runnable(){
                     @Override
                     public void run() {
-                        sendHttpPost("http://"+ip+"/rest/addComment",thiscomment);
+                        Connect myConnect = new Connect();
+                        returnStr=myConnect.sendHttpPost("http://"+ip+"/FindHere/GetComments?commentID=1",jsonStr);
+                        Message msg = mHandler.obtainMessage();
+                        msg.what = 1;
+                        mHandler.sendMessage(msg);
                     }}).start();
             }
         });
