@@ -1,8 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+<<<<<<< HEAD
   <component name="EntryPointsManager">
     <entry_points version="2.0" />
   </component>
+=======
+<<<<<<< HEAD
+  <component name="EntryPointsManager">
+    <entry_points version="2.0" />
+  </component>
+=======
+>>>>>>> origin/master
+>>>>>>> 1e5c18e5a4eaa090f155586f788ad6a7340d2ea7
   <component name="NullableNotNullManager">
     <option name="myDefaultNullable" value="android.support.annotation.Nullable" />
     <option name="myDefaultNotNull" value="android.support.annotation.NonNull" />
