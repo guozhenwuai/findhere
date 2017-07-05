@@ -26,7 +26,7 @@
                 android:layout_width="98dp"
                 android:layout_height="98dp"
                 android:src="@drawable/baoman"
-                android:layout_marginTop="60dp"
+                android:layout_marginTop="55dp"
                 android:layout_gravity="center"/>
 
             <RelativeLayout
@@ -93,41 +93,55 @@
 
         <ScrollView
             android:layout_width="match_parent"
-            android:layout_height="match_parent">
+            android:layout_height="match_parent"
+            android:layout_marginTop="20dp">
 
             <LinearLayout
-                android:id="@+id/history_scan"
+
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="vertical" >
 
-                <LinearLayout
+                <RelativeLayout
+                    android:id="@+id/history"
                     android:orientation="horizontal"
                     android:layout_width="match_parent"
                     android:layout_height="50dp"
-                    android:layout_marginTop="20dp"
+                    android:layout_marginTop="1dp"
                     android:background="@color/white">
                     <ImageView
-                        android:layout_width="35dp"
-                        android:layout_height="35dp"
+                        android:id="@+id/history_btn"
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
                         android:scaleType="fitXY"
                         android:src="@drawable/history2"
 
-                        android:layout_marginLeft="10dp"
-                        android:layout_gravity="center_vertical"/>
+                        android:layout_marginLeft="13dp"
+                        android:layout_centerVertical="true" />
                     <TextView
                         android:text="历史扫描"
                         android:textSize="@dimen/about_title"
                         android:textColor="@color/gray"
                         android:fontFamily="serif"
 
-                        android:layout_marginLeft="6dp"
+                        android:layout_toRightOf="@id/history_btn"
+                        android:layout_marginLeft="8dp"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_gravity="center_vertical"/>
-                </LinearLayout>
+                        android:layout_centerVertical="true"/>
+                    <TextView
+                        android:id="@+id/scannum"
+                        android:text="10"
+                        android:textColor="@color/light_blue"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginRight="13dp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" />
 
-                <LinearLayout
+                </RelativeLayout>
+
+                <RelativeLayout
                     android:id="@+id/my_comment"
                     android:orientation="horizontal"
                     android:layout_width="match_parent"
@@ -135,32 +149,38 @@
                     android:layout_marginTop="1dp"
                     android:background="@color/white">
                     <ImageView
+                        android:id="@+id/my_comment_btn"
                         android:layout_width="30dp"
                         android:layout_height="30dp"
                         android:scaleType="fitXY"
                         android:src="@drawable/comment_line1"
 
                         android:layout_marginLeft="13dp"
-                        android:layout_gravity="center_vertical"/>
+                        android:layout_centerVertical="true" />
                     <TextView
                         android:text="我的评论"
                         android:textSize="@dimen/about_title"
                         android:textColor="@color/gray"
                         android:fontFamily="serif"
 
+                        android:layout_toRightOf="@id/my_comment_btn"
                         android:layout_marginLeft="8dp"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_gravity="center_vertical"/>
+                        android:layout_centerVertical="true"/>
                     <TextView
                         android:id="@+id/comment_num"
-                        and
+                        android:text="90"
+                        android:textColor="@color/light_blue"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginRight="13dp"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content" />
 
-                </LinearLayout>
+                </RelativeLayout>
 
-                <LinearLayout
+                <RelativeLayout
                     android:id="@+id/my_like"
                     android:orientation="horizontal"
                     android:layout_width="match_parent"
@@ -168,25 +188,35 @@
                     android:layout_marginTop="1dp"
                     android:background="@color/white">
                     <ImageView
+                        android:id="@+id/star_btn"
                         android:layout_width="32dp"
                         android:layout_height="32dp"
                         android:scaleType="fitXY"
                         android:src="@drawable/star"
-
                         android:layout_marginLeft="13dp"
-                        android:layout_gravity="center_vertical"/>
+                        android:layout_centerVertical="true"/>
                     <TextView
                         android:text="我的收藏"
                         android:textSize="@dimen/about_title"
                         android:textColor="@color/gray"
                         android:fontFamily="serif"
+                        android:layout_toRightOf="@+id/star_btn"
+                        android:layout_marginLeft="8dp"
 
-                        android:layout_marginLeft="6dp"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_gravity="center_vertical"/>
-                </LinearLayout>
-                <LinearLayout
+                        android:layout_centerVertical="true"/>
+                    <TextView
+                        android:id="@+id/star_num"
+                        android:text="3"
+                        android:textColor="@color/light_blue"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginRight="13dp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" />
+                </RelativeLayout>
+                <RelativeLayout
                     android:id="@+id/my_targets"
                     android:orientation="horizontal"
                     android:layout_width="match_parent"
@@ -194,24 +224,34 @@
                     android:layout_marginTop="1dp"
                     android:background="@color/white">
                     <ImageView
+                        android:id="@+id/target"
                         android:layout_width="30dp"
                         android:layout_height="30dp"
                         android:scaleType="fitXY"
                         android:src="@drawable/target"
 
                         android:layout_marginLeft="13dp"
-                        android:layout_gravity="center_vertical"/>
+                        android:layout_centerVertical="true" />
                     <TextView
                         android:text="我的目标"
                         android:textSize="@dimen/about_title"
                         android:textColor="@color/gray"
                         android:fontFamily="serif"
-
+                        android:layout_toRightOf="@+id/target"
                         android:layout_marginLeft="8dp"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_gravity="center_vertical"/>
-                </LinearLayout>
+                        android:layout_centerVertical="true" />
+                    <TextView
+                        android:id="@+id/target_num"
+                        android:text="1"
+                        android:textColor="@color/light_blue"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginRight="13dp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" />
+                </RelativeLayout>
             </LinearLayout>
 
         </ScrollView>
@@ -237,6 +277,7 @@
            />
 
         <ImageButton
+            android:id="@+id/edit"
             android:layout_width="27dp"
             android:layout_height="27dp"
             android:src="@drawable/edit"
