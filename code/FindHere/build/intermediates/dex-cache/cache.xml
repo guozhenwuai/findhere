@@ -2,73 +2,49 @@
 <items version="2" >
 
     <item
-<<<<<<< HEAD
         is-multidex="true"
-        jar="D:\FindHere-Unity\FindHere-Unity\libs\unity-classes.jar"
+        jar="D:\Find\libs\unity-classes.jar"
         jumboMode="true"
         optimize="true"
         revision="26.0.0"
         sha1="51f46611e716600d0a9d36ff5f7c2dddde43688c">
-        <dex dex="D:\FindHere-Unity\FindHere-Unity\build\intermediates\transforms\dex\debug\folders\1000\2\unity-classes_31d52177952c5753af6091bf23238e2aad54d59d\classes.dex" />
+        <dex dex="D:\Find\build\intermediates\transforms\dex\debug\folders\1000\2\unity-classes_0488e4fd8a425ed6fd5bbe528def51d9bbc81234\classes.dex" />
     </item>
     <item
         is-multidex="true"
-        jar="D:\FindHere-Unity\FindHere-Unity\libs\Vuforia.jar"
+        jar="D:\Find\build\intermediates\incremental-classes\debug\instant-run-bootstrap.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="26.0.0"
+        sha1="c13c2cd565e4e08e03a8b3e7a046dea274325914">
+        <dex dex="D:\Find\build\intermediates\transforms\dex\debug\folders\1000\10000\instant-run-bootstrap_717ca6f101da9e538a76bac97cab53eaecd15fb1\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="D:\Find\libs\VuforiaUnityPlayer.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="26.0.0"
+        sha1="95f5205a17a7546c265d4a27d1e6f8be7b6f3f03">
+        <dex dex="D:\Find\build\intermediates\transforms\dex\debug\folders\1000\2\VuforiaUnityPlayer_c70dc393905943e3dbab073d635431cd71e1f99b\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="D:\Find\libs\Vuforia.jar"
         jumboMode="true"
         optimize="true"
         revision="26.0.0"
         sha1="be3db5d282d7094986c342631085ca4d84c02603">
-        <dex dex="D:\FindHere-Unity\FindHere-Unity\build\intermediates\transforms\dex\debug\folders\1000\2\Vuforia_7d5d72764edea2afc1ff5db11a6d3c2680e8ec9a\classes.dex" />
+        <dex dex="D:\Find\build\intermediates\transforms\dex\debug\folders\1000\2\Vuforia_d998292c754c825353e382f9c887990dc3f9540c\classes.dex" />
     </item>
     <item
         is-multidex="true"
-        jar="D:\FindHere-Unity\FindHere-Unity\build\intermediates\incremental-runtime-classes\debug\instant-run.jar"
+        jar="D:\Find\build\intermediates\incremental-runtime-classes\debug\instant-run.jar"
         jumboMode="true"
         optimize="true"
         revision="26.0.0"
         sha1="3be78ebc2706b2e1fe2f12d5726887a92d6c183b">
-        <dex dex="D:\FindHere-Unity\FindHere-Unity\build\intermediates\transforms\dex\debug\folders\1000\10000\instant-run_bbbc936d474b92943bc26967229fc7bbf9b49503\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="D:\FindHere-Unity\FindHere-Unity\build\intermediates\incremental-classes\debug\instant-run-bootstrap.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="26.0.0"
-        sha1="5c745642adda822b03391fd39b5ca179d085b85f">
-        <dex dex="D:\FindHere-Unity\FindHere-Unity\build\intermediates\transforms\dex\debug\folders\1000\10000\instant-run-bootstrap_53273ddb6bf508f7418793594b684b4d1a55a09f\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="D:\FindHere-Unity\FindHere-Unity\libs\VuforiaUnityPlayer.jar"
-        jumboMode="true"
-=======
-        is-multidex="false"
-        jar="G:\findhere\code\FindHere\libs\Vuforia.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="26.0.0"
-        sha1="be3db5d282d7094986c342631085ca4d84c02603">
-        <dex dex="G:\findhere\code\FindHere\build\intermediates\pre-dexed\debug\Vuforia_4ca6a5dfceefea76f9ff0ab612b43cb2675824ae.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="G:\findhere\code\FindHere\libs\unity-classes.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="26.0.0"
-        sha1="51f46611e716600d0a9d36ff5f7c2dddde43688c">
-        <dex dex="G:\findhere\code\FindHere\build\intermediates\pre-dexed\debug\unity-classes_54683e1f866b136e36f5b6f4c8aab3a39304f54a.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="G:\findhere\code\FindHere\libs\VuforiaUnityPlayer.jar"
-        jumboMode="false"
->>>>>>> ca52eed5bc47122568a2bd22ed6800a01317010b
-        optimize="true"
-        revision="26.0.0"
-        sha1="95f5205a17a7546c265d4a27d1e6f8be7b6f3f03">
-        <dex dex="G:\findhere\code\FindHere\build\intermediates\pre-dexed\debug\VuforiaUnityPlayer_0b7a791cf2e65750d6e0cf9c50cee44e17e35afd.jar" />
+        <dex dex="D:\Find\build\intermediates\transforms\dex\debug\folders\1000\10000\instant-run_57ec2be895ff7abe3fd990489b9c2340925b3313\classes.dex" />
     </item>
 
 </items>

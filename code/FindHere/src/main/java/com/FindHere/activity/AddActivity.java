@@ -86,6 +86,7 @@ public class AddActivity extends Activity {
                     msgbox(getString(R.string.not_empty));
                     return;
                 }
+                //type text targetID
                 thiscomment=new Comment();
                 thiscomment.setUserId(1);
                 thiscomment.setTargetId(1);

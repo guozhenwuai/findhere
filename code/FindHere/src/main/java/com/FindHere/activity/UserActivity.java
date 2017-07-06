@@ -1,10 +1,11 @@
 package com.FindHere.activity;
 
 import android.app.Activity;
-<<<<<<< HEAD
 import android.content.Context;
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.os.PersistableBundle;
 import android.view.View;
 import android.widget.ImageButton;
 
@@ -13,12 +14,12 @@ public class UserActivity extends Activity {
     private ImageButton backBtn;
 
     @Override
-    public void onCreate(Bundle savedInstanceState){
+    public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.user_activity);
 
         sp = getSharedPreferences("userInfo", Context.MODE_ENABLE_WRITE_AHEAD_LOGGING);
-        String email = sp.getString("email","");
+        String email = sp.getString("email", "");
 
         backBtn = findViewById(R.id.back);
         backBtn.setOnClickListener(new View.OnClickListener() {
@@ -27,20 +28,6 @@ public class UserActivity extends Activity {
                 finish();
             }
         });
-    }
-
-=======
-import android.content.Intent;
-import android.os.Bundle;
-import android.os.PersistableBundle;
-
-/**
- * Created by msi on 2017/7/5.
- */
-
-public class UserActivity extends Activity {
-    public UserActivity() {
-        super();
     }
 
     @Override
@@ -82,5 +69,4 @@ public class UserActivity extends Activity {
     protected void onDestroy() {
         super.onDestroy();
     }
->>>>>>> ca52eed5bc47122568a2bd22ed6800a01317010b
 }
