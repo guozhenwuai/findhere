@@ -5,9 +5,11 @@ import android.animation.AnimatorListenerAdapter;
 import android.annotation.TargetApi;
 import android.app.Activity;
 import android.app.LoaderManager.LoaderCallbacks;
+import android.content.Context;
 import android.content.CursorLoader;
 import android.content.Intent;
 import android.content.Loader;
+import android.content.SharedPreferences;
 import android.content.pm.PackageManager;
 import android.database.Cursor;
 import android.net.Uri;
@@ -26,9 +28,14 @@ import android.widget.ArrayAdapter;
 import android.widget.AutoCompleteTextView;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageButton;
 import android.widget.TextView;
+import android.widget.Toast;
 
-import com.FindHere.model.User;
+import com.FindHere.control.Connect;
+
+import org.json.JSONException;
+import org.json.JSONObject;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -46,17 +53,8 @@ public class LoginActivity extends Activity implements LoaderCallbacks<Cursor> {
     private static final int REQUEST_READ_CONTACTS = 0;
 
     /**
-     * A dummy authentication store containing known user names and passwords.
-     * TODO: remove after connecting to a real authentication system.
-     */
-     private static final String[] DUMMY_CREDENTIALS = new String[]{
-            "foo@example.com:hello", "bar@example.com:world"
-     };
-
-    /**
      * Keep track of the login task to ensure we can cancel it if requested.
      */
-    private User myUser;
     private UserLoginTask mAuthTask = null;
 
     // UI references.
@@ -64,12 +62,27 @@ public class LoginActivity extends Activity implements LoaderCallbacks<Cursor> {
     private EditText mPasswordView;
     private View mProgressView;
     private View mLoginFormView;
+    private ImageButton backBtn;
+
+    private String returnStr;
+
+    private SharedPreferences sp;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.login_activity);
         // Set up the login form.
+        sp = getSharedPreferences("userInfo", Context.MODE_ENABLE_WRITE_AHEAD_LOGGING);
+
+        backBtn = findViewById(R.id.back);
+        backBtn.setOnClickListener(new OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                finish();
+            }
+        });
+
         mEmailView = (AutoCompleteTextView) findViewById(R.id.email);
         populateAutoComplete();
 
@@ -94,9 +107,21 @@ public class LoginActivity extends Activity implements LoaderCallbacks<Cursor> {
         });
 
         mLoginFormView = findViewById(R.id.login_form);
-       // mProgressView = findViewById(R.id.login_progress);
+        mProgressView = findViewById(R.id.login_progress);
 
     }
+
+    @Override
+    protected void onStart(){
+        super.onStart();
+        if(sp!=null){
+            finish();
+            Intent intent= new Intent();
+            intent.setClass(LoginActivity.this,UserActivity.class);
+            startActivity(intent);
+        }
+    }
+
 
     private void populateAutoComplete() {
         if (!mayRequestContacts()) {
@@ -163,7 +188,7 @@ public class LoginActivity extends Activity implements LoaderCallbacks<Cursor> {
         boolean cancel = false;
         View focusView = null;
 
-        // Check for a valid password, if the user entered one.
+        // Check for a valid password, if the user_activity entered one.
         if (!TextUtils.isEmpty(password) && !isPasswordValid(password)) {
             mPasswordView.setError(getString(R.string.error_invalid_password));
             focusView = mPasswordView;
@@ -187,7 +212,7 @@ public class LoginActivity extends Activity implements LoaderCallbacks<Cursor> {
             focusView.requestFocus();
         } else {
             // Show a progress spinner, and kick off a background task to
-            // perform the user login attempt.
+            // perform the user_activity login attempt.
             showProgress(true);
             mAuthTask = new UserLoginTask(email, password);
             mAuthTask.execute((Void) null);
@@ -243,7 +268,7 @@ public class LoginActivity extends Activity implements LoaderCallbacks<Cursor> {
     @Override
     public Loader<Cursor> onCreateLoader(int i, Bundle bundle) {
         return new CursorLoader(this,
-                // Retrieve data rows for the device user's 'profile' contact.
+                // Retrieve data rows for the device user_activity's 'profile' contact.
                 Uri.withAppendedPath(ContactsContract.Profile.CONTENT_URI,
                         ContactsContract.Contacts.Data.CONTENT_DIRECTORY), ProfileQuery.PROJECTION,
 
@@ -253,7 +278,7 @@ public class LoginActivity extends Activity implements LoaderCallbacks<Cursor> {
                 .CONTENT_ITEM_TYPE},
 
                 // Show primary email addresses first. Note that there won't be
-                // a primary email address if the user hasn't specified one.
+                // a primary email address if the user_activity hasn't specified one.
                 ContactsContract.Contacts.Data.IS_PRIMARY + " DESC");
     }
 
@@ -294,75 +319,58 @@ public class LoginActivity extends Activity implements LoaderCallbacks<Cursor> {
         int IS_PRIMARY = 1;
     }
 
- /**   public Handler mHandler = new Handler(){
-   *     public void handleMessage(Message msg) {
-   *         if(msg.what==1) {
-   *             ((EditText)findViewById(R.id.upload)).setText("");
-   *         }
-   *     }
-   * };
-   */
     /**
      * Represents an asynchronous login/registration task used to authenticate
-     * the user.
+     * the user_activity.
      */
     public class UserLoginTask extends AsyncTask<Void, Void, Boolean> {
 
-        private final String mEmail;
-        private final String mPassword;
-        private String returnStr;
-        private String ip="...";
+        private String email;
+        private String password;
 
-        UserLoginTask(String email, String password) {
-            mEmail = email;
-            mPassword = password;
+        UserLoginTask(String mEmail, String mPassword) {
+            email = mEmail;
+            password = mPassword;
         }
 
         @Override
         protected Boolean doInBackground(Void... params) {
-            // TODO: attempt authentication against a network service.
-
+            String jsonStr="";
+            String ip=getString(R.string.login_ip);
+            JSONObject object = new JSONObject();
             try {
-                Thread.sleep(2000);
-  /**              new Thread(new Runnable(){
-  *@Override
-   *                 public void run() {
-   *                     Connect myConnect = new Connect();
-   *                     returnStr=myConnect.sendHttpGet("http://"+ip+"/rest/logIn",mEmail);
-   *                     Message msg = mHandler.obtainMessage();
-   *                    msg.what = 1;
-   *                     mHandler.sendMessage(msg);
-   *                }}).start();
-   */
-            } catch (InterruptedException e) {
-                return false;
+                object.put("email", email);
+                object.put("password", password);
+                jsonStr = object.toString();
+            } catch (JSONException e) {
+                e.printStackTrace();
             }
-
-            for (String credential : DUMMY_CREDENTIALS) {
-                String[] pieces = credential.split(":");
-                if (pieces[0].equals(mEmail)) {
-                    // Account exists, return true if the password matches.
-                    return pieces[1].equals(mPassword);
-                }
-            }
-
-            // TODO: register the new account here.
-            return false;
+            Connect myConnect = new Connect();
+            returnStr=myConnect.sendHttpPost(ip,jsonStr);
+            //returnStr="true";
+            if (returnStr.equals(getString(R.string.true_user))){return true;}
+            else{return false;}
         }
 
         @Override
         protected void onPostExecute(final Boolean success) {
-            mAuthTask = null;
             showProgress(false);
 
             if (success) {
+                SharedPreferences.Editor editor = sp.edit();
+                editor.putString("email", email);
+                editor.putString("password", password);
+                editor.commit();
+                Toast.makeText(LoginActivity.this,getString(R.string.login_success), Toast.LENGTH_SHORT).show();
+                mAuthTask = null;
                 finish();
                 Intent intent = new Intent();
-                intent.setClass(LoginActivity.this,MainActivity.class);
+                intent.setClass(LoginActivity.this,UserActivity.class);
                 startActivity(intent);
             } else {
                 mPasswordView.setError(getString(R.string.error_incorrect_password));
                 mPasswordView.requestFocus();
+                mAuthTask = null;
             }
         }
 

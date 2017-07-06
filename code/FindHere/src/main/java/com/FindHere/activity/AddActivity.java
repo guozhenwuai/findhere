@@ -12,14 +12,15 @@ import android.widget.EditText;
 import android.widget.ImageButton;
 import com.FindHere.model.Comment;
 import com.google.gson.Gson;
-import com.FindHere.connect.Connect;
+import com.FindHere.control.Connect;
 
 public class AddActivity extends Activity {
     private ImageButton commitBtn;
     public static Comment thiscomment;
-    public static String ip="115.159.184.211:8080";
+    public String ip;
     private String jsonStr;
     private String returnStr;
+    private ImageButton backBtn;
 
     @Override
     public Intent getIntent() {
@@ -35,7 +36,6 @@ public class AddActivity extends Activity {
         public void handleMessage(Message msg) {
             if(msg.what==1) {
                 ((EditText)findViewById(R.id.upload)).setText("");
-                //nmsgbox(getString(R.string.add_finished));
                 nmsgbox(returnStr);
             }
         }
@@ -67,6 +67,15 @@ public class AddActivity extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.add_activity);
 
+        ip = getString(R.string.add_ip);
+        backBtn = findViewById(R.id.back);
+        backBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                finish();
+            }
+        });
+
         commitBtn=findViewById(R.id.commit_btn);
         commitBtn.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -90,7 +99,7 @@ public class AddActivity extends Activity {
                     @Override
                     public void run() {
                         Connect myConnect = new Connect();
-                        returnStr=myConnect.sendHttpPost("http://"+ip+"/FindHere/GetComments?commentID=1",jsonStr);
+                        returnStr=myConnect.sendHttpPost(ip,jsonStr);
                         Message msg = mHandler.obtainMessage();
                         msg.what = 1;
                         mHandler.sendMessage(msg);
