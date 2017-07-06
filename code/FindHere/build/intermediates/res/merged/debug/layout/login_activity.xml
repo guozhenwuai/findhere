@@ -14,7 +14,6 @@
     android:background="@color/soft_blue">
 
     <!-- Login progress -->
-
     <ImageButton
         android:id="@+id/back"
         android:layout_width="30dp"
@@ -34,6 +33,14 @@
         android:visibility="gone" />
 =======
 >>>>>>> ca52eed5bc47122568a2bd22ed6800a01317010b
+
+    <ProgressBar
+        android:id="@+id/login_progress"
+        style="?android:attr/progressBarStyleLarge"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
+        android:visibility="gone" />
 
     <ScrollView
         android:id="@+id/login_form"

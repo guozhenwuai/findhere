@@ -1,13 +1,9 @@
-
 package com.FindHere.activity;
 
 import android.app.Activity;
 import android.content.Intent;
 import android.content.res.Configuration;
-import android.database.Cursor;
-import android.net.Uri;
 import android.os.Bundle;
-import android.provider.MediaStore;
 import android.view.KeyEvent;
 import android.view.MotionEvent;
 import android.view.View;
@@ -21,14 +17,14 @@ import com.unity3d.player.UnityPlayer;
 
 public class MainActivity extends Activity{
     protected UnityPlayer mUnityPlayer; // don't change the name of this variable; referenced from native code
-    private LinearLayout u3dLayout,addMenu;
-    private ImageButton userBtn,cameraBtn,addBtn,seekBtn,setBtn,textBtn,musicBtn,voiceBtn,imageBtn;
+    private LinearLayout u3dLayout;
+    private ImageButton userBtn,cameraBtn,addBtn,seekBtn,setBtn;
     private RelativeLayout loadLayout;
     private View scanLine;
     private ImageView cameraClose;
-    private static int RESULT_LOAD_IMAGE = 1;
+
     private boolean camera_on = false;
-    private boolean addflag=false;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -46,13 +42,6 @@ public class MainActivity extends Activity{
         setBtn = findViewById(R.id.set_btn);
         loadLayout =  findViewById(R.id.loading_layout);
         scanLine = findViewById(R.id.scan_line);
-
-        addMenu=findViewById(R.id.add_menu);
-        textBtn=findViewById(R.id.text);
-        musicBtn=findViewById(R.id.music);
-        voiceBtn=findViewById(R.id.sound);
-        imageBtn=findViewById(R.id.image);
-
 
         userBtn.setOnClickListener(new OnClickListener() {
             @Override
@@ -82,35 +71,12 @@ public class MainActivity extends Activity{
         addBtn.setOnClickListener(new OnClickListener() {
             @Override
             public void onClick(View v) {
-                if(addMenu.getVisibility() == View.GONE){
-                    addMenu.setVisibility(View.VISIBLE);
-                }
-                else{
-                    addMenu.setVisibility(View.GONE);
-                }
-               // UnityPlayer.UnitySendMessage("ForAndroid", "sayHello", "");
-            }
-        });
-        textBtn.setOnClickListener(new OnClickListener() {
-            @Override
-            public void onClick(View v) {
-
                 Intent intent = new Intent();
                 intent.setClass(MainActivity.this, AddActivity.class);
                 startActivity(intent);
-                // UnityPlayer.UnitySendMessage("ForAndroid", "sayHello", "");
+               // UnityPlayer.UnitySendMessage("ForAndroid", "sayHello", "");
             }
         });
-        imageBtn.setOnClickListener(new OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent i = new Intent(
-                        Intent.ACTION_PICK, android.provider.MediaStore.Images.Media.EXTERNAL_CONTENT_URI);
-
-                startActivityForResult(i, RESULT_LOAD_IMAGE);
-            }
-        });
-
         seekBtn.setOnClickListener(new OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -130,30 +96,7 @@ public class MainActivity extends Activity{
     }
 
 
-
-
-    @Override
-    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
-        super.onActivityResult(requestCode, resultCode, data);
-
-        if (requestCode == RESULT_LOAD_IMAGE && resultCode == RESULT_OK && null != data) {
-            Uri selectedImage = data.getData();
-            String[] filePathColumn = {MediaStore.Images.Media.DATA};
-
-            Cursor cursor = getContentResolver().query(selectedImage,
-                    filePathColumn, null, null, null);
-            cursor.moveToFirst();
-
-            int columnIndex = cursor.getColumnIndex(filePathColumn[0]);
-            String picturePath = cursor.getString(columnIndex);
-            cursor.close();
-
-
-            // String picturePath contains the path of selected Image
-        }
-    }
-    @Override
-    protected void onNewIntent(Intent intent)
+    @Override protected void onNewIntent(Intent intent)
     {
         // To support deep linking, we need to make sure that the client can get access to
         // the last sent intent. The clients access this through a JNI api that allows them
