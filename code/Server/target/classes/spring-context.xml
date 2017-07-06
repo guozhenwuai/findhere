@@ -39,11 +39,21 @@
  		<constructor-arg name="mongoDbFactory" ref="mongoDbFactory"/>
 	</bean>
 	
-	<bean id="mongoDBService" class="service.Impl.MongoDBServiceImpl">
+	<bean id="commentService" class="service.Impl.CommentServiceImpl">
 		<property name="commentDao" ref="commentDao"/>
 	</bean>
 	
+	<bean id="userService" class="service.Impl.UserServiceImpl">
+		<property name="userDao" ref="userDao"/>
+	</bean>
+	
+	<bean id="readService" class="service.Impl.ReadServiceImpl">
+	</bean>
+	
 	<bean id="commentDao" class="dao.Impl.CommentDaoImpl">
+	</bean>
+	
+	<bean id="userDao" class="dao.Impl.UserDaoImpl">
 	</bean>
 	
 	<bean id="FileDao" class="dao.Impl.FileDaoImpl">

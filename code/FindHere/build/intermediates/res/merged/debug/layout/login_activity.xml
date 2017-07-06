@@ -14,6 +14,7 @@
     android:background="@color/soft_blue">
 
     <!-- Login progress -->
+
     <ImageButton
         android:id="@+id/back"
         android:layout_width="30dp"
@@ -22,6 +23,7 @@
         android:scaleType="fitXY"
         android:background="@android:color/transparent"
        />
+<<<<<<< HEAD
 
     <ProgressBar
         android:id="@+id/login_progress"
@@ -30,6 +32,8 @@
         android:layout_height="wrap_content"
         android:layout_marginBottom="8dp"
         android:visibility="gone" />
+=======
+>>>>>>> ca52eed5bc47122568a2bd22ed6800a01317010b
 
     <ScrollView
         android:id="@+id/login_form"

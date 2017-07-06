@@ -1,10 +1,10 @@
 db.users.insertOne({
-	"_id":"1", 
+	"_id":"yangruiheng1@126.com", 
 	"name":"yang222", 
 	"password":"1111", 
+	"headPortraitID":"1",
 	"qq":"2837240931", 
-	"weixin":"yangruiheng", 
-	"email":"yangruiheng1@126.com"});
+	"weixin":"yangruiheng"});
 
 db.targets.insertOne({
 	"_id":"1", 

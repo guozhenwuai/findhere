@@ -1,25 +1,26 @@
 [
     {
-        "merged": "D:\\FindHere-Unity\\FindHere-Unity\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\abc_text_select_handle_right_mtrl_light.png",
-        "source": "C:\\Users\\asus\\.android\\build-cache\\19d7ea8401511620fa23c337710829464e6f2217\\output\\res\\drawable-xhdpi-v4\\abc_text_select_handle_right_mtrl_light.png"
+        "merged": "G:\\findhere\\code\\FindHere\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\add.png",
+        "source": "G:\\findhere\\code\\FindHere\\src\\main\\res\\drawable-xhdpi\\add.png"
     },
     {
-        "merged": "D:\\FindHere-Unity\\FindHere-Unity\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\abc_ic_star_half_black_16dp.png",
-        "source": "C:\\Users\\asus\\.android\\build-cache\\19d7ea8401511620fa23c337710829464e6f2217\\output\\res\\drawable-xhdpi-v4\\abc_ic_star_half_black_16dp.png"
+        "merged": "G:\\findhere\\code\\FindHere\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\camera_h.png",
+        "source": "G:\\findhere\\code\\FindHere\\src\\main\\res\\drawable-xhdpi\\camera_h.png"
     },
     {
-        "merged": "D:\\FindHere-Unity\\FindHere-Unity\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\abc_list_pressed_holo_dark.9.png",
-        "source": "C:\\Users\\asus\\.android\\build-cache\\19d7ea8401511620fa23c337710829464e6f2217\\output\\res\\drawable-xhdpi-v4\\abc_list_pressed_holo_dark.9.png"
+        "merged": "G:\\findhere\\code\\FindHere\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\abc_ic_menu_copy_mtrl_am_alpha.png",
+        "source": "C:\\Users\\msi\\.android\\build-cache\\9b833810b1ed2bf41c664d00bd9e7d183af313de\\output\\res\\drawable-xhdpi-v4\\abc_ic_menu_copy_mtrl_am_alpha.png"
     },
     {
-        "merged": "D:\\FindHere-Unity\\FindHere-Unity\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\abc_scrubber_control_off_mtrl_alpha.png",
-        "source": "C:\\Users\\asus\\.android\\build-cache\\19d7ea8401511620fa23c337710829464e6f2217\\output\\res\\drawable-xhdpi-v4\\abc_scrubber_control_off_mtrl_alpha.png"
+        "merged": "G:\\findhere\\code\\FindHere\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\abc_list_pressed_holo_light.9.png",
+        "source": "C:\\Users\\msi\\.android\\build-cache\\9b833810b1ed2bf41c664d00bd9e7d183af313de\\output\\res\\drawable-xhdpi-v4\\abc_list_pressed_holo_light.9.png"
     },
     {
-        "merged": "D:\\FindHere-Unity\\FindHere-Unity\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\refresh.png",
-        "source": "D:\\FindHere-Unity\\FindHere-Unity\\src\\main\\res\\drawable-xhdpi\\refresh.png"
+        "merged": "G:\\findhere\\code\\FindHere\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\design_ic_visibility.png",
+        "source": "C:\\Users\\msi\\.android\\build-cache\\d3edfa3b25b2e7c5ca765bd80601c2fa1c0aa2c6\\output\\res\\drawable-xhdpi-v4\\design_ic_visibility.png"
     },
     {
+<<<<<<< HEAD
         "merged": "D:\\FindHere-Unity\\FindHere-Unity\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\comment_line1.png",
         "source": "D:\\FindHere-Unity\\FindHere-Unity\\src\\main\\res\\drawable-xhdpi\\comment_line1.png"
     },
@@ -34,24 +35,33 @@
     {
         "merged": "D:\\FindHere-Unity\\FindHere-Unity\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\abc_list_selector_disabled_holo_dark.9.png",
         "source": "C:\\Users\\asus\\.android\\build-cache\\19d7ea8401511620fa23c337710829464e6f2217\\output\\res\\drawable-xhdpi-v4\\abc_list_selector_disabled_holo_dark.9.png"
+=======
+        "merged": "G:\\findhere\\code\\FindHere\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\sound.png",
+        "source": "G:\\findhere\\code\\FindHere\\src\\main\\res\\drawable-xhdpi\\sound.png"
     },
     {
-        "merged": "D:\\FindHere-Unity\\FindHere-Unity\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\abc_list_longpressed_holo.9.png",
-        "source": "C:\\Users\\asus\\.android\\build-cache\\19d7ea8401511620fa23c337710829464e6f2217\\output\\res\\drawable-xhdpi-v4\\abc_list_longpressed_holo.9.png"
+        "merged": "G:\\findhere\\code\\FindHere\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\abc_ic_star_black_36dp.png",
+        "source": "C:\\Users\\msi\\.android\\build-cache\\9b833810b1ed2bf41c664d00bd9e7d183af313de\\output\\res\\drawable-xhdpi-v4\\abc_ic_star_black_36dp.png"
+>>>>>>> ca52eed5bc47122568a2bd22ed6800a01317010b
     },
     {
-        "merged": "D:\\FindHere-Unity\\FindHere-Unity\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\abc_ab_share_pack_mtrl_alpha.9.png",
-        "source": "C:\\Users\\asus\\.android\\build-cache\\19d7ea8401511620fa23c337710829464e6f2217\\output\\res\\drawable-xhdpi-v4\\abc_ab_share_pack_mtrl_alpha.9.png"
+        "merged": "G:\\findhere\\code\\FindHere\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\comments.png",
+        "source": "G:\\findhere\\code\\FindHere\\src\\main\\res\\drawable-xhdpi\\comments.png"
     },
     {
-        "merged": "D:\\FindHere-Unity\\FindHere-Unity\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\user_b_48.png",
-        "source": "D:\\FindHere-Unity\\FindHere-Unity\\src\\main\\res\\drawable-xhdpi\\user_b_48.png"
+        "merged": "G:\\findhere\\code\\FindHere\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\baoman.png",
+        "source": "G:\\findhere\\code\\FindHere\\src\\main\\res\\drawable-xhdpi\\baoman.png"
     },
     {
-        "merged": "D:\\FindHere-Unity\\FindHere-Unity\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\refresh3.png",
-        "source": "D:\\FindHere-Unity\\FindHere-Unity\\src\\main\\res\\drawable-xhdpi\\refresh3.png"
+        "merged": "G:\\findhere\\code\\FindHere\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\notify_panel_notification_icon_bg.png",
+        "source": "C:\\Users\\msi\\.android\\build-cache\\9b833810b1ed2bf41c664d00bd9e7d183af313de\\output\\res\\drawable-xhdpi-v4\\notify_panel_notification_icon_bg.png"
     },
     {
+        "merged": "G:\\findhere\\code\\FindHere\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\abc_ic_menu_selectall_mtrl_alpha.png",
+        "source": "C:\\Users\\msi\\.android\\build-cache\\9b833810b1ed2bf41c664d00bd9e7d183af313de\\output\\res\\drawable-xhdpi-v4\\abc_ic_menu_selectall_mtrl_alpha.png"
+    },
+    {
+<<<<<<< HEAD
         "merged": "D:\\FindHere-Unity\\FindHere-Unity\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\email.png",
         "source": "D:\\FindHere-Unity\\FindHere-Unity\\src\\main\\res\\drawable-xhdpi\\email.png"
     },
@@ -70,24 +80,33 @@
     {
         "merged": "D:\\FindHere-Unity\\FindHere-Unity\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\abc_scrubber_track_mtrl_alpha.9.png",
         "source": "C:\\Users\\asus\\.android\\build-cache\\19d7ea8401511620fa23c337710829464e6f2217\\output\\res\\drawable-xhdpi-v4\\abc_scrubber_track_mtrl_alpha.9.png"
+=======
+        "merged": "G:\\findhere\\code\\FindHere\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\abc_list_selector_disabled_holo_light.9.png",
+        "source": "C:\\Users\\msi\\.android\\build-cache\\9b833810b1ed2bf41c664d00bd9e7d183af313de\\output\\res\\drawable-xhdpi-v4\\abc_list_selector_disabled_holo_light.9.png"
     },
     {
-        "merged": "D:\\FindHere-Unity\\FindHere-Unity\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\abc_switch_track_mtrl_alpha.9.png",
-        "source": "C:\\Users\\asus\\.android\\build-cache\\19d7ea8401511620fa23c337710829464e6f2217\\output\\res\\drawable-xhdpi-v4\\abc_switch_track_mtrl_alpha.9.png"
+        "merged": "G:\\findhere\\code\\FindHere\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\refresh.png",
+        "source": "G:\\findhere\\code\\FindHere\\src\\main\\res\\drawable-xhdpi\\refresh.png"
+>>>>>>> ca52eed5bc47122568a2bd22ed6800a01317010b
     },
     {
-        "merged": "D:\\FindHere-Unity\\FindHere-Unity\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\notification_bg_normal.9.png",
-        "source": "C:\\Users\\asus\\.android\\build-cache\\19d7ea8401511620fa23c337710829464e6f2217\\output\\res\\drawable-xhdpi-v4\\notification_bg_normal.9.png"
+        "merged": "G:\\findhere\\code\\FindHere\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\abc_tab_indicator_mtrl_alpha.9.png",
+        "source": "C:\\Users\\msi\\.android\\build-cache\\9b833810b1ed2bf41c664d00bd9e7d183af313de\\output\\res\\drawable-xhdpi-v4\\abc_tab_indicator_mtrl_alpha.9.png"
     },
     {
-        "merged": "D:\\FindHere-Unity\\FindHere-Unity\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\abc_ic_star_black_36dp.png",
-        "source": "C:\\Users\\asus\\.android\\build-cache\\19d7ea8401511620fa23c337710829464e6f2217\\output\\res\\drawable-xhdpi-v4\\abc_ic_star_black_36dp.png"
+        "merged": "G:\\findhere\\code\\FindHere\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\edit.png",
+        "source": "G:\\findhere\\code\\FindHere\\src\\main\\res\\drawable-xhdpi\\edit.png"
     },
     {
-        "merged": "D:\\FindHere-Unity\\FindHere-Unity\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\abc_btn_switch_to_on_mtrl_00001.9.png",
-        "source": "C:\\Users\\asus\\.android\\build-cache\\19d7ea8401511620fa23c337710829464e6f2217\\output\\res\\drawable-xhdpi-v4\\abc_btn_switch_to_on_mtrl_00001.9.png"
+        "merged": "G:\\findhere\\code\\FindHere\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\abc_textfield_search_default_mtrl_alpha.9.png",
+        "source": "C:\\Users\\msi\\.android\\build-cache\\9b833810b1ed2bf41c664d00bd9e7d183af313de\\output\\res\\drawable-xhdpi-v4\\abc_textfield_search_default_mtrl_alpha.9.png"
     },
     {
+        "merged": "G:\\findhere\\code\\FindHere\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\add1.png",
+        "source": "G:\\findhere\\code\\FindHere\\src\\main\\res\\drawable-xhdpi\\add1.png"
+    },
+    {
+<<<<<<< HEAD
         "merged": "D:\\FindHere-Unity\\FindHere-Unity\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\star_o.png",
         "source": "D:\\FindHere-Unity\\FindHere-Unity\\src\\main\\res\\drawable-xhdpi\\star_o.png"
     },
@@ -98,92 +117,107 @@
     {
         "merged": "D:\\FindHere-Unity\\FindHere-Unity\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\location_w.png",
         "source": "D:\\FindHere-Unity\\FindHere-Unity\\src\\main\\res\\drawable-xhdpi\\location_w.png"
+=======
+        "merged": "G:\\findhere\\code\\FindHere\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\notification_bg_low_pressed.9.png",
+        "source": "C:\\Users\\msi\\.android\\build-cache\\9b833810b1ed2bf41c664d00bd9e7d183af313de\\output\\res\\drawable-xhdpi-v4\\notification_bg_low_pressed.9.png"
+>>>>>>> ca52eed5bc47122568a2bd22ed6800a01317010b
     },
     {
-        "merged": "D:\\FindHere-Unity\\FindHere-Unity\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\abc_list_focused_holo.9.png",
-        "source": "C:\\Users\\asus\\.android\\build-cache\\19d7ea8401511620fa23c337710829464e6f2217\\output\\res\\drawable-xhdpi-v4\\abc_list_focused_holo.9.png"
+        "merged": "G:\\findhere\\code\\FindHere\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\abc_ic_menu_cut_mtrl_alpha.png",
+        "source": "C:\\Users\\msi\\.android\\build-cache\\9b833810b1ed2bf41c664d00bd9e7d183af313de\\output\\res\\drawable-xhdpi-v4\\abc_ic_menu_cut_mtrl_alpha.png"
     },
     {
-        "merged": "D:\\FindHere-Unity\\FindHere-Unity\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\abc_text_select_handle_left_mtrl_light.png",
-        "source": "C:\\Users\\asus\\.android\\build-cache\\19d7ea8401511620fa23c337710829464e6f2217\\output\\res\\drawable-xhdpi-v4\\abc_text_select_handle_left_mtrl_light.png"
+        "merged": "G:\\findhere\\code\\FindHere\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\list_h.png",
+        "source": "G:\\findhere\\code\\FindHere\\src\\main\\res\\drawable-xhdpi\\list_h.png"
     },
     {
-        "merged": "D:\\FindHere-Unity\\FindHere-Unity\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\user_w.png",
-        "source": "D:\\FindHere-Unity\\FindHere-Unity\\src\\main\\res\\drawable-xhdpi\\user_w.png"
+        "merged": "G:\\findhere\\code\\FindHere\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\abc_scrubber_primary_mtrl_alpha.9.png",
+        "source": "C:\\Users\\msi\\.android\\build-cache\\9b833810b1ed2bf41c664d00bd9e7d183af313de\\output\\res\\drawable-xhdpi-v4\\abc_scrubber_primary_mtrl_alpha.9.png"
     },
     {
-        "merged": "D:\\FindHere-Unity\\FindHere-Unity\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\abc_btn_check_to_on_mtrl_015.png",
-        "source": "C:\\Users\\asus\\.android\\build-cache\\19d7ea8401511620fa23c337710829464e6f2217\\output\\res\\drawable-xhdpi-v4\\abc_btn_check_to_on_mtrl_015.png"
+        "merged": "G:\\findhere\\code\\FindHere\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\design_ic_visibility_off.png",
+        "source": "C:\\Users\\msi\\.android\\build-cache\\d3edfa3b25b2e7c5ca765bd80601c2fa1c0aa2c6\\output\\res\\drawable-xhdpi-v4\\design_ic_visibility_off.png"
     },
     {
-        "merged": "D:\\FindHere-Unity\\FindHere-Unity\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\user2.png",
-        "source": "D:\\FindHere-Unity\\FindHere-Unity\\src\\main\\res\\drawable-xhdpi\\user2.png"
+        "merged": "G:\\findhere\\code\\FindHere\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\abc_textfield_activated_mtrl_alpha.9.png",
+        "source": "C:\\Users\\msi\\.android\\build-cache\\9b833810b1ed2bf41c664d00bd9e7d183af313de\\output\\res\\drawable-xhdpi-v4\\abc_textfield_activated_mtrl_alpha.9.png"
     },
     {
+<<<<<<< HEAD
         "merged": "D:\\FindHere-Unity\\FindHere-Unity\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\comment.png",
         "source": "D:\\FindHere-Unity\\FindHere-Unity\\src\\main\\res\\drawable-xhdpi\\comment.png"
     },
     {
         "merged": "D:\\FindHere-Unity\\FindHere-Unity\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\sound.png",
         "source": "D:\\FindHere-Unity\\FindHere-Unity\\src\\main\\res\\drawable-xhdpi\\sound.png"
+=======
+        "merged": "G:\\findhere\\code\\FindHere\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\setting_64.png",
+        "source": "G:\\findhere\\code\\FindHere\\src\\main\\res\\drawable-xhdpi\\setting_64.png"
+>>>>>>> ca52eed5bc47122568a2bd22ed6800a01317010b
     },
     {
-        "merged": "D:\\FindHere-Unity\\FindHere-Unity\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\refresh1.png",
-        "source": "D:\\FindHere-Unity\\FindHere-Unity\\src\\main\\res\\drawable-xhdpi\\refresh1.png"
+        "merged": "G:\\findhere\\code\\FindHere\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\github.png",
+        "source": "G:\\findhere\\code\\FindHere\\src\\main\\res\\drawable-xhdpi\\github.png"
     },
     {
-        "merged": "D:\\FindHere-Unity\\FindHere-Unity\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\location_b.png",
-        "source": "D:\\FindHere-Unity\\FindHere-Unity\\src\\main\\res\\drawable-xhdpi\\location_b.png"
+        "merged": "G:\\findhere\\code\\FindHere\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\abc_list_pressed_holo_dark.9.png",
+        "source": "C:\\Users\\msi\\.android\\build-cache\\9b833810b1ed2bf41c664d00bd9e7d183af313de\\output\\res\\drawable-xhdpi-v4\\abc_list_pressed_holo_dark.9.png"
     },
     {
-        "merged": "D:\\FindHere-Unity\\FindHere-Unity\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\expression.png",
-        "source": "D:\\FindHere-Unity\\FindHere-Unity\\src\\main\\res\\drawable-xhdpi\\expression.png"
+        "merged": "G:\\findhere\\code\\FindHere\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\user_b_48.png",
+        "source": "G:\\findhere\\code\\FindHere\\src\\main\\res\\drawable-xhdpi\\user_b_48.png"
     },
     {
+<<<<<<< HEAD
         "merged": "D:\\FindHere-Unity\\FindHere-Unity\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\history1.png",
         "source": "D:\\FindHere-Unity\\FindHere-Unity\\src\\main\\res\\drawable-xhdpi\\history1.png"
     },
     {
         "merged": "D:\\FindHere-Unity\\FindHere-Unity\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\abc_popup_background_mtrl_mult.9.png",
         "source": "C:\\Users\\asus\\.android\\build-cache\\19d7ea8401511620fa23c337710829464e6f2217\\output\\res\\drawable-xhdpi-v4\\abc_popup_background_mtrl_mult.9.png"
+=======
+        "merged": "G:\\findhere\\code\\FindHere\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\location_b.png",
+        "source": "G:\\findhere\\code\\FindHere\\src\\main\\res\\drawable-xhdpi\\location_b.png"
+>>>>>>> ca52eed5bc47122568a2bd22ed6800a01317010b
     },
     {
-        "merged": "D:\\FindHere-Unity\\FindHere-Unity\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\abc_ic_menu_cut_mtrl_alpha.png",
-        "source": "C:\\Users\\asus\\.android\\build-cache\\19d7ea8401511620fa23c337710829464e6f2217\\output\\res\\drawable-xhdpi-v4\\abc_ic_menu_cut_mtrl_alpha.png"
+        "merged": "G:\\findhere\\code\\FindHere\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\abc_text_select_handle_left_mtrl_light.png",
+        "source": "C:\\Users\\msi\\.android\\build-cache\\9b833810b1ed2bf41c664d00bd9e7d183af313de\\output\\res\\drawable-xhdpi-v4\\abc_text_select_handle_left_mtrl_light.png"
     },
     {
-        "merged": "D:\\FindHere-Unity\\FindHere-Unity\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\abc_ic_star_half_black_48dp.png",
-        "source": "C:\\Users\\asus\\.android\\build-cache\\19d7ea8401511620fa23c337710829464e6f2217\\output\\res\\drawable-xhdpi-v4\\abc_ic_star_half_black_48dp.png"
+        "merged": "G:\\findhere\\code\\FindHere\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\gender.png",
+        "source": "G:\\findhere\\code\\FindHere\\src\\main\\res\\drawable-xhdpi\\gender.png"
     },
     {
-        "merged": "D:\\FindHere-Unity\\FindHere-Unity\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\location_h.png",
-        "source": "D:\\FindHere-Unity\\FindHere-Unity\\src\\main\\res\\drawable-xhdpi\\location_h.png"
+        "merged": "G:\\findhere\\code\\FindHere\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\abc_popup_background_mtrl_mult.9.png",
+        "source": "C:\\Users\\msi\\.android\\build-cache\\9b833810b1ed2bf41c664d00bd9e7d183af313de\\output\\res\\drawable-xhdpi-v4\\abc_popup_background_mtrl_mult.9.png"
     },
     {
-        "merged": "D:\\FindHere-Unity\\FindHere-Unity\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\save.png",
-        "source": "D:\\FindHere-Unity\\FindHere-Unity\\src\\main\\res\\drawable-xhdpi\\save.png"
+        "merged": "G:\\findhere\\code\\FindHere\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\notification_bg_low_normal.9.png",
+        "source": "C:\\Users\\msi\\.android\\build-cache\\9b833810b1ed2bf41c664d00bd9e7d183af313de\\output\\res\\drawable-xhdpi-v4\\notification_bg_low_normal.9.png"
     },
     {
-        "merged": "D:\\FindHere-Unity\\FindHere-Unity\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\abc_textfield_search_default_mtrl_alpha.9.png",
-        "source": "C:\\Users\\asus\\.android\\build-cache\\19d7ea8401511620fa23c337710829464e6f2217\\output\\res\\drawable-xhdpi-v4\\abc_textfield_search_default_mtrl_alpha.9.png"
+        "merged": "G:\\findhere\\code\\FindHere\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\save.png",
+        "source": "G:\\findhere\\code\\FindHere\\src\\main\\res\\drawable-xhdpi\\save.png"
     },
     {
-        "merged": "D:\\FindHere-Unity\\FindHere-Unity\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\abc_scrubber_primary_mtrl_alpha.9.png",
-        "source": "C:\\Users\\asus\\.android\\build-cache\\19d7ea8401511620fa23c337710829464e6f2217\\output\\res\\drawable-xhdpi-v4\\abc_scrubber_primary_mtrl_alpha.9.png"
+        "merged": "G:\\findhere\\code\\FindHere\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\comment_line1.png",
+        "source": "G:\\findhere\\code\\FindHere\\src\\main\\res\\drawable-xhdpi\\comment_line1.png"
     },
     {
-        "merged": "D:\\FindHere-Unity\\FindHere-Unity\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\user1.png",
-        "source": "D:\\FindHere-Unity\\FindHere-Unity\\src\\main\\res\\drawable-xhdpi\\user1.png"
+        "merged": "G:\\findhere\\code\\FindHere\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\abc_list_selector_disabled_holo_dark.9.png",
+        "source": "C:\\Users\\msi\\.android\\build-cache\\9b833810b1ed2bf41c664d00bd9e7d183af313de\\output\\res\\drawable-xhdpi-v4\\abc_list_selector_disabled_holo_dark.9.png"
     },
     {
-        "merged": "D:\\FindHere-Unity\\FindHere-Unity\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\abc_ic_menu_copy_mtrl_am_alpha.png",
-        "source": "C:\\Users\\asus\\.android\\build-cache\\19d7ea8401511620fa23c337710829464e6f2217\\output\\res\\drawable-xhdpi-v4\\abc_ic_menu_copy_mtrl_am_alpha.png"
+        "merged": "G:\\findhere\\code\\FindHere\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\vuforia_splash.png",
+        "source": "G:\\findhere\\code\\FindHere\\src\\main\\res\\drawable-xhdpi\\vuforia_splash.png"
     },
     {
-        "merged": "D:\\FindHere-Unity\\FindHere-Unity\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\voice.png",
-        "source": "D:\\FindHere-Unity\\FindHere-Unity\\src\\main\\res\\drawable-xhdpi\\voice.png"
+        "merged": "G:\\findhere\\code\\FindHere\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\abc_textfield_search_activated_mtrl_alpha.9.png",
+        "source": "C:\\Users\\msi\\.android\\build-cache\\9b833810b1ed2bf41c664d00bd9e7d183af313de\\output\\res\\drawable-xhdpi-v4\\abc_textfield_search_activated_mtrl_alpha.9.png"
     },
     {
+<<<<<<< HEAD
         "merged": "D:\\FindHere-Unity\\FindHere-Unity\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\female.png",
         "source": "D:\\FindHere-Unity\\FindHere-Unity\\src\\main\\res\\drawable-xhdpi\\female.png"
     },
@@ -194,20 +228,25 @@
     {
         "merged": "D:\\FindHere-Unity\\FindHere-Unity\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\abc_list_pressed_holo_light.9.png",
         "source": "C:\\Users\\asus\\.android\\build-cache\\19d7ea8401511620fa23c337710829464e6f2217\\output\\res\\drawable-xhdpi-v4\\abc_list_pressed_holo_light.9.png"
+=======
+        "merged": "G:\\findhere\\code\\FindHere\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\setting_128.png",
+        "source": "G:\\findhere\\code\\FindHere\\src\\main\\res\\drawable-xhdpi\\setting_128.png"
+>>>>>>> ca52eed5bc47122568a2bd22ed6800a01317010b
     },
     {
-        "merged": "D:\\FindHere-Unity\\FindHere-Unity\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\abc_scrubber_control_to_pressed_mtrl_000.png",
-        "source": "C:\\Users\\asus\\.android\\build-cache\\19d7ea8401511620fa23c337710829464e6f2217\\output\\res\\drawable-xhdpi-v4\\abc_scrubber_control_to_pressed_mtrl_000.png"
+        "merged": "G:\\findhere\\code\\FindHere\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\abc_btn_radio_to_on_mtrl_015.png",
+        "source": "C:\\Users\\msi\\.android\\build-cache\\9b833810b1ed2bf41c664d00bd9e7d183af313de\\output\\res\\drawable-xhdpi-v4\\abc_btn_radio_to_on_mtrl_015.png"
     },
     {
-        "merged": "D:\\FindHere-Unity\\FindHere-Unity\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\abc_text_select_handle_middle_mtrl_dark.png",
-        "source": "C:\\Users\\asus\\.android\\build-cache\\19d7ea8401511620fa23c337710829464e6f2217\\output\\res\\drawable-xhdpi-v4\\abc_text_select_handle_middle_mtrl_dark.png"
+        "merged": "G:\\findhere\\code\\FindHere\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\abc_ic_star_half_black_16dp.png",
+        "source": "C:\\Users\\msi\\.android\\build-cache\\9b833810b1ed2bf41c664d00bd9e7d183af313de\\output\\res\\drawable-xhdpi-v4\\abc_ic_star_half_black_16dp.png"
     },
     {
-        "merged": "D:\\FindHere-Unity\\FindHere-Unity\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\abc_text_select_handle_right_mtrl_dark.png",
-        "source": "C:\\Users\\asus\\.android\\build-cache\\19d7ea8401511620fa23c337710829464e6f2217\\output\\res\\drawable-xhdpi-v4\\abc_text_select_handle_right_mtrl_dark.png"
+        "merged": "G:\\findhere\\code\\FindHere\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\abc_spinner_mtrl_am_alpha.9.png",
+        "source": "C:\\Users\\msi\\.android\\build-cache\\9b833810b1ed2bf41c664d00bd9e7d183af313de\\output\\res\\drawable-xhdpi-v4\\abc_spinner_mtrl_am_alpha.9.png"
     },
     {
+<<<<<<< HEAD
         "merged": "D:\\FindHere-Unity\\FindHere-Unity\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\star_b.png",
         "source": "D:\\FindHere-Unity\\FindHere-Unity\\src\\main\\res\\drawable-xhdpi\\star_b.png"
     },
@@ -218,124 +257,147 @@
     {
         "merged": "D:\\FindHere-Unity\\FindHere-Unity\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\abc_cab_background_top_mtrl_alpha.9.png",
         "source": "C:\\Users\\asus\\.android\\build-cache\\19d7ea8401511620fa23c337710829464e6f2217\\output\\res\\drawable-xhdpi-v4\\abc_cab_background_top_mtrl_alpha.9.png"
+=======
+        "merged": "G:\\findhere\\code\\FindHere\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\abc_ic_commit_search_api_mtrl_alpha.png",
+        "source": "C:\\Users\\msi\\.android\\build-cache\\9b833810b1ed2bf41c664d00bd9e7d183af313de\\output\\res\\drawable-xhdpi-v4\\abc_ic_commit_search_api_mtrl_alpha.png"
     },
     {
-        "merged": "D:\\FindHere-Unity\\FindHere-Unity\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\user_b.png",
-        "source": "D:\\FindHere-Unity\\FindHere-Unity\\src\\main\\res\\drawable-xhdpi\\user_b.png"
+        "merged": "G:\\findhere\\code\\FindHere\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\change_64.png",
+        "source": "G:\\findhere\\code\\FindHere\\src\\main\\res\\drawable-xhdpi\\change_64.png"
     },
     {
-        "merged": "D:\\FindHere-Unity\\FindHere-Unity\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\camera.png",
-        "source": "D:\\FindHere-Unity\\FindHere-Unity\\src\\main\\res\\drawable-xhdpi\\camera.png"
+        "merged": "G:\\findhere\\code\\FindHere\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\abc_text_select_handle_left_mtrl_dark.png",
+        "source": "C:\\Users\\msi\\.android\\build-cache\\9b833810b1ed2bf41c664d00bd9e7d183af313de\\output\\res\\drawable-xhdpi-v4\\abc_text_select_handle_left_mtrl_dark.png"
+>>>>>>> ca52eed5bc47122568a2bd22ed6800a01317010b
     },
     {
-        "merged": "D:\\FindHere-Unity\\FindHere-Unity\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\abc_list_selector_disabled_holo_light.9.png",
-        "source": "C:\\Users\\asus\\.android\\build-cache\\19d7ea8401511620fa23c337710829464e6f2217\\output\\res\\drawable-xhdpi-v4\\abc_list_selector_disabled_holo_light.9.png"
+        "merged": "G:\\findhere\\code\\FindHere\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\abc_ic_star_black_48dp.png",
+        "source": "C:\\Users\\msi\\.android\\build-cache\\9b833810b1ed2bf41c664d00bd9e7d183af313de\\output\\res\\drawable-xhdpi-v4\\abc_ic_star_black_48dp.png"
     },
     {
-        "merged": "D:\\FindHere-Unity\\FindHere-Unity\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\abc_ic_star_black_16dp.png",
-        "source": "C:\\Users\\asus\\.android\\build-cache\\19d7ea8401511620fa23c337710829464e6f2217\\output\\res\\drawable-xhdpi-v4\\abc_ic_star_black_16dp.png"
+        "merged": "G:\\findhere\\code\\FindHere\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\star_w.png",
+        "source": "G:\\findhere\\code\\FindHere\\src\\main\\res\\drawable-xhdpi\\star_w.png"
     },
     {
-        "merged": "D:\\FindHere-Unity\\FindHere-Unity\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\add.png",
-        "source": "D:\\FindHere-Unity\\FindHere-Unity\\src\\main\\res\\drawable-xhdpi\\add.png"
+        "merged": "G:\\findhere\\code\\FindHere\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\target.png",
+        "source": "G:\\findhere\\code\\FindHere\\src\\main\\res\\drawable-xhdpi\\target.png"
     },
     {
-        "merged": "D:\\FindHere-Unity\\FindHere-Unity\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\notification_bg_low_pressed.9.png",
-        "source": "C:\\Users\\asus\\.android\\build-cache\\19d7ea8401511620fa23c337710829464e6f2217\\output\\res\\drawable-xhdpi-v4\\notification_bg_low_pressed.9.png"
+        "merged": "G:\\findhere\\code\\FindHere\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\history.png",
+        "source": "G:\\findhere\\code\\FindHere\\src\\main\\res\\drawable-xhdpi\\history.png"
     },
     {
-        "merged": "D:\\FindHere-Unity\\FindHere-Unity\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\target_w.png",
-        "source": "D:\\FindHere-Unity\\FindHere-Unity\\src\\main\\res\\drawable-xhdpi\\target_w.png"
+        "merged": "G:\\findhere\\code\\FindHere\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\location_h.png",
+        "source": "G:\\findhere\\code\\FindHere\\src\\main\\res\\drawable-xhdpi\\location_h.png"
     },
     {
-        "merged": "D:\\FindHere-Unity\\FindHere-Unity\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\setting64.png",
-        "source": "D:\\FindHere-Unity\\FindHere-Unity\\src\\main\\res\\drawable-xhdpi\\setting64.png"
+        "merged": "G:\\findhere\\code\\FindHere\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\female.png",
+        "source": "G:\\findhere\\code\\FindHere\\src\\main\\res\\drawable-xhdpi\\female.png"
     },
     {
-        "merged": "D:\\FindHere-Unity\\FindHere-Unity\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\back_w.png",
-        "source": "D:\\FindHere-Unity\\FindHere-Unity\\src\\main\\res\\drawable-xhdpi\\back_w.png"
+        "merged": "G:\\findhere\\code\\FindHere\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\voice.png",
+        "source": "G:\\findhere\\code\\FindHere\\src\\main\\res\\drawable-xhdpi\\voice.png"
     },
     {
-        "merged": "D:\\FindHere-Unity\\FindHere-Unity\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\abc_textfield_activated_mtrl_alpha.9.png",
-        "source": "C:\\Users\\asus\\.android\\build-cache\\19d7ea8401511620fa23c337710829464e6f2217\\output\\res\\drawable-xhdpi-v4\\abc_textfield_activated_mtrl_alpha.9.png"
+        "merged": "G:\\findhere\\code\\FindHere\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\abc_scrubber_control_to_pressed_mtrl_005.png",
+        "source": "C:\\Users\\msi\\.android\\build-cache\\9b833810b1ed2bf41c664d00bd9e7d183af313de\\output\\res\\drawable-xhdpi-v4\\abc_scrubber_control_to_pressed_mtrl_005.png"
     },
     {
-        "merged": "D:\\FindHere-Unity\\FindHere-Unity\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\design_ic_visibility_off.png",
-        "source": "C:\\Users\\asus\\.android\\build-cache\\9926a36909df21df384e4fce808a30ec609d0eea\\output\\res\\drawable-xhdpi-v4\\design_ic_visibility_off.png"
+        "merged": "G:\\findhere\\code\\FindHere\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\shape_input.xml",
+        "source": "G:\\findhere\\code\\FindHere\\src\\main\\res\\drawable-xhdpi\\shape_input.xml"
     },
     {
+        "merged": "G:\\findhere\\code\\FindHere\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\right02.png",
+        "source": "G:\\findhere\\code\\FindHere\\src\\main\\res\\drawable-xhdpi\\right02.png"
+    },
+    {
+        "merged": "G:\\findhere\\code\\FindHere\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\location_w.png",
+        "source": "G:\\findhere\\code\\FindHere\\src\\main\\res\\drawable-xhdpi\\location_w.png"
+    },
+    {
+<<<<<<< HEAD
         "merged": "D:\\FindHere-Unity\\FindHere-Unity\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\comment_line.png",
         "source": "D:\\FindHere-Unity\\FindHere-Unity\\src\\main\\res\\drawable-xhdpi\\comment_line.png"
     },
     {
         "merged": "D:\\FindHere-Unity\\FindHere-Unity\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\abc_tab_indicator_mtrl_alpha.9.png",
         "source": "C:\\Users\\asus\\.android\\build-cache\\19d7ea8401511620fa23c337710829464e6f2217\\output\\res\\drawable-xhdpi-v4\\abc_tab_indicator_mtrl_alpha.9.png"
+=======
+        "merged": "G:\\findhere\\code\\FindHere\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\abc_btn_radio_to_on_mtrl_000.png",
+        "source": "C:\\Users\\msi\\.android\\build-cache\\9b833810b1ed2bf41c664d00bd9e7d183af313de\\output\\res\\drawable-xhdpi-v4\\abc_btn_radio_to_on_mtrl_000.png"
+>>>>>>> ca52eed5bc47122568a2bd22ed6800a01317010b
     },
     {
-        "merged": "D:\\FindHere-Unity\\FindHere-Unity\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\abc_ic_star_half_black_36dp.png",
-        "source": "C:\\Users\\asus\\.android\\build-cache\\19d7ea8401511620fa23c337710829464e6f2217\\output\\res\\drawable-xhdpi-v4\\abc_ic_star_half_black_36dp.png"
+        "merged": "G:\\findhere\\code\\FindHere\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\camera.png",
+        "source": "G:\\findhere\\code\\FindHere\\src\\main\\res\\drawable-xhdpi\\camera.png"
     },
     {
-        "merged": "D:\\FindHere-Unity\\FindHere-Unity\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\setting48.png",
-        "source": "D:\\FindHere-Unity\\FindHere-Unity\\src\\main\\res\\drawable-xhdpi\\setting48.png"
+        "merged": "G:\\findhere\\code\\FindHere\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\user_b.png",
+        "source": "G:\\findhere\\code\\FindHere\\src\\main\\res\\drawable-xhdpi\\user_b.png"
     },
     {
-        "merged": "D:\\FindHere-Unity\\FindHere-Unity\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\star_w.png",
-        "source": "D:\\FindHere-Unity\\FindHere-Unity\\src\\main\\res\\drawable-xhdpi\\star_w.png"
+        "merged": "G:\\findhere\\code\\FindHere\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\setting48.png",
+        "source": "G:\\findhere\\code\\FindHere\\src\\main\\res\\drawable-xhdpi\\setting48.png"
     },
     {
-        "merged": "D:\\FindHere-Unity\\FindHere-Unity\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\abc_text_select_handle_middle_mtrl_light.png",
-        "source": "C:\\Users\\asus\\.android\\build-cache\\19d7ea8401511620fa23c337710829464e6f2217\\output\\res\\drawable-xhdpi-v4\\abc_text_select_handle_middle_mtrl_light.png"
+        "merged": "G:\\findhere\\code\\FindHere\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\shape_handin.xml",
+        "source": "G:\\findhere\\code\\FindHere\\src\\main\\res\\drawable-xhdpi\\shape_handin.xml"
     },
     {
-        "merged": "D:\\FindHere-Unity\\FindHere-Unity\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\abc_btn_radio_to_on_mtrl_015.png",
-        "source": "C:\\Users\\asus\\.android\\build-cache\\19d7ea8401511620fa23c337710829464e6f2217\\output\\res\\drawable-xhdpi-v4\\abc_btn_radio_to_on_mtrl_015.png"
+        "merged": "G:\\findhere\\code\\FindHere\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\abc_ic_star_black_16dp.png",
+        "source": "C:\\Users\\msi\\.android\\build-cache\\9b833810b1ed2bf41c664d00bd9e7d183af313de\\output\\res\\drawable-xhdpi-v4\\abc_ic_star_black_16dp.png"
     },
     {
-        "merged": "D:\\FindHere-Unity\\FindHere-Unity\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\abc_btn_switch_to_on_mtrl_00012.9.png",
-        "source": "C:\\Users\\asus\\.android\\build-cache\\19d7ea8401511620fa23c337710829464e6f2217\\output\\res\\drawable-xhdpi-v4\\abc_btn_switch_to_on_mtrl_00012.9.png"
+        "merged": "G:\\findhere\\code\\FindHere\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\star_b.png",
+        "source": "G:\\findhere\\code\\FindHere\\src\\main\\res\\drawable-xhdpi\\star_b.png"
     },
     {
-        "merged": "D:\\FindHere-Unity\\FindHere-Unity\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\abc_text_select_handle_left_mtrl_dark.png",
-        "source": "C:\\Users\\asus\\.android\\build-cache\\19d7ea8401511620fa23c337710829464e6f2217\\output\\res\\drawable-xhdpi-v4\\abc_text_select_handle_left_mtrl_dark.png"
+        "merged": "G:\\findhere\\code\\FindHere\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\abc_list_focused_holo.9.png",
+        "source": "C:\\Users\\msi\\.android\\build-cache\\9b833810b1ed2bf41c664d00bd9e7d183af313de\\output\\res\\drawable-xhdpi-v4\\abc_list_focused_holo.9.png"
     },
     {
-        "merged": "D:\\FindHere-Unity\\FindHere-Unity\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\shape_handin.xml",
-        "source": "D:\\FindHere-Unity\\FindHere-Unity\\src\\main\\res\\drawable-xhdpi\\shape_handin.xml"
+        "merged": "G:\\findhere\\code\\FindHere\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\star.png",
+        "source": "G:\\findhere\\code\\FindHere\\src\\main\\res\\drawable-xhdpi\\star.png"
     },
     {
-        "merged": "D:\\FindHere-Unity\\FindHere-Unity\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\abc_ic_menu_paste_mtrl_am_alpha.png",
-        "source": "C:\\Users\\asus\\.android\\build-cache\\19d7ea8401511620fa23c337710829464e6f2217\\output\\res\\drawable-xhdpi-v4\\abc_ic_menu_paste_mtrl_am_alpha.png"
+        "merged": "G:\\findhere\\code\\FindHere\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\back_b.png",
+        "source": "G:\\findhere\\code\\FindHere\\src\\main\\res\\drawable-xhdpi\\back_b.png"
     },
     {
-        "merged": "D:\\FindHere-Unity\\FindHere-Unity\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\abc_textfield_search_activated_mtrl_alpha.9.png",
-        "source": "C:\\Users\\asus\\.android\\build-cache\\19d7ea8401511620fa23c337710829464e6f2217\\output\\res\\drawable-xhdpi-v4\\abc_textfield_search_activated_mtrl_alpha.9.png"
+        "merged": "G:\\findhere\\code\\FindHere\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\abc_btn_check_to_on_mtrl_000.png",
+        "source": "C:\\Users\\msi\\.android\\build-cache\\9b833810b1ed2bf41c664d00bd9e7d183af313de\\output\\res\\drawable-xhdpi-v4\\abc_btn_check_to_on_mtrl_000.png"
     },
     {
-        "merged": "D:\\FindHere-Unity\\FindHere-Unity\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\abc_btn_radio_to_on_mtrl_000.png",
-        "source": "C:\\Users\\asus\\.android\\build-cache\\19d7ea8401511620fa23c337710829464e6f2217\\output\\res\\drawable-xhdpi-v4\\abc_btn_radio_to_on_mtrl_000.png"
+        "merged": "G:\\findhere\\code\\FindHere\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\abc_ab_share_pack_mtrl_alpha.9.png",
+        "source": "C:\\Users\\msi\\.android\\build-cache\\9b833810b1ed2bf41c664d00bd9e7d183af313de\\output\\res\\drawable-xhdpi-v4\\abc_ab_share_pack_mtrl_alpha.9.png"
     },
     {
-        "merged": "D:\\FindHere-Unity\\FindHere-Unity\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\abc_spinner_mtrl_am_alpha.9.png",
-        "source": "C:\\Users\\asus\\.android\\build-cache\\19d7ea8401511620fa23c337710829464e6f2217\\output\\res\\drawable-xhdpi-v4\\abc_spinner_mtrl_am_alpha.9.png"
+        "merged": "G:\\findhere\\code\\FindHere\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\history2.png",
+        "source": "G:\\findhere\\code\\FindHere\\src\\main\\res\\drawable-xhdpi\\history2.png"
     },
     {
-        "merged": "D:\\FindHere-Unity\\FindHere-Unity\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\app_banner.png",
-        "source": "D:\\FindHere-Unity\\FindHere-Unity\\src\\main\\res\\drawable-xhdpi\\app_banner.png"
+        "merged": "G:\\findhere\\code\\FindHere\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\scanline.png",
+        "source": "G:\\findhere\\code\\FindHere\\src\\main\\res\\drawable-xhdpi\\scanline.png"
     },
     {
-        "merged": "D:\\FindHere-Unity\\FindHere-Unity\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\comments.png",
-        "source": "D:\\FindHere-Unity\\FindHere-Unity\\src\\main\\res\\drawable-xhdpi\\comments.png"
+        "merged": "G:\\findhere\\code\\FindHere\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\email.png",
+        "source": "G:\\findhere\\code\\FindHere\\src\\main\\res\\drawable-xhdpi\\email.png"
     },
     {
+<<<<<<< HEAD
         "merged": "D:\\FindHere-Unity\\FindHere-Unity\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\github.png",
         "source": "D:\\FindHere-Unity\\FindHere-Unity\\src\\main\\res\\drawable-xhdpi\\github.png"
+=======
+        "merged": "G:\\findhere\\code\\FindHere\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\user_w.png",
+        "source": "G:\\findhere\\code\\FindHere\\src\\main\\res\\drawable-xhdpi\\user_w.png"
+>>>>>>> ca52eed5bc47122568a2bd22ed6800a01317010b
     },
     {
-        "merged": "D:\\FindHere-Unity\\FindHere-Unity\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\list_w.png",
-        "source": "D:\\FindHere-Unity\\FindHere-Unity\\src\\main\\res\\drawable-xhdpi\\list_w.png"
+        "merged": "G:\\findhere\\code\\FindHere\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\abc_text_select_handle_middle_mtrl_dark.png",
+        "source": "C:\\Users\\msi\\.android\\build-cache\\9b833810b1ed2bf41c664d00bd9e7d183af313de\\output\\res\\drawable-xhdpi-v4\\abc_text_select_handle_middle_mtrl_dark.png"
     },
     {
+<<<<<<< HEAD
         "merged": "D:\\FindHere-Unity\\FindHere-Unity\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\abc_menu_hardkey_panel_mtrl_mult.9.png",
         "source": "C:\\Users\\asus\\.android\\build-cache\\19d7ea8401511620fa23c337710829464e6f2217\\output\\res\\drawable-xhdpi-v4\\abc_menu_hardkey_panel_mtrl_mult.9.png"
     },
@@ -346,12 +408,21 @@
     {
         "merged": "D:\\FindHere-Unity\\FindHere-Unity\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\abc_btn_check_to_on_mtrl_000.png",
         "source": "C:\\Users\\asus\\.android\\build-cache\\19d7ea8401511620fa23c337710829464e6f2217\\output\\res\\drawable-xhdpi-v4\\abc_btn_check_to_on_mtrl_000.png"
+=======
+        "merged": "G:\\findhere\\code\\FindHere\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\list_b.png",
+        "source": "G:\\findhere\\code\\FindHere\\src\\main\\res\\drawable-xhdpi\\list_b.png"
     },
     {
-        "merged": "D:\\FindHere-Unity\\FindHere-Unity\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\baoman.png",
-        "source": "D:\\FindHere-Unity\\FindHere-Unity\\src\\main\\res\\drawable-xhdpi\\baoman.png"
+        "merged": "G:\\findhere\\code\\FindHere\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\refresh3.png",
+        "source": "G:\\findhere\\code\\FindHere\\src\\main\\res\\drawable-xhdpi\\refresh3.png"
+>>>>>>> ca52eed5bc47122568a2bd22ed6800a01317010b
     },
     {
+        "merged": "G:\\findhere\\code\\FindHere\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\notification_bg_normal_pressed.9.png",
+        "source": "C:\\Users\\msi\\.android\\build-cache\\9b833810b1ed2bf41c664d00bd9e7d183af313de\\output\\res\\drawable-xhdpi-v4\\notification_bg_normal_pressed.9.png"
+    },
+    {
+<<<<<<< HEAD
         "merged": "D:\\FindHere-Unity\\FindHere-Unity\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\notify_panel_notification_icon_bg.png",
         "source": "C:\\Users\\asus\\.android\\build-cache\\19d7ea8401511620fa23c337710829464e6f2217\\output\\res\\drawable-xhdpi-v4\\notify_panel_notification_icon_bg.png"
     },
@@ -366,93 +437,187 @@
     {
         "merged": "D:\\FindHere-Unity\\FindHere-Unity\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\list_h.png",
         "source": "D:\\FindHere-Unity\\FindHere-Unity\\src\\main\\res\\drawable-xhdpi\\list_h.png"
+=======
+        "merged": "G:\\findhere\\code\\FindHere\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\camera_b.png",
+        "source": "G:\\findhere\\code\\FindHere\\src\\main\\res\\drawable-xhdpi\\camera_b.png"
     },
     {
-        "merged": "D:\\FindHere-Unity\\FindHere-Unity\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\design_ic_visibility.png",
-        "source": "C:\\Users\\asus\\.android\\build-cache\\9926a36909df21df384e4fce808a30ec609d0eea\\output\\res\\drawable-xhdpi-v4\\design_ic_visibility.png"
+        "merged": "G:\\findhere\\code\\FindHere\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\user1.png",
+        "source": "G:\\findhere\\code\\FindHere\\src\\main\\res\\drawable-xhdpi\\user1.png"
+>>>>>>> ca52eed5bc47122568a2bd22ed6800a01317010b
     },
     {
-        "merged": "D:\\FindHere-Unity\\FindHere-Unity\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\shape_input.xml",
-        "source": "D:\\FindHere-Unity\\FindHere-Unity\\src\\main\\res\\drawable-xhdpi\\shape_input.xml"
+        "merged": "G:\\findhere\\code\\FindHere\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\abc_btn_check_to_on_mtrl_015.png",
+        "source": "C:\\Users\\msi\\.android\\build-cache\\9b833810b1ed2bf41c664d00bd9e7d183af313de\\output\\res\\drawable-xhdpi-v4\\abc_btn_check_to_on_mtrl_015.png"
     },
     {
-        "merged": "D:\\FindHere-Unity\\FindHere-Unity\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\camera_h.png",
-        "source": "D:\\FindHere-Unity\\FindHere-Unity\\src\\main\\res\\drawable-xhdpi\\camera_h.png"
+        "merged": "G:\\findhere\\code\\FindHere\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\qq.png",
+        "source": "G:\\findhere\\code\\FindHere\\src\\main\\res\\drawable-xhdpi\\qq.png"
     },
     {
-        "merged": "D:\\FindHere-Unity\\FindHere-Unity\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\setting_128.png",
-        "source": "D:\\FindHere-Unity\\FindHere-Unity\\src\\main\\res\\drawable-xhdpi\\setting_128.png"
+        "merged": "G:\\findhere\\code\\FindHere\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\user2.png",
+        "source": "G:\\findhere\\code\\FindHere\\src\\main\\res\\drawable-xhdpi\\user2.png"
     },
     {
-        "merged": "D:\\FindHere-Unity\\FindHere-Unity\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\target_b.png",
-        "source": "D:\\FindHere-Unity\\FindHere-Unity\\src\\main\\res\\drawable-xhdpi\\target_b.png"
+        "merged": "G:\\findhere\\code\\FindHere\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\notification_bg_normal.9.png",
+        "source": "C:\\Users\\msi\\.android\\build-cache\\9b833810b1ed2bf41c664d00bd9e7d183af313de\\output\\res\\drawable-xhdpi-v4\\notification_bg_normal.9.png"
     },
     {
-        "merged": "D:\\FindHere-Unity\\FindHere-Unity\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\vuforia_splash.png",
-        "source": "D:\\FindHere-Unity\\FindHere-Unity\\src\\main\\res\\drawable-xhdpi\\vuforia_splash.png"
+        "merged": "G:\\findhere\\code\\FindHere\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\expression.png",
+        "source": "G:\\findhere\\code\\FindHere\\src\\main\\res\\drawable-xhdpi\\expression.png"
     },
     {
-        "merged": "D:\\FindHere-Unity\\FindHere-Unity\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\camera_b.png",
-        "source": "D:\\FindHere-Unity\\FindHere-Unity\\src\\main\\res\\drawable-xhdpi\\camera_b.png"
+        "merged": "G:\\findhere\\code\\FindHere\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\target_b.png",
+        "source": "G:\\findhere\\code\\FindHere\\src\\main\\res\\drawable-xhdpi\\target_b.png"
     },
     {
-        "merged": "D:\\FindHere-Unity\\FindHere-Unity\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\abc_list_divider_mtrl_alpha.9.png",
-        "source": "C:\\Users\\asus\\.android\\build-cache\\19d7ea8401511620fa23c337710829464e6f2217\\output\\res\\drawable-xhdpi-v4\\abc_list_divider_mtrl_alpha.9.png"
+        "merged": "G:\\findhere\\code\\FindHere\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\refresh1.png",
+        "source": "G:\\findhere\\code\\FindHere\\src\\main\\res\\drawable-xhdpi\\refresh1.png"
     },
     {
-        "merged": "D:\\FindHere-Unity\\FindHere-Unity\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\notification_bg_low_normal.9.png",
-        "source": "C:\\Users\\asus\\.android\\build-cache\\19d7ea8401511620fa23c337710829464e6f2217\\output\\res\\drawable-xhdpi-v4\\notification_bg_low_normal.9.png"
+        "merged": "G:\\findhere\\code\\FindHere\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\abc_btn_switch_to_on_mtrl_00012.9.png",
+        "source": "C:\\Users\\msi\\.android\\build-cache\\9b833810b1ed2bf41c664d00bd9e7d183af313de\\output\\res\\drawable-xhdpi-v4\\abc_btn_switch_to_on_mtrl_00012.9.png"
     },
     {
-        "merged": "D:\\FindHere-Unity\\FindHere-Unity\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\list_b.png",
-        "source": "D:\\FindHere-Unity\\FindHere-Unity\\src\\main\\res\\drawable-xhdpi\\list_b.png"
+        "merged": "G:\\findhere\\code\\FindHere\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\abc_textfield_default_mtrl_alpha.9.png",
+        "source": "C:\\Users\\msi\\.android\\build-cache\\9b833810b1ed2bf41c664d00bd9e7d183af313de\\output\\res\\drawable-xhdpi-v4\\abc_textfield_default_mtrl_alpha.9.png"
     },
     {
-        "merged": "D:\\FindHere-Unity\\FindHere-Unity\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\change_128.png",
-        "source": "D:\\FindHere-Unity\\FindHere-Unity\\src\\main\\res\\drawable-xhdpi\\change_128.png"
+        "merged": "G:\\findhere\\code\\FindHere\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\abc_ic_menu_share_mtrl_alpha.png",
+        "source": "C:\\Users\\msi\\.android\\build-cache\\9b833810b1ed2bf41c664d00bd9e7d183af313de\\output\\res\\drawable-xhdpi-v4\\abc_ic_menu_share_mtrl_alpha.png"
     },
     {
-        "merged": "D:\\FindHere-Unity\\FindHere-Unity\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\abc_ic_commit_search_api_mtrl_alpha.png",
-        "source": "C:\\Users\\asus\\.android\\build-cache\\19d7ea8401511620fa23c337710829464e6f2217\\output\\res\\drawable-xhdpi-v4\\abc_ic_commit_search_api_mtrl_alpha.png"
+        "merged": "G:\\findhere\\code\\FindHere\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\abc_btn_switch_to_on_mtrl_00001.9.png",
+        "source": "C:\\Users\\msi\\.android\\build-cache\\9b833810b1ed2bf41c664d00bd9e7d183af313de\\output\\res\\drawable-xhdpi-v4\\abc_btn_switch_to_on_mtrl_00001.9.png"
     },
     {
+        "merged": "G:\\findhere\\code\\FindHere\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\abc_text_select_handle_right_mtrl_dark.png",
+        "source": "C:\\Users\\msi\\.android\\build-cache\\9b833810b1ed2bf41c664d00bd9e7d183af313de\\output\\res\\drawable-xhdpi-v4\\abc_text_select_handle_right_mtrl_dark.png"
+    },
+    {
+<<<<<<< HEAD
         "merged": "D:\\FindHere-Unity\\FindHere-Unity\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\qq.png",
         "source": "D:\\FindHere-Unity\\FindHere-Unity\\src\\main\\res\\drawable-xhdpi\\qq.png"
     },
     {
         "merged": "D:\\FindHere-Unity\\FindHere-Unity\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\change_64.png",
         "source": "D:\\FindHere-Unity\\FindHere-Unity\\src\\main\\res\\drawable-xhdpi\\change_64.png"
+=======
+        "merged": "G:\\findhere\\code\\FindHere\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\abc_text_select_handle_middle_mtrl_light.png",
+        "source": "C:\\Users\\msi\\.android\\build-cache\\9b833810b1ed2bf41c664d00bd9e7d183af313de\\output\\res\\drawable-xhdpi-v4\\abc_text_select_handle_middle_mtrl_light.png"
+>>>>>>> ca52eed5bc47122568a2bd22ed6800a01317010b
     },
     {
-        "merged": "D:\\FindHere-Unity\\FindHere-Unity\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\abc_textfield_default_mtrl_alpha.9.png",
-        "source": "C:\\Users\\asus\\.android\\build-cache\\19d7ea8401511620fa23c337710829464e6f2217\\output\\res\\drawable-xhdpi-v4\\abc_textfield_default_mtrl_alpha.9.png"
+        "merged": "G:\\findhere\\code\\FindHere\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\change_128.png",
+        "source": "G:\\findhere\\code\\FindHere\\src\\main\\res\\drawable-xhdpi\\change_128.png"
     },
     {
-        "merged": "D:\\FindHere-Unity\\FindHere-Unity\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\setting_64.png",
-        "source": "D:\\FindHere-Unity\\FindHere-Unity\\src\\main\\res\\drawable-xhdpi\\setting_64.png"
+        "merged": "G:\\findhere\\code\\FindHere\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\setting64.png",
+        "source": "G:\\findhere\\code\\FindHere\\src\\main\\res\\drawable-xhdpi\\setting64.png"
     },
     {
-        "merged": "D:\\FindHere-Unity\\FindHere-Unity\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\abc_scrubber_control_to_pressed_mtrl_005.png",
-        "source": "C:\\Users\\asus\\.android\\build-cache\\19d7ea8401511620fa23c337710829464e6f2217\\output\\res\\drawable-xhdpi-v4\\abc_scrubber_control_to_pressed_mtrl_005.png"
+        "merged": "G:\\findhere\\code\\FindHere\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\back_w.png",
+        "source": "G:\\findhere\\code\\FindHere\\src\\main\\res\\drawable-xhdpi\\back_w.png"
     },
     {
-        "merged": "D:\\FindHere-Unity\\FindHere-Unity\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\abc_ic_star_black_48dp.png",
-        "source": "C:\\Users\\asus\\.android\\build-cache\\19d7ea8401511620fa23c337710829464e6f2217\\output\\res\\drawable-xhdpi-v4\\abc_ic_star_black_48dp.png"
+        "merged": "G:\\findhere\\code\\FindHere\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\abc_ic_star_half_black_36dp.png",
+        "source": "C:\\Users\\msi\\.android\\build-cache\\9b833810b1ed2bf41c664d00bd9e7d183af313de\\output\\res\\drawable-xhdpi-v4\\abc_ic_star_half_black_36dp.png"
     },
     {
-        "merged": "D:\\FindHere-Unity\\FindHere-Unity\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\add1.png",
-        "source": "D:\\FindHere-Unity\\FindHere-Unity\\src\\main\\res\\drawable-xhdpi\\add1.png"
+        "merged": "G:\\findhere\\code\\FindHere\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\abc_list_divider_mtrl_alpha.9.png",
+        "source": "C:\\Users\\msi\\.android\\build-cache\\9b833810b1ed2bf41c664d00bd9e7d183af313de\\output\\res\\drawable-xhdpi-v4\\abc_list_divider_mtrl_alpha.9.png"
     },
     {
-        "merged": "D:\\FindHere-Unity\\FindHere-Unity\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\scanline.png",
-        "source": "D:\\FindHere-Unity\\FindHere-Unity\\src\\main\\res\\drawable-xhdpi\\scanline.png"
+        "merged": "G:\\findhere\\code\\FindHere\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\edit1.png",
+        "source": "G:\\findhere\\code\\FindHere\\src\\main\\res\\drawable-xhdpi\\edit1.png"
     },
     {
+<<<<<<< HEAD
         "merged": "D:\\FindHere-Unity\\FindHere-Unity\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\abc_ic_menu_share_mtrl_alpha.png",
         "source": "C:\\Users\\asus\\.android\\build-cache\\19d7ea8401511620fa23c337710829464e6f2217\\output\\res\\drawable-xhdpi-v4\\abc_ic_menu_share_mtrl_alpha.png"
     },
     {
         "merged": "D:\\FindHere-Unity\\FindHere-Unity\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\history.png",
         "source": "D:\\FindHere-Unity\\FindHere-Unity\\src\\main\\res\\drawable-xhdpi\\history.png"
+=======
+        "merged": "G:\\findhere\\code\\FindHere\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\list_w.png",
+        "source": "G:\\findhere\\code\\FindHere\\src\\main\\res\\drawable-xhdpi\\list_w.png"
+    },
+    {
+        "merged": "G:\\findhere\\code\\FindHere\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\voice1.png",
+        "source": "G:\\findhere\\code\\FindHere\\src\\main\\res\\drawable-xhdpi\\voice1.png"
+    },
+    {
+        "merged": "G:\\findhere\\code\\FindHere\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\abc_list_longpressed_holo.9.png",
+        "source": "C:\\Users\\msi\\.android\\build-cache\\9b833810b1ed2bf41c664d00bd9e7d183af313de\\output\\res\\drawable-xhdpi-v4\\abc_list_longpressed_holo.9.png"
+    },
+    {
+        "merged": "G:\\findhere\\code\\FindHere\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\image.png",
+        "source": "G:\\findhere\\code\\FindHere\\src\\main\\res\\drawable-xhdpi\\image.png"
+    },
+    {
+        "merged": "G:\\findhere\\code\\FindHere\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\abc_scrubber_control_to_pressed_mtrl_000.png",
+        "source": "C:\\Users\\msi\\.android\\build-cache\\9b833810b1ed2bf41c664d00bd9e7d183af313de\\output\\res\\drawable-xhdpi-v4\\abc_scrubber_control_to_pressed_mtrl_000.png"
+    },
+    {
+        "merged": "G:\\findhere\\code\\FindHere\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\comment_line.png",
+        "source": "G:\\findhere\\code\\FindHere\\src\\main\\res\\drawable-xhdpi\\comment_line.png"
+    },
+    {
+        "merged": "G:\\findhere\\code\\FindHere\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\abc_scrubber_control_off_mtrl_alpha.png",
+        "source": "C:\\Users\\msi\\.android\\build-cache\\9b833810b1ed2bf41c664d00bd9e7d183af313de\\output\\res\\drawable-xhdpi-v4\\abc_scrubber_control_off_mtrl_alpha.png"
+    },
+    {
+        "merged": "G:\\findhere\\code\\FindHere\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\abc_scrubber_track_mtrl_alpha.9.png",
+        "source": "C:\\Users\\msi\\.android\\build-cache\\9b833810b1ed2bf41c664d00bd9e7d183af313de\\output\\res\\drawable-xhdpi-v4\\abc_scrubber_track_mtrl_alpha.9.png"
+    },
+    {
+        "merged": "G:\\findhere\\code\\FindHere\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\abc_ic_menu_paste_mtrl_am_alpha.png",
+        "source": "C:\\Users\\msi\\.android\\build-cache\\9b833810b1ed2bf41c664d00bd9e7d183af313de\\output\\res\\drawable-xhdpi-v4\\abc_ic_menu_paste_mtrl_am_alpha.png"
+    },
+    {
+        "merged": "G:\\findhere\\code\\FindHere\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\music.png",
+        "source": "G:\\findhere\\code\\FindHere\\src\\main\\res\\drawable-xhdpi\\music.png"
+    },
+    {
+        "merged": "G:\\findhere\\code\\FindHere\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\male.png",
+        "source": "G:\\findhere\\code\\FindHere\\src\\main\\res\\drawable-xhdpi\\male.png"
+    },
+    {
+        "merged": "G:\\findhere\\code\\FindHere\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\abc_switch_track_mtrl_alpha.9.png",
+        "source": "C:\\Users\\msi\\.android\\build-cache\\9b833810b1ed2bf41c664d00bd9e7d183af313de\\output\\res\\drawable-xhdpi-v4\\abc_switch_track_mtrl_alpha.9.png"
+    },
+    {
+        "merged": "G:\\findhere\\code\\FindHere\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\user.png",
+        "source": "G:\\findhere\\code\\FindHere\\src\\main\\res\\drawable-xhdpi\\user.png"
+    },
+    {
+        "merged": "G:\\findhere\\code\\FindHere\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\app_banner.png",
+        "source": "G:\\findhere\\code\\FindHere\\src\\main\\res\\drawable-xhdpi\\app_banner.png"
+    },
+    {
+        "merged": "G:\\findhere\\code\\FindHere\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\abc_text_select_handle_right_mtrl_light.png",
+        "source": "C:\\Users\\msi\\.android\\build-cache\\9b833810b1ed2bf41c664d00bd9e7d183af313de\\output\\res\\drawable-xhdpi-v4\\abc_text_select_handle_right_mtrl_light.png"
+    },
+    {
+        "merged": "G:\\findhere\\code\\FindHere\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\abc_menu_hardkey_panel_mtrl_mult.9.png",
+        "source": "C:\\Users\\msi\\.android\\build-cache\\9b833810b1ed2bf41c664d00bd9e7d183af313de\\output\\res\\drawable-xhdpi-v4\\abc_menu_hardkey_panel_mtrl_mult.9.png"
+    },
+    {
+        "merged": "G:\\findhere\\code\\FindHere\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\comment.png",
+        "source": "G:\\findhere\\code\\FindHere\\src\\main\\res\\drawable-xhdpi\\comment.png"
+    },
+    {
+        "merged": "G:\\findhere\\code\\FindHere\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\target_w.png",
+        "source": "G:\\findhere\\code\\FindHere\\src\\main\\res\\drawable-xhdpi\\target_w.png"
+    },
+    {
+        "merged": "G:\\findhere\\code\\FindHere\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\abc_cab_background_top_mtrl_alpha.9.png",
+        "source": "C:\\Users\\msi\\.android\\build-cache\\9b833810b1ed2bf41c664d00bd9e7d183af313de\\output\\res\\drawable-xhdpi-v4\\abc_cab_background_top_mtrl_alpha.9.png"
+    },
+    {
+        "merged": "G:\\findhere\\code\\FindHere\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\abc_ic_star_half_black_48dp.png",
+        "source": "C:\\Users\\msi\\.android\\build-cache\\9b833810b1ed2bf41c664d00bd9e7d183af313de\\output\\res\\drawable-xhdpi-v4\\abc_ic_star_half_black_48dp.png"
+>>>>>>> ca52eed5bc47122568a2bd22ed6800a01317010b
     }
 ]

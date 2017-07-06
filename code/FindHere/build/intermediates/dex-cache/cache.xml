@@ -2,6 +2,7 @@
 <items version="2" >
 
     <item
+<<<<<<< HEAD
         is-multidex="true"
         jar="D:\FindHere-Unity\FindHere-Unity\libs\unity-classes.jar"
         jumboMode="true"
@@ -41,10 +42,33 @@
         is-multidex="true"
         jar="D:\FindHere-Unity\FindHere-Unity\libs\VuforiaUnityPlayer.jar"
         jumboMode="true"
+=======
+        is-multidex="false"
+        jar="G:\findhere\code\FindHere\libs\Vuforia.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="26.0.0"
+        sha1="be3db5d282d7094986c342631085ca4d84c02603">
+        <dex dex="G:\findhere\code\FindHere\build\intermediates\pre-dexed\debug\Vuforia_4ca6a5dfceefea76f9ff0ab612b43cb2675824ae.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="G:\findhere\code\FindHere\libs\unity-classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="26.0.0"
+        sha1="51f46611e716600d0a9d36ff5f7c2dddde43688c">
+        <dex dex="G:\findhere\code\FindHere\build\intermediates\pre-dexed\debug\unity-classes_54683e1f866b136e36f5b6f4c8aab3a39304f54a.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="G:\findhere\code\FindHere\libs\VuforiaUnityPlayer.jar"
+        jumboMode="false"
+>>>>>>> ca52eed5bc47122568a2bd22ed6800a01317010b
         optimize="true"
         revision="26.0.0"
         sha1="95f5205a17a7546c265d4a27d1e6f8be7b6f3f03">
-        <dex dex="D:\FindHere-Unity\FindHere-Unity\build\intermediates\transforms\dex\debug\folders\1000\2\VuforiaUnityPlayer_df2008fc92495098c1cbf201d39dc7ab7b84bcba\classes.dex" />
+        <dex dex="G:\findhere\code\FindHere\build\intermediates\pre-dexed\debug\VuforiaUnityPlayer_0b7a791cf2e65750d6e0cf9c50cee44e17e35afd.jar" />
     </item>
 
 </items>
