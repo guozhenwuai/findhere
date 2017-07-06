@@ -183,8 +183,6 @@ public class MainActivity extends Activity{
         mUnityPlayer.resume();
     }
 
-     protected void kill(){}
-
     // Low Memory Unity
     @Override public void onLowMemory()
     {
@@ -228,10 +226,13 @@ public class MainActivity extends Activity{
     // Pass any events not handled by (unfocused) views straight to UnityPlayer
     @Override public boolean onKeyUp(int keyCode, KeyEvent event)     { return mUnityPlayer.injectEvent(event); }
     @Override public boolean onKeyDown(int keyCode, KeyEvent event)   {
-        if (keyCode == KeyEvent.KEYCODE_BACK) {
-            onDestroy();
-            return true;}
-        else{return mUnityPlayer.injectEvent(event);} }
+     /**   if (keyCode == KeyEvent.KEYCODE_BACK) {
+       *     onDestroy();
+       *     return true;}
+       * else{return mUnityPlayer.injectEvent(event);}
+       */
+     return mUnityPlayer.injectEvent(event);
+      }
     @Override public boolean onTouchEvent(MotionEvent event)          { return mUnityPlayer.injectEvent(event); }
     /*API12*/ public boolean onGenericMotionEvent(MotionEvent event)  { return mUnityPlayer.injectEvent(event); }
 
@@ -257,27 +258,6 @@ public class MainActivity extends Activity{
     @Override
     public void onBackPressed() {
         super.onBackPressed();
+        finish();
     }
-
-    /**  @Override
-      public void onWindowFocusChanged(boolean hasFocus) {
-          super.onWindowFocusChanged(hasFocus);
-
-          int[] location = new int[2];
-
-          scanLine.getLocationInWindow(location);
-
-          int left = scanLine.getLeft();
-          int top = scanLine.getTop();
-          int bottom = scanLine.getBottom();
-
-          // 从上到下的平移动画
-          Animation verticalAnimation = new TranslateAnimation(left, left, top, bottom);
-          verticalAnimation.setDuration(3000); // 动画持续时间
-          verticalAnimation.setRepeatCount(Animation.INFINITE); // 无限循环
-
-          // 播放动画
-          scanLine.setAnimation(verticalAnimation);
-          verticalAnimation.startNow();
-      }*/
 }

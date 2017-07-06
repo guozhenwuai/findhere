@@ -32,12 +32,12 @@ public class AnimationsManager : MonoBehaviour
         }
     
         // Performs Animation to 2D
-        if (mDoAnimationTo2D )
+        if ( mDoAnimationTo2D )
         {
             // Updates AugmentedObject position and rotation in every frame
-            mAugmentationObject.transform.position = Vector3.Lerp(mAugmentationObject.transform.position, OverlayPosition.transform.position,   Time.deltaTime * 5.0f);
+            mAugmentationObject.transform.position = Vector3.Lerp(mAugmentationObject.transform.position, OverlayPosition.transform.position, Time.deltaTime * 5.0f);
             mAugmentationObject.transform.rotation = Quaternion.Slerp(mAugmentationObject.transform.rotation, OverlayPosition.transform.rotation, Time.deltaTime * 5.0f);
-            
+
             // Checks for object distance to check animation finish
             if (Vector3.Distance(mAugmentationObject.transform.position, OverlayPosition.transform.position) < 1)
             {
@@ -49,7 +49,7 @@ public class AnimationsManager : MonoBehaviour
         if (mDoAnimationTo3D)
         {
             // Updates AugmentedObject position and rotation in every frame
-            mAugmentationObject.transform.localPosition = Vector3.Lerp( mAugmentationObject.transform.localPosition, new Vector3(0,0,0),   Time.deltaTime * 5.0f);
+            mAugmentationObject.transform.localPosition = Vector3.Lerp( mAugmentationObject.transform.localPosition, new Vector3(0,0.1f,0),   Time.deltaTime * 5.0f);
             mAugmentationObject.transform.localRotation = Quaternion.Slerp( mAugmentationObject.transform.localRotation, Quaternion.identity, Time.deltaTime * 5.0f);
             
             // Checks for object distance to check animation finish
@@ -65,6 +65,11 @@ public class AnimationsManager : MonoBehaviour
     public void PlayAnimationTo2D(GameObject augmentationObject)
     {
         mAugmentationObject = augmentationObject;
+
+        if (mIsShowingOverlay)
+        {
+            return;
+        }
         
         // Checks that the system is already tracking
         if (!mIsTracking)

@@ -10,16 +10,20 @@ import android.os.Message;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.ImageButton;
+
+import com.FindHere.control.Connect;
 import com.FindHere.model.Comment;
-import com.google.gson.Gson;
-import com.FindHere.connect.Connect;
+
+import org.json.JSONException;
+import org.json.JSONObject;
 
 public class AddActivity extends Activity {
     private ImageButton commitBtn;
     public static Comment thiscomment;
-    public static String ip="115.159.184.211:8080";
+    public String ip;
     private String jsonStr;
     private String returnStr;
+    private ImageButton backBtn;
 
     @Override
     public Intent getIntent() {
@@ -35,7 +39,6 @@ public class AddActivity extends Activity {
         public void handleMessage(Message msg) {
             if(msg.what==1) {
                 ((EditText)findViewById(R.id.upload)).setText("");
-                //nmsgbox(getString(R.string.add_finished));
                 nmsgbox(returnStr);
             }
         }
@@ -46,9 +49,7 @@ public class AddActivity extends Activity {
         new AlertDialog.Builder(this).setTitle(getString(R.string.prompt)).setMessage(msg)
                 .setNeutralButton(getString(R.string.ok), new DialogInterface.OnClickListener() {
                     public void onClick(DialogInterface dialog, int which) {
-                        Intent intent = new Intent();
-                        intent.setClass(AddActivity.this,MainActivity.class);
-                        startActivity(intent);
+                        finish();
                     }
                 }).show();
     }
@@ -67,6 +68,15 @@ public class AddActivity extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.add_activity);
 
+        ip = getString(R.string.add_ip);
+        backBtn = findViewById(R.id.back);
+        backBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                finish();
+            }
+        });
+
         commitBtn=findViewById(R.id.commit_btn);
         commitBtn.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -77,20 +87,21 @@ public class AddActivity extends Activity {
                     msgbox(getString(R.string.not_empty));
                     return;
                 }
-                thiscomment=new Comment();
-                thiscomment.setUserId(1);
-                thiscomment.setTargetId(1);
-                thiscomment.setContentId(1);
-                thiscomment.setText(text);
-                thiscomment.setImages(null);
-                thiscomment.setSounds(null);
-                Gson gson = new Gson();
-                jsonStr = gson.toJson(thiscomment);
+                //type text targetID
+                JSONObject object = new JSONObject();
+                try {
+                    object.put("type", "text");
+                    object.put("text", text);
+                    object.put("targetID","1");
+                    jsonStr = object.toString();
+                } catch (JSONException e) {
+                    e.printStackTrace();
+                }
                 new Thread(new Runnable(){
                     @Override
                     public void run() {
-                        Connect myConnect = new Connect();
-                        returnStr=myConnect.sendHttpPost("http://"+ip+"/FindHere/GetComments?commentID=1",jsonStr);
+                        Connect myConnect = new Connect(AddActivity.this);
+                        returnStr=myConnect.sendHttpPost(ip,jsonStr);
                         Message msg = mHandler.obtainMessage();
                         msg.what = 1;
                         mHandler.sendMessage(msg);
