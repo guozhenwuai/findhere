@@ -4,6 +4,7 @@ import java.util.Map;
 
 
 public class Comment {
+    private String type;
     private int id;
     private int userId;
     private int targetId;
@@ -11,6 +12,14 @@ public class Comment {
     private String text;
     private Map<Integer,String> images;
     private Map<Integer,String> sounds;
+
+    public String getType() {
+        return type;
+    }
+
+    public void setType(String type) {
+        this.type = type;
+    }
 
     public int getId(){return id;}
 

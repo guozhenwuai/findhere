@@ -6,33 +6,35 @@ import javax.annotation.Resource;
 import javax.servlet.ServletOutputStream;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
-import service.MongoDBService;
+import service.CommentService;
 
 @Controller
 public class GetComments {
 	private static final long serialVersionUID = 1L;
 	
 	@Resource
-	private MongoDBService mongoDBService;
+	private CommentService commentService;
 
 	@RequestMapping("/GetComments")
-	public String execute(@RequestParam("commentID")String commentID, HttpServletRequest request, HttpServletResponse response) 
+	public String execute(@RequestParam("commentID")String commentID, 
+			HttpServletRequest request, HttpServletResponse response, HttpSession httpSession) 
 			throws IOException{
-		mongoDBService.returnComment(commentID, response);
+		commentService.returnComment(commentID, response);
 		return null;
 	}
 	
 	/*GET and SET*/
-	public MongoDBService getMongoDBService(){
-		return mongoDBService;
+	public CommentService getMongoDBService(){
+		return commentService;
 	}
 	
-	public void setMongoDBService(MongoDBService ms){
-		mongoDBService = ms;
+	public void setMongoDBService(CommentService s){
+		commentService = s;
 	}
 }
