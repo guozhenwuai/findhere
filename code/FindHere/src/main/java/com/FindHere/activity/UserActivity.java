@@ -1,7 +1,9 @@
 package com.FindHere.activity;
 
 import android.app.Activity;
+import android.app.AlertDialog;
 import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
@@ -19,7 +21,11 @@ public class UserActivity extends Activity {
         setContentView(R.layout.user_activity);
 
         sp = getSharedPreferences("userInfo", Context.MODE_ENABLE_WRITE_AHEAD_LOGGING);
-        String email = sp.getString("email", "");
+        String sessionid = sp.getString("sessionId","");
+        msgbox(sessionid);
+        SharedPreferences.Editor editor = sp.edit();
+        editor.remove("email");
+        editor.commit();
 
         backBtn = findViewById(R.id.back);
         backBtn.setOnClickListener(new View.OnClickListener() {
@@ -28,6 +34,15 @@ public class UserActivity extends Activity {
                 finish();
             }
         });
+    }
+
+    public void msgbox(String msg)
+    {
+        new AlertDialog.Builder(this).setTitle(getString(R.string.prompt)).setMessage(msg)
+                .setNeutralButton(getString(R.string.ok), new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int which) {
+                    }
+                }).show();
     }
 
     @Override

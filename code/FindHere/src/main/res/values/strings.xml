@@ -29,6 +29,6 @@
 
     <!-- Strings related to ip -->
     <string name="ip">115.159.184.211:8080</string>
-    <string name="add_ip">http://115.159.184.211:8080/FindHere/GetComments?commentID=1</string>
+    <string name="add_ip">http://115.159.184.211:8080/FindHere/SetComments/text</string>
     <string name="login_ip">http://115.159.184.211:8080/FindHere/Login</string>
 </resources>

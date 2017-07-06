@@ -107,14 +107,22 @@ public class LoginActivity extends Activity implements LoaderCallbacks<Cursor> {
         });
 
         mLoginFormView = findViewById(R.id.login_form);
-       // mProgressView = findViewById(R.id.login_progress);
+        mProgressView = findViewById(R.id.login_progress);
 
+    }
+
+    protected boolean isLogged(){
+        String email = sp.getString("email","");
+        if(email.equals("")){
+            return false;
+        }
+        return true;
     }
 
     @Override
     protected void onStart(){
         super.onStart();
-        if(sp!=null){
+        if(isLogged()){
             finish();
             Intent intent= new Intent();
             intent.setClass(LoginActivity.this,UserActivity.class);
@@ -345,7 +353,7 @@ public class LoginActivity extends Activity implements LoaderCallbacks<Cursor> {
             } catch (JSONException e) {
                 e.printStackTrace();
             }
-            Connect myConnect = new Connect();
+            Connect myConnect = new Connect(LoginActivity.this);
             returnStr=myConnect.sendHttpPost(ip,jsonStr);
             //returnStr="true";
             if (returnStr.equals(getString(R.string.true_user))){return true;}

@@ -10,9 +10,12 @@ import android.os.Message;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.ImageButton;
-import com.FindHere.model.Comment;
-import com.google.gson.Gson;
+
 import com.FindHere.control.Connect;
+import com.FindHere.model.Comment;
+
+import org.json.JSONException;
+import org.json.JSONObject;
 
 public class AddActivity extends Activity {
     private ImageButton commitBtn;
@@ -46,9 +49,7 @@ public class AddActivity extends Activity {
         new AlertDialog.Builder(this).setTitle(getString(R.string.prompt)).setMessage(msg)
                 .setNeutralButton(getString(R.string.ok), new DialogInterface.OnClickListener() {
                     public void onClick(DialogInterface dialog, int which) {
-                        Intent intent = new Intent();
-                        intent.setClass(AddActivity.this,MainActivity.class);
-                        startActivity(intent);
+                        finish();
                     }
                 }).show();
     }
@@ -87,19 +88,19 @@ public class AddActivity extends Activity {
                     return;
                 }
                 //type text targetID
-                thiscomment=new Comment();
-                thiscomment.setUserId(1);
-                thiscomment.setTargetId(1);
-                thiscomment.setContentId(1);
-                thiscomment.setText(text);
-                thiscomment.setImages(null);
-                thiscomment.setSounds(null);
-                Gson gson = new Gson();
-                jsonStr = gson.toJson(thiscomment);
+                JSONObject object = new JSONObject();
+                try {
+                    object.put("type", "text");
+                    object.put("text", text);
+                    object.put("targetID","1");
+                    jsonStr = object.toString();
+                } catch (JSONException e) {
+                    e.printStackTrace();
+                }
                 new Thread(new Runnable(){
                     @Override
                     public void run() {
-                        Connect myConnect = new Connect();
+                        Connect myConnect = new Connect(AddActivity.this);
                         returnStr=myConnect.sendHttpPost(ip,jsonStr);
                         Message msg = mHandler.obtainMessage();
                         msg.what = 1;
