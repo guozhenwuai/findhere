@@ -48,8 +48,9 @@
         android:id="@+id/camera_btn"
         android:src="@drawable/camera_b"
         android:background="@android:color/transparent"
-        android:layout_width="60dp"
-        android:layout_height="60dp"
+        android:layout_width="66dp"
+        android:layout_height="66dp"
+        android:scaleType="fitXY"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
         android:layout_marginBottom="5dp"
@@ -63,7 +64,7 @@
         android:layout_height="40dp"
         android:layout_alignParentRight="true"
         android:layout_alignParentBottom="true"
-        android:layout_marginRight="20dp"
+        android:layout_marginRight="16dp"
         android:layout_marginBottom="15dp"
         />
     <ImageButton
@@ -73,7 +74,7 @@
         android:layout_height="40dp"
         android:background="@android:color/transparent"
         android:layout_alignParentBottom="true"
-        android:layout_marginLeft="20dp"
+        android:layout_marginLeft="16dp"
         android:layout_marginBottom="12dp"
         />
     <ImageButton
@@ -83,8 +84,8 @@
         android:layout_height="40dp"
         android:layout_width="40dp"
         android:layout_alignParentTop="true"
-        android:layout_marginLeft="20dp"
-        android:layout_marginTop="28dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="16dp"
         />
     <ImageButton
         android:id="@+id/set_btn"
@@ -94,8 +95,63 @@
         android:layout_width="40dp"
         android:layout_alignParentTop="true"
         android:layout_alignParentRight="true"
-        android:layout_marginRight="20dp"
-        android:layout_marginTop="28dp"
+        android:layout_marginRight="16dp"
+        android:layout_marginTop="16dp"
         />
+    <LinearLayout
+        android:id="@+id/add_menu"
+        android:orientation="vertical"
+        android:layout_width="40dp"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="16dp"
+        android:layout_above="@+id/add_btn"
+        android:layout_marginRight="16dp"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        android:visibility="gone">
+
+        <ImageButton
+
+            android:layout_width="26dp"
+            android:layout_height="28dp"
+            android:scaleType="fitXY"
+            android:background="@android:color/transparent"
+            android:src="@drawable/edit1"
+            android:layout_gravity="center_horizontal"
+            android:id="@+id/text" />
+
+        <ImageButton
+            android:layout_width="33dp"
+            android:layout_height="33dp"
+            android:background="@android:color/transparent"
+
+            android:layout_marginTop="14dp"
+            android:layout_gravity="center_horizontal"
+            android:src="@drawable/voice1"
+            android:scaleType="fitXY"
+            android:id="@+id/sound" />
+        <ImageButton
+            android:layout_width="31dp"
+            android:layout_height="30dp"
+            android:background="@android:color/transparent"
+
+            android:layout_marginTop="14dp"
+            android:layout_marginRight="2dp"
+            android:layout_gravity="center_horizontal"
+            android:src="@drawable/music"
+            android:scaleType="fitXY"
+            android:id="@+id/music" />
+
+        <ImageButton
+            android:layout_width="33dp"
+            android:layout_height="33dp"
+            android:background="@android:color/transparent"
+
+            android:layout_marginTop="12dp"
+            android:layout_gravity="center_horizontal"
+            android:src="@drawable/image"
+            android:id="@+id/image" />
+
+    </LinearLayout>
 
 </RelativeLayout>
