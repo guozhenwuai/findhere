@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<items version="2" >
+
+    <item
+        is-multidex="false"
+        jar="G:\findhere\code\FindHere\libs\unity-classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="26.0.0"
+        sha1="51f46611e716600d0a9d36ff5f7c2dddde43688c">
+        <dex dex="G:\findhere\code\FindHere\build\intermediates\pre-dexed\debug\unity-classes_54683e1f866b136e36f5b6f4c8aab3a39304f54a.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="G:\findhere\code\FindHere\libs\VuforiaUnityPlayer.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="26.0.0"
+        sha1="95f5205a17a7546c265d4a27d1e6f8be7b6f3f03">
+        <dex dex="G:\findhere\code\FindHere\build\intermediates\pre-dexed\debug\VuforiaUnityPlayer_0b7a791cf2e65750d6e0cf9c50cee44e17e35afd.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="G:\findhere\code\FindHere\libs\Vuforia.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="26.0.0"
+        sha1="be3db5d282d7094986c342631085ca4d84c02603">
+        <dex dex="G:\findhere\code\FindHere\build\intermediates\pre-dexed\debug\Vuforia_4ca6a5dfceefea76f9ff0ab612b43cb2675824ae.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Program Files\Android\Android Studio\gradle\m2repository\com\google\code\gson\gson\2.2.4\gson-2.2.4.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="26.0.0"
+        sha1="a60a5e993c98c864010053cb901b7eab25306568">
+        <dex dex="G:\findhere\code\FindHere\build\intermediates\pre-dexed\debug\gson-2.2.4_313aff129984a0a45e086871ec03bfcc02e7284e.jar" />
+    </item>
+
+</items>

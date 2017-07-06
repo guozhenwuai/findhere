@@ -380,12 +380,24 @@
         "source": "C:\\Users\\msi\\.android\\build-cache\\9b833810b1ed2bf41c664d00bd9e7d183af313de\\output\\res\\drawable-xhdpi-v4\\abc_list_divider_mtrl_alpha.9.png"
     },
     {
+        "merged": "G:\\findhere\\code\\FindHere\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\edit1.png",
+        "source": "G:\\findhere\\code\\FindHere\\src\\main\\res\\drawable-xhdpi\\edit1.png"
+    },
+    {
         "merged": "G:\\findhere\\code\\FindHere\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\list_w.png",
         "source": "G:\\findhere\\code\\FindHere\\src\\main\\res\\drawable-xhdpi\\list_w.png"
     },
     {
+        "merged": "G:\\findhere\\code\\FindHere\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\voice1.png",
+        "source": "G:\\findhere\\code\\FindHere\\src\\main\\res\\drawable-xhdpi\\voice1.png"
+    },
+    {
         "merged": "G:\\findhere\\code\\FindHere\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\abc_list_longpressed_holo.9.png",
         "source": "C:\\Users\\msi\\.android\\build-cache\\9b833810b1ed2bf41c664d00bd9e7d183af313de\\output\\res\\drawable-xhdpi-v4\\abc_list_longpressed_holo.9.png"
+    },
+    {
+        "merged": "G:\\findhere\\code\\FindHere\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\image.png",
+        "source": "G:\\findhere\\code\\FindHere\\src\\main\\res\\drawable-xhdpi\\image.png"
     },
     {
         "merged": "G:\\findhere\\code\\FindHere\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\abc_scrubber_control_to_pressed_mtrl_000.png",
@@ -406,6 +418,10 @@
     {
         "merged": "G:\\findhere\\code\\FindHere\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\abc_ic_menu_paste_mtrl_am_alpha.png",
         "source": "C:\\Users\\msi\\.android\\build-cache\\9b833810b1ed2bf41c664d00bd9e7d183af313de\\output\\res\\drawable-xhdpi-v4\\abc_ic_menu_paste_mtrl_am_alpha.png"
+    },
+    {
+        "merged": "G:\\findhere\\code\\FindHere\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\music.png",
+        "source": "G:\\findhere\\code\\FindHere\\src\\main\\res\\drawable-xhdpi\\music.png"
     },
     {
         "merged": "G:\\findhere\\code\\FindHere\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\male.png",
