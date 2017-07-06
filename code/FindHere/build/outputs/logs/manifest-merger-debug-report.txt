@@ -1,6 +1,6 @@
 -- Merging decision tree log ---
 manifest
-ADDED from D:\FindHere-Unity\FindHere-Unity\src\main\AndroidManifest.xml:2:1-126:12
+ADDED from D:\FindHere-Unity\FindHere-Unity\src\main\AndroidManifest.xml:2:1-130:12
 	package
 		ADDED from D:\FindHere-Unity\FindHere-Unity\src\main\AndroidManifest.xml:3:5-36
 		INJECTED from D:\FindHere-Unity\FindHere-Unity\src\main\AndroidManifest.xml
@@ -134,7 +134,7 @@ ADDED from D:\FindHere-Unity\FindHere-Unity\src\main\AndroidManifest.xml:53:5-72
 	android:name
 		ADDED from D:\FindHere-Unity\FindHere-Unity\src\main\AndroidManifest.xml:53:22-69
 application
-ADDED from D:\FindHere-Unity\FindHere-Unity\src\main\AndroidManifest.xml:55:5-124:19
+ADDED from D:\FindHere-Unity\FindHere-Unity\src\main\AndroidManifest.xml:55:5-128:19
 MERGED from [com.android.support:design:26.0.0-alpha1] C:\Users\asus\.android\build-cache\9926a36909df21df384e4fce808a30ec609d0eea\output\AndroidManifest.xml:29:5-20
 MERGED from [com.android.support:appcompat-v7:26.0.0-alpha1] C:\Users\asus\.android\build-cache\19d7ea8401511620fa23c337710829464e6f2217\output\AndroidManifest.xml:29:5-20
 MERGED from [com.android.support:animated-vector-drawable:26.0.0-alpha1] C:\Users\asus\.android\build-cache\2a6c7d379d6faeca3a5a779818175e79545936dd\output\AndroidManifest.xml:26:5-20
@@ -244,6 +244,12 @@ ADDED from D:\FindHere-Unity\FindHere-Unity\src\main\AndroidManifest.xml:120:9-1
 		ADDED from D:\FindHere-Unity\FindHere-Unity\src\main\AndroidManifest.xml:122:13-57
 	android:name
 		ADDED from D:\FindHere-Unity\FindHere-Unity\src\main\AndroidManifest.xml:121:13-66
+activity#com.FindHere.activity.UserActivity
+ADDED from D:\FindHere-Unity\FindHere-Unity\src\main\AndroidManifest.xml:124:9-127:20
+	android:label
+		ADDED from D:\FindHere-Unity\FindHere-Unity\src\main\AndroidManifest.xml:126:13-57
+	android:name
+		ADDED from D:\FindHere-Unity\FindHere-Unity\src\main\AndroidManifest.xml:125:13-62
 meta-data#android.support.VERSION
 ADDED from [com.android.support:design:26.0.0-alpha1] C:\Users\asus\.android\build-cache\9926a36909df21df384e4fce808a30ec609d0eea\output\AndroidManifest.xml:25:5-27:41
 MERGED from [com.android.support:appcompat-v7:26.0.0-alpha1] C:\Users\asus\.android\build-cache\19d7ea8401511620fa23c337710829464e6f2217\output\AndroidManifest.xml:25:5-27:41

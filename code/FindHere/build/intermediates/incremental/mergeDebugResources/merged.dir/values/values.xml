@@ -46,9 +46,10 @@
     <color name="foreground_material_dark">@android:color/white</color>
     <color name="foreground_material_light">@android:color/black</color>
     <color name="gray">#575757</color>
+    <color name="grey_blue">#dadfe3</color>
     <color name="highlighted_text_material_dark">#6680cbc4</color>
     <color name="highlighted_text_material_light">#66009688</color>
-    <color name="light_blue">#3ddef2</color>
+    <color name="light_blue">#52eeff</color>
     <color name="light_gray">#D3D3D3</color>
     <color name="material_blue_grey_800">#ff37474f</color>
     <color name="material_blue_grey_900">#ff263238</color>
@@ -80,7 +81,7 @@
     <color name="secondary_text_disabled_material_dark">#36ffffff</color>
     <color name="secondary_text_disabled_material_light">#24000000</color>
     <color name="semi_transparent_black">#C8000000</color>
-    <color name="soft_blue">#67cfe2</color>
+    <color name="soft_blue">#84d4e5</color>
     <color name="switch_thumb_disabled_material_dark">#ff616161</color>
     <color name="switch_thumb_disabled_material_light">#ffbdbdbd</color>
     <color name="switch_thumb_normal_material_dark">#ffbdbdbd</color>
@@ -607,6 +608,7 @@
     <string name="action_sign_in">Sign in or register</string>
     <string name="action_sign_in_short">Sign in</string>
     <string name="add_finished">添加成功</string>
+    <string name="add_ip">http://115.159.184.211:8080/FindHere/GetComments?commentID=1</string>
     <string name="app_name">Find Here</string>
     <string name="appbar_scrolling_view_behavior" translatable="false">android.support.design.widget.AppBarLayout$ScrollingViewBehavior</string>
     <string name="bottom_sheet_behavior" translatable="false">android.support.design.widget.BottomSheetBehavior</string>
@@ -616,6 +618,9 @@
     <string name="error_incorrect_password">This password is incorrect</string>
     <string name="error_invalid_email">This email address is invalid</string>
     <string name="error_invalid_password">This password is too short</string>
+    <string name="ip">115.159.184.211:8080</string>
+    <string name="login_ip">http://115.159.184.211:8080/FindHere/Login</string>
+    <string name="login_success">登陆成功</string>
     <string name="not_empty">不能为空</string>
     <string name="ok">确认</string>
     <string name="password_toggle_content_description">Toggle password visibility</string>
@@ -634,6 +639,7 @@
     <string name="splash_screen_description">Vuforia Splash</string>
     <string name="status_bar_notification_info_overflow">999+</string>
     <string name="title_activity_login">Sign in</string>
+    <string name="true_user">true</string>
     <style name="AlertDialog.AppCompat" parent="Base.AlertDialog.AppCompat"/>
     <style name="AlertDialog.AppCompat.Light" parent="Base.AlertDialog.AppCompat.Light"/>
     <style name="Animation.AppCompat.Dialog" parent="Base.Animation.AppCompat.Dialog"/>

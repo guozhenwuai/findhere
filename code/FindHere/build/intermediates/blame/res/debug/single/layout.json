@@ -172,6 +172,10 @@
         "source": "C:\\Users\\asus\\.android\\build-cache\\19d7ea8401511620fa23c337710829464e6f2217\\output\\res\\layout\\abc_select_dialog_material.xml"
     },
     {
+        "merged": "D:\\FindHere-Unity\\FindHere-Unity\\build\\intermediates\\res\\merged\\debug\\layout\\user_activity.xml",
+        "source": "D:\\FindHere-Unity\\FindHere-Unity\\src\\main\\res\\layout\\user_activity.xml"
+    },
+    {
         "merged": "D:\\FindHere-Unity\\FindHere-Unity\\build\\intermediates\\res\\merged\\debug\\layout\\abc_popup_menu_item_layout.xml",
         "source": "C:\\Users\\asus\\.android\\build-cache\\19d7ea8401511620fa23c337710829464e6f2217\\output\\res\\layout\\abc_popup_menu_item_layout.xml"
     },

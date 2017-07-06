@@ -11,42 +11,6 @@
         <dex dex="D:\FindHere-Unity\FindHere-Unity\build\intermediates\transforms\dex\debug\folders\1000\2\unity-classes_31d52177952c5753af6091bf23238e2aad54d59d\classes.dex" />
     </item>
     <item
-        is-multidex="false"
-        jar="D:\FindHere-Unity\FindHere-Unity\libs\VuforiaUnityPlayer.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="26.0.0"
-        sha1="95f5205a17a7546c265d4a27d1e6f8be7b6f3f03">
-        <dex dex="D:\FindHere-Unity\FindHere-Unity\build\intermediates\pre-dexed\debug\VuforiaUnityPlayer_df2008fc92495098c1cbf201d39dc7ab7b84bcba.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="D:\android studio\gradle\m2repository\com\google\code\gson\gson\2.2.4\gson-2.2.4.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="26.0.0"
-        sha1="a60a5e993c98c864010053cb901b7eab25306568">
-        <dex dex="D:\FindHere-Unity\FindHere-Unity\build\intermediates\pre-dexed\debug\gson-2.2.4_2937502ceb255a33c6575d33c4e2444115ffb4e5.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="D:\FindHere-Unity\FindHere-Unity\libs\unity-classes.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="26.0.0"
-        sha1="51f46611e716600d0a9d36ff5f7c2dddde43688c">
-        <dex dex="D:\FindHere-Unity\FindHere-Unity\build\intermediates\pre-dexed\debug\unity-classes_31d52177952c5753af6091bf23238e2aad54d59d.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="D:\FindHere-Unity\FindHere-Unity\libs\Vuforia.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="26.0.0"
-        sha1="be3db5d282d7094986c342631085ca4d84c02603">
-        <dex dex="D:\FindHere-Unity\FindHere-Unity\build\intermediates\pre-dexed\debug\Vuforia_7d5d72764edea2afc1ff5db11a6d3c2680e8ec9a.jar" />
-    </item>
-    <item
         is-multidex="true"
         jar="D:\FindHere-Unity\FindHere-Unity\libs\Vuforia.jar"
         jumboMode="true"
@@ -70,7 +34,7 @@
         jumboMode="true"
         optimize="true"
         revision="26.0.0"
-        sha1="0a368bdf2b21e73f99ce0332c57e2891b884b595">
+        sha1="5c745642adda822b03391fd39b5ca179d085b85f">
         <dex dex="D:\FindHere-Unity\FindHere-Unity\build\intermediates\transforms\dex\debug\folders\1000\10000\instant-run-bootstrap_53273ddb6bf508f7418793594b684b4d1a55a09f\classes.dex" />
     </item>
     <item
