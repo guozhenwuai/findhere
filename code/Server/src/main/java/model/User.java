@@ -16,6 +16,8 @@ public class User implements Serializable {
 	private String name;
 	@Field("password")
 	private String password;
+	@Field("headPortraitID")
+	private String headPortraitID;
 	@Field("qq")
 	private String qq;
 	@Field("weixin")
@@ -46,6 +48,14 @@ public class User implements Serializable {
 	
 	public void setPassword(String s) {
 		this.password = s;
+	}
+	
+	public String getHeadPortraitID() {
+		return headPortraitID;
+	}
+	
+	public void setHeadPortraitID(String s) {
+		this.headPortraitID = s;
 	}
 
 	public String getQq() {

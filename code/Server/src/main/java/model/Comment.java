@@ -1,7 +1,9 @@
 package model;
 
 import java.io.Serializable;
+import java.util.Date;
 
+import org.bson.types.ObjectId;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 import org.springframework.data.mongodb.core.mapping.Field;
@@ -11,13 +13,15 @@ public class Comment implements Serializable {
 	private static final long serialVersionUID = 1L;
 
 	@Id
-	private String _id;
+	private ObjectId _id;
 	@Field("userID")
 	private String userID;
 	@Field("type")
 	private String type;
 	@Field("targetID")
 	private String targetID;
+	@Field("time")
+	private Date time;
 	@Field("contentID")
 	private String contentID;
 	@Field("text")
@@ -30,11 +34,11 @@ public class Comment implements Serializable {
 	public Comment(){}
 	
 	/*GET and SET*/
-	public String get_id() {
+	public ObjectId get_id() {
 		return _id;
 	}
 	
-	public void set_id(String s) {
+	public void set_id(ObjectId s) {
 		this._id = s;
 	}
 	
@@ -52,6 +56,14 @@ public class Comment implements Serializable {
 	
 	public void setType(String s) {
 		this.type = s;
+	}
+	
+	public Date getTime() {
+		return time;
+	}
+	
+	public void setTime(Date s) {
+		this.time = s;
 	}
 	
 	public String getTargetID() {
