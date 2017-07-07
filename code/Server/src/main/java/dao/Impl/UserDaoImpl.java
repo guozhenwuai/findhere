@@ -18,7 +18,6 @@ public class UserDaoImpl implements UserDao {
 	
 	public User findOneByID(String id) {
 		User user = mongoTemplate.findOne(new Query(Criteria.where("_id").is(id)), User.class);
-		if(user == null) user = new User();
 		return user;
 	}
 	
