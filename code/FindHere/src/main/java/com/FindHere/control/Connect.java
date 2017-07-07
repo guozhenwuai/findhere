@@ -2,23 +2,15 @@ package com.FindHere.control;
 
 import android.content.Context;
 import android.content.SharedPreferences;
-import android.graphics.Bitmap;
-import android.util.Log;
-
-import com.FindHere.model.Comment;
 
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
-import java.io.ByteArrayOutputStream;
-import java.io.DataOutputStream;
 import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.io.OutputStream;
 import java.io.OutputStreamWriter;
 import java.net.HttpURLConnection;
 import java.net.URL;
-
-import static android.content.ContentValues.TAG;
 
 public class Connect {
     private SharedPreferences sp;
@@ -70,7 +62,6 @@ public class Connect {
             bw.close();
 
             if (urlConnection.getResponseCode() == HttpURLConnection.HTTP_OK) {
-
                 InputStream in = urlConnection.getInputStream();
                 BufferedReader br = new BufferedReader(new InputStreamReader(in));
                 StringBuffer buffer = new StringBuffer();
@@ -82,77 +73,11 @@ public class Connect {
                 br.close();
             }
         } catch (Exception e) {
-            Log.d("exception:",Log.getStackTraceString(e));
+
         } finally{
             urlConnection.disconnect();
             return str;
         }
     }
-
-
-
-    public String sendImage(String urlHost, Comment com){
-        String endString = "\r\n";
-        String twoHyphen = "--";
-        String boundary = "*****";
-        try {
-            URL url = new URL(urlHost);
-            HttpURLConnection con = (HttpURLConnection) url.openConnection();
-            if(isConnected()) {
-                con.setRequestProperty("cookie", sessionid);
-            }
-            con.setDoInput(true);
-            con.setDoOutput(true);
-            con.setUseCaches(false);
-
-            con.setRequestMethod("POST");
-
-            con.setRequestProperty("Connection", "Keep-Alive");
-            con.setRequestProperty("Charset", "utf-8");
-            con.setRequestProperty("Content-Type", "multipart/form-data;boundary=" + boundary);
-
-
-
-            if(!isConnected()) {
-                String cookieval = con.getHeaderField("set-cookie");
-                if (cookieval != null) {
-                    sessionid = cookieval.substring(0, cookieval.indexOf(";"));
-                    SharedPreferences.Editor editor = sp.edit();
-                    editor.putString("sessionId", sessionid);
-                    editor.commit();
-                }
-            }
-            DataOutputStream dsDataOutputStream = new DataOutputStream(con.getOutputStream());
-            dsDataOutputStream.writeBytes(twoHyphen + boundary + endString);
-            dsDataOutputStream.writeBytes("Content-Disposition:form-data;"+endString);
-
-
-            Log.d(TAG, "sendImage:"+endString);
-            dsDataOutputStream.write(com.getImage(), 0, com.getImage().length);
-
-            dsDataOutputStream.writeBytes(endString);
-            dsDataOutputStream.writeBytes(twoHyphen + boundary + twoHyphen + endString);
-
-            dsDataOutputStream.close();
-
-            int cah = con.getResponseCode();
-            if (cah == 200) {
-                InputStream isInputStream = con.getInputStream();
-                int ch;
-                StringBuffer buffer = new StringBuffer();
-                while ((ch = isInputStream.read()) != -1) {
-                    buffer.append((char) ch);
-                }
-                return buffer.toString();
-            } else {
-                return "false";
-            }
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-        return "false";
-    }
-
-
 
 }

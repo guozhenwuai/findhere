@@ -114,7 +114,6 @@
     <orderEntry type="library" exported="" name="VuforiaUnityPlayer" level="project" />
     <orderEntry type="library" exported="" name="Vuforia" level="project" />
     <orderEntry type="library" exported="" name="unity-classes" level="project" />
-    <orderEntry type="library" exported="" name="commons-codec-1.10" level="project" />
     <orderEntry type="library" exported="" name="design-26.0.0-alpha1" level="project" />
     <orderEntry type="library" exported="" name="recyclerview-v7-26.0.0-alpha1" level="project" />
     <orderEntry type="library" exported="" name="support-compat-26.0.0-alpha1" level="project" />

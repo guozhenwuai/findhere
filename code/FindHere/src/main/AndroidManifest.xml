@@ -74,7 +74,8 @@
             android:name="com.FindHere.activity.MainActivity"
             android:configChanges="mcc|mnc|locale|touchscreen|keyboard|keyboardHidden|navigation|orientation|screenLayout|uiMode|screenSize|smallestScreenSize|fontScale|layoutDirection"
             android:label="@string/app_name"
-            android:screenOrientation="portrait">
+            android:screenOrientation="portrait"
+            android:persistent="true">
 
             <meta-data
                 android:name="unityplayer.UnityActivity"

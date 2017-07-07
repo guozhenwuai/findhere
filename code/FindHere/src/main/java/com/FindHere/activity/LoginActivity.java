@@ -20,7 +20,6 @@ import android.provider.ContactsContract;
 import android.support.annotation.NonNull;
 import android.support.design.widget.Snackbar;
 import android.text.TextUtils;
-import android.util.Log;
 import android.view.KeyEvent;
 import android.view.View;
 import android.view.View.OnClickListener;
@@ -65,7 +64,7 @@ public class LoginActivity extends Activity implements LoaderCallbacks<Cursor> {
     private View mLoginFormView;
     private ImageButton backBtn;
 
-    private String returnStr;
+    private String returnStr="false";
 
     private SharedPreferences sp;
 
@@ -347,8 +346,6 @@ public class LoginActivity extends Activity implements LoaderCallbacks<Cursor> {
             String jsonStr="";
             String ip=getString(R.string.login_ip);
             JSONObject object = new JSONObject();
-            email="yangruiheng1@126.com";
-            password="11111";
             try {
                 object.put("email", email);
                 object.put("password", password);
@@ -357,7 +354,6 @@ public class LoginActivity extends Activity implements LoaderCallbacks<Cursor> {
                 e.printStackTrace();
             }
             Connect myConnect = new Connect(LoginActivity.this);
-            Log.d("OK",jsonStr);
             returnStr=myConnect.sendHttpPost(ip,jsonStr);
             //returnStr="true";
             if (returnStr.equals(getString(R.string.true_user))){return true;}

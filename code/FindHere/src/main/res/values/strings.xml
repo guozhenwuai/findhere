@@ -31,5 +31,11 @@
     <string name="ip">115.159.184.211:8080</string>
     <string name="add_ip">http://115.159.184.211:8080/FindHere/SetComments/text</string>
     <string name="login_ip">http://115.159.184.211:8080/FindHere/Login</string>
-    <string name="addimage_url">http://115.159.184.211:8080/FindHere/SetComments/file</string>
+
+    <!-- Strings related to targetID -->
+    <string name="no_target">target not recognized</string>
+
+    <!-- Strings related to unity -->
+    <string name="comment_type">http://115.159.184.211:8080/FindHere/SetComments/GetIDsByTargetID</string>
+    <string name="comment_content">http://115.159.184.211:8080/FindHere/GetComments/ByID</string>
 </resources>

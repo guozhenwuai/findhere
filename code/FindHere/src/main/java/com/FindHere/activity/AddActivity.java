@@ -2,8 +2,10 @@ package com.FindHere.activity;
 
 import android.app.Activity;
 import android.app.AlertDialog;
+import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
@@ -12,18 +14,18 @@ import android.widget.EditText;
 import android.widget.ImageButton;
 
 import com.FindHere.control.Connect;
-import com.FindHere.model.Comment;
 
 import org.json.JSONException;
 import org.json.JSONObject;
 
 public class AddActivity extends Activity {
     private ImageButton commitBtn;
-    public static Comment thiscomment;
     public String ip;
     private String jsonStr;
     private String returnStr;
     private ImageButton backBtn;
+    private SharedPreferences sp;
+    private String targetID;
 
     @Override
     public Intent getIntent() {
@@ -68,6 +70,9 @@ public class AddActivity extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.add_activity);
 
+        sp = getSharedPreferences("userInfo", Context.MODE_ENABLE_WRITE_AHEAD_LOGGING);
+        targetID = sp.getString("targetID","");
+        msgbox(targetID);
         ip = getString(R.string.add_ip);
         backBtn = findViewById(R.id.back);
         backBtn.setOnClickListener(new View.OnClickListener() {
@@ -92,7 +97,7 @@ public class AddActivity extends Activity {
                 try {
                     object.put("type", "text");
                     object.put("text", text);
-                    object.put("targetID","1");
+                    object.put("targetID",targetID);
                     jsonStr = object.toString();
                 } catch (JSONException e) {
                     e.printStackTrace();
