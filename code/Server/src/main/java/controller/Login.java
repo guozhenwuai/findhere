@@ -33,9 +33,9 @@ public class Login {
 		JSONObject jsonObj = new JSONObject(jsonString);
 		boolean success = userService.login(jsonObj, httpSession);
 		if(success) {
-			response.getWriter().println("true");
+			response.getOutputStream().print("true");
 		}else {
-			response.getWriter().println("false");
+			response.getOutputStream().print("false");
 		}
 		return null;
 	}

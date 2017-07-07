@@ -15,17 +15,26 @@ import org.springframework.web.bind.annotation.RequestParam;
 import service.CommentService;
 
 @Controller
+@RequestMapping("/GetComments")
 public class GetComments {
 	private static final long serialVersionUID = 1L;
 	
 	@Resource
 	private CommentService commentService;
 
-	@RequestMapping("/GetComments")
-	public String execute(@RequestParam("commentID")String commentID, 
+	@RequestMapping("/ByID")
+	public String execute1(@RequestParam("commentID")String commentID, 
 			HttpServletRequest request, HttpServletResponse response, HttpSession httpSession) 
 			throws IOException{
-		commentService.returnComment(commentID, response);
+		commentService.returnCommentByID(commentID, response);
+		return null;
+	}
+	
+	@RequestMapping("/GetIDsByTargetID")
+	public String execute2(@RequestParam("targetID")String targetID, 
+			HttpServletRequest request, HttpServletResponse response, HttpSession httpSession) 
+			throws IOException{
+		commentService.returnCommentIDsBytargetID(targetID, response);
 		return null;
 	}
 	

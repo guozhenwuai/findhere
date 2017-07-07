@@ -1,6 +1,7 @@
 package dao.Impl;
 
 import java.io.IOException;
+import java.io.InputStream;
 import java.io.OutputStream;
 
 import javax.annotation.Resource;
@@ -30,6 +31,13 @@ public class FileDaoImpl implements FileDao{
 		gfsFile = new GridFS(db, gfsName).findOne(new ObjectId(fileID));
 		if(gfsFile == null) return;
 		gfsFile.writeTo(outStream);
+	}
+	
+	public String inputFileToDB(String type, byte[] data) {
+		gfsInput = new GridFS(db, type).createFile(data);
+		gfsInput.save();
+		String id = (String) gfsInput.getId();
+		return id;
 	}
 	
 	/*GET and SET*/

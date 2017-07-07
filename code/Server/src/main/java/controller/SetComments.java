@@ -32,8 +32,50 @@ public class SetComments {
 		ServletInputStream inStream = request.getInputStream();
 		String commentJson = readService.inputStreamToString(inStream);
 		JSONObject jsonObj = new JSONObject(commentJson);
-		commentService.saveTextComment(jsonObj);
-		response.getWriter().println("OK");
+		JSONObject ret = new JSONObject();
+		String userID = (String) httpSession.getAttribute("userID");
+		if(userID.length() == 0) {
+			ret.put("status", "failure");
+			response.getOutputStream().print(ret.toString());
+			return null;
+		}
+		
+		String commentID = commentService.saveTextComment(jsonObj, userID);
+		if(commentID.length() == 0) {
+			ret.put("status", "failure");
+			response.getOutputStream().print(ret.toString());
+			return null;
+		}
+		
+		ret.put("status", "success");
+		ret.put("commentID", commentID);
+		response.getOutputStream().print(ret.toString());
+		return null;
+	}
+	
+	@RequestMapping("/file")
+	public String execute2(HttpServletRequest request, HttpServletResponse response, HttpSession httpSession) 
+			throws IOException{
+		String userID = (String) httpSession.getAttribute("userID");
+		ServletInputStream inStream = request.getInputStream();
+		String commentJson = readService.inputStreamToString(inStream);
+		JSONObject jsonObj = new JSONObject(commentJson);
+		JSONObject ret = new JSONObject();
+		if(userID.length() == 0) {
+			ret.put("status", "failure");
+			response.getOutputStream().print(ret.toString());
+			return null;
+		}
+		String commentID = commentService.saveFileComment(userID, jsonObj);
+		if(commentID.length() == 0) {
+			ret.put("status", "failure");
+			response.getOutputStream().print(ret.toString());
+			return null;
+		}
+		
+		ret.put("status", "success");
+		ret.put("commentID", commentID);
+		response.getOutputStream().print(ret.toString());
 		return null;
 	}
 	
