@@ -5,9 +5,12 @@ import android.app.Activity;
 import android.content.Intent;
 import android.content.res.Configuration;
 import android.database.Cursor;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.net.Uri;
 import android.os.Bundle;
 import android.provider.MediaStore;
+import android.util.Log;
 import android.view.KeyEvent;
 import android.view.MotionEvent;
 import android.view.View;
@@ -17,7 +20,11 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 
+import com.FindHere.control.Connect;
+import com.FindHere.model.Comment;
 import com.unity3d.player.UnityPlayer;
+
+import java.io.ByteArrayOutputStream;
 
 public class MainActivity extends Activity{
     protected UnityPlayer mUnityPlayer; // don't change the name of this variable; referenced from native code
@@ -29,6 +36,7 @@ public class MainActivity extends Activity{
     private static int RESULT_LOAD_IMAGE = 1;
     private boolean camera_on = false;
     private boolean addflag=false;
+    private  String restr;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -130,6 +138,11 @@ public class MainActivity extends Activity{
     }
 
 
+    public byte[] Bitmap2Bytes(Bitmap bm) {
+        ByteArrayOutputStream baos = new ByteArrayOutputStream();
+        bm.compress(Bitmap.CompressFormat.PNG, 100, baos);
+        return baos.toByteArray();
+    }
 
 
     @Override
@@ -148,10 +161,34 @@ public class MainActivity extends Activity{
             String picturePath = cursor.getString(columnIndex);
             cursor.close();
 
+            final Bitmap image= BitmapFactory.decodeFile(picturePath);
+
+            new Thread(new Runnable(){
+                @Override
+                public void run() {
+                    Connect myConnect = new Connect(MainActivity.this);
+                    String key =null;
+                    Comment newcom=new Comment();
+                    newcom.setImage(image);
+                    newcom.setType("image");
+                    newcom.setTargetId("???");
+
+                    Log.d("OK",getString(R.string.addimage_url));
+                    Log.d("OK",newcom.toJson());
+                    restr=myConnect.sendHttpPost(getString(R.string.addimage_url),newcom.toJson());
+                   // restr=myConnect.sendImage(getString(R.string.addimage_url),newcom);
+                    Log.d("OK", restr);
+                  /*  Message msg = mHandler.obtainMessage();
+                    msg.what = 1;
+                    mHandler.sendMessage(msg);*/
+                }}).start();
 
             // String picturePath contains the path of selected Image
         }
     }
+
+
+
     @Override
     protected void onNewIntent(Intent intent)
     {

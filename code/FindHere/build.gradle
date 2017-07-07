@@ -20,10 +20,10 @@ allprojects {
 apply plugin: 'com.android.application'
 
 dependencies {
-    compile fileTree(include: ['*.jar'], dir: 'libs')
-    compile 'com.android.support:support-annotations:26.0.0-alpha1'
-    compile 'com.android.support:design:26.0.0-alpha1'
-    compile 'com.google.code.gson:gson:2.2.4'
+	compile fileTree(include: ['*.jar'], dir: 'libs')
+	compile 'com.android.support:support-annotations:26.0.0-alpha1'
+	compile 'com.android.support:design:26.0.0-alpha1'
+	compile 'com.google.code.gson:gson:2.2.4'
 }
 
 android {
