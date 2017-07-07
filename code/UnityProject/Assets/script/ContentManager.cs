@@ -48,46 +48,49 @@ public class ContentManager : MonoBehaviour,ITrackableEventHandler {
             float v = 0.1f*Time.deltaTime;
             foreach(Transform point in infoPoint.transform)
             {
-                Vector3 pos = point.localPosition;
-                float x, y, z;
-                //确定移动坐标
-                if (pos.x <= -1f)
+                if (point.gameObject.activeInHierarchy)
                 {
-                    x = Random.Range(0, v);
+                    Vector3 pos = point.localPosition;
+                    float x, y, z;
+                    //确定移动坐标
+                    if (pos.x <= -1f)
+                    {
+                        x = Random.Range(0, v);
+                    }
+                    else if (pos.x >= 1f)
+                    {
+                        x = Random.Range(-v, 0);
+                    }
+                    else
+                    {
+                        x = Random.Range(-v, v);
+                    }
+                    if (pos.y <= 0)
+                    {
+                        y = Random.Range(0, v);
+                    }
+                    else if (pos.y >= 0.8f)
+                    {
+                        y = Random.Range(-v, 0);
+                    }
+                    else
+                    {
+                        y = Random.Range(-v, v);
+                    }
+                    if (pos.z <= -1f)
+                    {
+                        z = Random.Range(0, v);
+                    }
+                    else if (pos.z >= 1f)
+                    {
+                        z = Random.Range(-v, 0);
+                    }
+                    else
+                    {
+                        z = Random.Range(-v, v);
+                    }
+                    point.localPosition = new Vector3(pos.x + x, pos.y + y, pos.z + z);
                 }
-                else if (pos.x >= 1f)
-                {
-                    x = Random.Range(-v, 0);
-                }
-                else
-                {
-                    x = Random.Range(-v, v);
-                }
-                if(pos.y <= 0)
-                {
-                    y = Random.Range(0, v);
-                }
-                else if (pos.y >= 0.8f)
-                {
-                    y = Random.Range(-v, 0);
-                }
-                else
-                {
-                    y = Random.Range(-v, v);
-                }
-                if(pos.z <= -1f)
-                {
-                    z = Random.Range(0, v);
-                }
-                else if (pos.z >= 1f)
-                {
-                    z = Random.Range(-v, 0);
-                }
-                else
-                {
-                    z = Random.Range(-v, v);
-                }
-                point.localPosition = new Vector3(pos.x + x, pos.y + y, pos.z + z);
             }
         }
         if (Input.GetMouseButtonUp(0))
@@ -117,11 +120,15 @@ public class ContentManager : MonoBehaviour,ITrackableEventHandler {
                     AnimationsManager.PlayAnimationTo2D(TextField);
                     mObjectTracker.Stop();
                 }
-                else if(hitObject.name == "ImageField")
+                else if(hitObject.name == "ImageContent")
                 {
                     Debug.Log("touch image field");
                     AnimationsManager.PlayAnimationTo2D(ImageField);
                     mObjectTracker.Stop();
+                }
+                else
+                {
+                    Debug.Log(hitObject.name);
                 }
             }
             else
@@ -132,8 +139,9 @@ public class ContentManager : MonoBehaviour,ITrackableEventHandler {
         }
     }
 
-    public string GetTargetId()
+    public string GetTargetId(string target)
     {
+        target = targetId;
         return targetId;
     }
 
@@ -153,7 +161,6 @@ public class ContentManager : MonoBehaviour,ITrackableEventHandler {
             {
                 AnimationsManager.PlayAnimationTo2D(TextField);
             }
-            ShowTextField(tf);
         }
         else if (status == "imageField")
         {
@@ -165,7 +172,6 @@ public class ContentManager : MonoBehaviour,ITrackableEventHandler {
             {
                 AnimationsManager.PlayAnimationTo2D(ImageField);
             }
-            ShowImageField(tf);
         }
     }
 
@@ -195,8 +201,9 @@ public class ContentManager : MonoBehaviour,ITrackableEventHandler {
         targetId = target;
         status = "infoPoint";
         Vector3 parentPosition = infoPoint.transform.position;
+        infoLoader.LoadInfoPoint(target);
 
-        for(int i = 0; i < 10; i++)
+        /*for(int i = 0; i < 10; i++)
         {
             GameObject sphere = Instantiate(textInfo);
             sphere.transform.parent = infoPoint.transform;
@@ -219,6 +226,7 @@ public class ContentManager : MonoBehaviour,ITrackableEventHandler {
             sphere.transform.name = target + i;
         }
         imageInfo.SetActive(false);
+        */
     }
 
     public void ShowInfoPoint(bool tf)
@@ -287,6 +295,7 @@ public class ContentManager : MonoBehaviour,ITrackableEventHandler {
         {
             component.enabled = visible;
         }
+        TextField.transform.localPosition = new Vector3(0, 0.02f, 0);
     }
 
     private void ShowImageField(bool visible)
@@ -305,6 +314,7 @@ public class ContentManager : MonoBehaviour,ITrackableEventHandler {
         {
             component.enabled = visible;
         }
+        ImageField.transform.localPosition = new Vector3(0, 0.02f, 0);
     }
 
     /*

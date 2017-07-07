@@ -17,7 +17,7 @@ public class ImageAdapter : MonoBehaviour {
         imageField.GetComponent<Renderer>().material.mainTexture = texture;
         Vector3 scale = imageField.transform.localScale;
         imageField.transform.localScale = new Vector3(
-            scale.x * width / height, scale.y, scale.z);
+            scale.z * width / height, scale.y, scale.z);
     }
 
 }

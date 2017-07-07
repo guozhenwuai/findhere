@@ -8,6 +8,7 @@ using UnityEngine;
 public class InfoLoader : MonoBehaviour {
     public TextAdapter textAdapter;
     public ImageAdapter imageAdapter;
+    public GameObject infoPoint;
 
     // Use this for initialization
     void Start () {
@@ -21,7 +22,7 @@ public class InfoLoader : MonoBehaviour {
 
     public void LoadImage(string id)
     {
-        Image pic = Image.FromFile("D:\terun.jpg");
+        Image pic = Image.FromFile("D:\\terun.jpg");
         Debug.Log("width:" + pic.Width + " height:" + pic.Height);
         ImageFormat format = pic.RawFormat;
         MemoryStream ms = new MemoryStream();
@@ -29,7 +30,11 @@ public class InfoLoader : MonoBehaviour {
         {
             pic.Save(ms, ImageFormat.Jpeg);
         }
-        //byte[] img = 
-        //imageAdapter.setBytesToImage()
+        imageAdapter.setBytesToImage(ms.ToArray(), pic.Width, pic.Height);
     }
+
+    public void LoadInfoPoint(string targetId)
+    {
+    }
+
 }
