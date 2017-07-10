@@ -179,7 +179,6 @@ public class ContentManager : MonoBehaviour,ITrackableEventHandler {
         {
             isTrackable = true;
             targetId = keepTargetId;
-            Debug.Log("targetId: " + targetId);
             Show(true);
             Debug.Log("content manager show: true");
         }
@@ -187,10 +186,11 @@ public class ContentManager : MonoBehaviour,ITrackableEventHandler {
         {
             isTrackable = false;
             targetId = "";
-            Debug.Log("targetId: " + targetId);
             Show(false);
             Debug.Log("content manager show: false");
         }
+        Debug.Log("targetId: " + targetId);
+        infoLoader.SetTargetId(targetId);
     }
 
     public void TargetCreated(string target)

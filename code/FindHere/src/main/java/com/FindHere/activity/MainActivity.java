@@ -9,6 +9,7 @@ import android.database.Cursor;
 import android.net.Uri;
 import android.os.Bundle;
 import android.provider.MediaStore;
+import android.util.Log;
 import android.view.KeyEvent;
 import android.view.MotionEvent;
 import android.view.View;
@@ -33,14 +34,14 @@ public class MainActivity extends Activity{
     private boolean addflag=false;
     private SharedPreferences sp;
     private String targetID;
-    private String returnStr;
+    private String returnStr="";
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.main_activity);
 
         sp = getSharedPreferences("userInfo", Context.MODE_ENABLE_WRITE_AHEAD_LOGGING);
-        targetID = sp.getString("targetID","");
+
         mUnityPlayer = new UnityPlayer(this);
         cameraClose = new ImageView(this);
         cameraClose.setImageResource(R.drawable.baoman);
@@ -101,6 +102,7 @@ public class MainActivity extends Activity{
             @Override
             public void onClick(View v) {
                 //UnityPlayer.UnitySendMessage("ContentManager","GetTargetId","");
+                targetID = sp.getString("targetID","");
                 if(targetID==""){
                     Toast.makeText(MainActivity.this,getString(R.string.no_target), Toast.LENGTH_SHORT).show();
                 }else{
@@ -169,14 +171,16 @@ public class MainActivity extends Activity{
 
     // Unity uses this function to get {commentID:commentType}
     public String getCommentType(final String targetID,final int pageIndex){
-        new Thread(new Runnable(){
-            @Override
-            public void run() {
-                String ip = getString(R.string.comment_type)+"?targetID="+targetID+"&pageNum=20&pageIndex="+pageIndex;
-                Connect myConnect = new Connect(MainActivity.this);
-                returnStr=myConnect.sendHttpPost(ip,"");
-            }}).start();
+        String ip = getString(R.string.comment_type)+"?targetID="+targetID+"&pageNum=20&pageIndex="+pageIndex;
+        //String ip = "http://115.159.184.211:8080/FindHere/GetComments/GetIDsByTargetID?targetID=1&pageNum=20&pageIndex=0";
+        Connect myConnect = new Connect(MainActivity.this);
+        returnStr=myConnect.sendHttpPost(ip,"");
+
         return returnStr;
+    }
+
+    public void setToast(String message){
+        Toast.makeText(MainActivity.this,message, Toast.LENGTH_SHORT).show();
     }
 
     // Unity uses this function to get comment content

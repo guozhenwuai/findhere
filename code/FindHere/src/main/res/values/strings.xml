@@ -36,6 +36,6 @@
     <string name="no_target">target not recognized</string>
 
     <!-- Strings related to unity -->
-    <string name="comment_type">http://115.159.184.211:8080/FindHere/SetComments/GetIDsByTargetID</string>
+    <string name="comment_type">http://115.159.184.211:8080/FindHere/GetComments/GetIDsByTargetID</string>
     <string name="comment_content">http://115.159.184.211:8080/FindHere/GetComments/ByID</string>
 </resources>

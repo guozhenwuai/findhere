@@ -16,12 +16,14 @@ public class InfoLoader : MonoBehaviour {
 
     // Use this for initialization
     void Start () {
-        androidPlugin = new AndroidJavaObject("com.FindHere.control.TargetControl");
+        AndroidJavaClass jc = new AndroidJavaClass("com.unity3d.player.UnityPlayer");
+        androidPlugin = jc.GetStatic<AndroidJavaObject>("currentActivity");
     }
 
     public void LoadText(string id)
     {
-        textAdapter.setText(id);
+        string content = androidPlugin.Call<string>("getCommentContent",id);
+        textAdapter.setText(content);
     }
 
     public void LoadImage(string id)
@@ -37,13 +39,22 @@ public class InfoLoader : MonoBehaviour {
         imageAdapter.setBytesToImage(ms.ToArray(), pic.Width, pic.Height);
     }
 
+    public void SetTargetId(string id)
+    {
+        androidPlugin.Call("setTargetID", id);
+    }
+
     public void LoadInfoPoint(string targetId)
     {
         Debug.Log("load info point "+targetId);
-        string a = androidPlugin.Call<string>("sayHello");
-        Debug.Log(a);
-        string str = androidPlugin.CallStatic<string>("getCommentType",targetId,0);
-        Debug.Log("string:" + str);
+        string str = androidPlugin.Call<string>("getCommentType",targetId,0);
+        if (str == "[]") {
+            androidPlugin.Call("setToast","此处还没有信息哦~快来发布吧！");
+            return;
+        }
+        else {
+            androidPlugin.Call("setToast", "识别成功！");
+        }
         /*WWW www = new WWW("http://115.159.184.211:8080/FindHere/GetComments/GetIDsByTargetID?targetID=1&pageNum=20&pageIndex=0");
         //yield return www;
         while (!www.isDone);

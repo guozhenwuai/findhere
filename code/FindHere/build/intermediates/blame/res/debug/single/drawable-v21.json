@@ -1,66 +1,34 @@
 [
     {
-        "merged": "D:\\FindHere-Unity\\FindHere-Unity\\build\\intermediates\\res\\merged\\debug\\drawable-v21\\abc_btn_colored_material.xml",
-        "source": "C:\\Users\\asus\\.android\\build-cache\\19d7ea8401511620fa23c337710829464e6f2217\\output\\res\\drawable-v21\\abc_btn_colored_material.xml"
+        "merged": "D:\\git\\findhere\\code\\FindHere\\build\\intermediates\\res\\merged\\debug\\drawable-v21\\design_bottom_navigation_item_background.xml",
+        "source": "C:\\Users\\25382\\.android\\build-cache\\29c5064a5b670f9648bc7f091ebc40fe91ac90ec\\output\\res\\drawable-v21\\design_bottom_navigation_item_background.xml"
     },
     {
-        "merged": "D:\\FindHere-Unity\\FindHere-Unity\\build\\intermediates\\res\\merged\\debug\\drawable-v21\\avd_show_password.xml",
-        "source": "C:\\Users\\asus\\.android\\build-cache\\9926a36909df21df384e4fce808a30ec609d0eea\\output\\res\\drawable-v21\\avd_show_password.xml"
+        "merged": "D:\\git\\findhere\\code\\FindHere\\build\\intermediates\\res\\merged\\debug\\drawable-v21\\abc_action_bar_item_background_material.xml",
+        "source": "C:\\Users\\25382\\.android\\build-cache\\de1424a0f1916f84e4ab156a7690890ffdd5cb89\\output\\res\\drawable-v21\\abc_action_bar_item_background_material.xml"
     },
     {
-        "merged": "D:\\FindHere-Unity\\FindHere-Unity\\build\\intermediates\\res\\merged\\debug\\drawable-v21\\design_bottom_navigation_item_background.xml",
-        "source": "C:\\Users\\asus\\.android\\build-cache\\9926a36909df21df384e4fce808a30ec609d0eea\\output\\res\\drawable-v21\\design_bottom_navigation_item_background.xml"
+        "merged": "D:\\git\\findhere\\code\\FindHere\\build\\intermediates\\res\\merged\\debug\\drawable-v21\\avd_show_password.xml",
+        "source": "C:\\Users\\25382\\.android\\build-cache\\29c5064a5b670f9648bc7f091ebc40fe91ac90ec\\output\\res\\drawable-v21\\avd_show_password.xml"
     },
     {
-        "merged": "D:\\Find\\build\\intermediates\\res\\merged\\debug\\drawable-v21\\abc_edit_text_material.xml",
-        "source": "C:\\Users\\asus\\.android\\build-cache\\19d7ea8401511620fa23c337710829464e6f2217\\output\\res\\drawable-v21\\abc_edit_text_material.xml"
+        "merged": "D:\\git\\findhere\\code\\FindHere\\build\\intermediates\\res\\merged\\debug\\drawable-v21\\abc_btn_colored_material.xml",
+        "source": "C:\\Users\\25382\\.android\\build-cache\\de1424a0f1916f84e4ab156a7690890ffdd5cb89\\output\\res\\drawable-v21\\abc_btn_colored_material.xml"
     },
     {
-        "merged": "D:\\Find\\build\\intermediates\\res\\merged\\debug\\drawable-v21\\avd_hide_password.xml",
-        "source": "C:\\Users\\asus\\.android\\build-cache\\9926a36909df21df384e4fce808a30ec609d0eea\\output\\res\\drawable-v21\\avd_hide_password.xml"
+        "merged": "D:\\git\\findhere\\code\\FindHere\\build\\intermediates\\res\\merged\\debug\\drawable-v21\\design_password_eye.xml",
+        "source": "C:\\Users\\25382\\.android\\build-cache\\29c5064a5b670f9648bc7f091ebc40fe91ac90ec\\output\\res\\drawable-v21\\design_password_eye.xml"
     },
     {
-        "merged": "D:\\FindHere-Unity\\FindHere-Unity\\build\\intermediates\\res\\merged\\debug\\drawable-v21\\design_password_eye.xml",
-        "source": "C:\\Users\\asus\\.android\\build-cache\\9926a36909df21df384e4fce808a30ec609d0eea\\output\\res\\drawable-v21\\design_password_eye.xml"
+        "merged": "D:\\git\\findhere\\code\\FindHere\\build\\intermediates\\res\\merged\\debug\\drawable-v21\\abc_edit_text_material.xml",
+        "source": "C:\\Users\\25382\\.android\\build-cache\\de1424a0f1916f84e4ab156a7690890ffdd5cb89\\output\\res\\drawable-v21\\abc_edit_text_material.xml"
     },
     {
-        "merged": "D:\\Find\\build\\intermediates\\res\\merged\\debug\\drawable-v21\\avd_show_password.xml",
-        "source": "C:\\Users\\asus\\.android\\build-cache\\9926a36909df21df384e4fce808a30ec609d0eea\\output\\res\\drawable-v21\\avd_show_password.xml"
+        "merged": "D:\\git\\findhere\\code\\FindHere\\build\\intermediates\\res\\merged\\debug\\drawable-v21\\avd_hide_password.xml",
+        "source": "C:\\Users\\25382\\.android\\build-cache\\29c5064a5b670f9648bc7f091ebc40fe91ac90ec\\output\\res\\drawable-v21\\avd_hide_password.xml"
     },
     {
-        "merged": "D:\\FindHere-Unity\\FindHere-Unity\\build\\intermediates\\res\\merged\\debug\\drawable-v21\\abc_action_bar_item_background_material.xml",
-        "source": "C:\\Users\\asus\\.android\\build-cache\\19d7ea8401511620fa23c337710829464e6f2217\\output\\res\\drawable-v21\\abc_action_bar_item_background_material.xml"
-    },
-    {
-        "merged": "D:\\Find\\build\\intermediates\\res\\merged\\debug\\drawable-v21\\design_password_eye.xml",
-        "source": "C:\\Users\\asus\\.android\\build-cache\\9926a36909df21df384e4fce808a30ec609d0eea\\output\\res\\drawable-v21\\design_password_eye.xml"
-    },
-    {
-        "merged": "D:\\FindHere-Unity\\FindHere-Unity\\build\\intermediates\\res\\merged\\debug\\drawable-v21\\avd_hide_password.xml",
-        "source": "C:\\Users\\asus\\.android\\build-cache\\9926a36909df21df384e4fce808a30ec609d0eea\\output\\res\\drawable-v21\\avd_hide_password.xml"
-    },
-    {
-        "merged": "D:\\Find\\build\\intermediates\\res\\merged\\debug\\drawable-v21\\notification_action_background.xml",
-        "source": "C:\\Users\\asus\\.android\\build-cache\\19d7ea8401511620fa23c337710829464e6f2217\\output\\res\\drawable-v21\\notification_action_background.xml"
-    },
-    {
-        "merged": "D:\\FindHere-Unity\\FindHere-Unity\\build\\intermediates\\res\\merged\\debug\\drawable-v21\\notification_action_background.xml",
-        "source": "C:\\Users\\asus\\.android\\build-cache\\19d7ea8401511620fa23c337710829464e6f2217\\output\\res\\drawable-v21\\notification_action_background.xml"
-    },
-    {
-        "merged": "D:\\Find\\build\\intermediates\\res\\merged\\debug\\drawable-v21\\design_bottom_navigation_item_background.xml",
-        "source": "C:\\Users\\asus\\.android\\build-cache\\9926a36909df21df384e4fce808a30ec609d0eea\\output\\res\\drawable-v21\\design_bottom_navigation_item_background.xml"
-    },
-    {
-        "merged": "D:\\Find\\build\\intermediates\\res\\merged\\debug\\drawable-v21\\abc_btn_colored_material.xml",
-        "source": "C:\\Users\\asus\\.android\\build-cache\\19d7ea8401511620fa23c337710829464e6f2217\\output\\res\\drawable-v21\\abc_btn_colored_material.xml"
-    },
-    {
-        "merged": "D:\\FindHere-Unity\\FindHere-Unity\\build\\intermediates\\res\\merged\\debug\\drawable-v21\\abc_edit_text_material.xml",
-        "source": "C:\\Users\\asus\\.android\\build-cache\\19d7ea8401511620fa23c337710829464e6f2217\\output\\res\\drawable-v21\\abc_edit_text_material.xml"
-    },
-    {
-        "merged": "D:\\Find\\build\\intermediates\\res\\merged\\debug\\drawable-v21\\abc_action_bar_item_background_material.xml",
-        "source": "C:\\Users\\asus\\.android\\build-cache\\19d7ea8401511620fa23c337710829464e6f2217\\output\\res\\drawable-v21\\abc_action_bar_item_background_material.xml"
+        "merged": "D:\\git\\findhere\\code\\FindHere\\build\\intermediates\\res\\merged\\debug\\drawable-v21\\notification_action_background.xml",
+        "source": "C:\\Users\\25382\\.android\\build-cache\\de1424a0f1916f84e4ab156a7690890ffdd5cb89\\output\\res\\drawable-v21\\notification_action_background.xml"
     }
 ]

@@ -615,7 +615,7 @@
     <string name="button_start">Start</string>
     <string name="character_counter_pattern" translatable="false">%1$d / %2$d</string>
     <string name="comment_content">http://115.159.184.211:8080/FindHere/GetComments/ByID</string>
-    <string name="comment_type">http://115.159.184.211:8080/FindHere/SetComments/GetIDsByTargetID</string>
+    <string name="comment_type">http://115.159.184.211:8080/FindHere/GetComments/GetIDsByTargetID</string>
     <string name="error_field_required">This field is required</string>
     <string name="error_incorrect_password">This password is incorrect</string>
     <string name="error_invalid_email">This email address is invalid</string>
