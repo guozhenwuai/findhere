@@ -18,7 +18,7 @@ public class UserServiceImpl implements UserService {
 		String userID = jsonObj.getString("email");
 		String password = jsonObj.getString("password");
 		User user = userDao.findOneByID(userID);
-		if(user.getUserID().length() == 0) return false; //No user match
+		if(user == null) return false; //No user match
 		if(!user.getPassword().equals(password)) return false;
 		
 		//success

@@ -3,7 +3,6 @@ package controller;
 import java.io.IOException;
 
 import javax.annotation.Resource;
-import javax.servlet.ServletOutputStream;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
@@ -32,9 +31,11 @@ public class GetComments {
 	
 	@RequestMapping("/GetIDsByTargetID")
 	public String execute2(@RequestParam("targetID")String targetID, 
+			@RequestParam("pageNum")int pageNum,
+			@RequestParam("pageIndex")int pageIndex,
 			HttpServletRequest request, HttpServletResponse response, HttpSession httpSession) 
 			throws IOException{
-		commentService.returnCommentIDsBytargetID(targetID, response);
+		commentService.returnCommentIDsBytargetID(targetID, pageNum, pageIndex, response);
 		return null;
 	}
 	

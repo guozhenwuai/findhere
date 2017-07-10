@@ -19,6 +19,7 @@ import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.Toast;
 
+import com.FindHere.control.Connect;
 import com.unity3d.player.UnityPlayer;
 
 public class MainActivity extends Activity{
@@ -32,6 +33,7 @@ public class MainActivity extends Activity{
     private boolean addflag=false;
     private SharedPreferences sp;
     private String targetID;
+    private String returnStr;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -98,7 +100,7 @@ public class MainActivity extends Activity{
         textBtn.setOnClickListener(new OnClickListener() {
             @Override
             public void onClick(View v) {
-                UnityPlayer.UnitySendMessage("ContentManager","GetTargetId","");
+                //UnityPlayer.UnitySendMessage("ContentManager","GetTargetId","");
                 if(targetID==""){
                     Toast.makeText(MainActivity.this,getString(R.string.no_target), Toast.LENGTH_SHORT).show();
                 }else{
@@ -156,6 +158,37 @@ public class MainActivity extends Activity{
 
             // String picturePath contains the path of selected Image
         }
+    }
+
+    // Unity uses this function to set sp:targetID
+    public void setTargetID(String targetID){
+        SharedPreferences.Editor editor = sp.edit();
+        editor.putString("targetID",targetID);
+        editor.commit();
+    }
+
+    // Unity uses this function to get {commentID:commentType}
+    public String getCommentType(final String targetID,final int pageIndex){
+        new Thread(new Runnable(){
+            @Override
+            public void run() {
+                String ip = getString(R.string.comment_type)+"?targetID="+targetID+"&pageNum=20&pageIndex="+pageIndex;
+                Connect myConnect = new Connect(MainActivity.this);
+                returnStr=myConnect.sendHttpPost(ip,"");
+            }}).start();
+        return returnStr;
+    }
+
+    // Unity uses this function to get comment content
+    public String getCommentContent(final String commentID){
+        new Thread(new Runnable(){
+            @Override
+            public void run() {
+                String ip = getString(R.string.comment_content)+"?commentID="+commentID;
+                Connect myConnect = new Connect(MainActivity.this);
+                returnStr=myConnect.sendHttpPost(ip,"");
+            }}).start();
+        return returnStr;
     }
     @Override
     protected void onNewIntent(Intent intent)

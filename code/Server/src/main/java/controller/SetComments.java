@@ -1,5 +1,6 @@
 package controller;
 
+import java.io.FileInputStream;
 import java.io.IOException;
 
 import javax.annotation.Resource;
@@ -41,7 +42,7 @@ public class SetComments {
 		}
 		
 		String commentID = commentService.saveTextComment(jsonObj, userID);
-		if(commentID.length() == 0) {
+		if(commentID == null || commentID.length() == 0) {
 			ret.put("status", "failure");
 			response.getOutputStream().print(ret.toString());
 			return null;
@@ -56,9 +57,15 @@ public class SetComments {
 	@RequestMapping("/file")
 	public String execute2(HttpServletRequest request, HttpServletResponse response, HttpSession httpSession) 
 			throws IOException{
-		String userID = (String) httpSession.getAttribute("userID");
+		/*String userID = (String) httpSession.getAttribute("userID");
 		ServletInputStream inStream = request.getInputStream();
-		String commentJson = readService.inputStreamToString(inStream);
+		String commentJson = readService.inputStreamToString(inStream);*/
+		FileInputStream fs = new FileInputStream("D:/01.jpg");
+		String userID = "1";
+		String content = readService.inputStreamToString(fs);
+		String commentJson = "{\"file\":\"" + content + "\", \"type\":\"image\", \"targetID\":\"1\"}";
+		fs.close();
+		System.out.println(commentJson);
 		JSONObject jsonObj = new JSONObject(commentJson);
 		JSONObject ret = new JSONObject();
 		if(userID.length() == 0) {
@@ -66,8 +73,10 @@ public class SetComments {
 			response.getOutputStream().print(ret.toString());
 			return null;
 		}
+		System.out.println(":1");
 		String commentID = commentService.saveFileComment(userID, jsonObj);
-		if(commentID.length() == 0) {
+		System.out.println(":2");
+		if(commentID == null || commentID.length() == 0) {
 			ret.put("status", "failure");
 			response.getOutputStream().print(ret.toString());
 			return null;
@@ -75,6 +84,26 @@ public class SetComments {
 		
 		ret.put("status", "success");
 		ret.put("commentID", commentID);
+		response.getOutputStream().print(ret.toString());
+		return null;
+	}
+	
+	@RequestMapping("/text/update")
+	public String textUpdate(HttpServletRequest request, HttpServletResponse response, HttpSession httpSession) 
+			throws IOException{
+		ServletInputStream inStream = request.getInputStream();
+		String commentJson = readService.inputStreamToString(inStream);
+		JSONObject jsonObj = new JSONObject(commentJson);
+		JSONObject ret = new JSONObject();
+		String userID = (String) httpSession.getAttribute("userID");
+		if(userID.length() == 0) {
+			ret.put("status", "failure");
+			response.getOutputStream().print(ret.toString());
+			return null;
+		}
+		
+		commentService.updateTextComment(jsonObj, userID);
+		ret.put("status", "success");
 		response.getOutputStream().print(ret.toString());
 		return null;
 	}
