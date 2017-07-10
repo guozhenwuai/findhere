@@ -5,15 +5,14 @@ using UnityEngine.UI;
 using Vuforia;
 
 public class ContentManager : MonoBehaviour,ITrackableEventHandler {
-    private GameObject infoPoint;
     private CloudRecoBehaviour mCloudRecoBehaviour;
     private string status;
     private ObjectTracker mObjectTracker;
     private bool isTrackable;
+    private string keepTargetId;
     private string targetId;
 
-    public GameObject textInfo;
-    public GameObject imageInfo;
+    public GameObject infoPoint;
     public GameObject TextField;
     public GameObject ImageField;
 
@@ -24,7 +23,6 @@ public class ContentManager : MonoBehaviour,ITrackableEventHandler {
 
     // Use this for initialization
     void Start () {
-        infoPoint = textInfo.transform.parent.gameObject;
 
         TrackableBehaviour trackableBehaviour = infoPoint.transform.parent.GetComponent<TrackableBehaviour>();
         if (trackableBehaviour)
@@ -48,49 +46,46 @@ public class ContentManager : MonoBehaviour,ITrackableEventHandler {
             float v = 0.1f*Time.deltaTime;
             foreach(Transform point in infoPoint.transform)
             {
-                if (point.gameObject.activeInHierarchy)
+                Vector3 pos = point.localPosition;
+                float x, y, z;
+                //确定移动坐标
+                if (pos.x <= -1f)
                 {
-                    Vector3 pos = point.localPosition;
-                    float x, y, z;
-                    //确定移动坐标
-                    if (pos.x <= -1f)
-                    {
-                        x = Random.Range(0, v);
-                    }
-                    else if (pos.x >= 1f)
-                    {
-                        x = Random.Range(-v, 0);
-                    }
-                    else
-                    {
-                        x = Random.Range(-v, v);
-                    }
-                    if (pos.y <= 0)
-                    {
-                        y = Random.Range(0, v);
-                    }
-                    else if (pos.y >= 0.8f)
-                    {
-                        y = Random.Range(-v, 0);
-                    }
-                    else
-                    {
-                        y = Random.Range(-v, v);
-                    }
-                    if (pos.z <= -1f)
-                    {
-                        z = Random.Range(0, v);
-                    }
-                    else if (pos.z >= 1f)
-                    {
-                        z = Random.Range(-v, 0);
-                    }
-                    else
-                    {
-                        z = Random.Range(-v, v);
-                    }
-                    point.localPosition = new Vector3(pos.x + x, pos.y + y, pos.z + z);
+                    x = Random.Range(0, v);
                 }
+                else if (pos.x >= 1f)
+                {
+                    x = Random.Range(-v, 0);
+                }
+                else
+                {
+                    x = Random.Range(-v, v);
+                }
+                if (pos.y <= 0)
+                {
+                    y = Random.Range(0, v);
+                }
+                else if (pos.y >= 0.8f)
+                {
+                    y = Random.Range(-v, 0);
+                }
+                else
+                {
+                    y = Random.Range(-v, v);
+                }
+                if (pos.z <= -1f)
+                {
+                    z = Random.Range(0, v);
+                }
+                else if (pos.z >= 1f)
+                {
+                    z = Random.Range(-v, 0);
+                }
+                else
+                {
+                    z = Random.Range(-v, v);
+                }
+                point.localPosition = new Vector3(pos.x + x, pos.y + y, pos.z + z);
             }
         }
         if (Input.GetMouseButtonUp(0))
@@ -139,10 +134,9 @@ public class ContentManager : MonoBehaviour,ITrackableEventHandler {
         }
     }
 
-    public string GetTargetId(string target)
+    public void GetTargetId(string target)
     {
         target = targetId;
-        return targetId;
     }
 
     public void Show(bool tf)
@@ -184,6 +178,8 @@ public class ContentManager : MonoBehaviour,ITrackableEventHandler {
                 newStatus == TrackableBehaviour.Status.EXTENDED_TRACKED)
         {
             isTrackable = true;
+            targetId = keepTargetId;
+            Debug.Log("targetId: " + targetId);
             Show(true);
             Debug.Log("content manager show: true");
         }
@@ -191,6 +187,7 @@ public class ContentManager : MonoBehaviour,ITrackableEventHandler {
         {
             isTrackable = false;
             targetId = "";
+            Debug.Log("targetId: " + targetId);
             Show(false);
             Debug.Log("content manager show: false");
         }
@@ -198,9 +195,9 @@ public class ContentManager : MonoBehaviour,ITrackableEventHandler {
 
     public void TargetCreated(string target)
     {
+        keepTargetId = target;
         targetId = target;
         status = "infoPoint";
-        Vector3 parentPosition = infoPoint.transform.position;
         infoLoader.LoadInfoPoint(target);
 
         /*for(int i = 0; i < 10; i++)
@@ -263,13 +260,13 @@ public class ContentManager : MonoBehaviour,ITrackableEventHandler {
     {
         if (obj.tag == "TextInfo")
         {
-            infoLoader.LoadText(obj.transform.parent.name);
+            infoLoader.LoadText(obj.name);
             ShowTextField(true);
             status = "textField";
         }
         else if (obj.tag== "ImageInfo")
         {
-            infoLoader.LoadImage(obj.transform.parent.name);
+            infoLoader.LoadImage(obj.name);
             ShowImageField(true);
             status = "imageField";
         }

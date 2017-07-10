@@ -82,6 +82,9 @@
     <Reference Include="Vuforia.UnityExtensions">
       <HintPath>Assets\Vuforia\Scripts\Internal\Vuforia.UnityExtensions.dll</HintPath>
     </Reference>
+    <Reference Include="LitJson">
+      <HintPath>Assets\Plugins\LitJson.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\Vuforia\Scripts\BackgroundPlaneBehaviour.cs" />
@@ -125,8 +128,10 @@
     <Compile Include="Assets\script\CameraFocus.cs" />
     <Compile Include="Assets\script\ContentManager.cs" />
     <Compile Include="Assets\script\InfoLoader.cs" />
+    <Compile Include="Assets\script\Model\Comment.cs" />
     <Compile Include="Assets\script\ScanLine.cs" />
     <Compile Include="Assets\script\TrackableEventHandler.cs" />
+    <Compile Include="Assets\script\Utilities\JsonHelper.cs" />
     <Compile Include="Assets\script\cloudRecoHandler.cs" />
   </ItemGroup>
   <ItemGroup>
