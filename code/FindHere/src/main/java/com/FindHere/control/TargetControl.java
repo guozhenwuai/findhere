@@ -6,11 +6,8 @@ import android.content.SharedPreferences;
 import com.FindHere.activity.R;
 
 import java.io.BufferedReader;
-import java.io.BufferedWriter;
 import java.io.InputStream;
 import java.io.InputStreamReader;
-import java.io.OutputStream;
-import java.io.OutputStreamWriter;
 import java.net.HttpURLConnection;
 import java.net.URL;
 
@@ -23,7 +20,9 @@ public class TargetControl {
 
     public void TargetControl(Context mContext){
         sp = mContext.getSharedPreferences("userInfo", Context.MODE_ENABLE_WRITE_AHEAD_LOGGING);
+        sessionid = sp.getString("sessionid","");
         myContext = mContext;
+        returnStr = "";
     }
 
     // Unity uses this function to set sp:targetID
@@ -39,7 +38,7 @@ public class TargetControl {
             @Override
             public void run() {
                 String ip = myContext.getResources().getString(R.string.comment_type)+"?targetID="+targetID+"&pageNum=20&pageIndex="+pageIndex;
-                returnStr=sendHttpPost(ip,"");
+                returnStr=sendHttpPost(ip);
             }}).start();
         return returnStr;
     }
@@ -50,7 +49,7 @@ public class TargetControl {
             @Override
             public void run() {
                 String ip = myContext.getResources().getString(R.string.comment_content)+"?commentID="+commentID;
-                returnStr=sendHttpPost(ip,"");
+                returnStr=sendHttpPost(ip);
             }}).start();
         return returnStr;
     }
@@ -59,7 +58,7 @@ public class TargetControl {
         return !(sessionid.equals(""));
     }
 
-    public String sendHttpPost(String getUrl, String jsonstr) {
+    public String sendHttpPost(String getUrl) {
         HttpURLConnection urlConnection = null;
         URL url = null;
         String str=null;
@@ -88,12 +87,6 @@ public class TargetControl {
                     editor.commit();
                 }
             }
-            OutputStream out = urlConnection.getOutputStream();
-            BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(out));
-            bw.write(jsonstr);
-            bw.flush();
-            out.close();
-            bw.close();
 
             if (urlConnection.getResponseCode() == HttpURLConnection.HTTP_OK) {
                 InputStream in = urlConnection.getInputStream();
