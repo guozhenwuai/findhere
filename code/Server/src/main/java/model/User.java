@@ -16,12 +16,16 @@ public class User implements Serializable {
 	private String name;
 	@Field("password")
 	private String password;
+	@Field("gender")
+	private String gender;
 	@Field("headPortraitID")
 	private String headPortraitID;
 	@Field("qq")
 	private String qq;
 	@Field("weixin")
 	private String weixin;
+	@Field("isMember")
+	private int isMember;
 	
 	public User() {}
 	
@@ -50,6 +54,14 @@ public class User implements Serializable {
 		this.password = s;
 	}
 	
+	public String getGender() {
+		return gender;
+	}
+	
+	public void setGender(String s) {
+		this.gender = s;
+	}
+	
 	public String getHeadPortraitID() {
 		return headPortraitID;
 	}
@@ -72,5 +84,13 @@ public class User implements Serializable {
 	
 	public void setWeixin(String s) {
 		this.weixin = s;
+	}
+	
+	public int getIsMember() {
+		return isMember;
+	}
+	
+	public void setIsMember(int s) {
+		this.isMember = s;
 	}
 }

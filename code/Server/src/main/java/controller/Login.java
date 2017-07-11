@@ -26,9 +26,8 @@ public class Login {
 	private ReadService readService;
 	
 	@RequestMapping("/Login")
-	public String execute(HttpServletRequest request, HttpServletResponse response)
+	public String execute(HttpServletRequest request, HttpServletResponse response, HttpSession httpSession)
 			throws IOException {
-		HttpSession httpSession = request.getSession();
 		ServletInputStream inStream = request.getInputStream();
 		String jsonString = readService.inputStreamToString(inStream);
 		System.out.println(jsonString);
@@ -36,8 +35,10 @@ public class Login {
 		boolean success = userService.login(jsonObj, httpSession);
 		if(success) {
 			response.getOutputStream().print("true");
+			System.out.println("true");
 		}else {
 			response.getOutputStream().print("false");
+			System.out.println("false");
 		}
 		System.out.println(httpSession.getId());
 		System.out.println("one login");

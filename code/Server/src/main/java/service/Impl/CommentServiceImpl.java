@@ -6,12 +6,9 @@ import java.util.Date;
 import java.util.List;
 import javax.annotation.Resource;
 import javax.servlet.ServletInputStream;
-import javax.servlet.ServletOutputStream;
 import javax.servlet.http.HttpServletResponse;
 import org.json.JSONArray;
 import org.json.JSONObject;
-
-import com.mongodb.BasicDBObject;
 
 import dao.CommentDao;
 import dao.FileDao;
@@ -34,28 +31,26 @@ public class CommentServiceImpl implements CommentService {
 	public void returnCommentByID(String commentID, HttpServletResponse response) 
 			throws IOException {
 		Comment comment = commentDao.findOneByID(commentID);
-		ServletOutputStream outStream = response.getOutputStream();
 		switch(comment.getType()) {
 		case("text"):
 			JSONObject jsonObj = new JSONObject();
 			jsonObj.put("userID", comment.getUserID());
 			jsonObj.put("text", comment.getText());
 			jsonObj.put("time", comment.getTime());
-			outStream.print(jsonObj.toString());
+			response.setContentType("text/html;charset=UTF-8");
+			response.getWriter().print(jsonObj.toString());
 			break;
 		case("sound"):
-			fileDao.outputFileToStream("sound", comment.getSoundID(), outStream);
+			fileDao.outputFileToStream("sound", comment.getSoundID(), response.getOutputStream());
 			break;
 		case("picture"):
-			fileDao.outputFileToStream("picture", comment.getPictureID(), outStream);
+			fileDao.outputFileToStream("picture", comment.getPictureID(), response.getOutputStream());
 			break;
 		}
-		outStream.close();
 	}
 	
 	public void returnCommentIDsBytargetID(String targetID, int pageNum, int pageIndex, HttpServletResponse response)
 			throws IOException{
-		ServletOutputStream outStream = response.getOutputStream();
 		List<Comment> comments = commentDao.getSomeCommentsByTargetID(targetID, pageNum*pageIndex, pageNum);
 		List<JSONObject> ret = new ArrayList<JSONObject>();
 		for(int i = 0; i < comments.size(); i++) {
@@ -65,8 +60,7 @@ public class CommentServiceImpl implements CommentService {
 			ret.add(jsonObj);
 		}
 		JSONArray jsonArray = new JSONArray(ret);
-		outStream.print(jsonArray.toString());
-		outStream.close();
+		response.getWriter().print(jsonArray.toString());
 	}
 	
 	public String saveTextComment(JSONObject jsonObj, String userID) {
@@ -102,14 +96,9 @@ public class CommentServiceImpl implements CommentService {
 	public String saveFileComment(String userID, JSONObject jsonObj, ServletInputStream inStream) {
 		String targetID = jsonObj.getString("targetID");
 		String type = jsonObj.getString("type");
-		BasicDBObject dbObj = new BasicDBObject();
 		switch(type) {
 		case("image"):
 			type = "picture";
-			//dbObj.append("width", jsonObj.getInt("width"));
-			//dbObj.append("height", jsonObj.getInt("height"));
-			dbObj.append("width", 45);
-			dbObj.append("height", 23);
 			break;
 		case("sound"):
 			break;
@@ -117,7 +106,7 @@ public class CommentServiceImpl implements CommentService {
 			return null;
 		}
 		
-		String fileID = fileDao.inputFileToDB(type, inStream, dbObj);
+		String fileID = fileDao.inputFileToDB(type, inStream);
 		Date time = new Date();
 		Comment comment = new Comment();
 		comment.setUserID(userID);
