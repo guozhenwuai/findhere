@@ -21,7 +21,7 @@ public class Connect {
         sessionid = sp.getString("sessionId", "");
     }
 
-    public boolean isConnected(){
+    private boolean isConnected(){
         return !(sessionid.equals(""));
     }
 
@@ -33,7 +33,7 @@ public class Connect {
             url = new URL(getUrl);
             urlConnection = (HttpURLConnection) url.openConnection();
             if(isConnected()) {
-                urlConnection.setRequestProperty("cookie", sessionid);
+                urlConnection.setRequestProperty("Cookie",sessionid);
             }
             urlConnection.setConnectTimeout(3000);
             urlConnection.setUseCaches(false);
@@ -44,16 +44,6 @@ public class Connect {
             urlConnection.setRequestMethod("POST");
             urlConnection.setRequestProperty("Content-Type", "application/json;charset=UTF-8");
             urlConnection.connect();
-            // 取得sessionid.
-            if(!isConnected()) {
-                String cookieval = urlConnection.getHeaderField("set-cookie");
-                if (cookieval != null) {
-                    sessionid = cookieval.substring(0, cookieval.indexOf(";"));
-                    SharedPreferences.Editor editor = sp.edit();
-                    editor.putString("sessionId", sessionid);
-                    editor.commit();
-                }
-            }
             OutputStream out = urlConnection.getOutputStream();
             BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(out));
             bw.write(jsonstr);
@@ -69,6 +59,14 @@ public class Connect {
                     buffer.append(str);
                 }
                 str=buffer.toString();
+                // 取得sessionid.
+                String cookieval = urlConnection.getHeaderField("Set-Cookie");
+                if (!cookieval.equals("")) {
+                    sessionid = cookieval.substring(0, cookieval.indexOf(";"));
+                    SharedPreferences.Editor editor = sp.edit();
+                    editor.putString("sessionId", sessionid);
+                    editor.commit();
+                }
                 in.close();
                 br.close();
             }

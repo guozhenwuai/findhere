@@ -28,14 +28,18 @@
     <string name="not_empty">不能为空</string>
 
     <!-- Strings related to ip -->
-    <string name="ip">115.159.184.211:8080</string>
-    <string name="add_ip">http://115.159.184.211:8080/FindHere/SetComments/text</string>
-    <string name="login_ip">http://115.159.184.211:8080/FindHere/Login</string>
+    <string name="ip">192.168.1.8:8080</string>
+    <string name="add_ip">http://192.168.1.8:8080/FindHere/SetComments/text</string>
+    <string name="login_ip">http://192.168.1.8:8080/FindHere/Login</string>
 
     <!-- Strings related to targetID -->
-    <string name="no_target">target not recognized</string>
+    <string name="no_login">未登录</string>
+    <string name="no_target">未识别出标识物</string>
 
     <!-- Strings related to unity -->
-    <string name="comment_type">http://115.159.184.211:8080/FindHere/GetComments/GetIDsByTargetID</string>
-    <string name="comment_content">http://115.159.184.211:8080/FindHere/GetComments/ByID</string>
+    <string name="comment_type">http://192.168.1.8:8080/FindHere/GetComments/GetIDsByTargetID</string>
+    <string name="comment_content">http://192.168.1.8:8080/FindHere/GetComments/ByID</string>
+
+    <!-- Strings related to comments -->
+    <string name="text">text</string>
 </resources>

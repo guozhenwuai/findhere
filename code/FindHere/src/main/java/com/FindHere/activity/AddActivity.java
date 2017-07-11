@@ -72,7 +72,6 @@ public class AddActivity extends Activity {
 
         sp = getSharedPreferences("userInfo", Context.MODE_ENABLE_WRITE_AHEAD_LOGGING);
         targetID = sp.getString("targetID","");
-        msgbox(targetID);
         ip = getString(R.string.add_ip);
         backBtn = findViewById(R.id.back);
         backBtn.setOnClickListener(new View.OnClickListener() {
@@ -95,7 +94,7 @@ public class AddActivity extends Activity {
                 //type text targetID
                 JSONObject object = new JSONObject();
                 try {
-                    object.put("type", "text");
+                    object.put("type", getString(R.string.text));
                     object.put("text", text);
                     object.put("targetID",targetID);
                     jsonStr = object.toString();

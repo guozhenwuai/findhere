@@ -23,9 +23,6 @@ public class UserActivity extends Activity {
         sp = getSharedPreferences("userInfo", Context.MODE_ENABLE_WRITE_AHEAD_LOGGING);
         String sessionid = sp.getString("sessionId","");
         msgbox(sessionid);
-        SharedPreferences.Editor editor = sp.edit();
-        editor.remove("email");
-        editor.commit();
 
         backBtn = findViewById(R.id.back);
         backBtn.setOnClickListener(new View.OnClickListener() {

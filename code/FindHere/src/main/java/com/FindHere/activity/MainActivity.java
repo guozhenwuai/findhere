@@ -9,7 +9,6 @@ import android.database.Cursor;
 import android.net.Uri;
 import android.os.Bundle;
 import android.provider.MediaStore;
-import android.util.Log;
 import android.view.KeyEvent;
 import android.view.MotionEvent;
 import android.view.View;
@@ -35,6 +34,7 @@ public class MainActivity extends Activity{
     private SharedPreferences sp;
     private String targetID;
     private String returnStr="";
+    private String sessionid;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -103,7 +103,11 @@ public class MainActivity extends Activity{
             public void onClick(View v) {
                 //UnityPlayer.UnitySendMessage("ContentManager","GetTargetId","");
                 targetID = sp.getString("targetID","");
-                if(targetID==""){
+                sessionid = sp.getString("sessionId","");
+                if(sessionid.equals("")){
+                    Toast.makeText(MainActivity.this,getString(R.string.no_login), Toast.LENGTH_SHORT).show();
+                }
+                if(targetID.equals("")){
                     Toast.makeText(MainActivity.this,getString(R.string.no_target), Toast.LENGTH_SHORT).show();
                 }else{
                     Intent intent = new Intent();

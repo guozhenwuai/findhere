@@ -1,26 +1,26 @@
 [
     {
-        "merged": "D:\\git\\findhere\\code\\FindHere\\build\\intermediates\\res\\merged\\debug\\layout-v11\\notification_media_action.xml",
-        "source": "C:\\Users\\25382\\.android\\build-cache\\de1424a0f1916f84e4ab156a7690890ffdd5cb89\\output\\res\\layout-v11\\notification_media_action.xml"
+        "merged": "D:\\Find\\build\\intermediates\\res\\merged\\debug\\layout-v11\\notification_template_big_media_custom.xml",
+        "source": "C:\\Users\\asus\\.android\\build-cache\\19d7ea8401511620fa23c337710829464e6f2217\\output\\res\\layout-v11\\notification_template_big_media_custom.xml"
     },
     {
-        "merged": "D:\\git\\findhere\\code\\FindHere\\build\\intermediates\\res\\merged\\debug\\layout-v11\\notification_media_cancel_action.xml",
-        "source": "C:\\Users\\25382\\.android\\build-cache\\de1424a0f1916f84e4ab156a7690890ffdd5cb89\\output\\res\\layout-v11\\notification_media_cancel_action.xml"
+        "merged": "D:\\Find\\build\\intermediates\\res\\merged\\debug\\layout-v11\\notification_template_big_media_narrow_custom.xml",
+        "source": "C:\\Users\\asus\\.android\\build-cache\\19d7ea8401511620fa23c337710829464e6f2217\\output\\res\\layout-v11\\notification_template_big_media_narrow_custom.xml"
     },
     {
-        "merged": "D:\\git\\findhere\\code\\FindHere\\build\\intermediates\\res\\merged\\debug\\layout-v11\\notification_template_big_media_narrow.xml",
-        "source": "C:\\Users\\25382\\.android\\build-cache\\de1424a0f1916f84e4ab156a7690890ffdd5cb89\\output\\res\\layout-v11\\notification_template_big_media_narrow.xml"
+        "merged": "D:\\Find\\build\\intermediates\\res\\merged\\debug\\layout-v11\\notification_media_action.xml",
+        "source": "C:\\Users\\asus\\.android\\build-cache\\19d7ea8401511620fa23c337710829464e6f2217\\output\\res\\layout-v11\\notification_media_action.xml"
     },
     {
-        "merged": "D:\\git\\findhere\\code\\FindHere\\build\\intermediates\\res\\merged\\debug\\layout-v11\\notification_template_big_media_narrow_custom.xml",
-        "source": "C:\\Users\\25382\\.android\\build-cache\\de1424a0f1916f84e4ab156a7690890ffdd5cb89\\output\\res\\layout-v11\\notification_template_big_media_narrow_custom.xml"
+        "merged": "D:\\Find\\build\\intermediates\\res\\merged\\debug\\layout-v11\\notification_media_cancel_action.xml",
+        "source": "C:\\Users\\asus\\.android\\build-cache\\19d7ea8401511620fa23c337710829464e6f2217\\output\\res\\layout-v11\\notification_media_cancel_action.xml"
     },
     {
-        "merged": "D:\\git\\findhere\\code\\FindHere\\build\\intermediates\\res\\merged\\debug\\layout-v11\\notification_template_big_media_custom.xml",
-        "source": "C:\\Users\\25382\\.android\\build-cache\\de1424a0f1916f84e4ab156a7690890ffdd5cb89\\output\\res\\layout-v11\\notification_template_big_media_custom.xml"
+        "merged": "D:\\Find\\build\\intermediates\\res\\merged\\debug\\layout-v11\\notification_template_big_media_narrow.xml",
+        "source": "C:\\Users\\asus\\.android\\build-cache\\19d7ea8401511620fa23c337710829464e6f2217\\output\\res\\layout-v11\\notification_template_big_media_narrow.xml"
     },
     {
-        "merged": "D:\\git\\findhere\\code\\FindHere\\build\\intermediates\\res\\merged\\debug\\layout-v11\\notification_template_big_media.xml",
-        "source": "C:\\Users\\25382\\.android\\build-cache\\de1424a0f1916f84e4ab156a7690890ffdd5cb89\\output\\res\\layout-v11\\notification_template_big_media.xml"
+        "merged": "D:\\Find\\build\\intermediates\\res\\merged\\debug\\layout-v11\\notification_template_big_media.xml",
+        "source": "C:\\Users\\asus\\.android\\build-cache\\19d7ea8401511620fa23c337710829464e6f2217\\output\\res\\layout-v11\\notification_template_big_media.xml"
     }
 ]

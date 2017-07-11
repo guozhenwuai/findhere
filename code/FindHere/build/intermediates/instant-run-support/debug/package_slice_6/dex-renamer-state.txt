@@ -1,4 +1,4 @@
-#Mon Jul 10 11:21:28 CST 2017
-base.0=D\:\\git\\findhere\\code\\FindHere\\build\\intermediates\\transforms\\dex\\debug\\folders\\1000\\5\\slice_6
+#Tue Jul 11 10:14:58 CST 2017
+base.0=D\:\\Find\\build\\intermediates\\transforms\\dex\\debug\\folders\\1000\\5\\slice_6
 renamed.0=classes.dex
-file.0=D\:\\git\\findhere\\code\\FindHere\\build\\intermediates\\transforms\\dex\\debug\\folders\\1000\\5\\slice_6\\classes.dex
+file.0=D\:\\Find\\build\\intermediates\\transforms\\dex\\debug\\folders\\1000\\5\\slice_6\\classes.dex
