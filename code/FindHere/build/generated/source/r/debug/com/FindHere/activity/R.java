@@ -2871,12 +2871,13 @@ containing a value of this type.
         public static final int listMode=0x7f0c0010;
         public static final int list_item=0x7f0c0049;
         public static final int loading_layout=0x7f0c008f;
+        public static final int log_out=0x7f0c00ba;
         public static final int login=0x7f0c008b;
         public static final int login_form=0x7f0c0086;
         public static final int login_progress=0x7f0c0085;
         public static final int logo_image=0x7f0c00b1;
         public static final int main_activity=0x7f0c008d;
-        public static final int masked=0x7f0c00bc;
+        public static final int masked=0x7f0c00bd;
         public static final int media_actions=0x7f0c00a0;
         public static final int middle=0x7f0c003a;
         public static final int mini=0x7f0c0038;
@@ -2944,7 +2945,7 @@ containing a value of this type.
         public static final int submenuarrow=0x7f0c005f;
         public static final int submit_area=0x7f0c0070;
         public static final int tabMode=0x7f0c0012;
-        public static final int tabbar=0x7f0c00ba;
+        public static final int tabbar=0x7f0c00bb;
         public static final int text=0x7f0c0097;
         public static final int text2=0x7f0c00ad;
         public static final int textSpacerNoButtons=0x7f0c0053;
@@ -2970,7 +2971,7 @@ containing a value of this type.
         public static final int userhead=0x7f0c00b3;
         public static final int username=0x7f0c00b4;
         public static final int view_offset_helper=0x7f0c000f;
-        public static final int visible=0x7f0c00bb;
+        public static final int visible=0x7f0c00bc;
         public static final int withText=0x7f0c003f;
         public static final int wrap_content=0x7f0c0025;
     }

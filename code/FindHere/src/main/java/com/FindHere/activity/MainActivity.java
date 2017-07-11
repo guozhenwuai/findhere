@@ -32,7 +32,7 @@ public class MainActivity extends Activity{
     private boolean camera_on = false;
     private boolean addflag=false;
     private SharedPreferences sp;
-    private String targetID;
+    private static String targetID;
     private String returnStr="";
     private String sessionid;
     @Override
@@ -164,6 +164,10 @@ public class MainActivity extends Activity{
 
             // String picturePath contains the path of selected Image
         }
+    }
+
+    protected static void loadInfoPoint(){
+        UnityPlayer.UnitySendMessage("InfoLoader","LoadInfoPoint",targetID);
     }
 
     // Unity uses this function to set sp:targetID

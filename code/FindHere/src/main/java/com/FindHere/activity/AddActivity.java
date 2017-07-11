@@ -52,6 +52,7 @@ public class AddActivity extends Activity {
                 .setNeutralButton(getString(R.string.ok), new DialogInterface.OnClickListener() {
                     public void onClick(DialogInterface dialog, int which) {
                         finish();
+                        MainActivity.loadInfoPoint();
                     }
                 }).show();
     }

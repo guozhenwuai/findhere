@@ -14,6 +14,7 @@ import android.widget.ImageButton;
 public class UserActivity extends Activity {
     private SharedPreferences sp;
     private ImageButton backBtn;
+    private View logOut;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -29,6 +30,18 @@ public class UserActivity extends Activity {
             @Override
             public void onClick(View v) {
                 finish();
+            }
+        });
+        logOut = findViewById(R.id.log_out);
+        logOut.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                SharedPreferences.Editor editor = sp.edit();
+                editor.clear();
+                editor.commit();
+                finish();
+                Intent intent = new Intent();
+                intent.setClass(UserActivity.this,LoginActivity.class);
+                startActivity(intent);
             }
         });
     }

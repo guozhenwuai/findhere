@@ -1,6 +1,6 @@
 [
     {
-        "outputFile": "D:\\Find\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-v21\\values-v21.xml",
+        "outputFile": "D:\\FindHere-Unity\\FindHere-Unity\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-v21\\values-v21.xml",
         "map": [
             {
                 "to": {
@@ -2023,7 +2023,7 @@
                     "endOffset": 20554
                 },
                 "from": {
-                    "file": "D:\\Find\\src\\main\\res\\values-v21\\styles.xml",
+                    "file": "D:\\FindHere-Unity\\FindHere-Unity\\src\\main\\res\\values-v21\\styles.xml",
                     "position": {
                         "startLine": 2,
                         "startColumn": 0,
