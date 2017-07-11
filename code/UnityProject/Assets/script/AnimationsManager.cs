@@ -18,7 +18,7 @@ public class AnimationsManager : MonoBehaviour
     {
         if (Screen.dpi > 260)
         {
-            OverlayPosition.transform.localPosition = new Vector3(0, 0, 550);
+            OverlayPosition.transform.localPosition = new Vector3(0, 0, 1.5f);
         }  
     }
     
@@ -39,7 +39,7 @@ public class AnimationsManager : MonoBehaviour
             mAugmentationObject.transform.rotation = Quaternion.Slerp(mAugmentationObject.transform.rotation, OverlayPosition.transform.rotation, Time.deltaTime * 5.0f);
 
             // Checks for object distance to check animation finish
-            if (Vector3.Distance(mAugmentationObject.transform.position, OverlayPosition.transform.position) < 1)
+            if (Vector3.Distance(mAugmentationObject.transform.position, OverlayPosition.transform.position) < 0.01f)
             {
                 mDoAnimationTo2D = false;
             }
@@ -53,7 +53,7 @@ public class AnimationsManager : MonoBehaviour
             mAugmentationObject.transform.localRotation = Quaternion.Slerp( mAugmentationObject.transform.localRotation, Quaternion.identity, Time.deltaTime * 5.0f);
             
             // Checks for object distance to check animation finish
-            if (Vector3.Distance(mAugmentationObject.transform.localPosition, new Vector3(0,0,0)) < 0.01f)
+            if (Vector3.Distance(mAugmentationObject.transform.localPosition, new Vector3(0,0.1f,0)) < 0.01f)
             {
                 mDoAnimationTo3D = false;
             }

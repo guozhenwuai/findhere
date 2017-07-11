@@ -6,7 +6,8 @@ using Vuforia;
 
 public class ContentManager : MonoBehaviour,ITrackableEventHandler {
     private CloudRecoBehaviour mCloudRecoBehaviour;
-    private string status;
+    //0:scanning 1:infopoint 2:textfield 3:imagefield 4:audiofield
+    private int status;
     private ObjectTracker mObjectTracker;
     private bool isTrackable;
     private string keepTargetId;
@@ -15,6 +16,7 @@ public class ContentManager : MonoBehaviour,ITrackableEventHandler {
     public GameObject infoPoint;
     public GameObject TextField;
     public GameObject ImageField;
+    public GameObject AudioField;
 
     public InfoLoader infoLoader;
     
@@ -33,7 +35,7 @@ public class ContentManager : MonoBehaviour,ITrackableEventHandler {
         mObjectTracker = TrackerManager.Instance.GetTracker<ObjectTracker>();
 
         //SetCancelButtonVisible(false);
-        status = "scanning";
+        status = 0;
         targetId = "";
         isTrackable = false;
     }
@@ -41,7 +43,7 @@ public class ContentManager : MonoBehaviour,ITrackableEventHandler {
     void Update()
     {
         //信息点的移动效果
-        if (status == "infoPoint")
+        if (status == 1)
         {
             float v = 0.1f*Time.deltaTime;
             foreach(Transform point in infoPoint.transform)
@@ -90,7 +92,7 @@ public class ContentManager : MonoBehaviour,ITrackableEventHandler {
         }
         if (Input.GetMouseButtonUp(0))
         {
-            if (status=="scanning")
+            if (status==0)
             {
                 Debug.Log("enableCloudReco");
                 return;
@@ -141,11 +143,11 @@ public class ContentManager : MonoBehaviour,ITrackableEventHandler {
 
     public void Show(bool tf)
     {
-        if (status == "infoPoint")
+        if (status == 1)
         {
-            ShowInfoPoint(tf);
+            ShowField(infoPoint,tf);
         }
-        else if (status== "textField")
+        else if (status== 2)
         {
             if (tf)
             {
@@ -156,7 +158,7 @@ public class ContentManager : MonoBehaviour,ITrackableEventHandler {
                 AnimationsManager.PlayAnimationTo2D(TextField);
             }
         }
-        else if (status == "imageField")
+        else if (status == 3)
         {
             if (tf)
             {
@@ -196,8 +198,7 @@ public class ContentManager : MonoBehaviour,ITrackableEventHandler {
     public void TargetCreated(string target)
     {
         keepTargetId = target;
-        targetId = target;
-        status = "infoPoint";
+        status = 1;
         infoLoader.LoadInfoPoint(target);
 
         /*for(int i = 0; i < 10; i++)
@@ -226,60 +227,73 @@ public class ContentManager : MonoBehaviour,ITrackableEventHandler {
         */
     }
 
-    public void ShowInfoPoint(bool tf)
-    {
-        Renderer[] rendererComponents = infoPoint.GetComponentsInChildren<Renderer>();
-        Collider[] colliderComponents = infoPoint.GetComponentsInChildren<Collider>();
-
-        // Enable rendering:
-        foreach (Renderer component in rendererComponents)
-        {
-            component.enabled = tf;
-        }
-
-        // Enable colliders:
-        foreach (Collider component in colliderComponents)
-        {
-            component.enabled = tf;
-        }
-    }
-
     public void OnCancel()
     {
         //SetCancelButtonVisible(false);
         if (isTrackable)
         {
-            ShowInfoPoint(true);
+            ShowField(infoPoint,true);
         }
-        if (status == "textField") ShowTextField(false);
-        else if (status == "imageField") ShowImageField(false);
-        status = "infoPoint";
+        if (status == 2)
+        {
+            ShowField(TextField, false);
+            AnimationsManager.PlayAnimationTo3D(TextField);
+
+        } 
+        else if (status == 3)
+        {
+            ShowField(ImageField,false);
+            AnimationsManager.PlayAnimationTo3D(ImageField);
+        }
+        else if (status == 4)
+        {
+            ShowField(AudioField, false);
+            AnimationsManager.PlayAnimationTo3D(AudioField);
+        }
+        status = 1;
+    }
+
+    public int GetStatus()
+    {
+        return status;
+    }
+
+    public void SetStatus(int newValue)
+    {
+        status = newValue;
     }
 
     public void OnDisplay(GameObject obj)
     {
-        if (obj.tag == "TextInfo")
+        string tag = obj.tag;
+        if (tag == "TextInfo")
         {
             infoLoader.LoadText(obj.name);
-            ShowTextField(true);
-            status = "textField";
+            ShowField(TextField,true);
+            status = 2;
         }
-        else if (obj.tag== "ImageInfo")
+        else if (tag == "ImageInfo")
         {
             infoLoader.LoadImage(obj.name);
-            ShowImageField(true);
-            status = "imageField";
+            ShowField(ImageField,true);
+            status = 3;
+        }
+        else if (tag == "audioInfo")
+        {
+            infoLoader.LoadAudio(obj.name);
+            ShowField(AudioField,true);
+            status = 4;
         }
 
         //SetCancelButtonVisible(true);
-        ShowInfoPoint(false);
+        ShowField(infoPoint,false);
         
     }
 
-    private void ShowTextField(bool visible)
+    private void ShowField(GameObject Field, bool visible)
     {
-        Renderer[] rendererComponents = TextField.GetComponentsInChildren<Renderer>();
-        Collider[] colliderComponents = TextField.GetComponentsInChildren<Collider>();
+        Renderer[] rendererComponents = Field.GetComponentsInChildren<Renderer>();
+        Collider[] colliderComponents = Field.GetComponentsInChildren<Collider>();
 
         // Enable rendering:
         foreach (Renderer component in rendererComponents)
@@ -292,26 +306,7 @@ public class ContentManager : MonoBehaviour,ITrackableEventHandler {
         {
             component.enabled = visible;
         }
-        TextField.transform.localPosition = new Vector3(0, 0.02f, 0);
-    }
-
-    private void ShowImageField(bool visible)
-    {
-        Renderer[] rendererComponents = ImageField.GetComponentsInChildren<Renderer>();
-        Collider[] colliderComponents = ImageField.GetComponentsInChildren<Collider>();
-
-        // Enable rendering:
-        foreach (Renderer component in rendererComponents)
-        {
-            component.enabled = visible;
-        }
-
-        // Enable colliders:
-        foreach (Collider component in colliderComponents)
-        {
-            component.enabled = visible;
-        }
-        ImageField.transform.localPosition = new Vector3(0, 0.02f, 0);
+        AnimationsManager.PlayAnimationTo3D(Field);
     }
 
     /*

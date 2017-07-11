@@ -55,7 +55,7 @@ public class cloudRecoHandler : MonoBehaviour, ICloudRecoEventHandler
         mIsScanning = scanning;
         if (scanning) {
             mObjectTracker.TargetFinder.ClearTrackables(false);
-            mContentManager.ShowInfoPoint(false);
+            mContentManager.Show(false);
         }
 
         ShowScanLine(scanning);
