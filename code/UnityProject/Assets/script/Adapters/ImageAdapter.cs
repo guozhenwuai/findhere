@@ -20,4 +20,14 @@ public class ImageAdapter : MonoBehaviour {
             scale.z * width / height, scale.y, scale.z);
     }
 
+    public void setTexture(Texture2D texture)
+    {
+        int width = texture.width;
+        int height = texture.height;
+        imageField.GetComponent<Renderer>().material.mainTexture = texture;
+        Vector3 scale = imageField.transform.localScale;
+        imageField.transform.localScale = new Vector3(
+            scale.z * width / height, scale.y, scale.z);
+    }
+
 }
