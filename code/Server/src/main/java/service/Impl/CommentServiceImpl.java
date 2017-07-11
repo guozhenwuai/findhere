@@ -5,6 +5,7 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 import javax.annotation.Resource;
+import javax.servlet.ServletInputStream;
 import javax.servlet.ServletOutputStream;
 import javax.servlet.http.HttpServletResponse;
 import org.json.JSONArray;
@@ -98,8 +99,7 @@ public class CommentServiceImpl implements CommentService {
 		return null;
 	}
 	
-	public String saveFileComment(String userID, JSONObject jsonObj) {
-		byte[] data = jsonObj.getString("file").getBytes();
+	public String saveFileComment(String userID, JSONObject jsonObj, ServletInputStream inStream) {
 		String targetID = jsonObj.getString("targetID");
 		String type = jsonObj.getString("type");
 		BasicDBObject dbObj = new BasicDBObject();
@@ -117,7 +117,7 @@ public class CommentServiceImpl implements CommentService {
 			return null;
 		}
 		
-		String fileID = fileDao.inputFileToDB(type, data, dbObj);
+		String fileID = fileDao.inputFileToDB(type, inStream, dbObj);
 		Date time = new Date();
 		Comment comment = new Comment();
 		comment.setUserID(userID);

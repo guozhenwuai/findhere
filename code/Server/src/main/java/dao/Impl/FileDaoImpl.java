@@ -1,6 +1,7 @@
 package dao.Impl;
 
 import java.io.IOException;
+import java.io.InputStream;
 import java.io.OutputStream;
 
 import javax.annotation.Resource;
@@ -33,9 +34,9 @@ public class FileDaoImpl implements FileDao{
 		gfsFile.writeTo(outStream);
 	}
 	
-	public String inputFileToDB(String type, byte[] data, DBObject metaData) {
+	public String inputFileToDB(String type, InputStream inStream, DBObject metaData) {
 		db = mongoTemplate.getDb();
-		gfsInput = new GridFS(db, type).createFile(data);
+		gfsInput = new GridFS(db, type).createFile(inStream);
 		gfsInput.setFilename("ee.jpg");
 		gfsInput.setContentType("image/jpeg");
 		gfsInput.setMetaData(metaData);
