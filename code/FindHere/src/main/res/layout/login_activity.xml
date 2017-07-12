@@ -79,18 +79,34 @@
                 android:background="@drawable/shape_input"
                 android:singleLine="true" />
 
-            <Button
-                android:id="@+id/email_sign_in_button"
-                android:layout_width="120dp"
-                android:layout_height="40dp"
-                android:layout_marginTop="20dp"
-                android:text="@string/title_activity_login"
-                android:gravity="center"
-                android:textColor="@color/white"
-                android:background="@drawable/shape_handin"
-                android:layout_gravity="center"
-                android:textSize="16dp"
-                android:textStyle="italic" />
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
+                <Button
+                    android:id="@+id/email_register_button"
+                    android:layout_width="100dp"
+                    android:layout_height="40dp"
+                    android:layout_marginTop="20dp"
+                    android:text="@string/title_activity_register"
+                    android:gravity="center"
+                    android:textColor="@color/white"
+                    android:background="@drawable/shape_handin"
+                    android:textSize="16dp"
+                    android:textStyle="italic" />
+                <Button
+                    android:id="@+id/email_sign_in_button"
+                    android:layout_width="100dp"
+                    android:layout_height="40dp"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginLeft="50dp"
+                    android:text="@string/title_activity_login"
+                    android:gravity="center"
+                    android:textColor="@color/white"
+                    android:background="@drawable/shape_handin"
+                    android:textSize="16dp"
+                    android:textStyle="italic" />
+            </LinearLayout>
 
         </LinearLayout>
 

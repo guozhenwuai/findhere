@@ -1,6 +1,6 @@
 -- Merging decision tree log ---
 manifest
-ADDED from D:\FindHere-Unity\FindHere-Unity\src\main\AndroidManifest.xml:2:1-131:12
+ADDED from D:\FindHere-Unity\FindHere-Unity\src\main\AndroidManifest.xml:2:1-125:12
 	package
 		ADDED from D:\FindHere-Unity\FindHere-Unity\src\main\AndroidManifest.xml:3:5-36
 		INJECTED from D:\FindHere-Unity\FindHere-Unity\src\main\AndroidManifest.xml
@@ -33,6 +33,7 @@ MERGED from [com.android.support:support-fragment:26.0.0-alpha1] C:\Users\asus\.
 MERGED from [com.android.support:support-core-ui:26.0.0-alpha1] C:\Users\asus\.android\build-cache\1faeaee35b18122194bff5ac51a37667d1b8acd9\output\AndroidManifest.xml:21:5-23:58
 MERGED from [com.android.support:support-core-utils:26.0.0-alpha1] C:\Users\asus\.android\build-cache\fd280a4c2c0e6c64223815daa1f2a19132bfdd98\output\AndroidManifest.xml:21:5-23:61
 MERGED from [com.android.support:support-compat:26.0.0-alpha1] C:\Users\asus\.android\build-cache\74f29e7de35d103925fcc09d0d5ff0c48f805790\output\AndroidManifest.xml:21:5-23:58
+MERGED from [com.android.support.constraint:constraint-layout:1.0.2] C:\Users\asus\.android\build-cache\77bedf7a267eca4ab0d75da705497abfd04fbbdc\output\AndroidManifest.xml:5:5-7:41
 	tools:overrideLibrary
 		ADDED from [com.android.support:design:26.0.0-alpha1] C:\Users\asus\.android\build-cache\9926a36909df21df384e4fce808a30ec609d0eea\output\AndroidManifest.xml:23:9-59
 	android:targetSdkVersion
@@ -134,7 +135,7 @@ ADDED from D:\FindHere-Unity\FindHere-Unity\src\main\AndroidManifest.xml:53:5-72
 	android:name
 		ADDED from D:\FindHere-Unity\FindHere-Unity\src\main\AndroidManifest.xml:53:22-69
 application
-ADDED from D:\FindHere-Unity\FindHere-Unity\src\main\AndroidManifest.xml:55:5-129:19
+ADDED from D:\FindHere-Unity\FindHere-Unity\src\main\AndroidManifest.xml:55:5-123:19
 MERGED from [com.android.support:design:26.0.0-alpha1] C:\Users\asus\.android\build-cache\9926a36909df21df384e4fce808a30ec609d0eea\output\AndroidManifest.xml:29:5-20
 MERGED from [com.android.support:appcompat-v7:26.0.0-alpha1] C:\Users\asus\.android\build-cache\19d7ea8401511620fa23c337710829464e6f2217\output\AndroidManifest.xml:29:5-20
 MERGED from [com.android.support:animated-vector-drawable:26.0.0-alpha1] C:\Users\asus\.android\build-cache\2a6c7d379d6faeca3a5a779818175e79545936dd\output\AndroidManifest.xml:26:5-20
@@ -146,6 +147,7 @@ MERGED from [com.android.support:support-fragment:26.0.0-alpha1] C:\Users\asus\.
 MERGED from [com.android.support:support-core-ui:26.0.0-alpha1] C:\Users\asus\.android\build-cache\1faeaee35b18122194bff5ac51a37667d1b8acd9\output\AndroidManifest.xml:29:5-20
 MERGED from [com.android.support:support-core-utils:26.0.0-alpha1] C:\Users\asus\.android\build-cache\fd280a4c2c0e6c64223815daa1f2a19132bfdd98\output\AndroidManifest.xml:29:5-20
 MERGED from [com.android.support:support-compat:26.0.0-alpha1] C:\Users\asus\.android\build-cache\74f29e7de35d103925fcc09d0d5ff0c48f805790\output\AndroidManifest.xml:29:5-20
+MERGED from [com.android.support.constraint:constraint-layout:1.0.2] C:\Users\asus\.android\build-cache\77bedf7a267eca4ab0d75da705497abfd04fbbdc\output\AndroidManifest.xml:9:5-20
 	android:label
 		ADDED from D:\FindHere-Unity\FindHere-Unity\src\main\AndroidManifest.xml:59:9-41
 	android:icon
@@ -157,101 +159,107 @@ MERGED from [com.android.support:support-compat:26.0.0-alpha1] C:\Users\asus\.an
 	android:isGame
 		ADDED from D:\FindHere-Unity\FindHere-Unity\src\main\AndroidManifest.xml:58:9-30
 activity#com.FindHere.activity.ActivitySplashScreen
-ADDED from D:\FindHere-Unity\FindHere-Unity\src\main\AndroidManifest.xml:62:9-72:20
+ADDED from D:\FindHere-Unity\FindHere-Unity\src\main\AndroidManifest.xml:61:9-71:20
 	android:screenOrientation
 		ADDED from D:\FindHere-Unity\FindHere-Unity\src\main\AndroidManifest.xml:65:13-49
 	android:noHistory
-		ADDED from D:\FindHere-Unity\FindHere-Unity\src\main\AndroidManifest.xml:66:13-37
+		ADDED from D:\FindHere-Unity\FindHere-Unity\src\main\AndroidManifest.xml:64:13-37
 	android:configChanges
-		ADDED from D:\FindHere-Unity\FindHere-Unity\src\main\AndroidManifest.xml:64:13-93
+		ADDED from D:\FindHere-Unity\FindHere-Unity\src\main\AndroidManifest.xml:63:13-93
 	android:name
-		ADDED from D:\FindHere-Unity\FindHere-Unity\src\main\AndroidManifest.xml:63:13-70
+		ADDED from D:\FindHere-Unity\FindHere-Unity\src\main\AndroidManifest.xml:62:13-49
 intent-filter#android.intent.action.MAIN+android.intent.category.LAUNCHER
-ADDED from D:\FindHere-Unity\FindHere-Unity\src\main\AndroidManifest.xml:67:13-71:29
+ADDED from D:\FindHere-Unity\FindHere-Unity\src\main\AndroidManifest.xml:66:13-70:29
 action#android.intent.action.MAIN
-ADDED from D:\FindHere-Unity\FindHere-Unity\src\main\AndroidManifest.xml:68:17-69
+ADDED from D:\FindHere-Unity\FindHere-Unity\src\main\AndroidManifest.xml:67:17-69
 	android:name
-		ADDED from D:\FindHere-Unity\FindHere-Unity\src\main\AndroidManifest.xml:68:25-66
+		ADDED from D:\FindHere-Unity\FindHere-Unity\src\main\AndroidManifest.xml:67:25-66
 category#android.intent.category.LAUNCHER
-ADDED from D:\FindHere-Unity\FindHere-Unity\src\main\AndroidManifest.xml:70:17-77
+ADDED from D:\FindHere-Unity\FindHere-Unity\src\main\AndroidManifest.xml:69:17-77
 	android:name
-		ADDED from D:\FindHere-Unity\FindHere-Unity\src\main\AndroidManifest.xml:70:27-74
+		ADDED from D:\FindHere-Unity\FindHere-Unity\src\main\AndroidManifest.xml:69:27-74
 activity#com.FindHere.activity.MainActivity
-ADDED from D:\FindHere-Unity\FindHere-Unity\src\main\AndroidManifest.xml:73:9-87:20
+ADDED from D:\FindHere-Unity\FindHere-Unity\src\main\AndroidManifest.xml:72:9-84:20
 	android:screenOrientation
 		ADDED from D:\FindHere-Unity\FindHere-Unity\src\main\AndroidManifest.xml:77:13-49
 	android:label
-		ADDED from D:\FindHere-Unity\FindHere-Unity\src\main\AndroidManifest.xml:76:13-45
+		ADDED from D:\FindHere-Unity\FindHere-Unity\src\main\AndroidManifest.xml:75:13-45
 	android:configChanges
-		ADDED from D:\FindHere-Unity\FindHere-Unity\src\main\AndroidManifest.xml:75:13-186
+		ADDED from D:\FindHere-Unity\FindHere-Unity\src\main\AndroidManifest.xml:74:13-186
 	android:persistent
-		ADDED from D:\FindHere-Unity\FindHere-Unity\src\main\AndroidManifest.xml:78:13-38
+		ADDED from D:\FindHere-Unity\FindHere-Unity\src\main\AndroidManifest.xml:76:13-38
 	android:name
-		ADDED from D:\FindHere-Unity\FindHere-Unity\src\main\AndroidManifest.xml:74:13-62
+		ADDED from D:\FindHere-Unity\FindHere-Unity\src\main\AndroidManifest.xml:73:13-41
 meta-data#unityplayer.UnityActivity
-ADDED from D:\FindHere-Unity\FindHere-Unity\src\main\AndroidManifest.xml:80:13-82:40
+ADDED from D:\FindHere-Unity\FindHere-Unity\src\main\AndroidManifest.xml:78:13-80:40
 	android:value
-		ADDED from D:\FindHere-Unity\FindHere-Unity\src\main\AndroidManifest.xml:82:17-37
+		ADDED from D:\FindHere-Unity\FindHere-Unity\src\main\AndroidManifest.xml:80:17-37
 	android:name
-		ADDED from D:\FindHere-Unity\FindHere-Unity\src\main\AndroidManifest.xml:81:17-57
+		ADDED from D:\FindHere-Unity\FindHere-Unity\src\main\AndroidManifest.xml:79:17-57
 meta-data#unityplayer.ForwardNativeEventsToDalvik
-ADDED from D:\FindHere-Unity\FindHere-Unity\src\main\AndroidManifest.xml:83:13-85:40
+ADDED from D:\FindHere-Unity\FindHere-Unity\src\main\AndroidManifest.xml:81:13-83:40
 	android:value
-		ADDED from D:\FindHere-Unity\FindHere-Unity\src\main\AndroidManifest.xml:85:17-37
+		ADDED from D:\FindHere-Unity\FindHere-Unity\src\main\AndroidManifest.xml:83:17-37
 	android:name
-		ADDED from D:\FindHere-Unity\FindHere-Unity\src\main\AndroidManifest.xml:84:17-71
+		ADDED from D:\FindHere-Unity\FindHere-Unity\src\main\AndroidManifest.xml:82:17-71
 activity#com.unity3d.player.VideoPlayer
-ADDED from D:\FindHere-Unity\FindHere-Unity\src\main\AndroidManifest.xml:89:9-93:52
+ADDED from D:\FindHere-Unity\FindHere-Unity\src\main\AndroidManifest.xml:85:9-89:52
 	android:screenOrientation
-		ADDED from D:\FindHere-Unity\FindHere-Unity\src\main\AndroidManifest.xml:93:13-49
+		ADDED from D:\FindHere-Unity\FindHere-Unity\src\main\AndroidManifest.xml:89:13-49
 	android:label
-		ADDED from D:\FindHere-Unity\FindHere-Unity\src\main\AndroidManifest.xml:92:13-45
+		ADDED from D:\FindHere-Unity\FindHere-Unity\src\main\AndroidManifest.xml:88:13-45
 	android:configChanges
-		ADDED from D:\FindHere-Unity\FindHere-Unity\src\main\AndroidManifest.xml:91:13-170
+		ADDED from D:\FindHere-Unity\FindHere-Unity\src\main\AndroidManifest.xml:87:13-170
 	android:name
-		ADDED from D:\FindHere-Unity\FindHere-Unity\src\main\AndroidManifest.xml:90:13-58
+		ADDED from D:\FindHere-Unity\FindHere-Unity\src\main\AndroidManifest.xml:86:13-58
 uses-library#com.ti.s3d
+ADDED from D:\FindHere-Unity\FindHere-Unity\src\main\AndroidManifest.xml:96:9-98:40
+	android:required
+		ADDED from D:\FindHere-Unity\FindHere-Unity\src\main\AndroidManifest.xml:98:13-37
+	android:name
+		ADDED from D:\FindHere-Unity\FindHere-Unity\src\main\AndroidManifest.xml:97:13-38
+uses-library#com.osterhoutgroup.api.ext
 ADDED from D:\FindHere-Unity\FindHere-Unity\src\main\AndroidManifest.xml:100:9-102:40
 	android:required
 		ADDED from D:\FindHere-Unity\FindHere-Unity\src\main\AndroidManifest.xml:102:13-37
 	android:name
-		ADDED from D:\FindHere-Unity\FindHere-Unity\src\main\AndroidManifest.xml:101:13-38
-uses-library#com.osterhoutgroup.api.ext
-ADDED from D:\FindHere-Unity\FindHere-Unity\src\main\AndroidManifest.xml:104:9-106:40
-	android:required
-		ADDED from D:\FindHere-Unity\FindHere-Unity\src\main\AndroidManifest.xml:106:13-37
-	android:name
-		ADDED from D:\FindHere-Unity\FindHere-Unity\src\main\AndroidManifest.xml:105:13-54
+		ADDED from D:\FindHere-Unity\FindHere-Unity\src\main\AndroidManifest.xml:101:13-54
 activity#com.FindHere.activity.LoginActivity
-ADDED from D:\FindHere-Unity\FindHere-Unity\src\main\AndroidManifest.xml:108:9-111:20
+ADDED from D:\FindHere-Unity\FindHere-Unity\src\main\AndroidManifest.xml:104:9-106:60
 	android:label
-		ADDED from D:\FindHere-Unity\FindHere-Unity\src\main\AndroidManifest.xml:110:13-57
+		ADDED from D:\FindHere-Unity\FindHere-Unity\src\main\AndroidManifest.xml:106:13-57
 	android:name
-		ADDED from D:\FindHere-Unity\FindHere-Unity\src\main\AndroidManifest.xml:109:13-63
+		ADDED from D:\FindHere-Unity\FindHere-Unity\src\main\AndroidManifest.xml:105:13-42
 activity#com.FindHere.activity.AddActivity
-ADDED from D:\FindHere-Unity\FindHere-Unity\src\main\AndroidManifest.xml:113:9-116:20
+ADDED from D:\FindHere-Unity\FindHere-Unity\src\main\AndroidManifest.xml:107:9-109:60
+	android:label
+		ADDED from D:\FindHere-Unity\FindHere-Unity\src\main\AndroidManifest.xml:109:13-57
+	android:name
+		ADDED from D:\FindHere-Unity\FindHere-Unity\src\main\AndroidManifest.xml:108:13-40
+activity#com.FindHere.activity.SeekActivity
+ADDED from D:\FindHere-Unity\FindHere-Unity\src\main\AndroidManifest.xml:110:9-112:60
+	android:label
+		ADDED from D:\FindHere-Unity\FindHere-Unity\src\main\AndroidManifest.xml:112:13-57
+	android:name
+		ADDED from D:\FindHere-Unity\FindHere-Unity\src\main\AndroidManifest.xml:111:13-41
+activity#com.FindHere.activity.SettingsActivity
+ADDED from D:\FindHere-Unity\FindHere-Unity\src\main\AndroidManifest.xml:113:9-115:60
 	android:label
 		ADDED from D:\FindHere-Unity\FindHere-Unity\src\main\AndroidManifest.xml:115:13-57
 	android:name
-		ADDED from D:\FindHere-Unity\FindHere-Unity\src\main\AndroidManifest.xml:114:13-61
-activity#com.FindHere.activity.SeekActivity
-ADDED from D:\FindHere-Unity\FindHere-Unity\src\main\AndroidManifest.xml:117:9-120:20
-	android:label
-		ADDED from D:\FindHere-Unity\FindHere-Unity\src\main\AndroidManifest.xml:119:13-57
-	android:name
-		ADDED from D:\FindHere-Unity\FindHere-Unity\src\main\AndroidManifest.xml:118:13-62
-activity#com.FindHere.activity.SettingsActivity
-ADDED from D:\FindHere-Unity\FindHere-Unity\src\main\AndroidManifest.xml:121:9-124:20
-	android:label
-		ADDED from D:\FindHere-Unity\FindHere-Unity\src\main\AndroidManifest.xml:123:13-57
-	android:name
-		ADDED from D:\FindHere-Unity\FindHere-Unity\src\main\AndroidManifest.xml:122:13-66
+		ADDED from D:\FindHere-Unity\FindHere-Unity\src\main\AndroidManifest.xml:114:13-45
 activity#com.FindHere.activity.UserActivity
-ADDED from D:\FindHere-Unity\FindHere-Unity\src\main\AndroidManifest.xml:125:9-128:20
+ADDED from D:\FindHere-Unity\FindHere-Unity\src\main\AndroidManifest.xml:116:9-118:60
 	android:label
-		ADDED from D:\FindHere-Unity\FindHere-Unity\src\main\AndroidManifest.xml:127:13-57
+		ADDED from D:\FindHere-Unity\FindHere-Unity\src\main\AndroidManifest.xml:118:13-57
 	android:name
-		ADDED from D:\FindHere-Unity\FindHere-Unity\src\main\AndroidManifest.xml:126:13-62
+		ADDED from D:\FindHere-Unity\FindHere-Unity\src\main\AndroidManifest.xml:117:13-41
+activity#com.FindHere.activity.RegisterActivity
+ADDED from D:\FindHere-Unity\FindHere-Unity\src\main\AndroidManifest.xml:119:9-121:63
+	android:label
+		ADDED from D:\FindHere-Unity\FindHere-Unity\src\main\AndroidManifest.xml:121:13-60
+	android:name
+		ADDED from D:\FindHere-Unity\FindHere-Unity\src\main\AndroidManifest.xml:120:13-45
 meta-data#android.support.VERSION
 ADDED from [com.android.support:design:26.0.0-alpha1] C:\Users\asus\.android\build-cache\9926a36909df21df384e4fce808a30ec609d0eea\output\AndroidManifest.xml:25:5-27:41
 MERGED from [com.android.support:appcompat-v7:26.0.0-alpha1] C:\Users\asus\.android\build-cache\19d7ea8401511620fa23c337710829464e6f2217\output\AndroidManifest.xml:25:5-27:41
