@@ -61,17 +61,25 @@ public class cloudRecoHandler : MonoBehaviour, ICloudRecoEventHandler
         ShowScanLine(scanning);
     }
 
+    public void RestartScanning()
+    {
+        OnStateChanged(true);
+    }
+
     private void ShowScanLine(bool show)
     {
         // Toggle scanline rendering
         if (scanLine != null)
         {
             Renderer scanLineRenderer = scanLine.GetComponent<Renderer>();
+            Collider scanLineCollider = scanLine.GetComponent<Collider>();
             if (show)
             {
                 // Enable scan line rendering
                 if (!scanLineRenderer.enabled)
                     scanLineRenderer.enabled = true;
+                if (!scanLineCollider.enabled)
+                    scanLineCollider.enabled = true;
 
                 scanLine.ResetAnimation();
             }
@@ -80,6 +88,8 @@ public class cloudRecoHandler : MonoBehaviour, ICloudRecoEventHandler
                 // Disable scanline rendering
                 if (scanLineRenderer.enabled)
                     scanLineRenderer.enabled = false;
+                if (scanLineCollider.enabled)
+                    scanLineCollider.enabled = false;
             }
         }
     }
