@@ -35,15 +35,6 @@
     </RelativeLayout>
 
 
-    <ImageView
-        android:id="@+id/scan_line"
-        android:layout_width="match_parent"
-        android:layout_height="50px"
-        android:src="@drawable/scanline"
-        android:scaleType="fitXY"
-        android:visibility="gone"/>
-
-
     <ImageButton
         android:id="@+id/camera_btn"
         android:src="@drawable/camera_b"

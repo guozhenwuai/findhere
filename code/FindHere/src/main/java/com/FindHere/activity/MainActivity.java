@@ -14,7 +14,6 @@ import android.view.MotionEvent;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.ImageButton;
-import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.Toast;
@@ -27,10 +26,9 @@ public class MainActivity extends Activity{
     private LinearLayout u3dLayout,addMenu;
     private ImageButton userBtn,cameraBtn,addBtn,seekBtn,setBtn,textBtn,musicBtn,voiceBtn,imageBtn;
     private RelativeLayout loadLayout;
-    private ImageView cameraClose;
+    //private ImageView cameraClose;
     private static int RESULT_LOAD_IMAGE = 1;
-    private boolean camera_on = false;
-    private boolean addflag=false;
+    //private boolean camera_on = false;
     private SharedPreferences sp;
     private static String targetID;
     private String returnStr="";
@@ -42,11 +40,14 @@ public class MainActivity extends Activity{
 
         sp = getSharedPreferences("userInfo", Context.MODE_ENABLE_WRITE_AHEAD_LOGGING);
 
-        mUnityPlayer = new UnityPlayer(MainActivity.this);
-        cameraClose = new ImageView(this);
-        cameraClose.setImageResource(R.drawable.baoman);
+        mUnityPlayer = new UnityPlayer(this);
+        //cameraClose = new ImageView(this);
+        //cameraClose.setImageResource(R.drawable.baoman);
         u3dLayout =  findViewById(R.id.unity3d);
-        u3dLayout.addView(cameraClose);
+        //u3dLayout.addView(cameraClose);
+        u3dLayout.addView(mUnityPlayer);
+        mUnityPlayer.resume();
+        mUnityPlayer.requestFocus();
         userBtn =  findViewById(R.id.user_btn);
         cameraBtn =  findViewById(R.id.camera_btn);
         addBtn =  findViewById(R.id.add_btn);
@@ -69,21 +70,28 @@ public class MainActivity extends Activity{
                 startActivity(intent);
             }
         });
+        /**cameraBtn.setOnClickListener(new OnClickListener() {
+          *  @Override
+          *  public void onClick(View v) {
+          *      if(camera_on){
+          *          mUnityPlayer.pause();
+          *          u3dLayout.removeAllViews();
+          *          u3dLayout.addView(cameraClose);
+          *          camera_on = false;
+          *      }else{
+          *          u3dLayout.removeAllViews();
+          *          u3dLayout.addView(mUnityPlayer);
+          *          mUnityPlayer.resume();
+          *          mUnityPlayer.requestFocus();
+          *          camera_on = true;
+          *      }
+          *  }
+        *});
+         **/
         cameraBtn.setOnClickListener(new OnClickListener() {
             @Override
-            public void onClick(View v) {
-                if(camera_on){
-                    mUnityPlayer.pause();
-                    u3dLayout.removeAllViews();
-                    u3dLayout.addView(cameraClose);
-                    camera_on = false;
-                }else{
-                    u3dLayout.removeAllViews();
-                    u3dLayout.addView(mUnityPlayer);
-                    mUnityPlayer.resume();
-                    mUnityPlayer.requestFocus();
-                    camera_on = true;
-                }
+            public void onClick(View view) {
+                UnityPlayer.UnitySendMessage("CloudRecognition","RestartScanning","");
             }
         });
         addBtn.setOnClickListener(new OnClickListener() {
@@ -95,7 +103,6 @@ public class MainActivity extends Activity{
                 else{
                     addMenu.setVisibility(View.GONE);
                 }
-               // UnityPlayer.UnitySendMessage("ForAndroid", "sayHello", "");
             }
         });
         textBtn.setOnClickListener(new OnClickListener() {
