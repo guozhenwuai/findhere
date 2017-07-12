@@ -1,4 +1,4 @@
-#Wed Jul 12 10:43:53 CST 2017
+#Wed Jul 12 14:03:48 CST 2017
 base.0=D\:\\FindHere-Unity\\FindHere-Unity\\build\\intermediates\\transforms\\dex\\debug\\folders\\1000\\10000\\instant-run_bbbc936d474b92943bc26967229fc7bbf9b49503
 renamed.1=classes.dex
 renamed.0=classes2.dex

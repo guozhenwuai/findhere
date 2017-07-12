@@ -8,12 +8,12 @@
         "source": "C:\\Users\\asus\\.android\\build-cache\\19d7ea8401511620fa23c337710829464e6f2217\\output\\res\\drawable-xxxhdpi-v4\\abc_ic_star_black_36dp.png"
     },
     {
-        "merged": "D:\\FindHere-Unity\\FindHere-Unity\\build\\intermediates\\res\\merged\\debug\\drawable-xxxhdpi-v4\\abc_ic_star_black_16dp.png",
-        "source": "C:\\Users\\asus\\.android\\build-cache\\19d7ea8401511620fa23c337710829464e6f2217\\output\\res\\drawable-xxxhdpi-v4\\abc_ic_star_black_16dp.png"
-    },
-    {
         "merged": "D:\\FindHere-Unity\\FindHere-Unity\\build\\intermediates\\res\\merged\\debug\\drawable-xxxhdpi-v4\\abc_scrubber_control_to_pressed_mtrl_000.png",
         "source": "C:\\Users\\asus\\.android\\build-cache\\19d7ea8401511620fa23c337710829464e6f2217\\output\\res\\drawable-xxxhdpi-v4\\abc_scrubber_control_to_pressed_mtrl_000.png"
+    },
+    {
+        "merged": "D:\\FindHere-Unity\\FindHere-Unity\\build\\intermediates\\res\\merged\\debug\\drawable-xxxhdpi-v4\\abc_ic_star_black_16dp.png",
+        "source": "C:\\Users\\asus\\.android\\build-cache\\19d7ea8401511620fa23c337710829464e6f2217\\output\\res\\drawable-xxxhdpi-v4\\abc_ic_star_black_16dp.png"
     },
     {
         "merged": "D:\\FindHere-Unity\\FindHere-Unity\\build\\intermediates\\res\\merged\\debug\\drawable-xxxhdpi-v4\\abc_btn_switch_to_on_mtrl_00012.9.png",
