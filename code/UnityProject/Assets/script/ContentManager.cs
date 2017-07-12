@@ -6,12 +6,14 @@ using Vuforia;
 
 public class ContentManager : MonoBehaviour,ITrackableEventHandler {
     private CloudRecoBehaviour mCloudRecoBehaviour;
-    //0:scanning 1:infopoint 2:textfield 3:imagefield 4:audiofield
+    //0:scanning 1:infopoint 2:textfield 3:imagefield
     private int status;
     private ObjectTracker mObjectTracker;
     private bool isTrackable;
     private string keepTargetId;
     private string targetId;
+    private AudioSource music;
+    private bool isAudioShow;
 
     public GameObject infoPoint;
     public GameObject TextField;
@@ -33,15 +35,22 @@ public class ContentManager : MonoBehaviour,ITrackableEventHandler {
         }
         mCloudRecoBehaviour = FindObjectOfType<CloudRecoBehaviour>();
         mObjectTracker = TrackerManager.Instance.GetTracker<ObjectTracker>();
+        music = AudioField.GetComponent<AudioSource>();
 
         //SetCancelButtonVisible(false);
         status = 0;
         targetId = "";
         isTrackable = false;
+        isAudioShow = false;
     }
 
     void Update()
     {
+        //声音停止后喇叭消失
+        if (!music.isPlaying&&isAudioShow)
+        {
+            ShowField(AudioField,false);
+        }
         //信息点的移动效果
         if (status == 1)
         {
@@ -90,11 +99,11 @@ public class ContentManager : MonoBehaviour,ITrackableEventHandler {
                 point.localPosition = new Vector3(pos.x + x, pos.y + y, pos.z + z);
             }
         }
+        //点击事件处理
         if (Input.GetMouseButtonUp(0))
         {
             if (status==0)
             {
-                Debug.Log("enableCloudReco");
                 return;
             }
             RaycastHit hit;
@@ -123,6 +132,11 @@ public class ContentManager : MonoBehaviour,ITrackableEventHandler {
                     AnimationsManager.PlayAnimationTo2D(ImageField);
                     mObjectTracker.Stop();
                 }
+                else if(hitObject.name == "AudioField")
+                {
+                    Debug.Log("touch audio field");
+                    AudioPlaying(false);
+                }
                 else
                 {
                     Debug.Log(hitObject.name);
@@ -146,6 +160,7 @@ public class ContentManager : MonoBehaviour,ITrackableEventHandler {
         if (status == 1)
         {
             ShowField(infoPoint,tf);
+            //AudioPlaying(false);
         }
         else if (status== 2)
         {
@@ -168,6 +183,22 @@ public class ContentManager : MonoBehaviour,ITrackableEventHandler {
             {
                 AnimationsManager.PlayAnimationTo2D(ImageField);
             }
+        }
+    }
+
+    public void AudioPlaying(bool tf)
+    {
+        if (status == 1)
+        {
+            ShowField(AudioField, tf);
+        }
+        if (tf)
+        {
+            music.Play();
+        }
+        else
+        {
+            music.Stop();
         }
     }
 
@@ -230,6 +261,10 @@ public class ContentManager : MonoBehaviour,ITrackableEventHandler {
     public void OnCancel()
     {
         //SetCancelButtonVisible(false);
+        if (infoLoader.isLoading())
+        {
+            infoLoader.stopLoading();
+        }
         if (isTrackable)
         {
             ShowField(infoPoint,true);
@@ -244,11 +279,6 @@ public class ContentManager : MonoBehaviour,ITrackableEventHandler {
         {
             ShowField(ImageField,false);
             AnimationsManager.PlayAnimationTo3D(ImageField);
-        }
-        else if (status == 4)
-        {
-            ShowField(AudioField, false);
-            AnimationsManager.PlayAnimationTo3D(AudioField);
         }
         status = 1;
     }
@@ -271,27 +301,42 @@ public class ContentManager : MonoBehaviour,ITrackableEventHandler {
             infoLoader.LoadText(obj.name);
             ShowField(TextField,true);
             status = 2;
+            ShowField(infoPoint, false);
         }
         else if (tag == "ImageInfo")
         {
+            ShowField(infoPoint, false);
             infoLoader.LoadImage(obj.name);
-            ShowField(ImageField,true);
             status = 3;
         }
-        else if (tag == "audioInfo")
+        else if (tag == "AudioInfo")
         {
-            infoLoader.LoadAudio(obj.name);
-            ShowField(AudioField,true);
-            status = 4;
+            if (!music.isPlaying)
+            {
+                infoLoader.LoadAudio(obj);
+            }
+            else if (AudioField.transform.parent == obj.transform.parent)
+            {
+                AudioPlaying(false);
+            }
+            else
+            {
+                infoLoader.LoadAudio(obj);
+            }
+            status = 1;
         }
 
         //SetCancelButtonVisible(true);
-        ShowField(infoPoint,false);
+        
         
     }
 
-    private void ShowField(GameObject Field, bool visible)
+    public void ShowField(GameObject Field, bool visible)
     {
+        if (Field == AudioField)
+        {
+            isAudioShow = visible;
+        }
         Renderer[] rendererComponents = Field.GetComponentsInChildren<Renderer>();
         Collider[] colliderComponents = Field.GetComponentsInChildren<Collider>();
 
@@ -306,7 +351,6 @@ public class ContentManager : MonoBehaviour,ITrackableEventHandler {
         {
             component.enabled = visible;
         }
-        AnimationsManager.PlayAnimationTo3D(Field);
     }
 
     /*

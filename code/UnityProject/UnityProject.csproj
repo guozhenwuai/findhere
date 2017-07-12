@@ -122,6 +122,7 @@
     <Compile Include="Assets\Vuforia\Scripts\WireframeBehaviour.cs" />
     <Compile Include="Assets\Vuforia\Scripts\WireframeTrackableEventHandler.cs" />
     <Compile Include="Assets\Vuforia\Scripts\WordBehaviour.cs" />
+    <Compile Include="Assets\script\Adapters\AudioAdapter.cs" />
     <Compile Include="Assets\script\Adapters\ImageAdapter.cs" />
     <Compile Include="Assets\script\Adapters\TextAdapter.cs" />
     <Compile Include="Assets\script\AnimationsManager.cs" />

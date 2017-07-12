@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class ImageAdapter : MonoBehaviour {
     public GameObject imageField;
+    public ContentManager contentManager;
 
 	// Use this for initialization
 	void Start () {
@@ -17,17 +18,23 @@ public class ImageAdapter : MonoBehaviour {
         imageField.GetComponent<Renderer>().material.mainTexture = texture;
         Vector3 scale = imageField.transform.localScale;
         imageField.transform.localScale = new Vector3(
-            scale.z * width / height, scale.y, scale.z);
+            scale.z, scale.y, scale.z * height/width);
     }
 
     public void setTexture(Texture2D texture)
     {
-        int width = texture.width;
-        int height = texture.height;
+        float width = texture.width;
+        float height = texture.height;
         imageField.GetComponent<Renderer>().material.mainTexture = texture;
-        Vector3 scale = imageField.transform.localScale;
-        imageField.transform.localScale = new Vector3(
-            scale.z * width / height, scale.y, scale.z);
+        Vector3 scale = imageField.transform.parent.localScale;
+        float h = scale.x * height / width;
+        float w = scale.x;
+        if (h >= 0.15f)
+        {
+            h = 0.15f;
+            w = h * width / height;
+        }
+        imageField.transform.parent.localScale = new Vector3(w, scale.y,h);
+        contentManager.ShowField(imageField.transform.parent.gameObject, true);
     }
-
 }
