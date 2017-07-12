@@ -19,7 +19,7 @@
 			<div id="top-navigation">
 				Welcome <a href="#"><strong>Administrator</strong></a>
 				<span>|</span>
-				<a href="#">Log out</a>
+				<a href="/FindHere/LogOut">Log out</a>
 			</div>
 		</div>
 		<!-- End Logo + Top Nav -->
@@ -156,7 +156,7 @@
 <!-- Footer -->
 <div id="footer">
 	<div class="shell">
-		<span class="left">&copy; 2010 - FindHere</span>
+		<span class="left">&copy; 2017 - FindHere</span>
 	</div>
 </div>
 <!-- End Footer -->

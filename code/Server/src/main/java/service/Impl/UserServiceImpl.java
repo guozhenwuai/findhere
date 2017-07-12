@@ -1,10 +1,15 @@
 package service.Impl;
 
+import java.io.IOException;
+
 import javax.annotation.Resource;
+import javax.servlet.ServletOutputStream;
+import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 import org.json.JSONObject;
 
+import dao.FileDao;
 import dao.UserDao;
 import model.User;
 import service.UserService;
@@ -14,15 +19,45 @@ public class UserServiceImpl implements UserService {
 	@Resource
 	private UserDao userDao;
 	
-	public boolean login(JSONObject jsonObj, HttpSession httpSession) {
+	@Resource
+	private FileDao fileDao;
+	
+	public boolean login(JSONObject jsonObj, HttpServletResponse response, HttpSession httpSession)
+			throws IOException {
+		JSONObject ret = new JSONObject();
+		ServletOutputStream outStream = response.getOutputStream();
 		String userID = jsonObj.getString("email");
 		String password = jsonObj.getString("password");
 		User user = userDao.findOneByID(userID);
-		if(user == null) return false; //No user match
-		if(!user.getPassword().equals(password)) return false;
+		if(user == null) {
+			ret.put("status", "failure");
+			outStream.print(ret.toString());
+			return false; //No user match
+		}
+		else if(!user.getPassword().equals(password)) {
+			ret.put("status", "failure");
+			outStream.print(ret.toString());
+			return false;
+		}
 		
 		//success
 		httpSession.setAttribute("userID", userID);
+		ret.put("status", "success");
+		ret.put("userName", user.getName());
+		ret.put("gender", user.getGender());
+		ret.put("isMember", user.getIsMember());
+		outStream.print(ret.toString());
+		
+		//headPortrait
+		fileDao.outputFileToStream("headPortrait", user.getHeadPortraitID(), outStream);
+		return false;
+	}
+	
+	public boolean webLogin(String userID, String password) {
+		User user = userDao.findOneByID(userID);
+		if(user == null) return false; //No user match
+		if(!user.getPassword().equals(password)) return false;
+		if(user.getAdmin() != 1) return false;
 		return true;
 	}
 	
@@ -52,5 +87,13 @@ public class UserServiceImpl implements UserService {
 	
 	public void setUserDao(UserDao dao) {
 		userDao = dao;
+	}
+	
+	public FileDao getFileDao() {
+		return fileDao;
+	}
+	
+	public void setFileDao(FileDao dao) {
+		fileDao = dao;
 	}
 }

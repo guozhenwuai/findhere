@@ -35,16 +35,16 @@ public class SignUp {
 		int result = userService.SignUp(jsonObj, httpSession);
 		switch(result) {
 		case(0):
-			ret.put("status", "Success");
+			ret.put("status", "success");
 			response.getWriter().print(ret.toString());
 			httpSession.setAttribute("userID", jsonObj.get("email"));
 			break;
 		case(1):
-			ret.put("status", "DuplicativeUserID");
+			ret.put("status", "duplicativeUserID");
 			response.getWriter().print(ret.toString());
 			break;
 		case(2):
-			ret.put("status", "UnknowGender");
+			ret.put("status", "unknowGender");
 			response.getWriter().print(ret.toString());
 			break;
 		}

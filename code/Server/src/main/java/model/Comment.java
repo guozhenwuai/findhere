@@ -22,8 +22,6 @@ public class Comment implements Serializable {
 	private String targetID;
 	@Field("time")
 	private Date time;
-	@Field("contentID")
-	private String contentID;
 	@Field("text")
 	private String text;
 	@Field("soundID")
@@ -72,14 +70,6 @@ public class Comment implements Serializable {
 	
 	public void setTargetID(String s) {
 		this.targetID = s;
-	}
-	
-	public String getContentID() {
-		return contentID;
-	}
-	
-	public void setContentID(String s) {
-		this.contentID = s;
 	}
 	
 	public String getText() {

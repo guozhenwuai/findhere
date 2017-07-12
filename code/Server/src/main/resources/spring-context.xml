@@ -66,4 +66,7 @@
 	<bean id="applyDao" class="dao.Impl.ApplyDaoImpl">
 	</bean>
 	
+	<bean id="HeadPortraitDao" class="dao.Impl.HeadPortraitDaoImpl">
+	</bean>
+	
 </beans>

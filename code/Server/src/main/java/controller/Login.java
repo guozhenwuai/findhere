@@ -30,19 +30,29 @@ public class Login {
 			throws IOException {
 		ServletInputStream inStream = request.getInputStream();
 		String jsonString = readService.inputStreamToString(inStream);
-		System.out.println(jsonString);
 		JSONObject jsonObj = new JSONObject(jsonString);
-		boolean success = userService.login(jsonObj, httpSession);
-		if(success) {
-			response.getOutputStream().print("true");
-			System.out.println("true");
-		}else {
-			response.getOutputStream().print("false");
-			System.out.println("false");
-		}
-		System.out.println(httpSession.getId());
-		System.out.println("one login");
+		JSONObject ret = new JSONObject(jsonString);
+		userService.login(jsonObj, response, httpSession);
 		return null;
+	}
+	
+	@RequestMapping("/webLogin")
+	public String execute2(HttpServletRequest request, HttpServletResponse response, HttpSession httpSession)
+			throws IOException {
+		String userID = request.getParameter("userID");
+		String password = request.getParameter("password");
+		boolean success = userService.webLogin(userID, password);
+		if(success) {
+			httpSession.setAttribute("isAdmin", "true");
+		}
+		return "redirect:/ConfirmMember?pageIndex=0";
+	}
+	
+	@RequestMapping("/LogOut")
+	public String execute3(HttpServletRequest request, HttpServletResponse response, HttpSession httpSession)
+			throws IOException {
+		httpSession.invalidate();
+		return "login";
 	}
 	
 	/*GET and SET*/
