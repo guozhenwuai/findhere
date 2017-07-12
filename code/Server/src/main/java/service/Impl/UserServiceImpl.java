@@ -26,6 +26,25 @@ public class UserServiceImpl implements UserService {
 		return true;
 	}
 	
+	public int SignUp(JSONObject jsonObj, HttpSession httpSession) {
+		String userID = jsonObj.getString("email");
+		String password = jsonObj.getString("password");
+		String name = jsonObj.getString("userName");
+		String gender = jsonObj.getString("gender");
+		
+		if( !gender.equals("male") && !gender.equals("female") && gender != null ) return 2;
+		User userOld = userDao.findOneByID(userID);
+		if(userOld != null) return 1;
+		
+		User user = new User();
+		user.setUserID(userID);
+		user.setPassword(password);
+		user.setName(name);
+		user.setGender(gender);
+		userDao.insert(user);
+		return 0;
+	}
+	
 	/*GET and SET*/
 	public UserDao getUserDao() {
 		return userDao;

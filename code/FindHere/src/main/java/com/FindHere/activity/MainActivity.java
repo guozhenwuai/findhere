@@ -32,7 +32,7 @@ public class MainActivity extends Activity{
     private boolean camera_on = false;
     private boolean addflag=false;
     private SharedPreferences sp;
-    private String targetID;
+    private static String targetID;
     private String returnStr="";
     private String sessionid;
     @Override
@@ -42,7 +42,7 @@ public class MainActivity extends Activity{
 
         sp = getSharedPreferences("userInfo", Context.MODE_ENABLE_WRITE_AHEAD_LOGGING);
 
-        mUnityPlayer = new UnityPlayer(this);
+        mUnityPlayer = new UnityPlayer(MainActivity.this);
         cameraClose = new ImageView(this);
         cameraClose.setImageResource(R.drawable.baoman);
         u3dLayout =  findViewById(R.id.unity3d);
@@ -166,6 +166,11 @@ public class MainActivity extends Activity{
         }
     }
 
+    // Unity uses this function to load infoPoint
+    protected static void loadInfoPoint(){
+        UnityPlayer.UnitySendMessage("InfoLoader","LoadInfoPoint",targetID);
+    }
+
     // Unity uses this function to set sp:targetID
     public void setTargetID(String targetID){
         SharedPreferences.Editor editor = sp.edit();
@@ -219,14 +224,14 @@ public class MainActivity extends Activity{
     @Override protected void onPause()
     {
         super.onPause();
-        mUnityPlayer.pause();
+        //mUnityPlayer.pause();
     }
 
     // Resume Unity
     @Override protected void onResume()
     {
         super.onResume();
-        mUnityPlayer.resume();
+        //mUnityPlayer.resume();
     }
 
     // Low Memory Unity

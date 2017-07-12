@@ -21,6 +21,15 @@ public class UserDaoImpl implements UserDao {
 		return user;
 	}
 	
+	public String insert(User user) {
+		mongoTemplate.insert(user);
+		return user.getUserID();
+	}
+	
+	public void update(User user) {
+		mongoTemplate.save(user);
+	}
+	
 	/*GET and SET*/
 	public MongoTemplate getMongoTemplate() {
 		return mongoTemplate;

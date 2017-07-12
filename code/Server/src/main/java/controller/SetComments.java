@@ -61,9 +61,8 @@ public class SetComments {
 	}
 	
 	@RequestMapping("/file")
-	public String execute2(HttpServletRequest request, HttpServletResponse response) 
+	public String execute2(HttpServletRequest request, HttpServletResponse response, HttpSession httpSession) 
 			throws IOException{
-		HttpSession httpSession = request.getSession();
 		String userID = (String) httpSession.getAttribute("userID");
 		ServletInputStream inStream = request.getInputStream();
 		System.out.println(httpSession.getId());

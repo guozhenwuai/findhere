@@ -26,7 +26,7 @@ public class DeleteComments {
 			throws IOException{
 		JSONObject ret = new JSONObject();
 		String userID = (String) httpSession.getAttribute("userID");
-		if(userID.length() == 0) {
+		if(userID == null) {
 			ret.put("status", "failure");
 			response.getOutputStream().print(ret.toString());
 			return null;

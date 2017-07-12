@@ -1,4 +1,4 @@
-#Tue Jul 11 10:32:37 CST 2017
-base.0=D\:\\Find\\build\\intermediates\\transforms\\dex\\debug\\folders\\1000\\5\\slice_7
+#Wed Jul 12 11:23:40 CST 2017
+base.0=D\:\\FindHere-Unity\\FindHere-Unity\\build\\intermediates\\transforms\\dex\\debug\\folders\\1000\\5\\slice_7
 renamed.0=classes.dex
-file.0=D\:\\Find\\build\\intermediates\\transforms\\dex\\debug\\folders\\1000\\5\\slice_7\\classes.dex
+file.0=D\:\\FindHere-Unity\\FindHere-Unity\\build\\intermediates\\transforms\\dex\\debug\\folders\\1000\\5\\slice_7\\classes.dex

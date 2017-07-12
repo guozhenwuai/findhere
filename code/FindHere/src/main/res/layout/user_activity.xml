@@ -205,6 +205,32 @@
                         android:layout_height="wrap_content"
                         android:layout_gravity="center_vertical"/>
                 </LinearLayout>
+                <LinearLayout
+                    android:id="@+id/log_out"
+                    android:orientation="horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:layout_marginTop="1dp"
+                    android:background="@color/white">
+                    <ImageView
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
+                        android:scaleType="fitXY"
+                        android:src="@drawable/target"
+
+                        android:layout_marginLeft="13dp"
+                        android:layout_gravity="center_vertical"/>
+                    <TextView
+                        android:text="退出登录"
+                        android:textSize="@dimen/about_title"
+                        android:textColor="@color/gray"
+                        android:fontFamily="serif"
+
+                        android:layout_marginLeft="6dp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"/>
+                </LinearLayout>
             </LinearLayout>
 
         </ScrollView>

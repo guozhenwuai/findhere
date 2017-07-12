@@ -10,7 +10,6 @@ import org.bson.types.ObjectId;
 import org.springframework.data.mongodb.core.MongoTemplate;
 
 import com.mongodb.DB;
-import com.mongodb.DBObject;
 import com.mongodb.gridfs.GridFS;
 import com.mongodb.gridfs.GridFSDBFile;
 import com.mongodb.gridfs.GridFSInputFile;
@@ -34,12 +33,11 @@ public class FileDaoImpl implements FileDao{
 		gfsFile.writeTo(outStream);
 	}
 	
-	public String inputFileToDB(String type, InputStream inStream, DBObject metaData) {
+	public String inputFileToDB(String type, InputStream inStream) {
 		db = mongoTemplate.getDb();
 		gfsInput = new GridFS(db, type).createFile(inStream);
 		gfsInput.setFilename("ee.jpg");
 		gfsInput.setContentType("image/jpeg");
-		gfsInput.setMetaData(metaData);
 		gfsInput.save();
 		String id = gfsInput.getId().toString();
 		return id;
