@@ -29,6 +29,10 @@ public class ApplyServiceImpl implements ApplyService {
 		applyDao.removeApply(applyID);
 	}
 	
+	public void rejectApply(String applyID) {
+		applyDao.removeApply(applyID);
+	}
+	
 	/*GET and SET*/
 	public ApplyDao getMongoTemplate() {
 		return applyDao;

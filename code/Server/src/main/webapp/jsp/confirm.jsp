@@ -97,7 +97,9 @@
 								<td><%=applyList.get(i).getInc() %></td>
 								<td><%=applyList.get(i).getNationalID() %></td>
 								<td>
-									<a href="#" class="ico del">Delete</a>
+									<a href="/FindHere/RejectApply?
+										applyID=<%=applyList.get(i).getId().toString() %>
+										&pageIndex=<%=pageIndex %>" class="ico del">Delete</a>
 									<a href="/FindHere/AgreeMember?
 										userID=<%=applyList.get(i).getUserID() %>
 										&applyID=<%=applyList.get(i).getId().toString() %>
