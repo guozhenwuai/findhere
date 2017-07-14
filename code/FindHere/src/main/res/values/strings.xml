@@ -42,6 +42,9 @@
     <string name="login_ip">http://192.168.1.8:8080/FindHere/Login</string>
     <string name="register_ip">http://192.168.1.8:8080/FindHere/SignUp</string>
 
+    <string name="addfile_url">http://192.168.1.8:8080/FindHere/SetComments/file</string>
+    <string name="title_activity_rigister">RigisterActivity</string>
+
     <!-- Strings related to targetID -->
     <string name="no_login">未登录</string>
     <string name="no_target">未识别出标识物</string>

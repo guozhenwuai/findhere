@@ -2,49 +2,49 @@
 <items version="2" >
 
     <item
-        is-multidex="true"
-        jar="D:\FindHere-Unity\FindHere-Unity\libs\unity-classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="26.0.0"
-        sha1="51f46611e716600d0a9d36ff5f7c2dddde43688c">
-        <dex dex="D:\FindHere-Unity\FindHere-Unity\build\intermediates\transforms\dex\debug\folders\1000\2\unity-classes_31d52177952c5753af6091bf23238e2aad54d59d\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="D:\FindHere-Unity\FindHere-Unity\libs\Vuforia.jar"
-        jumboMode="true"
+        is-multidex="false"
+        jar="G:\7.14\code\FindHere\libs\Vuforia.jar"
+        jumboMode="false"
         optimize="true"
         revision="26.0.0"
         sha1="be3db5d282d7094986c342631085ca4d84c02603">
-        <dex dex="D:\FindHere-Unity\FindHere-Unity\build\intermediates\transforms\dex\debug\folders\1000\2\Vuforia_7d5d72764edea2afc1ff5db11a6d3c2680e8ec9a\classes.dex" />
+        <dex dex="G:\7.14\code\FindHere\build\intermediates\pre-dexed\debug\Vuforia_db4ffe59032937d43bc75aa11b665365435f58bb.jar" />
     </item>
     <item
-        is-multidex="true"
-        jar="D:\FindHere-Unity\FindHere-Unity\build\intermediates\incremental-runtime-classes\debug\instant-run.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="26.0.0"
-        sha1="3be78ebc2706b2e1fe2f12d5726887a92d6c183b">
-        <dex dex="D:\FindHere-Unity\FindHere-Unity\build\intermediates\transforms\dex\debug\folders\1000\10000\instant-run_bbbc936d474b92943bc26967229fc7bbf9b49503\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="D:\FindHere-Unity\FindHere-Unity\build\intermediates\incremental-classes\debug\instant-run-bootstrap.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="26.0.0"
-        sha1="542b28cd6696e3385189737f6fe0f6ed8e494659">
-        <dex dex="D:\FindHere-Unity\FindHere-Unity\build\intermediates\transforms\dex\debug\folders\1000\10000\instant-run-bootstrap_53273ddb6bf508f7418793594b684b4d1a55a09f\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="D:\FindHere-Unity\FindHere-Unity\libs\VuforiaUnityPlayer.jar"
-        jumboMode="true"
+        is-multidex="false"
+        jar="G:\7.14\code\FindHere\libs\VuforiaUnityPlayer.jar"
+        jumboMode="false"
         optimize="true"
         revision="26.0.0"
         sha1="95f5205a17a7546c265d4a27d1e6f8be7b6f3f03">
-        <dex dex="D:\FindHere-Unity\FindHere-Unity\build\intermediates\transforms\dex\debug\folders\1000\2\VuforiaUnityPlayer_df2008fc92495098c1cbf201d39dc7ab7b84bcba\classes.dex" />
+        <dex dex="G:\7.14\code\FindHere\build\intermediates\pre-dexed\debug\VuforiaUnityPlayer_2e555d5d0c67565c787cc00557a2597968e45f5f.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\msi\.android\build-cache\2b65982d28228286f4caae7304bab4fad2f318f7\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="26.0.0"
+        sha1="44ee06abb66da30f5855e6bf54574e64cdcd982a">
+        <dex dex="G:\7.14\code\FindHere\build\intermediates\pre-dexed\debug\classes_fe864431f432639293eb1e2a7c2254e2ecd84ccf.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\msi\AppData\Local\Android\sdk\extras\m2repository\com\android\support\constraint\constraint-layout-solver\1.0.2\constraint-layout-solver-1.0.2.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="26.0.0"
+        sha1="b9cd8fc6bd15cb915735d34535db30ece0c44603">
+        <dex dex="G:\7.14\code\FindHere\build\intermediates\pre-dexed\debug\constraint-layout-solver-1.0.2_4c63532e28073c32456a376974e62ecb73f5adb7.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="G:\7.14\code\FindHere\libs\unity-classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="26.0.0"
+        sha1="51f46611e716600d0a9d36ff5f7c2dddde43688c">
+        <dex dex="G:\7.14\code\FindHere\build\intermediates\pre-dexed\debug\unity-classes_b6a49440c8fec950337caf7ac4efa6f00f887ec4.jar" />
     </item>
 
 </items>

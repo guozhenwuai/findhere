@@ -1,12 +1,15 @@
 <component name="libraryTable">
   <library name="design-26.0.0-alpha1">
+    <ANNOTATIONS>
+      <root url="jar://$USER_HOME$/.android/build-cache/d3edfa3b25b2e7c5ca765bd80601c2fa1c0aa2c6/output/annotations.zip!/" />
+    </ANNOTATIONS>
     <CLASSES>
-      <root url="jar://$USER_HOME$/.android/build-cache/9926a36909df21df384e4fce808a30ec609d0eea/output/jars/classes.jar!/" />
-      <root url="file://$USER_HOME$/.android/build-cache/9926a36909df21df384e4fce808a30ec609d0eea/output/res" />
+      <root url="jar://$USER_HOME$/.android/build-cache/d3edfa3b25b2e7c5ca765bd80601c2fa1c0aa2c6/output/jars/classes.jar!/" />
+      <root url="file://$USER_HOME$/.android/build-cache/d3edfa3b25b2e7c5ca765bd80601c2fa1c0aa2c6/output/res" />
     </CLASSES>
     <JAVADOC />
     <SOURCES>
-      <root url="jar://$USER_HOME$/AppData/Local/Android/sdk1/extras/android/m2repository/com/android/support/design/26.0.0-alpha1/design-26.0.0-alpha1-sources.jar!/" />
+      <root url="jar://$USER_HOME$/AppData/Local/Android/sdk/extras/android/m2repository/com/android/support/design/26.0.0-alpha1/design-26.0.0-alpha1-sources.jar!/" />
     </SOURCES>
   </library>
 </component>
