@@ -297,6 +297,7 @@
                 }
             }
         ]
+<<<<<<< HEAD
     },
     {
         "outputFile": "G:\\7.14\\code\\FindHere\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-v17\\values-v17.xml",
@@ -895,5 +896,7 @@
                 }
             }
         ]
+=======
+>>>>>>> 91dd5b9c89f373ba51ee0ce4cb4c335479be6c36
     }
 ]

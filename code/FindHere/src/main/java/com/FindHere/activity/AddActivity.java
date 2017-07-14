@@ -23,7 +23,9 @@ public class AddActivity extends Activity {
     public String ip;
     private String jsonStr;
     private String returnStr;
+    private EditText upload;
     private ImageButton backBtn;
+    private ImageButton imageBtn;
     private SharedPreferences sp;
     private String targetID;
 
@@ -74,6 +76,8 @@ public class AddActivity extends Activity {
         sp = getSharedPreferences("userInfo", Context.MODE_ENABLE_WRITE_AHEAD_LOGGING);
         targetID = sp.getString("targetID","");
         ip = getString(R.string.add_ip);
+        upload = findViewById(R.id.upload);
+
         backBtn = findViewById(R.id.back);
         backBtn.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -86,7 +90,7 @@ public class AddActivity extends Activity {
         commitBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                String text=((EditText)findViewById(R.id.upload)).getText().toString();
+                String text=upload.getText().toString();
                 if(text.equals(""))
                 {
                     msgbox(getString(R.string.not_empty));

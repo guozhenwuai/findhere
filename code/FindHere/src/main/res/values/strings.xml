@@ -18,7 +18,7 @@
     <string name="permission_rationale">"Contacts permissions are needed for providing email
         completions."
     </string>
-    <string name="true_user">true</string>
+    <string name="true_user">success</string>
     <string name="login_success">登陆成功</string>
 
     <!-- Strings related to register -->
@@ -41,9 +41,6 @@
     <string name="add_ip">http://192.168.1.8:8080/FindHere/SetComments/text</string>
     <string name="login_ip">http://192.168.1.8:8080/FindHere/Login</string>
     <string name="register_ip">http://192.168.1.8:8080/FindHere/SignUp</string>
-
-    <string name="addfile_url">http://192.168.1.8:8080/FindHere/SetComments/file</string>
-    <string name="title_activity_rigister">RigisterActivity</string>
 
     <!-- Strings related to targetID -->
     <string name="no_login">未登录</string>

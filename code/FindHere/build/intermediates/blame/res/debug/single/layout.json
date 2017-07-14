@@ -1,5 +1,6 @@
 [
     {
+<<<<<<< HEAD
         "merged": "G:\\7.14\\code\\FindHere\\build\\intermediates\\res\\merged\\debug\\layout\\design_bottom_sheet_dialog.xml",
         "source": "C:\\Users\\msi\\.android\\build-cache\\d3edfa3b25b2e7c5ca765bd80601c2fa1c0aa2c6\\output\\res\\layout\\design_bottom_sheet_dialog.xml"
     },
@@ -18,20 +19,30 @@
     {
         "merged": "G:\\7.14\\code\\FindHere\\build\\intermediates\\res\\merged\\debug\\layout\\abc_action_menu_item_layout.xml",
         "source": "C:\\Users\\msi\\.android\\build-cache\\9b833810b1ed2bf41c664d00bd9e7d183af313de\\output\\res\\layout\\abc_action_menu_item_layout.xml"
+=======
+        "merged": "D:\\FindHere-Unity\\FindHere-Unity\\build\\intermediates\\res\\merged\\debug\\layout\\design_navigation_item_header.xml",
+        "source": "C:\\Users\\asus\\.android\\build-cache\\9926a36909df21df384e4fce808a30ec609d0eea\\output\\res\\layout\\design_navigation_item_header.xml"
+>>>>>>> 91dd5b9c89f373ba51ee0ce4cb4c335479be6c36
     },
     {
         "merged": "D:\\FindHere-Unity\\FindHere-Unity\\build\\intermediates\\res\\merged\\debug\\layout\\abc_screen_simple_overlay_action_mode.xml",
         "source": "C:\\Users\\asus\\.android\\build-cache\\19d7ea8401511620fa23c337710829464e6f2217\\output\\res\\layout\\abc_screen_simple_overlay_action_mode.xml"
     },
     {
+<<<<<<< HEAD
         "merged": "D:\\Find\\build\\intermediates\\res\\merged\\debug\\layout\\design_layout_tab_icon.xml",
         "source": "C:\\Users\\asus\\.android\\build-cache\\9926a36909df21df384e4fce808a30ec609d0eea\\output\\res\\layout\\design_layout_tab_icon.xml"
+=======
+        "merged": "D:\\FindHere-Unity\\FindHere-Unity\\build\\intermediates\\res\\merged\\debug\\layout\\design_menu_item_action_area.xml",
+        "source": "C:\\Users\\asus\\.android\\build-cache\\9926a36909df21df384e4fce808a30ec609d0eea\\output\\res\\layout\\design_menu_item_action_area.xml"
+>>>>>>> 91dd5b9c89f373ba51ee0ce4cb4c335479be6c36
     },
     {
-        "merged": "G:\\7.14\\code\\FindHere\\build\\intermediates\\res\\merged\\debug\\layout\\abc_action_bar_title_item.xml",
-        "source": "C:\\Users\\msi\\.android\\build-cache\\9b833810b1ed2bf41c664d00bd9e7d183af313de\\output\\res\\layout\\abc_action_bar_title_item.xml"
+        "merged": "D:\\FindHere-Unity\\FindHere-Unity\\build\\intermediates\\res\\merged\\debug\\layout\\notification_template_custom_big.xml",
+        "source": "C:\\Users\\asus\\.android\\build-cache\\19d7ea8401511620fa23c337710829464e6f2217\\output\\res\\layout\\notification_template_custom_big.xml"
     },
     {
+<<<<<<< HEAD
         "merged": "G:\\7.14\\code\\FindHere\\build\\intermediates\\res\\merged\\debug\\layout\\add_activity.xml",
         "source": "G:\\7.14\\code\\FindHere\\src\\main\\res\\layout\\add_activity.xml"
     },
@@ -42,14 +53,22 @@
     {
         "merged": "G:\\7.14\\code\\FindHere\\build\\intermediates\\res\\merged\\debug\\layout\\abc_action_bar_view_list_nav_layout.xml",
         "source": "C:\\Users\\msi\\.android\\build-cache\\9b833810b1ed2bf41c664d00bd9e7d183af313de\\output\\res\\layout\\abc_action_bar_view_list_nav_layout.xml"
+=======
+        "merged": "D:\\FindHere-Unity\\FindHere-Unity\\build\\intermediates\\res\\merged\\debug\\layout\\seek_activity.xml",
+        "source": "D:\\FindHere-Unity\\FindHere-Unity\\src\\main\\res\\layout\\seek_activity.xml"
+    },
+    {
+        "merged": "D:\\FindHere-Unity\\FindHere-Unity\\build\\intermediates\\res\\merged\\debug\\layout\\notification_template_lines_media.xml",
+        "source": "C:\\Users\\asus\\.android\\build-cache\\19d7ea8401511620fa23c337710829464e6f2217\\output\\res\\layout\\notification_template_lines_media.xml"
+>>>>>>> 91dd5b9c89f373ba51ee0ce4cb4c335479be6c36
     },
     {
         "merged": "D:\\FindHere-Unity\\FindHere-Unity\\build\\intermediates\\res\\merged\\debug\\layout\\support_simple_spinner_dropdown_item.xml",
         "source": "C:\\Users\\asus\\.android\\build-cache\\19d7ea8401511620fa23c337710829464e6f2217\\output\\res\\layout\\support_simple_spinner_dropdown_item.xml"
     },
     {
-        "merged": "G:\\7.14\\code\\FindHere\\build\\intermediates\\res\\merged\\debug\\layout\\abc_activity_chooser_view.xml",
-        "source": "C:\\Users\\msi\\.android\\build-cache\\9b833810b1ed2bf41c664d00bd9e7d183af313de\\output\\res\\layout\\abc_activity_chooser_view.xml"
+        "merged": "D:\\FindHere-Unity\\FindHere-Unity\\build\\intermediates\\res\\merged\\debug\\layout\\abc_screen_toolbar.xml",
+        "source": "C:\\Users\\asus\\.android\\build-cache\\19d7ea8401511620fa23c337710829464e6f2217\\output\\res\\layout\\abc_screen_toolbar.xml"
     },
     {
         "merged": "D:\\Find\\build\\intermediates\\res\\merged\\debug\\layout\\notification_template_custom_big.xml",
@@ -68,6 +87,7 @@
         "source": "C:\\Users\\asus\\.android\\build-cache\\19d7ea8401511620fa23c337710829464e6f2217\\output\\res\\layout\\notification_template_media_custom.xml"
     },
     {
+<<<<<<< HEAD
         "merged": "G:\\7.14\\code\\FindHere\\build\\intermediates\\res\\merged\\debug\\layout\\design_bottom_navigation_item.xml",
         "source": "C:\\Users\\msi\\.android\\build-cache\\d3edfa3b25b2e7c5ca765bd80601c2fa1c0aa2c6\\output\\res\\layout\\design_bottom_navigation_item.xml"
     },
@@ -420,6 +440,8 @@
         "source": "C:\\Users\\asus\\.android\\build-cache\\19d7ea8401511620fa23c337710829464e6f2217\\output\\res\\layout\\abc_search_view.xml"
     },
     {
+=======
+>>>>>>> 91dd5b9c89f373ba51ee0ce4cb4c335479be6c36
         "merged": "D:\\FindHere-Unity\\FindHere-Unity\\build\\intermediates\\res\\merged\\debug\\layout\\abc_action_bar_title_item.xml",
         "source": "C:\\Users\\asus\\.android\\build-cache\\19d7ea8401511620fa23c337710829464e6f2217\\output\\res\\layout\\abc_action_bar_title_item.xml"
     },
@@ -428,14 +450,11 @@
         "source": "D:\\FindHere-Unity\\FindHere-Unity\\src\\main\\res\\layout\\splash_screen.xml"
     },
     {
-        "merged": "G:\\7.14\\code\\FindHere\\build\\intermediates\\res\\merged\\debug\\layout\\design_navigation_item.xml",
-        "source": "C:\\Users\\msi\\.android\\build-cache\\d3edfa3b25b2e7c5ca765bd80601c2fa1c0aa2c6\\output\\res\\layout\\design_navigation_item.xml"
-    },
-    {
         "merged": "D:\\FindHere-Unity\\FindHere-Unity\\build\\intermediates\\res\\merged\\debug\\layout\\set_activity.xml",
         "source": "D:\\FindHere-Unity\\FindHere-Unity\\src\\main\\res\\layout\\set_activity.xml"
     },
     {
+<<<<<<< HEAD
         "merged": "G:\\7.14\\code\\FindHere\\build\\intermediates\\res\\merged\\debug\\layout\\seek_activity.xml",
         "source": "G:\\7.14\\code\\FindHere\\src\\main\\res\\layout\\seek_activity.xml"
     },
@@ -444,6 +463,8 @@
         "source": "D:\\Find\\src\\main\\res\\layout\\login_activity.xml"
     },
     {
+=======
+>>>>>>> 91dd5b9c89f373ba51ee0ce4cb4c335479be6c36
         "merged": "D:\\FindHere-Unity\\FindHere-Unity\\build\\intermediates\\res\\merged\\debug\\layout\\abc_alert_dialog_material.xml",
         "source": "C:\\Users\\asus\\.android\\build-cache\\19d7ea8401511620fa23c337710829464e6f2217\\output\\res\\layout\\abc_alert_dialog_material.xml"
     },
@@ -460,8 +481,12 @@
         "source": "D:\\FindHere-Unity\\FindHere-Unity\\src\\main\\res\\layout\\add_activity.xml"
     },
     {
-        "merged": "G:\\7.14\\code\\FindHere\\build\\intermediates\\res\\merged\\debug\\layout\\register_activity.xml",
-        "source": "G:\\7.14\\code\\FindHere\\src\\main\\res\\layout\\register_activity.xml"
+        "merged": "D:\\FindHere-Unity\\FindHere-Unity\\build\\intermediates\\res\\merged\\debug\\layout\\design_navigation_item.xml",
+        "source": "C:\\Users\\asus\\.android\\build-cache\\9926a36909df21df384e4fce808a30ec609d0eea\\output\\res\\layout\\design_navigation_item.xml"
+    },
+    {
+        "merged": "D:\\FindHere-Unity\\FindHere-Unity\\build\\intermediates\\res\\merged\\debug\\layout\\login_activity.xml",
+        "source": "D:\\FindHere-Unity\\FindHere-Unity\\src\\main\\res\\layout\\login_activity.xml"
     },
     {
         "merged": "D:\\FindHere-Unity\\FindHere-Unity\\build\\intermediates\\res\\merged\\debug\\layout\\design_bottom_sheet_dialog.xml",
@@ -476,10 +501,6 @@
         "source": "C:\\Users\\asus\\.android\\build-cache\\19d7ea8401511620fa23c337710829464e6f2217\\output\\res\\layout\\abc_alert_dialog_button_bar_material.xml"
     },
     {
-        "merged": "G:\\7.14\\code\\FindHere\\build\\intermediates\\res\\merged\\debug\\layout\\abc_screen_content_include.xml",
-        "source": "C:\\Users\\msi\\.android\\build-cache\\9b833810b1ed2bf41c664d00bd9e7d183af313de\\output\\res\\layout\\abc_screen_content_include.xml"
-    },
-    {
         "merged": "D:\\FindHere-Unity\\FindHere-Unity\\build\\intermediates\\res\\merged\\debug\\layout\\abc_action_menu_item_layout.xml",
         "source": "C:\\Users\\asus\\.android\\build-cache\\19d7ea8401511620fa23c337710829464e6f2217\\output\\res\\layout\\abc_action_menu_item_layout.xml"
     },
@@ -492,8 +513,8 @@
         "source": "C:\\Users\\asus\\.android\\build-cache\\19d7ea8401511620fa23c337710829464e6f2217\\output\\res\\layout\\abc_action_mode_close_item_material.xml"
     },
     {
-        "merged": "G:\\7.14\\code\\FindHere\\build\\intermediates\\res\\merged\\debug\\layout\\abc_screen_simple_overlay_action_mode.xml",
-        "source": "C:\\Users\\msi\\.android\\build-cache\\9b833810b1ed2bf41c664d00bd9e7d183af313de\\output\\res\\layout\\abc_screen_simple_overlay_action_mode.xml"
+        "merged": "D:\\FindHere-Unity\\FindHere-Unity\\build\\intermediates\\res\\merged\\debug\\layout\\design_navigation_item_separator.xml",
+        "source": "C:\\Users\\asus\\.android\\build-cache\\9926a36909df21df384e4fce808a30ec609d0eea\\output\\res\\layout\\design_navigation_item_separator.xml"
     },
     {
         "merged": "D:\\Find\\build\\intermediates\\res\\merged\\debug\\layout\\abc_action_bar_view_list_nav_layout.xml",
@@ -504,6 +525,7 @@
         "source": "C:\\Users\\asus\\.android\\build-cache\\19d7ea8401511620fa23c337710829464e6f2217\\output\\res\\layout\\select_dialog_singlechoice_material.xml"
     },
     {
+<<<<<<< HEAD
         "merged": "D:\\Find\\build\\intermediates\\res\\merged\\debug\\layout\\abc_expanded_menu_layout.xml",
         "source": "C:\\Users\\asus\\.android\\build-cache\\19d7ea8401511620fa23c337710829464e6f2217\\output\\res\\layout\\abc_expanded_menu_layout.xml"
     },
@@ -520,16 +542,31 @@
         "source": "C:\\Users\\asus\\.android\\build-cache\\19d7ea8401511620fa23c337710829464e6f2217\\output\\res\\layout\\abc_list_menu_item_checkbox.xml"
     },
     {
+=======
+>>>>>>> 91dd5b9c89f373ba51ee0ce4cb4c335479be6c36
         "merged": "D:\\FindHere-Unity\\FindHere-Unity\\build\\intermediates\\res\\merged\\debug\\layout\\abc_dialog_title_material.xml",
         "source": "C:\\Users\\asus\\.android\\build-cache\\19d7ea8401511620fa23c337710829464e6f2217\\output\\res\\layout\\abc_dialog_title_material.xml"
     },
     {
+<<<<<<< HEAD
         "merged": "D:\\Find\\build\\intermediates\\res\\merged\\debug\\layout\\notification_template_media.xml",
         "source": "C:\\Users\\asus\\.android\\build-cache\\19d7ea8401511620fa23c337710829464e6f2217\\output\\res\\layout\\notification_template_media.xml"
     },
     {
         "merged": "G:\\7.14\\code\\FindHere\\build\\intermediates\\res\\merged\\debug\\layout\\abc_search_view.xml",
         "source": "C:\\Users\\msi\\.android\\build-cache\\9b833810b1ed2bf41c664d00bd9e7d183af313de\\output\\res\\layout\\abc_search_view.xml"
+=======
+        "merged": "D:\\FindHere-Unity\\FindHere-Unity\\build\\intermediates\\res\\merged\\debug\\layout\\design_navigation_item_subheader.xml",
+        "source": "C:\\Users\\asus\\.android\\build-cache\\9926a36909df21df384e4fce808a30ec609d0eea\\output\\res\\layout\\design_navigation_item_subheader.xml"
+    },
+    {
+        "merged": "D:\\FindHere-Unity\\FindHere-Unity\\build\\intermediates\\res\\merged\\debug\\layout\\abc_action_bar_view_list_nav_layout.xml",
+        "source": "C:\\Users\\asus\\.android\\build-cache\\19d7ea8401511620fa23c337710829464e6f2217\\output\\res\\layout\\abc_action_bar_view_list_nav_layout.xml"
+    },
+    {
+        "merged": "D:\\FindHere-Unity\\FindHere-Unity\\build\\intermediates\\res\\merged\\debug\\layout\\abc_alert_dialog_title_material.xml",
+        "source": "C:\\Users\\asus\\.android\\build-cache\\19d7ea8401511620fa23c337710829464e6f2217\\output\\res\\layout\\abc_alert_dialog_title_material.xml"
+>>>>>>> 91dd5b9c89f373ba51ee0ce4cb4c335479be6c36
     },
     {
         "merged": "D:\\FindHere-Unity\\FindHere-Unity\\build\\intermediates\\res\\merged\\debug\\layout\\abc_popup_menu_header_item_layout.xml",
@@ -540,6 +577,7 @@
         "source": "D:\\FindHere-Unity\\FindHere-Unity\\src\\main\\res\\layout\\register_activity.xml"
     },
     {
+<<<<<<< HEAD
         "merged": "D:\\Find\\build\\intermediates\\res\\merged\\debug\\layout\\abc_action_bar_title_item.xml",
         "source": "C:\\Users\\asus\\.android\\build-cache\\19d7ea8401511620fa23c337710829464e6f2217\\output\\res\\layout\\abc_action_bar_title_item.xml"
     },
@@ -556,16 +594,22 @@
         "source": "C:\\Users\\asus\\.android\\build-cache\\9926a36909df21df384e4fce808a30ec609d0eea\\output\\res\\layout\\design_layout_snackbar.xml"
     },
     {
+=======
+>>>>>>> 91dd5b9c89f373ba51ee0ce4cb4c335479be6c36
         "merged": "D:\\FindHere-Unity\\FindHere-Unity\\build\\intermediates\\res\\merged\\debug\\layout\\abc_activity_chooser_view.xml",
         "source": "C:\\Users\\asus\\.android\\build-cache\\19d7ea8401511620fa23c337710829464e6f2217\\output\\res\\layout\\abc_activity_chooser_view.xml"
     },
     {
-        "merged": "G:\\7.14\\code\\FindHere\\build\\intermediates\\res\\merged\\debug\\layout\\abc_list_menu_item_icon.xml",
-        "source": "C:\\Users\\msi\\.android\\build-cache\\9b833810b1ed2bf41c664d00bd9e7d183af313de\\output\\res\\layout\\abc_list_menu_item_icon.xml"
+        "merged": "D:\\FindHere-Unity\\FindHere-Unity\\build\\intermediates\\res\\merged\\debug\\layout\\design_layout_snackbar.xml",
+        "source": "C:\\Users\\asus\\.android\\build-cache\\9926a36909df21df384e4fce808a30ec609d0eea\\output\\res\\layout\\design_layout_snackbar.xml"
     },
     {
-        "merged": "G:\\7.14\\code\\FindHere\\build\\intermediates\\res\\merged\\debug\\layout\\notification_template_part_chronometer.xml",
-        "source": "C:\\Users\\msi\\.android\\build-cache\\9b833810b1ed2bf41c664d00bd9e7d183af313de\\output\\res\\layout\\notification_template_part_chronometer.xml"
+        "merged": "D:\\FindHere-Unity\\FindHere-Unity\\build\\intermediates\\res\\merged\\debug\\layout\\notification_template_part_time.xml",
+        "source": "C:\\Users\\asus\\.android\\build-cache\\19d7ea8401511620fa23c337710829464e6f2217\\output\\res\\layout\\notification_template_part_time.xml"
+    },
+    {
+        "merged": "D:\\FindHere-Unity\\FindHere-Unity\\build\\intermediates\\res\\merged\\debug\\layout\\notification_template_media.xml",
+        "source": "C:\\Users\\asus\\.android\\build-cache\\19d7ea8401511620fa23c337710829464e6f2217\\output\\res\\layout\\notification_template_media.xml"
     },
     {
         "merged": "D:\\Find\\build\\intermediates\\res\\merged\\debug\\layout\\notification_action.xml",
@@ -588,28 +632,42 @@
         "source": "C:\\Users\\asus\\.android\\build-cache\\9926a36909df21df384e4fce808a30ec609d0eea\\output\\res\\layout\\design_text_input_password_icon.xml"
     },
     {
-        "merged": "D:\\FindHere-Unity\\FindHere-Unity\\build\\intermediates\\res\\merged\\debug\\layout\\main_activity.xml",
-        "source": "D:\\FindHere-Unity\\FindHere-Unity\\src\\main\\res\\layout\\main_activity.xml"
+        "merged": "D:\\FindHere-Unity\\FindHere-Unity\\build\\intermediates\\res\\merged\\debug\\layout\\design_bottom_navigation_item.xml",
+        "source": "C:\\Users\\asus\\.android\\build-cache\\9926a36909df21df384e4fce808a30ec609d0eea\\output\\res\\layout\\design_bottom_navigation_item.xml"
     },
     {
         "merged": "D:\\FindHere-Unity\\FindHere-Unity\\build\\intermediates\\res\\merged\\debug\\layout\\design_layout_tab_text.xml",
         "source": "C:\\Users\\asus\\.android\\build-cache\\9926a36909df21df384e4fce808a30ec609d0eea\\output\\res\\layout\\design_layout_tab_text.xml"
     },
     {
+<<<<<<< HEAD
         "merged": "D:\\Find\\build\\intermediates\\res\\merged\\debug\\layout\\design_layout_tab_text.xml",
         "source": "C:\\Users\\asus\\.android\\build-cache\\9926a36909df21df384e4fce808a30ec609d0eea\\output\\res\\layout\\design_layout_tab_text.xml"
     },
     {
         "merged": "D:\\Find\\build\\intermediates\\res\\merged\\debug\\layout\\notification_template_part_time.xml",
         "source": "C:\\Users\\asus\\.android\\build-cache\\19d7ea8401511620fa23c337710829464e6f2217\\output\\res\\layout\\notification_template_part_time.xml"
+=======
+        "merged": "D:\\FindHere-Unity\\FindHere-Unity\\build\\intermediates\\res\\merged\\debug\\layout\\main_activity.xml",
+        "source": "D:\\FindHere-Unity\\FindHere-Unity\\src\\main\\res\\layout\\main_activity.xml"
+    },
+    {
+        "merged": "D:\\FindHere-Unity\\FindHere-Unity\\build\\intermediates\\res\\merged\\debug\\layout\\select_dialog_item_material.xml",
+        "source": "C:\\Users\\asus\\.android\\build-cache\\19d7ea8401511620fa23c337710829464e6f2217\\output\\res\\layout\\select_dialog_item_material.xml"
+>>>>>>> 91dd5b9c89f373ba51ee0ce4cb4c335479be6c36
     },
     {
         "merged": "D:\\FindHere-Unity\\FindHere-Unity\\build\\intermediates\\res\\merged\\debug\\layout\\abc_select_dialog_material.xml",
         "source": "C:\\Users\\asus\\.android\\build-cache\\19d7ea8401511620fa23c337710829464e6f2217\\output\\res\\layout\\abc_select_dialog_material.xml"
     },
     {
+<<<<<<< HEAD
         "merged": "D:\\Find\\build\\intermediates\\res\\merged\\debug\\layout\\set_activity.xml",
         "source": "D:\\Find\\src\\main\\res\\layout\\set_activity.xml"
+=======
+        "merged": "D:\\FindHere-Unity\\FindHere-Unity\\build\\intermediates\\res\\merged\\debug\\layout\\user_activity.xml",
+        "source": "D:\\FindHere-Unity\\FindHere-Unity\\src\\main\\res\\layout\\user_activity.xml"
+>>>>>>> 91dd5b9c89f373ba51ee0ce4cb4c335479be6c36
     },
     {
         "merged": "D:\\FindHere-Unity\\FindHere-Unity\\build\\intermediates\\res\\merged\\debug\\layout\\abc_popup_menu_item_layout.xml",
@@ -624,8 +682,8 @@
         "source": "C:\\Users\\asus\\.android\\build-cache\\19d7ea8401511620fa23c337710829464e6f2217\\output\\res\\layout\\abc_search_view.xml"
     },
     {
-        "merged": "G:\\7.14\\code\\FindHere\\build\\intermediates\\res\\merged\\debug\\layout\\abc_screen_toolbar.xml",
-        "source": "C:\\Users\\msi\\.android\\build-cache\\9b833810b1ed2bf41c664d00bd9e7d183af313de\\output\\res\\layout\\abc_screen_toolbar.xml"
+        "merged": "D:\\FindHere-Unity\\FindHere-Unity\\build\\intermediates\\res\\merged\\debug\\layout\\abc_list_menu_item_radio.xml",
+        "source": "C:\\Users\\asus\\.android\\build-cache\\19d7ea8401511620fa23c337710829464e6f2217\\output\\res\\layout\\abc_list_menu_item_radio.xml"
     },
     {
         "merged": "D:\\FindHere-Unity\\FindHere-Unity\\build\\intermediates\\res\\merged\\debug\\layout\\abc_list_menu_item_checkbox.xml",
@@ -636,16 +694,16 @@
         "source": "C:\\Users\\asus\\.android\\build-cache\\9926a36909df21df384e4fce808a30ec609d0eea\\output\\res\\layout\\design_navigation_menu.xml"
     },
     {
-        "merged": "G:\\7.14\\code\\FindHere\\build\\intermediates\\res\\merged\\debug\\layout\\abc_expanded_menu_layout.xml",
-        "source": "C:\\Users\\msi\\.android\\build-cache\\9b833810b1ed2bf41c664d00bd9e7d183af313de\\output\\res\\layout\\abc_expanded_menu_layout.xml"
+        "merged": "D:\\FindHere-Unity\\FindHere-Unity\\build\\intermediates\\res\\merged\\debug\\layout\\abc_list_menu_item_icon.xml",
+        "source": "C:\\Users\\asus\\.android\\build-cache\\19d7ea8401511620fa23c337710829464e6f2217\\output\\res\\layout\\abc_list_menu_item_icon.xml"
+    },
+    {
+        "merged": "D:\\FindHere-Unity\\FindHere-Unity\\build\\intermediates\\res\\merged\\debug\\layout\\abc_activity_chooser_view_list_item.xml",
+        "source": "C:\\Users\\asus\\.android\\build-cache\\19d7ea8401511620fa23c337710829464e6f2217\\output\\res\\layout\\abc_activity_chooser_view_list_item.xml"
     },
     {
         "merged": "D:\\FindHere-Unity\\FindHere-Unity\\build\\intermediates\\res\\merged\\debug\\layout\\select_dialog_multichoice_material.xml",
         "source": "C:\\Users\\asus\\.android\\build-cache\\19d7ea8401511620fa23c337710829464e6f2217\\output\\res\\layout\\select_dialog_multichoice_material.xml"
-    },
-    {
-        "merged": "G:\\7.14\\code\\FindHere\\build\\intermediates\\res\\merged\\debug\\layout\\abc_select_dialog_material.xml",
-        "source": "C:\\Users\\msi\\.android\\build-cache\\9b833810b1ed2bf41c664d00bd9e7d183af313de\\output\\res\\layout\\abc_select_dialog_material.xml"
     },
     {
         "merged": "D:\\Find\\build\\intermediates\\res\\merged\\debug\\layout\\abc_activity_chooser_view_list_item.xml",
@@ -656,10 +714,6 @@
         "source": "C:\\Users\\asus\\.android\\build-cache\\19d7ea8401511620fa23c337710829464e6f2217\\output\\res\\layout\\abc_search_dropdown_item_icons_2line.xml"
     },
     {
-        "merged": "G:\\7.14\\code\\FindHere\\build\\intermediates\\res\\merged\\debug\\layout\\abc_list_menu_item_layout.xml",
-        "source": "C:\\Users\\msi\\.android\\build-cache\\9b833810b1ed2bf41c664d00bd9e7d183af313de\\output\\res\\layout\\abc_list_menu_item_layout.xml"
-    },
-    {
         "merged": "D:\\FindHere-Unity\\FindHere-Unity\\build\\intermediates\\res\\merged\\debug\\layout\\abc_list_menu_item_layout.xml",
         "source": "C:\\Users\\asus\\.android\\build-cache\\19d7ea8401511620fa23c337710829464e6f2217\\output\\res\\layout\\abc_list_menu_item_layout.xml"
     },
@@ -668,6 +722,7 @@
         "source": "C:\\Users\\asus\\.android\\build-cache\\19d7ea8401511620fa23c337710829464e6f2217\\output\\res\\layout\\abc_action_menu_layout.xml"
     },
     {
+<<<<<<< HEAD
         "merged": "G:\\7.14\\code\\FindHere\\build\\intermediates\\res\\merged\\debug\\layout\\abc_action_mode_close_item_material.xml",
         "source": "C:\\Users\\msi\\.android\\build-cache\\9b833810b1ed2bf41c664d00bd9e7d183af313de\\output\\res\\layout\\abc_action_mode_close_item_material.xml"
     },
@@ -684,10 +739,13 @@
         "source": "C:\\Users\\asus\\.android\\build-cache\\19d7ea8401511620fa23c337710829464e6f2217\\output\\res\\layout\\select_dialog_multichoice_material.xml"
     },
     {
+=======
+>>>>>>> 91dd5b9c89f373ba51ee0ce4cb4c335479be6c36
         "merged": "D:\\FindHere-Unity\\FindHere-Unity\\build\\intermediates\\res\\merged\\debug\\layout\\abc_action_bar_up_container.xml",
         "source": "C:\\Users\\asus\\.android\\build-cache\\19d7ea8401511620fa23c337710829464e6f2217\\output\\res\\layout\\abc_action_bar_up_container.xml"
     },
     {
+<<<<<<< HEAD
         "merged": "D:\\Find\\build\\intermediates\\res\\merged\\debug\\layout\\notification_template_media_custom.xml",
         "source": "C:\\Users\\asus\\.android\\build-cache\\19d7ea8401511620fa23c337710829464e6f2217\\output\\res\\layout\\notification_template_media_custom.xml"
     },
@@ -702,6 +760,10 @@
     {
         "merged": "G:\\7.14\\code\\FindHere\\build\\intermediates\\res\\merged\\debug\\layout\\notification_template_media.xml",
         "source": "C:\\Users\\msi\\.android\\build-cache\\9b833810b1ed2bf41c664d00bd9e7d183af313de\\output\\res\\layout\\notification_template_media.xml"
+=======
+        "merged": "D:\\FindHere-Unity\\FindHere-Unity\\build\\intermediates\\res\\merged\\debug\\layout\\notification_template_icon_group.xml",
+        "source": "C:\\Users\\asus\\.android\\build-cache\\19d7ea8401511620fa23c337710829464e6f2217\\output\\res\\layout\\notification_template_icon_group.xml"
+>>>>>>> 91dd5b9c89f373ba51ee0ce4cb4c335479be6c36
     },
     {
         "merged": "D:\\Find\\build\\intermediates\\res\\merged\\debug\\layout\\support_simple_spinner_dropdown_item.xml",
@@ -724,16 +786,8 @@
         "source": "C:\\Users\\asus\\.android\\build-cache\\9926a36909df21df384e4fce808a30ec609d0eea\\output\\res\\layout\\design_layout_tab_icon.xml"
     },
     {
-        "merged": "G:\\7.14\\code\\FindHere\\build\\intermediates\\res\\merged\\debug\\layout\\record.xml",
-        "source": "G:\\7.14\\code\\FindHere\\src\\main\\res\\layout\\record.xml"
-    },
-    {
-        "merged": "G:\\7.14\\code\\FindHere\\build\\intermediates\\res\\merged\\debug\\layout\\abc_search_dropdown_item_icons_2line.xml",
-        "source": "C:\\Users\\msi\\.android\\build-cache\\9b833810b1ed2bf41c664d00bd9e7d183af313de\\output\\res\\layout\\abc_search_dropdown_item_icons_2line.xml"
-    },
-    {
-        "merged": "G:\\7.14\\code\\FindHere\\build\\intermediates\\res\\merged\\debug\\layout\\design_navigation_item_subheader.xml",
-        "source": "C:\\Users\\msi\\.android\\build-cache\\d3edfa3b25b2e7c5ca765bd80601c2fa1c0aa2c6\\output\\res\\layout\\design_navigation_item_subheader.xml"
+        "merged": "D:\\FindHere-Unity\\FindHere-Unity\\build\\intermediates\\res\\merged\\debug\\layout\\design_navigation_menu_item.xml",
+        "source": "C:\\Users\\asus\\.android\\build-cache\\9926a36909df21df384e4fce808a30ec609d0eea\\output\\res\\layout\\design_navigation_menu_item.xml"
     },
     {
         "merged": "D:\\FindHere-Unity\\FindHere-Unity\\build\\intermediates\\res\\merged\\debug\\layout\\abc_screen_simple.xml",
@@ -742,6 +796,7 @@
     {
         "merged": "D:\\FindHere-Unity\\FindHere-Unity\\build\\intermediates\\res\\merged\\debug\\layout\\notification_action_tombstone.xml",
         "source": "C:\\Users\\asus\\.android\\build-cache\\19d7ea8401511620fa23c337710829464e6f2217\\output\\res\\layout\\notification_action_tombstone.xml"
+<<<<<<< HEAD
     },
     {
         "merged": "G:\\7.14\\code\\FindHere\\build\\intermediates\\res\\merged\\debug\\layout\\design_navigation_item_separator.xml",
@@ -750,5 +805,7 @@
     {
         "merged": "D:\\Find\\build\\intermediates\\res\\merged\\debug\\layout\\abc_search_dropdown_item_icons_2line.xml",
         "source": "C:\\Users\\asus\\.android\\build-cache\\19d7ea8401511620fa23c337710829464e6f2217\\output\\res\\layout\\abc_search_dropdown_item_icons_2line.xml"
+=======
+>>>>>>> 91dd5b9c89f373ba51ee0ce4cb4c335479be6c36
     }
 ]

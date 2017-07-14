@@ -1,5 +1,6 @@
 [
     {
+<<<<<<< HEAD
         "outputFile": "D:\\Find\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-kk\\values-kk.xml",
         "map": [
             {
@@ -808,6 +809,8 @@
         ]
     },
     {
+=======
+>>>>>>> 91dd5b9c89f373ba51ee0ce4cb4c335479be6c36
         "outputFile": "D:\\FindHere-Unity\\FindHere-Unity\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-kk\\values-kk.xml",
         "map": [
             {

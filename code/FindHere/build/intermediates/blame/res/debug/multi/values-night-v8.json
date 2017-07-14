@@ -136,6 +136,7 @@
                 }
             }
         ]
+<<<<<<< HEAD
     },
     {
         "outputFile": "G:\\7.14\\code\\FindHere\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-night-v8\\values-night-v8.xml",
@@ -412,5 +413,7 @@
                 }
             }
         ]
+=======
+>>>>>>> 91dd5b9c89f373ba51ee0ce4cb4c335479be6c36
     }
 ]

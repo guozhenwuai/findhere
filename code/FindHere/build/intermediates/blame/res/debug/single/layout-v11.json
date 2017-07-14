@@ -4,6 +4,7 @@
         "source": "C:\\Users\\asus\\.android\\build-cache\\19d7ea8401511620fa23c337710829464e6f2217\\output\\res\\layout-v11\\notification_template_big_media_narrow.xml"
     },
     {
+<<<<<<< HEAD
         "merged": "G:\\7.14\\code\\FindHere\\build\\intermediates\\res\\merged\\debug\\layout-v11\\notification_template_big_media.xml",
         "source": "C:\\Users\\msi\\.android\\build-cache\\9b833810b1ed2bf41c664d00bd9e7d183af313de\\output\\res\\layout-v11\\notification_template_big_media.xml"
     },
@@ -12,22 +13,17 @@
         "source": "C:\\Users\\asus\\.android\\build-cache\\19d7ea8401511620fa23c337710829464e6f2217\\output\\res\\layout-v11\\notification_template_big_media_custom.xml"
     },
     {
+=======
+>>>>>>> 91dd5b9c89f373ba51ee0ce4cb4c335479be6c36
         "merged": "D:\\FindHere-Unity\\FindHere-Unity\\build\\intermediates\\res\\merged\\debug\\layout-v11\\notification_media_cancel_action.xml",
         "source": "C:\\Users\\asus\\.android\\build-cache\\19d7ea8401511620fa23c337710829464e6f2217\\output\\res\\layout-v11\\notification_media_cancel_action.xml"
-    },
-    {
-        "merged": "G:\\7.14\\code\\FindHere\\build\\intermediates\\res\\merged\\debug\\layout-v11\\notification_media_cancel_action.xml",
-        "source": "C:\\Users\\msi\\.android\\build-cache\\9b833810b1ed2bf41c664d00bd9e7d183af313de\\output\\res\\layout-v11\\notification_media_cancel_action.xml"
-    },
-    {
-        "merged": "G:\\7.14\\code\\FindHere\\build\\intermediates\\res\\merged\\debug\\layout-v11\\notification_template_big_media_narrow.xml",
-        "source": "C:\\Users\\msi\\.android\\build-cache\\9b833810b1ed2bf41c664d00bd9e7d183af313de\\output\\res\\layout-v11\\notification_template_big_media_narrow.xml"
     },
     {
         "merged": "D:\\FindHere-Unity\\FindHere-Unity\\build\\intermediates\\res\\merged\\debug\\layout-v11\\notification_template_big_media_custom.xml",
         "source": "C:\\Users\\asus\\.android\\build-cache\\19d7ea8401511620fa23c337710829464e6f2217\\output\\res\\layout-v11\\notification_template_big_media_custom.xml"
     },
     {
+<<<<<<< HEAD
         "merged": "G:\\7.14\\code\\FindHere\\build\\intermediates\\res\\merged\\debug\\layout-v11\\notification_template_big_media_custom.xml",
         "source": "C:\\Users\\msi\\.android\\build-cache\\9b833810b1ed2bf41c664d00bd9e7d183af313de\\output\\res\\layout-v11\\notification_template_big_media_custom.xml"
     },
@@ -36,10 +32,13 @@
         "source": "C:\\Users\\asus\\.android\\build-cache\\19d7ea8401511620fa23c337710829464e6f2217\\output\\res\\layout-v11\\notification_template_big_media_narrow_custom.xml"
     },
     {
+=======
+>>>>>>> 91dd5b9c89f373ba51ee0ce4cb4c335479be6c36
         "merged": "D:\\FindHere-Unity\\FindHere-Unity\\build\\intermediates\\res\\merged\\debug\\layout-v11\\notification_template_big_media.xml",
         "source": "C:\\Users\\asus\\.android\\build-cache\\19d7ea8401511620fa23c337710829464e6f2217\\output\\res\\layout-v11\\notification_template_big_media.xml"
     },
     {
+<<<<<<< HEAD
         "merged": "G:\\7.14\\code\\FindHere\\build\\intermediates\\res\\merged\\debug\\layout-v11\\notification_media_action.xml",
         "source": "C:\\Users\\msi\\.android\\build-cache\\9b833810b1ed2bf41c664d00bd9e7d183af313de\\output\\res\\layout-v11\\notification_media_action.xml"
     },
@@ -52,6 +51,8 @@
         "source": "C:\\Users\\msi\\.android\\build-cache\\9b833810b1ed2bf41c664d00bd9e7d183af313de\\output\\res\\layout-v11\\notification_template_big_media_narrow_custom.xml"
     },
     {
+=======
+>>>>>>> 91dd5b9c89f373ba51ee0ce4cb4c335479be6c36
         "merged": "D:\\FindHere-Unity\\FindHere-Unity\\build\\intermediates\\res\\merged\\debug\\layout-v11\\notification_media_action.xml",
         "source": "C:\\Users\\asus\\.android\\build-cache\\19d7ea8401511620fa23c337710829464e6f2217\\output\\res\\layout-v11\\notification_media_action.xml"
     },

@@ -12,6 +12,7 @@ import android.content.Loader;
 import android.content.SharedPreferences;
 import android.content.pm.PackageManager;
 import android.database.Cursor;
+import android.graphics.Bitmap;
 import android.net.Uri;
 import android.os.AsyncTask;
 import android.os.Build;
@@ -64,8 +65,10 @@ public class LoginActivity extends Activity implements LoaderCallbacks<Cursor> {
     private View mLoginFormView;
     private ImageButton backBtn;
 
-    private String returnStr="false";
+    private String returnStr = "false";
     private String jsonStr="";
+    private byte[] returnByte;
+    private Bitmap bitmap = null;
 
     private SharedPreferences sp;
 
@@ -389,7 +392,6 @@ public class LoginActivity extends Activity implements LoaderCallbacks<Cursor> {
         @Override
         protected Boolean doInBackground(Void... params) {
             String ip=getString(R.string.login_ip);
-            //String ip = "http://192.168.1.8:8080/FindHere/Login?email=yangruiheng1@126.com&password=11111";
             JSONObject object = new JSONObject();
             try {
                 object.put("email", email);
@@ -399,11 +401,7 @@ public class LoginActivity extends Activity implements LoaderCallbacks<Cursor> {
                 e.printStackTrace();
             }
             Connect myConnect = new Connect(LoginActivity.this);
-            returnStr=myConnect.sendHttpPost(ip,jsonStr);
-            //returnStr="true";
-            if(returnStr.equals("")){return false;}
-            if (returnStr.equals(getString(R.string.true_user))){return true;}
-            else{return false;}
+            return myConnect.sendHttpPostByte(ip,jsonStr);
         }
 
         @Override
@@ -411,10 +409,6 @@ public class LoginActivity extends Activity implements LoaderCallbacks<Cursor> {
             showProgress(false);
 
             if (success) {
-                SharedPreferences.Editor editor = sp.edit();
-                editor.putString("email", email);
-                editor.putString("password", password);
-                editor.commit();
                 Toast.makeText(LoginActivity.this,getString(R.string.login_success), Toast.LENGTH_SHORT).show();
                 mAuthTask = null;
                 finish();
