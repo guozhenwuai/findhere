@@ -22,9 +22,14 @@
 		<mvc:interceptor>
     		<mvc:mapping path="/ConfirmMember"/>
     		<mvc:mapping path="/AgreeMember"/>
+    		<mvc:mapping path="/RejectApply"/>
     		<bean class="controller.AdminLoginInterceptor"></bean>
     	</mvc:interceptor>
-    	
+    	<mvc:interceptor>
+    		<mvc:mapping path="/MemberUploadContent"/>
+    		<mvc:mapping path="/MemberWelcome"/>
+    		<bean class="controller.MemberLoginInterceptor"></bean>
+    	</mvc:interceptor>
     </mvc:interceptors>
 
     <context:component-scan base-package="controller" />

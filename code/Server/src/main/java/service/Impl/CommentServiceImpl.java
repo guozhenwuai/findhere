@@ -49,7 +49,7 @@ public class CommentServiceImpl implements CommentService {
 		}
 	}
 	
-	public void returnCommentIDsBytargetID(String targetID, int pageNum, int pageIndex, HttpServletResponse response)
+	public void returnCommentIDsByTargetID(String targetID, int pageNum, int pageIndex, HttpServletResponse response)
 			throws IOException{
 		List<Comment> comments = commentDao.getSomeCommentsByTargetID(targetID, pageNum*pageIndex, pageNum);
 		List<JSONObject> ret = new ArrayList<JSONObject>();
@@ -57,6 +57,22 @@ public class CommentServiceImpl implements CommentService {
 			JSONObject jsonObj = new JSONObject();
 			jsonObj.put("type", comments.get(i).getType());
 			jsonObj.put("commentID", comments.get(i).get_id());
+			ret.add(jsonObj);
+		}
+		JSONArray jsonArray = new JSONArray(ret);
+		response.getWriter().print(jsonArray.toString());
+	}
+	
+	public void returnCommentIDsByUserID(String userID, int pageIndex, HttpServletResponse response)
+			throws IOException{
+		int pageNum = 10;
+		List<Comment> comments = commentDao.getSomeCommentsByUserID(userID, pageNum*pageIndex, pageNum);
+		List<JSONObject> ret = new ArrayList<JSONObject>();
+		for(int i = 0; i < comments.size(); i++) {
+			JSONObject jsonObj = new JSONObject();
+			jsonObj.put("type", comments.get(i).getType());
+			jsonObj.put("commentID", comments.get(i).get_id());
+			jsonObj.put("text", comments.get(i).getText());
 			ret.add(jsonObj);
 		}
 		JSONArray jsonArray = new JSONArray(ret);

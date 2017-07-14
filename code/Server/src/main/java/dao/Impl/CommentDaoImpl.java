@@ -55,6 +55,15 @@ public class CommentDaoImpl implements CommentDao {
 		return comments;
 	}
 	
+	public List<Comment> getSomeCommentsByUserID(String userID, int skipNum, int num){
+		List<Comment> comments = mongoTemplate.find(
+				new Query(Criteria.where("userID").is(userID))
+				.with(new Sort(Direction.DESC, "time"))
+				.skip(skipNum)
+				.limit(num), Comment.class);
+		return comments;
+	}
+	
 	public boolean remove(String commentID, String userID) {
 		int influenced = mongoTemplate.remove(new Query(Criteria
 				.where("_id").is(commentID)

@@ -33,9 +33,9 @@ public class FileDaoImpl implements FileDao{
 		gfsFile.writeTo(outStream);
 	}
 	
-	public String inputFileToDB(String type, InputStream inStream) {
+	public String inputFileToDB(String gfsName, InputStream inStream) {
 		db = mongoTemplate.getDb();
-		gfsInput = new GridFS(db, type).createFile(inStream);
+		gfsInput = new GridFS(db, gfsName).createFile(inStream);
 		gfsInput.setFilename("ee.jpg");
 		gfsInput.setContentType("image/jpeg");
 		gfsInput.save();
@@ -43,9 +43,9 @@ public class FileDaoImpl implements FileDao{
 		return id;
 	}
 	
-	public boolean removeFile(String type, String fileID) {
+	public boolean removeFile(String gfsName, String fileID) {
 		db = mongoTemplate.getDb();
-		new GridFS(db, type).remove(new ObjectId(fileID));
+		new GridFS(db, gfsName).remove(new ObjectId(fileID));
 		return true;
 	}
 	

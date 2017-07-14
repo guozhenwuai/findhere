@@ -28,11 +28,14 @@ public class Login {
 	@RequestMapping("/Login")
 	public String execute(HttpServletRequest request, HttpServletResponse response, HttpSession httpSession)
 			throws IOException {
+		System.out.println("perparing login");
 		ServletInputStream inStream = request.getInputStream();
 		String jsonString = readService.inputStreamToString(inStream);
 		JSONObject jsonObj = new JSONObject(jsonString);
 		JSONObject ret = new JSONObject(jsonString);
+		System.out.println(":1");
 		userService.login(jsonObj, response, httpSession);
+		System.out.println(":2");
 		return null;
 	}
 	
@@ -41,11 +44,19 @@ public class Login {
 			throws IOException {
 		String userID = request.getParameter("userID");
 		String password = request.getParameter("password");
-		boolean success = userService.webLogin(userID, password);
-		if(success) {
+		int result = userService.webLogin(userID, password);
+		
+		if(result == 1) {//Administrator
 			httpSession.setAttribute("isAdmin", "true");
+			return "redirect:/ConfirmMember?pageIndex=0";
+		}else if(result == 2) {//Member
+			httpSession.setAttribute("isMember", "true");
+			httpSession.setAttribute("userID", userID);
+			return "redirect:/MemberWelcome";
+		}else if(result == 3) {//ordinary user
+			return "login";
 		}
-		return "redirect:/ConfirmMember?pageIndex=0";
+		return "login";
 	}
 	
 	@RequestMapping("/LogOut")
@@ -56,11 +67,11 @@ public class Login {
 	}
 	
 	/*GET and SET*/
-	public UserService getMongoDBService(){
+	public UserService getUserService(){
 		return userService;
 	}
 	
-	public void setMongoDBService(UserService s){
+	public void setUserService(UserService s){
 		userService = s;
 	}
 	
