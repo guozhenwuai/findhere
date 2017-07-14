@@ -1,5 +1,9 @@
 [
     {
+        "merged": "D:\\Find\\build\\intermediates\\res\\merged\\debug\\color\\abc_tint_edittext.xml",
+        "source": "C:\\Users\\asus\\.android\\build-cache\\19d7ea8401511620fa23c337710829464e6f2217\\output\\res\\color\\abc_tint_edittext.xml"
+    },
+    {
         "merged": "D:\\FindHere-Unity\\FindHere-Unity\\build\\intermediates\\res\\merged\\debug\\color\\abc_tint_seek_thumb.xml",
         "source": "C:\\Users\\asus\\.android\\build-cache\\19d7ea8401511620fa23c337710829464e6f2217\\output\\res\\color\\abc_tint_seek_thumb.xml"
     },
@@ -16,28 +20,28 @@
         "source": "C:\\Users\\msi\\.android\\build-cache\\9b833810b1ed2bf41c664d00bd9e7d183af313de\\output\\res\\color\\abc_btn_colored_borderless_text_material.xml"
     },
     {
-        "merged": "D:\\FindHere-Unity\\FindHere-Unity\\build\\intermediates\\res\\merged\\debug\\color\\abc_hint_foreground_material_dark.xml",
-        "source": "C:\\Users\\asus\\.android\\build-cache\\19d7ea8401511620fa23c337710829464e6f2217\\output\\res\\color\\abc_hint_foreground_material_dark.xml"
+        "merged": "D:\\Find\\build\\intermediates\\res\\merged\\debug\\color\\abc_secondary_text_material_light.xml",
+        "source": "C:\\Users\\asus\\.android\\build-cache\\19d7ea8401511620fa23c337710829464e6f2217\\output\\res\\color\\abc_secondary_text_material_light.xml"
     },
     {
         "merged": "D:\\FindHere-Unity\\FindHere-Unity\\build\\intermediates\\res\\merged\\debug\\color\\abc_search_url_text.xml",
         "source": "C:\\Users\\asus\\.android\\build-cache\\19d7ea8401511620fa23c337710829464e6f2217\\output\\res\\color\\abc_search_url_text.xml"
     },
     {
-        "merged": "G:\\7.14\\code\\FindHere\\build\\intermediates\\res\\merged\\debug\\color\\abc_hint_foreground_material_light.xml",
-        "source": "C:\\Users\\msi\\.android\\build-cache\\9b833810b1ed2bf41c664d00bd9e7d183af313de\\output\\res\\color\\abc_hint_foreground_material_light.xml"
+        "merged": "D:\\Find\\build\\intermediates\\res\\merged\\debug\\color\\abc_btn_colored_text_material.xml",
+        "source": "C:\\Users\\asus\\.android\\build-cache\\19d7ea8401511620fa23c337710829464e6f2217\\output\\res\\color\\abc_btn_colored_text_material.xml"
     },
     {
         "merged": "D:\\FindHere-Unity\\FindHere-Unity\\build\\intermediates\\res\\merged\\debug\\color\\abc_secondary_text_material_light.xml",
         "source": "C:\\Users\\asus\\.android\\build-cache\\19d7ea8401511620fa23c337710829464e6f2217\\output\\res\\color\\abc_secondary_text_material_light.xml"
     },
     {
-        "merged": "G:\\7.14\\code\\FindHere\\build\\intermediates\\res\\merged\\debug\\color\\abc_tint_spinner.xml",
-        "source": "C:\\Users\\msi\\.android\\build-cache\\9b833810b1ed2bf41c664d00bd9e7d183af313de\\output\\res\\color\\abc_tint_spinner.xml"
+        "merged": "D:\\Find\\build\\intermediates\\res\\merged\\debug\\color\\design_error.xml",
+        "source": "C:\\Users\\asus\\.android\\build-cache\\9926a36909df21df384e4fce808a30ec609d0eea\\output\\res\\color\\design_error.xml"
     },
     {
-        "merged": "G:\\7.14\\code\\FindHere\\build\\intermediates\\res\\merged\\debug\\color\\design_tint_password_toggle.xml",
-        "source": "C:\\Users\\msi\\.android\\build-cache\\d3edfa3b25b2e7c5ca765bd80601c2fa1c0aa2c6\\output\\res\\color\\design_tint_password_toggle.xml"
+        "merged": "D:\\Find\\build\\intermediates\\res\\merged\\debug\\color\\abc_primary_text_disable_only_material_dark.xml",
+        "source": "C:\\Users\\asus\\.android\\build-cache\\19d7ea8401511620fa23c337710829464e6f2217\\output\\res\\color\\abc_primary_text_disable_only_material_dark.xml"
     },
     {
         "merged": "D:\\FindHere-Unity\\FindHere-Unity\\build\\intermediates\\res\\merged\\debug\\color\\abc_tint_switch_thumb.xml",
@@ -56,6 +60,90 @@
         "source": "C:\\Users\\asus\\.android\\build-cache\\19d7ea8401511620fa23c337710829464e6f2217\\output\\res\\color\\switch_thumb_material_light.xml"
     },
     {
+        "merged": "D:\\Find\\build\\intermediates\\res\\merged\\debug\\color\\abc_hint_foreground_material_light.xml",
+        "source": "C:\\Users\\asus\\.android\\build-cache\\19d7ea8401511620fa23c337710829464e6f2217\\output\\res\\color\\abc_hint_foreground_material_light.xml"
+    },
+    {
+        "merged": "D:\\Find\\build\\intermediates\\res\\merged\\debug\\color\\abc_tint_switch_thumb.xml",
+        "source": "C:\\Users\\asus\\.android\\build-cache\\19d7ea8401511620fa23c337710829464e6f2217\\output\\res\\color\\abc_tint_switch_thumb.xml"
+    },
+    {
+        "merged": "G:\\7.14\\code\\FindHere\\build\\intermediates\\res\\merged\\debug\\color\\abc_tint_switch_thumb.xml",
+        "source": "C:\\Users\\msi\\.android\\build-cache\\9b833810b1ed2bf41c664d00bd9e7d183af313de\\output\\res\\color\\abc_tint_switch_thumb.xml"
+    },
+    {
+        "merged": "D:\\FindHere-Unity\\FindHere-Unity\\build\\intermediates\\res\\merged\\debug\\color\\abc_primary_text_material_dark.xml",
+        "source": "C:\\Users\\asus\\.android\\build-cache\\19d7ea8401511620fa23c337710829464e6f2217\\output\\res\\color\\abc_primary_text_material_dark.xml"
+    },
+    {
+        "merged": "D:\\Find\\build\\intermediates\\res\\merged\\debug\\color\\abc_hint_foreground_material_dark.xml",
+        "source": "C:\\Users\\asus\\.android\\build-cache\\19d7ea8401511620fa23c337710829464e6f2217\\output\\res\\color\\abc_hint_foreground_material_dark.xml"
+    },
+    {
+        "merged": "D:\\FindHere-Unity\\FindHere-Unity\\build\\intermediates\\res\\merged\\debug\\color\\switch_thumb_material_dark.xml",
+        "source": "C:\\Users\\asus\\.android\\build-cache\\19d7ea8401511620fa23c337710829464e6f2217\\output\\res\\color\\switch_thumb_material_dark.xml"
+    },
+    {
+        "merged": "G:\\7.14\\code\\FindHere\\build\\intermediates\\res\\merged\\debug\\color\\abc_primary_text_disable_only_material_dark.xml",
+        "source": "C:\\Users\\msi\\.android\\build-cache\\9b833810b1ed2bf41c664d00bd9e7d183af313de\\output\\res\\color\\abc_primary_text_disable_only_material_dark.xml"
+    },
+    {
+        "merged": "G:\\7.14\\code\\FindHere\\build\\intermediates\\res\\merged\\debug\\color\\switch_thumb_material_dark.xml",
+        "source": "C:\\Users\\msi\\.android\\build-cache\\9b833810b1ed2bf41c664d00bd9e7d183af313de\\output\\res\\color\\switch_thumb_material_dark.xml"
+    },
+    {
+        "merged": "D:\\Find\\build\\intermediates\\res\\merged\\debug\\color\\switch_thumb_material_light.xml",
+        "source": "C:\\Users\\asus\\.android\\build-cache\\19d7ea8401511620fa23c337710829464e6f2217\\output\\res\\color\\switch_thumb_material_light.xml"
+    },
+    {
+        "merged": "D:\\FindHere-Unity\\FindHere-Unity\\build\\intermediates\\res\\merged\\debug\\color\\abc_tint_edittext.xml",
+        "source": "C:\\Users\\asus\\.android\\build-cache\\19d7ea8401511620fa23c337710829464e6f2217\\output\\res\\color\\abc_tint_edittext.xml"
+    },
+    {
+        "merged": "G:\\7.14\\code\\FindHere\\build\\intermediates\\res\\merged\\debug\\color\\abc_primary_text_material_light.xml",
+        "source": "C:\\Users\\msi\\.android\\build-cache\\9b833810b1ed2bf41c664d00bd9e7d183af313de\\output\\res\\color\\abc_primary_text_material_light.xml"
+    },
+    {
+        "merged": "D:\\FindHere-Unity\\FindHere-Unity\\build\\intermediates\\res\\merged\\debug\\color\\abc_tint_switch_track.xml",
+        "source": "C:\\Users\\asus\\.android\\build-cache\\19d7ea8401511620fa23c337710829464e6f2217\\output\\res\\color\\abc_tint_switch_track.xml"
+    },
+    {
+        "merged": "D:\\Find\\build\\intermediates\\res\\merged\\debug\\color\\abc_primary_text_material_light.xml",
+        "source": "C:\\Users\\asus\\.android\\build-cache\\19d7ea8401511620fa23c337710829464e6f2217\\output\\res\\color\\abc_primary_text_material_light.xml"
+    },
+    {
+        "merged": "D:\\Find\\build\\intermediates\\res\\merged\\debug\\color\\abc_tint_btn_checkable.xml",
+        "source": "C:\\Users\\asus\\.android\\build-cache\\19d7ea8401511620fa23c337710829464e6f2217\\output\\res\\color\\abc_tint_btn_checkable.xml"
+    },
+    {
+        "merged": "D:\\FindHere-Unity\\FindHere-Unity\\build\\intermediates\\res\\merged\\debug\\color\\abc_primary_text_disable_only_material_dark.xml",
+        "source": "C:\\Users\\asus\\.android\\build-cache\\19d7ea8401511620fa23c337710829464e6f2217\\output\\res\\color\\abc_primary_text_disable_only_material_dark.xml"
+    },
+    {
+        "merged": "G:\\7.14\\code\\FindHere\\build\\intermediates\\res\\merged\\debug\\color\\abc_secondary_text_material_dark.xml",
+        "source": "C:\\Users\\msi\\.android\\build-cache\\9b833810b1ed2bf41c664d00bd9e7d183af313de\\output\\res\\color\\abc_secondary_text_material_dark.xml"
+    },
+    {
+        "merged": "D:\\Find\\build\\intermediates\\res\\merged\\debug\\color\\abc_tint_default.xml",
+        "source": "C:\\Users\\asus\\.android\\build-cache\\19d7ea8401511620fa23c337710829464e6f2217\\output\\res\\color\\abc_tint_default.xml"
+    },
+    {
+        "merged": "D:\\FindHere-Unity\\FindHere-Unity\\build\\intermediates\\res\\merged\\debug\\color\\abc_hint_foreground_material_dark.xml",
+        "source": "C:\\Users\\asus\\.android\\build-cache\\19d7ea8401511620fa23c337710829464e6f2217\\output\\res\\color\\abc_hint_foreground_material_dark.xml"
+    },
+    {
+        "merged": "G:\\7.14\\code\\FindHere\\build\\intermediates\\res\\merged\\debug\\color\\abc_hint_foreground_material_light.xml",
+        "source": "C:\\Users\\msi\\.android\\build-cache\\9b833810b1ed2bf41c664d00bd9e7d183af313de\\output\\res\\color\\abc_hint_foreground_material_light.xml"
+    },
+    {
+        "merged": "G:\\7.14\\code\\FindHere\\build\\intermediates\\res\\merged\\debug\\color\\abc_tint_spinner.xml",
+        "source": "C:\\Users\\msi\\.android\\build-cache\\9b833810b1ed2bf41c664d00bd9e7d183af313de\\output\\res\\color\\abc_tint_spinner.xml"
+    },
+    {
+        "merged": "G:\\7.14\\code\\FindHere\\build\\intermediates\\res\\merged\\debug\\color\\design_tint_password_toggle.xml",
+        "source": "C:\\Users\\msi\\.android\\build-cache\\d3edfa3b25b2e7c5ca765bd80601c2fa1c0aa2c6\\output\\res\\color\\design_tint_password_toggle.xml"
+    },
+    {
         "merged": "D:\\FindHere-Unity\\FindHere-Unity\\build\\intermediates\\res\\merged\\debug\\color\\design_tint_password_toggle.xml",
         "source": "C:\\Users\\asus\\.android\\build-cache\\9926a36909df21df384e4fce808a30ec609d0eea\\output\\res\\color\\design_tint_password_toggle.xml"
     },
@@ -72,28 +160,8 @@
         "source": "C:\\Users\\asus\\.android\\build-cache\\19d7ea8401511620fa23c337710829464e6f2217\\output\\res\\color\\abc_btn_colored_text_material.xml"
     },
     {
-        "merged": "G:\\7.14\\code\\FindHere\\build\\intermediates\\res\\merged\\debug\\color\\abc_tint_switch_thumb.xml",
-        "source": "C:\\Users\\msi\\.android\\build-cache\\9b833810b1ed2bf41c664d00bd9e7d183af313de\\output\\res\\color\\abc_tint_switch_thumb.xml"
-    },
-    {
-        "merged": "D:\\FindHere-Unity\\FindHere-Unity\\build\\intermediates\\res\\merged\\debug\\color\\abc_primary_text_material_dark.xml",
-        "source": "C:\\Users\\asus\\.android\\build-cache\\19d7ea8401511620fa23c337710829464e6f2217\\output\\res\\color\\abc_primary_text_material_dark.xml"
-    },
-    {
         "merged": "D:\\FindHere-Unity\\FindHere-Unity\\build\\intermediates\\res\\merged\\debug\\color\\abc_tint_default.xml",
         "source": "C:\\Users\\asus\\.android\\build-cache\\19d7ea8401511620fa23c337710829464e6f2217\\output\\res\\color\\abc_tint_default.xml"
-    },
-    {
-        "merged": "D:\\FindHere-Unity\\FindHere-Unity\\build\\intermediates\\res\\merged\\debug\\color\\switch_thumb_material_dark.xml",
-        "source": "C:\\Users\\asus\\.android\\build-cache\\19d7ea8401511620fa23c337710829464e6f2217\\output\\res\\color\\switch_thumb_material_dark.xml"
-    },
-    {
-        "merged": "G:\\7.14\\code\\FindHere\\build\\intermediates\\res\\merged\\debug\\color\\abc_primary_text_disable_only_material_dark.xml",
-        "source": "C:\\Users\\msi\\.android\\build-cache\\9b833810b1ed2bf41c664d00bd9e7d183af313de\\output\\res\\color\\abc_primary_text_disable_only_material_dark.xml"
-    },
-    {
-        "merged": "G:\\7.14\\code\\FindHere\\build\\intermediates\\res\\merged\\debug\\color\\switch_thumb_material_dark.xml",
-        "source": "C:\\Users\\msi\\.android\\build-cache\\9b833810b1ed2bf41c664d00bd9e7d183af313de\\output\\res\\color\\switch_thumb_material_dark.xml"
     },
     {
         "merged": "D:\\FindHere-Unity\\FindHere-Unity\\build\\intermediates\\res\\merged\\debug\\color\\abc_tint_btn_checkable.xml",
@@ -104,8 +172,12 @@
         "source": "C:\\Users\\asus\\.android\\build-cache\\19d7ea8401511620fa23c337710829464e6f2217\\output\\res\\color\\abc_primary_text_material_light.xml"
     },
     {
-        "merged": "D:\\FindHere-Unity\\FindHere-Unity\\build\\intermediates\\res\\merged\\debug\\color\\abc_tint_edittext.xml",
-        "source": "C:\\Users\\asus\\.android\\build-cache\\19d7ea8401511620fa23c337710829464e6f2217\\output\\res\\color\\abc_tint_edittext.xml"
+        "merged": "D:\\Find\\build\\intermediates\\res\\merged\\debug\\color\\design_tint_password_toggle.xml",
+        "source": "C:\\Users\\asus\\.android\\build-cache\\9926a36909df21df384e4fce808a30ec609d0eea\\output\\res\\color\\design_tint_password_toggle.xml"
+    },
+    {
+        "merged": "D:\\Find\\build\\intermediates\\res\\merged\\debug\\color\\abc_btn_colored_borderless_text_material.xml",
+        "source": "C:\\Users\\asus\\.android\\build-cache\\19d7ea8401511620fa23c337710829464e6f2217\\output\\res\\color\\abc_btn_colored_borderless_text_material.xml"
     },
     {
         "merged": "G:\\7.14\\code\\FindHere\\build\\intermediates\\res\\merged\\debug\\color\\abc_primary_text_material_dark.xml",
@@ -116,12 +188,28 @@
         "source": "C:\\Users\\msi\\.android\\build-cache\\d3edfa3b25b2e7c5ca765bd80601c2fa1c0aa2c6\\output\\res\\color\\design_error.xml"
     },
     {
+        "merged": "D:\\Find\\build\\intermediates\\res\\merged\\debug\\color\\abc_primary_text_material_dark.xml",
+        "source": "C:\\Users\\asus\\.android\\build-cache\\19d7ea8401511620fa23c337710829464e6f2217\\output\\res\\color\\abc_primary_text_material_dark.xml"
+    },
+    {
         "merged": "G:\\7.14\\code\\FindHere\\build\\intermediates\\res\\merged\\debug\\color\\abc_tint_default.xml",
         "source": "C:\\Users\\msi\\.android\\build-cache\\9b833810b1ed2bf41c664d00bd9e7d183af313de\\output\\res\\color\\abc_tint_default.xml"
     },
     {
+        "merged": "D:\\Find\\build\\intermediates\\res\\merged\\debug\\color\\abc_tint_spinner.xml",
+        "source": "C:\\Users\\asus\\.android\\build-cache\\19d7ea8401511620fa23c337710829464e6f2217\\output\\res\\color\\abc_tint_spinner.xml"
+    },
+    {
         "merged": "D:\\FindHere-Unity\\FindHere-Unity\\build\\intermediates\\res\\merged\\debug\\color\\abc_primary_text_disable_only_material_light.xml",
         "source": "C:\\Users\\asus\\.android\\build-cache\\19d7ea8401511620fa23c337710829464e6f2217\\output\\res\\color\\abc_primary_text_disable_only_material_light.xml"
+    },
+    {
+        "merged": "D:\\Find\\build\\intermediates\\res\\merged\\debug\\color\\switch_thumb_material_dark.xml",
+        "source": "C:\\Users\\asus\\.android\\build-cache\\19d7ea8401511620fa23c337710829464e6f2217\\output\\res\\color\\switch_thumb_material_dark.xml"
+    },
+    {
+        "merged": "D:\\Find\\build\\intermediates\\res\\merged\\debug\\color\\abc_tint_switch_track.xml",
+        "source": "C:\\Users\\asus\\.android\\build-cache\\19d7ea8401511620fa23c337710829464e6f2217\\output\\res\\color\\abc_tint_switch_track.xml"
     },
     {
         "merged": "G:\\7.14\\code\\FindHere\\build\\intermediates\\res\\merged\\debug\\color\\abc_secondary_text_material_light.xml",
@@ -132,12 +220,16 @@
         "source": "C:\\Users\\msi\\.android\\build-cache\\9b833810b1ed2bf41c664d00bd9e7d183af313de\\output\\res\\color\\abc_tint_btn_checkable.xml"
     },
     {
-        "merged": "G:\\7.14\\code\\FindHere\\build\\intermediates\\res\\merged\\debug\\color\\abc_primary_text_material_light.xml",
-        "source": "C:\\Users\\msi\\.android\\build-cache\\9b833810b1ed2bf41c664d00bd9e7d183af313de\\output\\res\\color\\abc_primary_text_material_light.xml"
+        "merged": "D:\\Find\\build\\intermediates\\res\\merged\\debug\\color\\abc_secondary_text_material_dark.xml",
+        "source": "C:\\Users\\asus\\.android\\build-cache\\19d7ea8401511620fa23c337710829464e6f2217\\output\\res\\color\\abc_secondary_text_material_dark.xml"
     },
     {
-        "merged": "D:\\FindHere-Unity\\FindHere-Unity\\build\\intermediates\\res\\merged\\debug\\color\\abc_tint_switch_track.xml",
-        "source": "C:\\Users\\asus\\.android\\build-cache\\19d7ea8401511620fa23c337710829464e6f2217\\output\\res\\color\\abc_tint_switch_track.xml"
+        "merged": "D:\\Find\\build\\intermediates\\res\\merged\\debug\\color\\abc_search_url_text.xml",
+        "source": "C:\\Users\\asus\\.android\\build-cache\\19d7ea8401511620fa23c337710829464e6f2217\\output\\res\\color\\abc_search_url_text.xml"
+    },
+    {
+        "merged": "D:\\Find\\build\\intermediates\\res\\merged\\debug\\color\\abc_tint_seek_thumb.xml",
+        "source": "C:\\Users\\asus\\.android\\build-cache\\19d7ea8401511620fa23c337710829464e6f2217\\output\\res\\color\\abc_tint_seek_thumb.xml"
     },
     {
         "merged": "D:\\FindHere-Unity\\FindHere-Unity\\build\\intermediates\\res\\merged\\debug\\color\\abc_tint_spinner.xml",
@@ -160,12 +252,8 @@
         "source": "C:\\Users\\msi\\.android\\build-cache\\9b833810b1ed2bf41c664d00bd9e7d183af313de\\output\\res\\color\\abc_search_url_text.xml"
     },
     {
-        "merged": "D:\\FindHere-Unity\\FindHere-Unity\\build\\intermediates\\res\\merged\\debug\\color\\abc_primary_text_disable_only_material_dark.xml",
-        "source": "C:\\Users\\asus\\.android\\build-cache\\19d7ea8401511620fa23c337710829464e6f2217\\output\\res\\color\\abc_primary_text_disable_only_material_dark.xml"
-    },
-    {
-        "merged": "G:\\7.14\\code\\FindHere\\build\\intermediates\\res\\merged\\debug\\color\\abc_secondary_text_material_dark.xml",
-        "source": "C:\\Users\\msi\\.android\\build-cache\\9b833810b1ed2bf41c664d00bd9e7d183af313de\\output\\res\\color\\abc_secondary_text_material_dark.xml"
+        "merged": "D:\\Find\\build\\intermediates\\res\\merged\\debug\\color\\abc_primary_text_disable_only_material_light.xml",
+        "source": "C:\\Users\\asus\\.android\\build-cache\\19d7ea8401511620fa23c337710829464e6f2217\\output\\res\\color\\abc_primary_text_disable_only_material_light.xml"
     },
     {
         "merged": "G:\\7.14\\code\\FindHere\\build\\intermediates\\res\\merged\\debug\\color\\abc_tint_seek_thumb.xml",
