@@ -1,15 +1,12 @@
 <component name="libraryTable">
   <library name="recyclerview-v7-26.0.0-alpha1">
-    <ANNOTATIONS>
-      <root url="jar://$USER_HOME$/.android/build-cache/cff1569881ab4119d3e72df77f8e5fdbab207aaa/output/annotations.zip!/" />
-    </ANNOTATIONS>
     <CLASSES>
-      <root url="file://$USER_HOME$/.android/build-cache/cff1569881ab4119d3e72df77f8e5fdbab207aaa/output/res" />
-      <root url="jar://$USER_HOME$/.android/build-cache/cff1569881ab4119d3e72df77f8e5fdbab207aaa/output/jars/classes.jar!/" />
+      <root url="jar://$USER_HOME$/.android/build-cache/e6234a49e7d426fe8214d2bd095b4b678274f14d/output/jars/classes.jar!/" />
+      <root url="file://$USER_HOME$/.android/build-cache/e6234a49e7d426fe8214d2bd095b4b678274f14d/output/res" />
     </CLASSES>
     <JAVADOC />
     <SOURCES>
-      <root url="jar://$USER_HOME$/AppData/Local/Android/sdk/extras/android/m2repository/com/android/support/recyclerview-v7/26.0.0-alpha1/recyclerview-v7-26.0.0-alpha1-sources.jar!/" />
+      <root url="jar://$USER_HOME$/AppData/Local/Android/sdk1/extras/android/m2repository/com/android/support/recyclerview-v7/26.0.0-alpha1/recyclerview-v7-26.0.0-alpha1-sources.jar!/" />
     </SOURCES>
   </library>
 </component>
