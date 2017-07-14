@@ -47,24 +47,28 @@ public class ContentManager : MonoBehaviour,ITrackableEventHandler {
     void Update()
     {
         //声音停止后喇叭消失
-        if (!music.isPlaying&&isAudioShow)
+        if (music!=null&&!music.isPlaying&&isAudioShow)
         {
             ShowField(AudioField,false);
         }
         //信息点的移动效果
-        if (status == 1)
+        /*if (status == 1)
         {
             float v = 0.1f*Time.deltaTime;
             foreach(Transform point in infoPoint.transform)
             {
-                Vector3 pos = point.localPosition;
+                //Vector3 pos = point.localPosition;
                 float x, y, z;
+                x = Random.Range(-0.8f, 0.8f);
+                y = Random.Range(0, 0.4f);
+                z = Random.Range(-0.8f, 0.8f);
+                point.localPosition = Vector3.Lerp(point.localPosition, new Vector3(x,y,z), v);
                 //确定移动坐标
-                if (pos.x <= -1f)
+                if (pos.x <= -0.8f)
                 {
                     x = Random.Range(0, v);
                 }
-                else if (pos.x >= 1f)
+                else if (pos.x >= 0.8f)
                 {
                     x = Random.Range(-v, 0);
                 }
@@ -76,7 +80,7 @@ public class ContentManager : MonoBehaviour,ITrackableEventHandler {
                 {
                     y = Random.Range(0, v);
                 }
-                else if (pos.y >= 0.8f)
+                else if (pos.y >= 0.4f)
                 {
                     y = Random.Range(-v, 0);
                 }
@@ -97,8 +101,9 @@ public class ContentManager : MonoBehaviour,ITrackableEventHandler {
                     z = Random.Range(-v, v);
                 }
                 point.localPosition = new Vector3(pos.x + x, pos.y + y, pos.z + z);
+
             }
-        }
+        }*/
         //点击事件处理
         if (Input.GetMouseButtonUp(0))
         {
@@ -117,7 +122,7 @@ public class ContentManager : MonoBehaviour,ITrackableEventHandler {
                 }
                 if (hitObject.transform.parent.tag == "InfoPoint")
                 {
-                    Debug.Log("touch info point");
+                    Debug.Log("touch info point"+hitObject.name);
                     OnDisplay(hitObject);
                 }
                 else if (hitObject.name == "TextField")
@@ -298,10 +303,9 @@ public class ContentManager : MonoBehaviour,ITrackableEventHandler {
         string tag = obj.tag;
         if (tag == "TextInfo")
         {
-            infoLoader.LoadText(obj.name);
-            ShowField(TextField,true);
-            status = 2;
             ShowField(infoPoint, false);
+            infoLoader.LoadText(obj.name);
+            status = 2;
         }
         else if (tag == "ImageInfo")
         {

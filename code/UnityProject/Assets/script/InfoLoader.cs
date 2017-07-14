@@ -19,9 +19,10 @@ public class InfoLoader : MonoBehaviour {
 
     private AndroidJavaObject androidPlugin;
     private bool isLoadingImage;
+    private bool isLoadingText;
     private bool isLoadingAudio;
     private GameObject audioFrom;
-    private WWW imageContent;
+    private WWW incompatibleContent;
     private WWW audioContent;
 
     // Use this for initialization
@@ -29,12 +30,12 @@ public class InfoLoader : MonoBehaviour {
         AndroidJavaClass jc = new AndroidJavaClass("com.unity3d.player.UnityPlayer");
         androidPlugin = jc.GetStatic<AndroidJavaObject>("currentActivity");
         isLoadingImage = false;
+        isLoadingText = false;
         isLoadingAudio = false;
     }
 
     void Update()
     {
-        SetLoadingSpinner(isLoadingImage||isLoadingAudio);
         if (isLoadingImage)
         {
             LoadImage();
@@ -43,38 +44,63 @@ public class InfoLoader : MonoBehaviour {
         {
             LoadAudio();
         }
+        if (isLoadingText)
+        {
+            LoadText();
+        }
+        SetLoadingSpinner(isLoadingImage || isLoadingText || isLoadingAudio);
     }
 
     public bool isLoading()
     {
-        return isLoadingImage;
+        return isLoadingImage || isLoadingText ;
     }
 
     public void stopLoading()
     {
         isLoadingImage = false;
-        imageContent = null;
+        isLoadingText = false;
+        incompatibleContent = null;
+    }
+
+    private void LoadText()
+    {
+        if (incompatibleContent.error != null)
+        {
+            isLoadingText = false;
+        }
+        else if (incompatibleContent.progress >= 1)
+        {
+            string content = incompatibleContent.text;
+            TextContent text = JsonUtility.FromJson<TextContent>(content);
+            textAdapter.setText(text.GetText());
+            isLoadingText = false;
+        }
     }
 
     public void LoadText(string id)
     {
-        string content = id;
+        string url = "http://115.159.184.211:8080/FindHere/GetComments/ByID?commentID=" + id;
+        //string url = "http://192.168.1.8:8080/FindHere/GetComments/ByID?commentID=" + id;
+        incompatibleContent = new WWW(url);
+        isLoadingText = true;
+        //string content = www.text;
         //string content = androidPlugin.Call<string>("getCommentContent",id);
-        Debug.Log("string: " + content);
+        //Debug.Log("string: " + content);
         //TextContent text = JsonUtility.FromJson<TextContent>(content);
         //textAdapter.setText(text.GetText());
-        textAdapter.setText(content);
+        //textAdapter.setText(content);
     }
 
     private void LoadImage()
     {
-        if (imageContent.error != null)
+        if (incompatibleContent.error != null)
         {
             isLoadingImage = false;
         }
-        else if (imageContent.progress >= 1)
+        else if (incompatibleContent.progress >= 1)
         {
-            Texture2D texture = imageContent.texture;
+            Texture2D texture = incompatibleContent.texture;
             imageAdapter.setTexture(texture);
             isLoadingImage = false;
         }
@@ -83,7 +109,7 @@ public class InfoLoader : MonoBehaviour {
     public void LoadImage(string id)
     {
         string url = "http://192.168.1.8:8080/FindHere/GetComments/ByID?commentID=" + id;
-        imageContent = new WWW(url);
+        incompatibleContent = new WWW(url);
         isLoadingImage = true;   
     }
 
@@ -136,10 +162,10 @@ public class InfoLoader : MonoBehaviour {
             androidPlugin.Call("setToast", "识别成功！");
         }*/
         WWW www = new WWW("http://115.159.184.211:8080/FindHere/GetComments/GetIDsByTargetID?targetID=1&pageNum=20&pageIndex=0");
+        //WWW www = new WWW("http://192.168.1.8:8080/FindHere/GetComments/GetIDsByTargetID?targetID=8b98be35577b42ed8db301e8b729f7cf&pageNum=20&pageIndex=0");
         while (!www.isDone);
         //记录取得的comments中各类型的id
         string str = www.text;
-        
 
         List<string> textId = new List<string>();
         List<string> imageId = new List<string>();
@@ -165,9 +191,6 @@ public class InfoLoader : MonoBehaviour {
                 Debug.Log("comment type: "+type);
             }
         }
-        audioId.Add("1");
-        audioId.Add("2");
-        audioId.Add("3");
         int textSize = GameObject.FindGameObjectsWithTag("TextInfo").Length;
         //如果已有TextInfo数目不够，重新实例化
         if(textSize<textId.Count)InitializeInfoPoint(textInfo, textId.Count - textSize);
@@ -193,7 +216,7 @@ public class InfoLoader : MonoBehaviour {
         }
         if (visible)
         {
-            loadingSpinner.rectTransform.Rotate(Vector3.forward, 120.0f * Time.deltaTime);
+            loadingSpinner.rectTransform.Rotate(Vector3.forward, 240.0f * Time.deltaTime);
         }
     }
 
@@ -207,9 +230,9 @@ public class InfoLoader : MonoBehaviour {
         {
             point.transform.parent.parent = infoPoint.transform;
             point.transform.parent.localPosition = new Vector3(
-                Random.Range(-1f, 1f),
-                Random.Range(0, 0.5f),
-                Random.Range(-1f, 1f));
+                Random.Range(-0.8f, 0.8f),
+                Random.Range(0, 0.4f),
+                Random.Range(-0.8f, 0.8f));
             point.transform.name = comments[count];
             count++;
             if (count >= size) break;
