@@ -2,8 +2,10 @@ package com.FindHere.activity;
 
 import android.app.Activity;
 import android.app.AlertDialog;
+import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
@@ -35,11 +37,14 @@ public class RegisterActivity extends Activity {
     private String gender;
     private String jsonStr;
     private String returnStr;
+    private SharedPreferences sp;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.register_activity);
+
+        sp = getSharedPreferences("userInfo", Context.MODE_ENABLE_WRITE_AHEAD_LOGGING);
 
         Intent intent = getIntent();
         email = intent.getStringExtra("email");
@@ -125,7 +130,15 @@ public class RegisterActivity extends Activity {
     public Handler mHandler = new Handler(){
         public void handleMessage(Message msg) {
             if(msg.what==1) {
-                if(returnStr.equals("{\"status\":\"Success\"}")){
+                String strNew = returnStr.substring(returnStr.indexOf("{"),returnStr.indexOf("}")+1);
+                String status = "";
+                try {
+                    JSONObject jsonObj = new JSONObject(strNew);
+                    status = jsonObj.getString("status");
+                }catch(JSONException e){
+                    e.printStackTrace();
+                }
+                if(status.equals("success")){
                     msgbox1(returnStr);
                 }
                 else{
@@ -141,6 +154,10 @@ public class RegisterActivity extends Activity {
                 .setNeutralButton(getString(R.string.ok), new DialogInterface.OnClickListener() {
                     public void onClick(DialogInterface dialog, int which) {
                         finish();
+                        SharedPreferences.Editor editor = sp.edit();
+                        editor.putString("userName",userName);
+                        editor.putString("gender",gender);
+                        editor.commit();
                         Intent intent = new Intent();
                         intent.setClass(RegisterActivity.this,UserActivity.class);
                         startActivity(intent);

@@ -26,8 +26,13 @@ public class User implements Serializable {
 	private String weixin;
 	@Field("isMember")
 	private int isMember;
+	@Field("Admin")
+	private int Admin;
 	
-	public User() {}
+	public User() {
+		isMember = 0;
+		Admin = 0;
+	}
 	
 	/*GET and SET*/
 	public String getUserID() {
@@ -92,5 +97,13 @@ public class User implements Serializable {
 	
 	public void setIsMember(int s) {
 		this.isMember = s;
+	}
+	
+	public int getAdmin() {
+		return Admin;
+	}
+	
+	public void setAdmin(int s) {
+		this.Admin = s;
 	}
 }

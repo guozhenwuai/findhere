@@ -1,10 +1,6 @@
 package controller;
 
-import java.io.BufferedReader;
-import java.io.FileInputStream;
 import java.io.IOException;
-import java.io.InputStream;
-import java.io.InputStreamReader;
 
 import javax.annotation.Resource;
 import javax.servlet.ServletInputStream;
@@ -31,16 +27,13 @@ public class SetComments {
 	private ReadService readService;
 
 	@RequestMapping("/text")
-	public String execute(HttpServletRequest request, HttpServletResponse response) 
+	public String execute(HttpServletRequest request, HttpServletResponse response, HttpSession httpSession) 
 			throws IOException{
-		HttpSession httpSession = request.getSession();
 		ServletInputStream inStream = request.getInputStream();
 		String commentJson = readService.inputStreamToString(inStream);
 		JSONObject jsonObj = new JSONObject(commentJson);
 		JSONObject ret = new JSONObject();
 		String userID = (String) httpSession.getAttribute("userID");
-		System.out.println(":1");
-		System.out.println("userID = " + userID);
 		if(userID == null) {
 			ret.put("status", "failure");
 			response.getOutputStream().print(ret.toString());

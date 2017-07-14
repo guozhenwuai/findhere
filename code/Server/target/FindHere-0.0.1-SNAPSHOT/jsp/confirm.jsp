@@ -19,7 +19,7 @@
 			<div id="top-navigation">
 				Welcome <a href="#"><strong>Administrator</strong></a>
 				<span>|</span>
-				<a href="#">Log out</a>
+				<a href="/FindHere/LogOut">Log out</a>
 			</div>
 		</div>
 		<!-- End Logo + Top Nav -->
@@ -97,7 +97,9 @@
 								<td><%=applyList.get(i).getInc() %></td>
 								<td><%=applyList.get(i).getNationalID() %></td>
 								<td>
-									<a href="#" class="ico del">Delete</a>
+									<a href="/FindHere/RejectApply?
+										applyID=<%=applyList.get(i).getId().toString() %>
+										&pageIndex=<%=pageIndex %>" class="ico del">Delete</a>
 									<a href="/FindHere/AgreeMember?
 										userID=<%=applyList.get(i).getUserID() %>
 										&applyID=<%=applyList.get(i).getId().toString() %>
@@ -156,7 +158,7 @@
 <!-- Footer -->
 <div id="footer">
 	<div class="shell">
-		<span class="left">&copy; 2010 - FindHere</span>
+		<span class="left">&copy; 2017 - FindHere</span>
 	</div>
 </div>
 <!-- End Footer -->

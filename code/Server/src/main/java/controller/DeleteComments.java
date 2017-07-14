@@ -22,7 +22,8 @@ public class DeleteComments {
 	@Resource
 	private CommentService commentService;
 	
-	public String execute(@RequestParam("commentID")String commentID, HttpServletRequest request, HttpServletResponse response, HttpSession httpSession) 
+	public String execute(@RequestParam("commentID")String commentID, 
+			HttpServletRequest request, HttpServletResponse response, HttpSession httpSession) 
 			throws IOException{
 		JSONObject ret = new JSONObject();
 		String userID = (String) httpSession.getAttribute("userID");

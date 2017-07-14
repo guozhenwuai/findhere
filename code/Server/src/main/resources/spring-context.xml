@@ -41,6 +41,13 @@
 	
 	<bean id="commentService" class="service.Impl.CommentServiceImpl">
 		<property name="commentDao" ref="commentDao"/>
+		<property name="fileDao" ref="fileDao"/>
+	</bean>
+	
+	<bean id="contentService" class="service.Impl.ContentServiceImpl">
+		<property name="contentDao" ref="contentDao"/>
+		<property name="ARManagerDao" ref="ARManagerDao"/>
+		<property name="fileDao" ref="fileDao"/>
 	</bean>
 	
 	<bean id="userService" class="service.Impl.UserServiceImpl">
@@ -55,15 +62,22 @@
 	</bean>
 	
 	<bean id="commentDao" class="dao.Impl.CommentDaoImpl">
+		<property name="fileDao" ref="fileDao"/>
 	</bean>
 	
 	<bean id="userDao" class="dao.Impl.UserDaoImpl">
 	</bean>
 	
-	<bean id="FileDao" class="dao.Impl.FileDaoImpl">
+	<bean id="fileDao" class="dao.Impl.FileDaoImpl">
 	</bean>
 	
 	<bean id="applyDao" class="dao.Impl.ApplyDaoImpl">
+	</bean>
+	
+	<bean id="contentDao" class="dao.Impl.ContentDaoImpl">
+	</bean>
+	
+	<bean id="ARManagerDao" class="dao.Impl.ARManagerDaoImpl">
 	</bean>
 	
 </beans>
