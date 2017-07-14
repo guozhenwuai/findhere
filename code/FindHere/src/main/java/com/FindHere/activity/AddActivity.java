@@ -77,7 +77,6 @@ public class AddActivity extends Activity {
         targetID = sp.getString("targetID","");
         ip = getString(R.string.add_ip);
         upload = findViewById(R.id.upload);
-
         backBtn = findViewById(R.id.back);
         backBtn.setOnClickListener(new View.OnClickListener() {
             @Override

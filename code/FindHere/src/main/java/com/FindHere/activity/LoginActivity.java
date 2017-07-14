@@ -12,7 +12,6 @@ import android.content.Loader;
 import android.content.SharedPreferences;
 import android.content.pm.PackageManager;
 import android.database.Cursor;
-import android.graphics.Bitmap;
 import android.net.Uri;
 import android.os.AsyncTask;
 import android.os.Build;
@@ -65,10 +64,8 @@ public class LoginActivity extends Activity implements LoaderCallbacks<Cursor> {
     private View mLoginFormView;
     private ImageButton backBtn;
 
-    private String returnStr = "false";
+    private String returnStr="false";
     private String jsonStr="";
-    private byte[] returnByte;
-    private Bitmap bitmap = null;
 
     private SharedPreferences sp;
 
