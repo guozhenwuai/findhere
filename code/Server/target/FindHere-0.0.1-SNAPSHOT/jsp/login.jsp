@@ -21,6 +21,8 @@
 		<div class="wrapper">
 			<h1>Welcome Administrator</h1>
 			<h2>This is the <span>Manager System</span> of FindHere</h2>
+			<br>
+			<br>
 			<div class="content">
 				<div id="form_wrapper" class="form_wrapper">
 					<form class="login active" action="/FindHere/webLogin">

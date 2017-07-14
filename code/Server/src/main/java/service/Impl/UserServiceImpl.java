@@ -49,7 +49,9 @@ public class UserServiceImpl implements UserService {
 		outStream.print(ret.toString());
 		
 		//headPortrait
-		fileDao.outputFileToStream("headPortrait", user.getHeadPortraitID(), outStream);
+		if(user.getHeadPortraitID() != null) {
+			fileDao.outputFileToStream("headPortrait", user.getHeadPortraitID(), outStream);
+		}
 		return false;
 	}
 	

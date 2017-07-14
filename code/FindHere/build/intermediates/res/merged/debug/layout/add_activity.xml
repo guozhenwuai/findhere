@@ -24,6 +24,7 @@
         android:layout_height="250dp"
         android:maxLines="5"
         android:hint="@string/prompt_upload"
+        android:gravity="top|left"
      />
 
     <ImageButton
@@ -35,16 +36,6 @@
         android:layout_below="@+id/upload"
         android:layout_alignRight="@+id/upload"/>
 
-    <ImageButton
-        android:id="@+id/save"
-        android:layout_width="28dp"
-        android:layout_height="28dp"
-        android:scaleType="fitXY"
-        android:layout_marginLeft="8dp"
-        android:src="@drawable/expression"
-        android:layout_below="@+id/upload"
-        android:background="@android:color/transparent"
-        />
     </RelativeLayout>
 
     <ImageButton

@@ -22,7 +22,7 @@ public class GetComments {
 	private CommentService commentService;
 
 	@RequestMapping("/ByID")
-	public String execute1(@RequestParam("commentID")String commentID, 
+	public String execute1(@RequestParam("commentID")String commentID,  
 			HttpServletRequest request, HttpServletResponse response, HttpSession httpSession) 
 			throws IOException{
 		commentService.returnCommentByID(commentID, response);
