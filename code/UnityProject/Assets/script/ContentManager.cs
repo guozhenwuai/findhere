@@ -8,7 +8,6 @@ public class ContentManager : MonoBehaviour,ITrackableEventHandler {
     private CloudRecoBehaviour mCloudRecoBehaviour;
     //0:scanning 1:infopoint 2:textfield 3:imagefield
     private int status;
-    private ObjectTracker mObjectTracker;
     private bool isTrackable;
     private string keepTargetId;
     private string targetId;
@@ -34,7 +33,6 @@ public class ContentManager : MonoBehaviour,ITrackableEventHandler {
             trackableBehaviour.RegisterTrackableEventHandler(this);
         }
         mCloudRecoBehaviour = FindObjectOfType<CloudRecoBehaviour>();
-        mObjectTracker = TrackerManager.Instance.GetTracker<ObjectTracker>();
         music = AudioField.GetComponent<AudioSource>();
 
         //SetCancelButtonVisible(false);
@@ -129,13 +127,13 @@ public class ContentManager : MonoBehaviour,ITrackableEventHandler {
                 {
                     Debug.Log("touch text field");
                     AnimationsManager.PlayAnimationTo2D(TextField);
-                    mObjectTracker.Stop();
+                    TrackerManager.Instance.GetTracker<ObjectTracker>().Stop();
                 }
                 else if(hitObject.name == "ImageContent")
                 {
                     Debug.Log("touch image field");
                     AnimationsManager.PlayAnimationTo2D(ImageField);
-                    mObjectTracker.Stop();
+                    TrackerManager.Instance.GetTracker<ObjectTracker>().Stop();
                 }
                 else if(hitObject.name == "AudioField")
                 {
@@ -150,7 +148,7 @@ public class ContentManager : MonoBehaviour,ITrackableEventHandler {
             else
             {
                 OnCancel();
-                mObjectTracker.Start();
+                TrackerManager.Instance.GetTracker<ObjectTracker>().Start();
             }
         }
     }

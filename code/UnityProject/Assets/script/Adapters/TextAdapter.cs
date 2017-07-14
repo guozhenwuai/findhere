@@ -24,7 +24,7 @@ public class TextAdapter : MonoBehaviour {
     public void setText(string inputString)
     {
         CleanEmoji();
-        inputString = "bicyclist:\U0001F6B4哈, and US flag:\U0001F1FA\U0001F1F8⚽➕❤ = I love football \U0001F3B5 \U0001F3B6 \U0001F3B7 \U0001F3B8 \U0001F3B9 \U0001F3BA";
+        //inputString = "bicyclist:\U0001F6B4哈, and US flag:\U0001F1FA\U0001F1F8⚽➕❤ = I love football \U0001F3B5 \U0001F3B6 \U0001F3B7 \U0001F3B8 \U0001F3B9 \U0001F3BA";
         int feet = 60;
         int count = 0;
         int lines = 0;

@@ -80,8 +80,8 @@ public class InfoLoader : MonoBehaviour {
 
     public void LoadText(string id)
     {
-        string url = "http://115.159.184.211:8080/FindHere/GetComments/ByID?commentID=" + id;
-        //string url = "http://192.168.1.8:8080/FindHere/GetComments/ByID?commentID=" + id;
+        //string url = "http://115.159.184.211:8080/FindHere/GetComments/ByID?commentID=" + id;
+        string url = "http://192.168.1.8:8080/FindHere/GetComments/ByID?commentID=" + id;
         incompatibleContent = new WWW(url);
         isLoadingText = true;
         //string content = www.text;
@@ -136,7 +136,7 @@ public class InfoLoader : MonoBehaviour {
 
     public void SetTargetId(string id)
     {
-        //androidPlugin.Call("setTargetID", id);
+        androidPlugin.Call("setTargetID", id);
     }
 
     private void ResetInfoPool()
@@ -161,8 +161,8 @@ public class InfoLoader : MonoBehaviour {
         else {
             androidPlugin.Call("setToast", "识别成功！");
         }*/
-        WWW www = new WWW("http://115.159.184.211:8080/FindHere/GetComments/GetIDsByTargetID?targetID=1&pageNum=20&pageIndex=0");
-        //WWW www = new WWW("http://192.168.1.8:8080/FindHere/GetComments/GetIDsByTargetID?targetID=8b98be35577b42ed8db301e8b729f7cf&pageNum=20&pageIndex=0");
+        //WWW www = new WWW("http://115.159.184.211:8080/FindHere/GetComments/GetIDsByTargetID?targetID=1&pageNum=20&pageIndex=0");
+        WWW www = new WWW("http://192.168.1.8:8080/FindHere/GetComments/GetIDsByTargetID?targetID=8b98be35577b42ed8db301e8b729f7cf&pageNum=20&pageIndex=0");
         while (!www.isDone);
         //记录取得的comments中各类型的id
         string str = www.text;

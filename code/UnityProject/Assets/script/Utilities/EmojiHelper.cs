@@ -95,11 +95,14 @@ public class EmojiHelper : MonoBehaviour {
             int y = emojiReplacements[j].y;
             GameObject newRawImage = GameObject.Instantiate(this.rawImageToClone);
 
-            newRawImage.transform.localScale = new Vector3(0.007f, 1, 0.007f);
+            newRawImage.transform.localScale = new Vector3(0.007f, 100, 0.007f);
             newRawImage.transform.parent = textField.transform;
-            Vector3 imagePos = new Vector3(0.46f+0.14f*x, -0.2f-0.92f*(y-1), 0.1f);
+            Vector3 imagePos = new Vector3(0.46f+0.14f*x, -0.2f-0.92f*(y-1), 4);
             newRawImage.transform.localPosition = imagePos;
             newRawImage.transform.parent = textField.transform.parent;
+            newRawImage.transform.localPosition = new Vector3(
+                newRawImage.transform.localPosition.x,4,
+                newRawImage.transform.localPosition.z);
 
             Renderer renderer = newRawImage.GetComponent<Renderer>();
             Texture2D texture = (Texture2D)Resources.Load("emojis/" + emojiName[emojiReplacements[j].emoji]);
