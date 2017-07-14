@@ -52,6 +52,7 @@ public class UserActivity extends Activity {
         }else{
             gender_view.setVisibility(View.GONE);
         }
+
         backBtn = findViewById(R.id.back);
         backBtn.setOnClickListener(new View.OnClickListener() {
             @Override

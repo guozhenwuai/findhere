@@ -35,16 +35,7 @@ public class GetComments {
 			@RequestParam("pageIndex")int pageIndex,
 			HttpServletRequest request, HttpServletResponse response, HttpSession httpSession) 
 			throws IOException{
-		commentService.returnCommentIDsByTargetID(targetID, pageNum, pageIndex, response);
-		return null;
-	}
-	
-	@RequestMapping("/GetIDsByUserID")
-	public String execute3(@RequestParam("userID")String userID, 
-			@RequestParam("pageIndex")int pageIndex,
-			HttpServletRequest request, HttpServletResponse response, HttpSession httpSession) 
-			throws IOException{
-		commentService.returnCommentIDsByUserID(userID, pageIndex, response);
+		commentService.returnCommentIDsBytargetID(targetID, pageNum, pageIndex, response);
 		return null;
 	}
 	

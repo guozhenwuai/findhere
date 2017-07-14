@@ -38,11 +38,11 @@ public class GetContents {
 	}
 	
 	/*GET and SET*/
-	public ContentService getContentService(){
+	public ContentService getMongoDBService(){
 		return contentService;
 	}
 	
-	public void setContentService(ContentService s){
+	public void setMongoDBService(ContentService s){
 		contentService = s;
 	}
 }

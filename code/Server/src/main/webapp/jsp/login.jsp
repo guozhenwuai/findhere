@@ -19,7 +19,7 @@
     </head>
     <body>
 		<div class="wrapper">
-			<h1>Welcome FindHere Users</h1>
+			<h1>Welcome Administrator</h1>
 			<h2>This is the <span>Manager System</span> of FindHere</h2>
 			<br>
 			<br>

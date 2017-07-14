@@ -19,11 +19,6 @@ public class ARManagerDaoImpl implements ARManagerDao {
 		return arManager;
 	}
 	
-	public String insertOne(ARManager arManager) {
-		mongoTemplate.insert(arManager);
-		return arManager.getId().toString();
-	}
-	
 	/*GET and SET*/
 	public MongoTemplate getMongoTemplate() {
 		return mongoTemplate;

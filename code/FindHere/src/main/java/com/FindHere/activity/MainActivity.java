@@ -6,9 +6,12 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.res.Configuration;
 import android.database.Cursor;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.net.Uri;
 import android.os.Bundle;
 import android.provider.MediaStore;
+import android.util.Log;
 import android.view.KeyEvent;
 import android.view.MotionEvent;
 import android.view.View;
@@ -19,20 +22,30 @@ import android.widget.RelativeLayout;
 import android.widget.Toast;
 
 import com.FindHere.control.Connect;
+import com.FindHere.model.Comment;
 import com.unity3d.player.UnityPlayer;
+
+import java.io.ByteArrayOutputStream;
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.IOException;
+
+import static android.content.ContentValues.TAG;
 
 public class MainActivity extends Activity{
     protected UnityPlayer mUnityPlayer; // don't change the name of this variable; referenced from native code
     private LinearLayout u3dLayout,addMenu;
     private ImageButton userBtn,cameraBtn,addBtn,seekBtn,setBtn,textBtn,musicBtn,voiceBtn,imageBtn;
     private RelativeLayout loadLayout;
-    //private ImageView cameraClose;
-    private static int RESULT_LOAD_IMAGE = 1;
-    //private boolean camera_on = false;
     private SharedPreferences sp;
     private static String targetID;
     private String returnStr="";
     private String sessionid;
+    private  String restr;
+    private static int RESULT_LOAD_IMAGE = 1;
+    private static int RESULT_RECORD = 2;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -41,8 +54,6 @@ public class MainActivity extends Activity{
         sp = getSharedPreferences("userInfo", Context.MODE_ENABLE_WRITE_AHEAD_LOGGING);
 
         mUnityPlayer = new UnityPlayer(this);
-        //cameraClose = new ImageView(this);
-        //cameraClose.setImageResource(R.drawable.baoman);
         u3dLayout =  findViewById(R.id.unity3d);
         //u3dLayout.addView(cameraClose);
         u3dLayout.addView(mUnityPlayer);
@@ -133,6 +144,16 @@ public class MainActivity extends Activity{
                 startActivityForResult(i, RESULT_LOAD_IMAGE);
             }
         });
+        voiceBtn.setOnClickListener(new OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                Intent intent = new Intent();
+                intent.setClass(MainActivity.this, RecorderActivity.class);
+                startActivityForResult(intent, RESULT_RECORD);
+                // UnityPlayer.UnitySendMessage("ForAndroid", "sayHello", "");
+            }
+        });
 
         seekBtn.setOnClickListener(new OnClickListener() {
             @Override
@@ -152,10 +173,9 @@ public class MainActivity extends Activity{
         });
     }
 
-    @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
-
+        Log.d(TAG, "onActivityResult:OK "+requestCode+" "+resultCode+" "+(data==null));
         if (requestCode == RESULT_LOAD_IMAGE && resultCode == RESULT_OK && null != data) {
             Uri selectedImage = data.getData();
             String[] filePathColumn = {MediaStore.Images.Media.DATA};
@@ -168,8 +188,77 @@ public class MainActivity extends Activity{
             String picturePath = cursor.getString(columnIndex);
             cursor.close();
 
+            final Bitmap image= BitmapFactory.decodeFile(picturePath);
+
+            new Thread(new Runnable(){
+                @Override
+                public void run() {
+                    Connect myConnect = new Connect(MainActivity.this);
+                    String key =null;
+                    Comment newcom=new Comment();
+                    newcom.setImage(image);
+                    newcom.setType("image");
+                    newcom.setTargetId("???");
+
+
+
+                    Log.d("OK",restr+newcom.toJson());
+
+                    restr=myConnect.sendFile(getString(R.string.addfile_url),newcom);
+                    //  restr=myConnect.sendImage(getString(R.string.addimage_url),newcom);
+                    Log.d("OK", restr);
+                  /*  Message msg = mHandler.obtainMessage();
+                    msg.what = 1;
+                    mHandler.sendMessage(msg);*/
+                }}).start();
 
             // String picturePath contains the path of selected Image
+        }
+
+        else if(requestCode==RESULT_RECORD &&resultCode==RESULT_OK && null != data){
+
+            String path=data.getStringExtra("path");
+            Log.d(TAG, "onActivityResult0000"+path);
+
+            File file=new File(path);
+            FileInputStream fis;
+            try {
+                fis = new FileInputStream(file);
+
+                ByteArrayOutputStream bos = new ByteArrayOutputStream();
+                byte[] b = new byte[1024];
+                int n;
+                while ((n = fis.read(b)) != -1)
+                {
+                    bos.write(b, 0, n);
+                }
+                final byte[] wav=bos.toByteArray();
+                new Thread(new Runnable(){
+                    @Override
+                    public void run() {
+                        Connect myConnect = new Connect(MainActivity.this);
+                        Comment newcom = new Comment();
+                        Log.d(TAG, "run:"+wav.length);
+                        newcom.setSounds(wav);
+                        newcom.setType("sound");
+                        newcom.setTargetId("???");
+                        restr = myConnect.sendFile(getString(R.string.addfile_url), newcom);
+                        Log.d(TAG, "run: "+restr);
+                    } }).start();
+            }
+            catch (FileNotFoundException e)
+            {
+                e.printStackTrace();
+            }
+            catch (IOException e)
+            {
+                e.printStackTrace();
+            }
+
+
+
+
+
         }
     }
 

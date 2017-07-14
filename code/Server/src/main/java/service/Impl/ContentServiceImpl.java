@@ -1,7 +1,6 @@
 package service.Impl;
 
 import java.io.IOException;
-import java.io.InputStream;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -14,7 +13,6 @@ import org.json.JSONObject;
 import dao.ARManagerDao;
 import dao.ContentDao;
 import dao.FileDao;
-import dao.UserTargetDao;
 import model.ARManager;
 import model.Content;
 import service.ContentService;
@@ -27,8 +25,6 @@ public class ContentServiceImpl implements ContentService {
 	private ARManagerDao arManagerDao;
 	@Resource
 	private FileDao fileDao;
-	@Resource
-	private UserTargetDao userTargetDao;
 	
 	public void returnContentByID(String contentID, String type, HttpServletResponse response) throws IOException {
 		Content content = contentDao.findOneByID(contentID);
@@ -71,32 +67,6 @@ public class ContentServiceImpl implements ContentService {
 		response.getWriter().print(jsonArray.toString());
 	}
 	
-	public void addARObject(String targetID, InputStream objectFile, InputStream textureFile, InputStream MLTFile) 
-			throws IOException{
-		System.out.println(":2.1");
-		String ARObjectID = fileDao.inputFileToDB("ARObject", objectFile);
-		String texture = fileDao.inputFileToDB("texture", textureFile);
-		String MLTID = fileDao.inputFileToDB("MLT", MLTFile);
-		
-		System.out.println(":2.2");
-		ARManager arManager = new ARManager();
-		arManager.setARObjectID(ARObjectID);
-		arManager.setTexture(texture);
-		arManager.setMTLID(MLTID);
-		String ARManagerID = arManagerDao.insertOne(arManager);
-		
-		System.out.println(":2.3");
-		Content content = new Content();
-		content.setTargetID(targetID);
-		content.setARManagerID(ARManagerID);
-		content.setType("ARObject");
-		String contentID = contentDao.insertOne(content);
-	}
-	
-	public List<String> getUserTargetIDs(String userID){
-		return userTargetDao.findUserTargetIDs(userID);
-	}
-	
 	/*GET and SET*/
 	public ContentDao getContentDao() {
 		return contentDao;
@@ -120,13 +90,5 @@ public class ContentServiceImpl implements ContentService {
 	
 	public void setFileDao(FileDao dao) {
 		fileDao = dao;
-	}
-	
-	public UserTargetDao getUserTargetDao() {
-		return userTargetDao;
-	}
-	
-	public void setUserTargetDao(UserTargetDao dao) {
-		userTargetDao = dao;
 	}
 }

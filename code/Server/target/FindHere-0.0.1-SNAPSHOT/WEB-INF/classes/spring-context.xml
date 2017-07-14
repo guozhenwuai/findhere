@@ -39,12 +39,6 @@
  		<constructor-arg name="mongoDbFactory" ref="mongoDbFactory"/>
 	</bean>
 	
-	<bean id="multipartResolver" class="org.springframework.web.multipart.commons.CommonsMultipartResolver">
-		<property name="defaultEncoding" value="UTF-8" />
-		<property name="maxUploadSize" value="10485760000" />
-		<property name="maxInMemorySize" value="10960" />
-	</bean>
-	
 	<bean id="commentService" class="service.Impl.CommentServiceImpl">
 		<property name="commentDao" ref="commentDao"/>
 		<property name="fileDao" ref="fileDao"/>
@@ -84,9 +78,6 @@
 	</bean>
 	
 	<bean id="ARManagerDao" class="dao.Impl.ARManagerDaoImpl">
-	</bean>
-	
-	<bean id="userTargetDao" class="dao.Impl.UserTargetDaoImpl">
 	</bean>
 	
 </beans>

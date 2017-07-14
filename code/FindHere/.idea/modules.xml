@@ -2,11 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-<<<<<<< HEAD
       <module fileurl="file://$PROJECT_DIR$/Find.iml" filepath="$PROJECT_DIR$/Find.iml" />
-=======
-      <module fileurl="file://$PROJECT_DIR$/FindHere-Unity.iml" filepath="$PROJECT_DIR$/FindHere-Unity.iml" />
->>>>>>> 91dd5b9c89f373ba51ee0ce4cb4c335479be6c36
     </modules>
   </component>
 </project>
