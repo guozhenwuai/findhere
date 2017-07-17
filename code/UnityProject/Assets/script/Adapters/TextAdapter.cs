@@ -109,12 +109,12 @@ public class TextAdapter : MonoBehaviour {
         text.transform.parent = textField.transform;
         text.transform.localPosition = new Vector3(-4.33f, 0, (0.02f+(lines-1)*0.036f)/zScale);
         emojiHelper.LoadEmoji(text.gameObject);
-        contentManager.ShowField(textField, true);
+        contentManager.ShowField(textField.transform.parent.gameObject, true);
     }
 
     private void CleanEmoji()
     {
-        Transform textFieldTransform = textField.transform;
+        Transform textFieldTransform = textField.transform.parent;
         foreach(Transform childTransform in textFieldTransform)
         {
             if (childTransform.tag == "Emoji")

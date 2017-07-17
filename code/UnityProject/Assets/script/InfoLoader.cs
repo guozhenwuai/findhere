@@ -100,7 +100,10 @@ public class InfoLoader : MonoBehaviour {
         }
         else if (incompatibleContent.progress >= 1)
         {
-            Texture2D texture = incompatibleContent.texture;
+            int width = incompatibleContent.texture.width;
+            int height = incompatibleContent.texture.height;
+            Texture2D texture = new Texture2D(width, height);
+            incompatibleContent.LoadImageIntoTexture(texture);
             imageAdapter.setTexture(texture);
             isLoadingImage = false;
         }
@@ -121,7 +124,7 @@ public class InfoLoader : MonoBehaviour {
         }
         else if(audioContent.progress >= 1)
         {
-            AudioClip music = audioContent.GetAudioClip(false, true, AudioType.MPEG);
+            AudioClip music = audioContent.GetAudioClip(false, true, AudioType.WAV);
             audioAdapter.SetAudioSource(music, audioFrom);
             isLoadingAudio = false;
         }
@@ -129,14 +132,14 @@ public class InfoLoader : MonoBehaviour {
 
     public void LoadAudio(GameObject obj)
     {
-        audioContent = new WWW("http://192.168.1.8:8080/FindHere/GetComments/ByID?commentID=596468ea37fe3e08765850c5");
+        audioContent = new WWW("http://192.168.1.8:8080/FindHere/GetComments/ByID?commentID="+obj.name);
         audioFrom = obj;
         isLoadingAudio = true;
     }
 
     public void SetTargetId(string id)
     {
-        androidPlugin.Call("setTargetID", id);
+        //androidPlugin.Call("setTargetID", id);
     }
 
     private void ResetInfoPool()
@@ -191,6 +194,7 @@ public class InfoLoader : MonoBehaviour {
                 Debug.Log("comment type: "+type);
             }
         }
+
         int textSize = GameObject.FindGameObjectsWithTag("TextInfo").Length;
         //如果已有TextInfo数目不够，重新实例化
         if(textSize<textId.Count)InitializeInfoPoint(textInfo, textId.Count - textSize);
@@ -243,7 +247,7 @@ public class InfoLoader : MonoBehaviour {
     {
         for(int i = 0; i < num; i++)
         {
-            GameObject sphere = Instantiate(prototype);
+            Instantiate(prototype);
         }
     }
 

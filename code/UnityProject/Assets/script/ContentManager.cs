@@ -5,14 +5,18 @@ using UnityEngine.UI;
 using Vuforia;
 
 public class ContentManager : MonoBehaviour,ITrackableEventHandler {
-    private CloudRecoBehaviour mCloudRecoBehaviour;
     //0:scanning 1:infopoint 2:textfield 3:imagefield
     private int status;
     private bool isTrackable;
     private string keepTargetId;
     private string targetId;
-    private AudioSource music;
     private bool isAudioShow;
+    private Transform pickedObject = null;
+    
+    // 移动加权，使移动与手指移动同步
+    private float xSpeed = 0.01f;
+    private float ySpeed = 0.01f;
+    private float zSpeed = 0.01f;
 
     public GameObject infoPoint;
     public GameObject TextField;
@@ -32,8 +36,6 @@ public class ContentManager : MonoBehaviour,ITrackableEventHandler {
         {
             trackableBehaviour.RegisterTrackableEventHandler(this);
         }
-        mCloudRecoBehaviour = FindObjectOfType<CloudRecoBehaviour>();
-        music = AudioField.GetComponent<AudioSource>();
 
         //SetCancelButtonVisible(false);
         status = 0;
@@ -45,63 +47,10 @@ public class ContentManager : MonoBehaviour,ITrackableEventHandler {
     void Update()
     {
         //声音停止后喇叭消失
-        if (music!=null&&!music.isPlaying&&isAudioShow)
+        if (AudioField.GetComponent<AudioSource>()!=null&&!AudioField.GetComponent<AudioSource>().isPlaying&&isAudioShow)
         {
             ShowField(AudioField,false);
         }
-        //信息点的移动效果
-        /*if (status == 1)
-        {
-            float v = 0.1f*Time.deltaTime;
-            foreach(Transform point in infoPoint.transform)
-            {
-                //Vector3 pos = point.localPosition;
-                float x, y, z;
-                x = Random.Range(-0.8f, 0.8f);
-                y = Random.Range(0, 0.4f);
-                z = Random.Range(-0.8f, 0.8f);
-                point.localPosition = Vector3.Lerp(point.localPosition, new Vector3(x,y,z), v);
-                //确定移动坐标
-                if (pos.x <= -0.8f)
-                {
-                    x = Random.Range(0, v);
-                }
-                else if (pos.x >= 0.8f)
-                {
-                    x = Random.Range(-v, 0);
-                }
-                else
-                {
-                    x = Random.Range(-v, v);
-                }
-                if (pos.y <= 0)
-                {
-                    y = Random.Range(0, v);
-                }
-                else if (pos.y >= 0.4f)
-                {
-                    y = Random.Range(-v, 0);
-                }
-                else
-                {
-                    y = Random.Range(-v, v);
-                }
-                if (pos.z <= -1f)
-                {
-                    z = Random.Range(0, v);
-                }
-                else if (pos.z >= 1f)
-                {
-                    z = Random.Range(-v, 0);
-                }
-                else
-                {
-                    z = Random.Range(-v, v);
-                }
-                point.localPosition = new Vector3(pos.x + x, pos.y + y, pos.z + z);
-
-            }
-        }*/
         //点击事件处理
         if (Input.GetMouseButtonUp(0))
         {
@@ -123,7 +72,7 @@ public class ContentManager : MonoBehaviour,ITrackableEventHandler {
                     Debug.Log("touch info point"+hitObject.name);
                     OnDisplay(hitObject);
                 }
-                else if (hitObject.name == "TextField")
+                else if (hitObject.name == "TextBackground")
                 {
                     Debug.Log("touch text field");
                     AnimationsManager.PlayAnimationTo2D(TextField);
@@ -149,6 +98,49 @@ public class ContentManager : MonoBehaviour,ITrackableEventHandler {
             {
                 OnCancel();
                 TrackerManager.Instance.GetTracker<ObjectTracker>().Start();
+            }
+        }
+        DragEvent();
+    }
+
+    private void DragEvent()
+    {
+        foreach (Touch touch in Input.touches)
+        {
+            //获取摄像头近平面到屏幕触摸点的射线
+            Ray ray = Camera.main.ScreenPointToRay(touch.position);
+            //获取沿着射线在距离dist位置的点
+            //按下手指触碰屏幕
+            if (touch.phase == TouchPhase.Began)
+            {
+                RaycastHit hit = new RaycastHit();
+                // 判断是否有碰撞到对象
+                if (Physics.Raycast(ray, out hit, 1000))
+                {
+                    pickedObject = hit.transform;
+                }
+                else
+                {
+                    pickedObject = null;
+                }
+
+            }//选中模型后拖拽
+            else if (touch.phase == TouchPhase.Moved)
+            {
+                if (pickedObject != null)
+                {
+                    // 设置移动位移
+                    float x = -Input.GetAxis("Mouse X") * xSpeed;
+                    float z = -Input.GetAxis("Mouse Y") * ySpeed;
+                    float y = Input.GetAxis("Mouse Z") * zSpeed;
+
+                    pickedObject.transform.parent.position += new Vector3(x, y, z);
+                }
+                //释放
+            }
+            else if (touch.phase == TouchPhase.Ended)
+            {
+                pickedObject = null;
             }
         }
     }
@@ -197,11 +189,11 @@ public class ContentManager : MonoBehaviour,ITrackableEventHandler {
         }
         if (tf)
         {
-            music.Play();
+            AudioField.GetComponent<AudioSource>().Play();
         }
         else
         {
-            music.Stop();
+            AudioField.GetComponent<AudioSource>().Stop();
         }
     }
 
@@ -261,6 +253,34 @@ public class ContentManager : MonoBehaviour,ITrackableEventHandler {
         */
     }
 
+    public void RemoveAll()
+    {
+        if (infoLoader.isLoading())
+        {
+            infoLoader.stopLoading();
+        }
+        if (isAudioShow)
+        {
+            ShowField(AudioField, false);
+        }
+        if (isTrackable)
+        {
+            ShowField(infoPoint, false);
+        }
+        if (status == 2)
+        {
+            ShowField(TextField, false);
+            AnimationsManager.PlayAnimationTo3D(TextField);
+
+        }
+        else if (status == 3)
+        {
+            ShowField(ImageField, false);
+            AnimationsManager.PlayAnimationTo3D(ImageField);
+        }
+        status = 0;
+    }
+
     public void OnCancel()
     {
         //SetCancelButtonVisible(false);
@@ -313,7 +333,7 @@ public class ContentManager : MonoBehaviour,ITrackableEventHandler {
         }
         else if (tag == "AudioInfo")
         {
-            if (!music.isPlaying)
+            if (!AudioField.GetComponent<AudioSource>().isPlaying)
             {
                 infoLoader.LoadAudio(obj);
             }
@@ -338,6 +358,10 @@ public class ContentManager : MonoBehaviour,ITrackableEventHandler {
         if (Field == AudioField)
         {
             isAudioShow = visible;
+            if (!visible)
+            {
+                AudioField.transform.parent = TextField.transform.parent;
+            }
         }
         Renderer[] rendererComponents = Field.GetComponentsInChildren<Renderer>();
         Collider[] colliderComponents = Field.GetComponentsInChildren<Collider>();
