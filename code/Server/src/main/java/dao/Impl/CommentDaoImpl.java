@@ -40,15 +40,24 @@ public class CommentDaoImpl implements CommentDao {
 	
 	public String update(String commentID, String text, Date time) {
 		mongoTemplate.updateFirst(new Query(Criteria.where("_id").is(commentID)), 
-		new Update().set("text", text)
-		.set("time", time)
-		, Comment.class);
+				new Update().set("text", text)
+				.set("time", time)
+				, Comment.class);
 		return null;
 	}
 	
 	public List<Comment> getSomeCommentsByTargetID(String targetID, int skipNum, int num){
 		List<Comment> comments = mongoTemplate.find(
 				new Query(Criteria.where("targetID").is(targetID))
+				.with(new Sort(Direction.DESC, "time"))
+				.skip(skipNum)
+				.limit(num), Comment.class);
+		return comments;
+	}
+	
+	public List<Comment> getSomeCommentsByUserID(String userID, int skipNum, int num){
+		List<Comment> comments = mongoTemplate.find(
+				new Query(Criteria.where("userID").is(userID))
 				.with(new Sort(Direction.DESC, "time"))
 				.skip(skipNum)
 				.limit(num), Comment.class);

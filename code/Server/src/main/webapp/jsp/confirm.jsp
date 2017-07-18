@@ -28,11 +28,7 @@
 		<div id="navigation">
 			<ul>
 			    <li><a href="#" class="active"><span>Member</span></a></li>
-			    <li><a href="#"><span>New Articles</span></a></li>
-			    <li><a href="#"><span>User Management</span></a></li>
-			    <li><a href="#"><span>Photo Gallery</span></a></li>
-			    <li><a href="#"><span>Products</span></a></li>
-			    <li><a href="#"><span>Services Control</span></a></li>
+			    <li><a href="/FindHere/VerifyTarget/Verify"><span>New Articles</span></a></li>
 			</ul>
 		</div>
 		<!-- End Main Nav -->
