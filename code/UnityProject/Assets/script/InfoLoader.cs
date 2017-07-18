@@ -16,6 +16,7 @@ public class InfoLoader : MonoBehaviour {
     public GameObject audioInfo;
     public GameObject infoPointPool;
     public RawImage loadingSpinner;
+    public InfoPointMoveManager infoPointMoveManager;
 
     private AndroidJavaObject androidPlugin;
     private bool isLoadingImage;
@@ -24,6 +25,9 @@ public class InfoLoader : MonoBehaviour {
     private GameObject audioFrom;
     private WWW incompatibleContent;
     private WWW audioContent;
+    private int pageIndex;
+    private bool isLastPage;
+    private bool emptyPage;
 
     // Use this for initialization
     void Start () {
@@ -32,6 +36,9 @@ public class InfoLoader : MonoBehaviour {
         isLoadingImage = false;
         isLoadingText = false;
         isLoadingAudio = false;
+        pageIndex = 0;
+        isLastPage = false;
+        emptyPage = false;
     }
 
     void Update()
@@ -139,7 +146,7 @@ public class InfoLoader : MonoBehaviour {
 
     public void SetTargetId(string id)
     {
-        //androidPlugin.Call("setTargetID", id);
+        androidPlugin.Call("setTargetID", id);
     }
 
     private void ResetInfoPool()
@@ -152,24 +159,120 @@ public class InfoLoader : MonoBehaviour {
         }
     }
 
+    public void NextPost(string targetId)
+    {
+        string str;
+        if (emptyPage)
+        {
+            androidPlugin.Call("setToast", "没有更多信息了~");
+            str = GetCommentsFromAndroid(targetId);
+            ParseInfoPoint(str);
+            return;
+        }
+        infoPointMoveManager.ZoomingIn();
+        pageIndex++;
+        str = GetCommentsFromAndroid(targetId);
+        if (str == "")
+        {
+            androidPlugin.Call("setToast", "没有更多信息了~");
+            pageIndex--;
+            ResetInfoPool();
+            str = GetCommentsFromAndroid(targetId);
+            ParseInfoPoint(str);
+            infoPointMoveManager.ZoomingOut();
+        }
+        else
+        {
+            ResetInfoPool();
+            ParseInfoPoint(str);
+            infoPointMoveManager.ZoomingOut();
+        }
+    }
+
+    public void LastPost(string targetId)
+    {
+        infoPointMoveManager.ZoomingIn();
+        if (pageIndex == 0)
+        {
+            androidPlugin.Call("setToast", "已经是第一页啦！");
+        }
+        else
+        {
+            pageIndex--;
+        }
+        LoadInfoPoint(targetId);
+    }
+
+    public void ResetPageIndex()
+    {
+        pageIndex = 0;
+    }
+
+    public void FirstLoadInfoPoint(string targetId)
+    {
+        Debug.Log("load info point " + targetId);
+        ResetInfoPool();
+
+        //string str = GetCommentsFromAndroid(targetId);
+        string str = GetTestComments();
+
+        if (str == "")
+        {
+            emptyPage = true;
+            androidPlugin.Call("setToast", "此处还没有信息哦~快来发布吧！");
+        }
+        else
+        {
+            emptyPage = false;
+            androidPlugin.Call("setToast", "识别成功！");
+            ParseInfoPoint(str);
+            infoPointMoveManager.ZoomingOut();
+        }
+    }
+
     public void LoadInfoPoint(string targetId)
     {
         Debug.Log("load info point "+targetId);
         ResetInfoPool();
-        /*string str = androidPlugin.Call<string>("getCommentType",targetId,0);
-        if (str == "[]"||str=="") {
-            androidPlugin.Call("setToast","此处还没有信息哦~快来发布吧！");
-            return;
+
+        string str = GetCommentsFromAndroid(targetId);
+
+        if (str != "")
+        {
+            emptyPage = false;
+            ParseInfoPoint(str);
+            infoPointMoveManager.ZoomingOut();
         }
-        else {
-            androidPlugin.Call("setToast", "识别成功！");
-        }*/
-        //WWW www = new WWW("http://115.159.184.211:8080/FindHere/GetComments/GetIDsByTargetID?targetID=1&pageNum=20&pageIndex=0");
+        else
+        {
+            emptyPage = true;
+        }
+    }
+
+    private string GetTestComments()
+    {
         WWW www = new WWW("http://192.168.1.8:8080/FindHere/GetComments/GetIDsByTargetID?targetID=8b98be35577b42ed8db301e8b729f7cf&pageNum=20&pageIndex=0");
-        while (!www.isDone);
+        while (!www.isDone) ;
         //记录取得的comments中各类型的id
         string str = www.text;
+        return str;
+    }
 
+    private string GetCommentsFromAndroid(string targetId)
+    {
+        string str = androidPlugin.Call<string>("getCommentType", targetId, pageIndex);
+        if (str == "[]" || str == "")
+        {
+            return "";
+        }
+        else
+        {
+            return str;
+        }
+    }
+
+    private void ParseInfoPoint(string str)
+    {
         List<string> textId = new List<string>();
         List<string> imageId = new List<string>();
         List<string> audioId = new List<string>();
@@ -191,15 +294,15 @@ public class InfoLoader : MonoBehaviour {
             }
             else
             {
-                Debug.Log("comment type: "+type);
+                Debug.Log("comment type: " + type);
             }
         }
 
         int textSize = GameObject.FindGameObjectsWithTag("TextInfo").Length;
         //如果已有TextInfo数目不够，重新实例化
-        if(textSize<textId.Count)InitializeInfoPoint(textInfo, textId.Count - textSize);
+        if (textSize < textId.Count) InitializeInfoPoint(textInfo, textId.Count - textSize);
         int imageSize = GameObject.FindGameObjectsWithTag("ImageInfo").Length;
-        if (imageSize<imageId.Count) InitializeInfoPoint(imageInfo, imageId.Count - imageSize);
+        if (imageSize < imageId.Count) InitializeInfoPoint(imageInfo, imageId.Count - imageSize);
         int audioSize = GameObject.FindGameObjectsWithTag("AudioInfo").Length;
         if (audioSize < audioId.Count) InitializeInfoPoint(audioInfo, audioId.Count - audioSize);
 
@@ -233,10 +336,7 @@ public class InfoLoader : MonoBehaviour {
         foreach(GameObject point in points)
         {
             point.transform.parent.parent = infoPoint.transform;
-            point.transform.parent.localPosition = new Vector3(
-                Random.Range(-0.8f, 0.8f),
-                Random.Range(0, 0.4f),
-                Random.Range(-0.8f, 0.8f));
+            point.transform.parent.localPosition = new Vector3(0, 0, 0);
             point.transform.name = comments[count];
             count++;
             if (count >= size) break;

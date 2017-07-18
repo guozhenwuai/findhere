@@ -13,6 +13,9 @@ public class AnimationsManager : MonoBehaviour
     private bool mDoAnimationTo2D = false;
     private bool mDoAnimationTo3D = false;
     private bool mIsShowingOverlay = false;
+    private float distance = 5;
+
+    private Vector3 imageDimension;
 
     void Start () 
     {
@@ -64,11 +67,16 @@ public class AnimationsManager : MonoBehaviour
     // Starts playing animation to 2D
     public void PlayAnimationTo2D(GameObject augmentationObject)
     {
-        mAugmentationObject = augmentationObject;
-
         if (mIsShowingOverlay)
         {
             return;
+        }
+
+        mAugmentationObject = augmentationObject;
+        if (augmentationObject.name == "ImageField")
+        {
+            distance = 5;
+            imageDimension = augmentationObject.transform.localScale;
         }
         
         // Checks that the system is already tracking
@@ -92,16 +100,27 @@ public class AnimationsManager : MonoBehaviour
         mDoAnimationTo3D = false;
 		mIsShowingOverlay = true;
     }
+
+    public bool IsShowingOverlay()
+    {
+        return mIsShowingOverlay;
+    }
     
     // Starts playing animation to 3D
     public void PlayAnimationTo3D( GameObject augmentedObject )
     {
+
         mAugmentationObject = augmentedObject;
         mDoAnimationTo2D = false;
         
         // Checks that the system is showing the overlay right now
         if (mIsShowingOverlay)
         {
+            if (augmentedObject.name == "ImageField")
+            {
+                augmentedObject.transform.localScale = imageDimension;
+            }
+
             mDoAnimationTo3D = true;
             
             // Updates the augmented object initial position to the overlay position.
@@ -113,6 +132,16 @@ public class AnimationsManager : MonoBehaviour
         // Updates state variables
         mIsShowingOverlay = false;
         mIsTracking = true;
+    }
+
+    public float GetDistance()
+    {
+        return distance;
+    }
+
+    public void SetDistance(float d)
+    {
+        distance = d;
     }
     #endregion //PUBLIC_METHODS
 }

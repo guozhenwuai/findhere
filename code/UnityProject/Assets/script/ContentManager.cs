@@ -12,7 +12,13 @@ public class ContentManager : MonoBehaviour,ITrackableEventHandler {
     private string targetId;
     private bool isAudioShow;
     private Transform pickedObject = null;
-    
+
+    //左右滑动事件两指的坐标
+    private Vector2 position;
+    //双指触控时，两指的坐标。用于实现图片的两指放大
+    private Vector2 oldPosition1;
+    private Vector2 oldPosition2;
+
     // 移动加权，使移动与手指移动同步
     private float xSpeed = 0.01f;
     private float ySpeed = 0.01f;
@@ -25,7 +31,6 @@ public class ContentManager : MonoBehaviour,ITrackableEventHandler {
 
     public InfoLoader infoLoader;
     
-    //public Button CancelButton;
     public AnimationsManager AnimationsManager;
 
     // Use this for initialization
@@ -100,7 +105,63 @@ public class ContentManager : MonoBehaviour,ITrackableEventHandler {
                 TrackerManager.Instance.GetTracker<ObjectTracker>().Start();
             }
         }
-        DragEvent();
+        if(status==1||(status==3&&AnimationsManager.IsShowingOverlay()))DragEvent();       //信息点的拖拽事件
+        if(status==3&&AnimationsManager.IsShowingOverlay())ImageZoomEvent();      //图片的放大缩小事件
+    }
+
+    private void ImageZoomEvent()
+    {
+        if (Input.touchCount > 1)
+        {
+            if (Input.GetTouch(0).phase == TouchPhase.Moved || Input.GetTouch(1).phase == TouchPhase.Moved)
+            {
+                Vector2 tempPosition1 = Input.GetTouch(0).position;
+                Vector2 tempPosition2 = Input.GetTouch(1).position;
+
+                float distance = AnimationsManager.GetDistance();
+                if (IsEnlarge(oldPosition1, oldPosition2, tempPosition1, tempPosition2))
+                {
+                    if (distance < 10)
+                    {
+                        distance += 0.1f;
+                        Vector3 body = ImageField.transform.localScale;
+                        ImageField.transform.localScale += new Vector3(body.x * Time.deltaTime,0, body.z * Time.deltaTime);
+                    }
+                }
+                else
+                {
+                    if (distance > 1)
+                    {
+                        distance -= 0.1f;
+                        Vector3 body = ImageField.transform.localScale;
+                        ImageField.transform.localScale += new Vector3(-body.x * Time.deltaTime,0, -body.z * Time.deltaTime);
+                    }
+                }
+                AnimationsManager.SetDistance(distance);
+
+                oldPosition1 = tempPosition1;
+                oldPosition2 = tempPosition2;
+            }
+        }
+    }
+
+    private bool IsEnlarge(Vector2 oP1, Vector2 oP2, Vector2 nP1, Vector2 nP2)
+    {
+        //old distance  
+        float oldDistance = Mathf.Sqrt((oP1.x - oP2.x) * (oP1.x - oP2.x) + (oP1.y - oP2.y) * (oP1.y - oP2.y));
+        //new distance  
+        float newDistance = Mathf.Sqrt((nP1.x - nP2.x) * (nP1.x - nP2.x) + (nP1.y - nP2.y) * (nP1.y - nP2.y));
+
+        if (oldDistance < newDistance)
+        {
+            //zoom+  
+            return true;
+        }
+        else
+        {
+            //zoom-  
+            return false;
+        }
     }
 
     private void DragEvent()
@@ -121,6 +182,7 @@ public class ContentManager : MonoBehaviour,ITrackableEventHandler {
                 }
                 else
                 {
+                    position = touch.position;
                     pickedObject = null;
                 }
 
@@ -136,12 +198,45 @@ public class ContentManager : MonoBehaviour,ITrackableEventHandler {
 
                     pickedObject.transform.parent.position += new Vector3(x, y, z);
                 }
+                else if (status == 1&&targetId!="")
+                {
+                    Vector2 newPos = touch.position;
+                    int result = DragDirection(position, newPos);
+                    if (result == 1)
+                    {
+                        infoLoader.LastPost(targetId);
+                    }
+                    else if(result == -1)
+                    {
+                        infoLoader.NextPost(targetId);
+                    }
+                }
                 //释放
             }
             else if (touch.phase == TouchPhase.Ended)
             {
                 pickedObject = null;
             }
+        }
+    }
+
+    private int DragDirection(Vector2 oldPos,Vector2 newPos)
+    {
+        float distance = 50;
+        float x = newPos.x - oldPos.x;
+        float y = newPos.y - oldPos.y;
+        //右滑
+        if (x > distance && y < distance && y > -distance)
+        {
+            return 1;
+        }
+        else if (x < -distance && y < distance && y > -distance)
+        {
+            return -1;
+        }
+        else
+        {
+            return 0;
         }
     }
 
@@ -225,7 +320,8 @@ public class ContentManager : MonoBehaviour,ITrackableEventHandler {
     {
         keepTargetId = target;
         status = 1;
-        infoLoader.LoadInfoPoint(target);
+        infoLoader.ResetPageIndex();
+        infoLoader.FirstLoadInfoPoint(target);
 
         /*for(int i = 0; i < 10; i++)
         {
@@ -263,11 +359,11 @@ public class ContentManager : MonoBehaviour,ITrackableEventHandler {
         {
             ShowField(AudioField, false);
         }
-        if (isTrackable)
+        if (status == 1)
         {
             ShowField(infoPoint, false);
         }
-        if (status == 2)
+        else if (status == 2)
         {
             ShowField(TextField, false);
             AnimationsManager.PlayAnimationTo3D(TextField);
