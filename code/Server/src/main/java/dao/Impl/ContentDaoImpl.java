@@ -32,6 +32,11 @@ public class ContentDaoImpl implements ContentDao {
 		return contents;
 	}
 	
+	public String insertOne(Content content) {
+		mongoTemplate.insert(content);
+		return content.getId().toString();
+	}
+	
 	/*GET and SET*/
 	public MongoTemplate getMongoTemplate() {
 		return mongoTemplate;

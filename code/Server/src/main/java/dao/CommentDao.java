@@ -10,6 +10,7 @@ public interface CommentDao {
 	public String insert(Comment comment);
 	public String update(String commentID, String text, Date time);
 	public List<Comment> getSomeCommentsByTargetID(String targetID, int skipNum, int num);
+	public List<Comment> getSomeCommentsByUserID(String userID, int skipNum, int num);
 	public boolean remove(String commentID, String userID);
 	public boolean removeCascaded(String commentID, String userID);
 }

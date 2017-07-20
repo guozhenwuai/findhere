@@ -1,6 +1,7 @@
 package service.Impl;
 
 import java.io.IOException;
+import java.io.InputStream;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -13,9 +14,12 @@ import org.json.JSONObject;
 import dao.ARManagerDao;
 import dao.ContentDao;
 import dao.FileDao;
+import dao.UserTargetDao;
 import model.ARManager;
 import model.Content;
+import model.UserTarget;
 import service.ContentService;
+import tool.Wrapper;
 
 public class ContentServiceImpl implements ContentService {
 	
@@ -25,6 +29,8 @@ public class ContentServiceImpl implements ContentService {
 	private ARManagerDao arManagerDao;
 	@Resource
 	private FileDao fileDao;
+	@Resource
+	private UserTargetDao userTargetDao;
 	
 	public void returnContentByID(String contentID, String type, HttpServletResponse response) throws IOException {
 		Content content = contentDao.findOneByID(contentID);
@@ -67,6 +73,73 @@ public class ContentServiceImpl implements ContentService {
 		response.getWriter().print(jsonArray.toString());
 	}
 	
+	public void addARObject(String targetID, InputStream objectFile, InputStream textureFile, InputStream MLTFile) 
+			throws IOException{
+		System.out.println(":2.1");
+		String ARObjectID = fileDao.inputFileToDB("ARObject", objectFile);
+		String texture = fileDao.inputFileToDB("texture", textureFile);
+		String MLTID = fileDao.inputFileToDB("MLT", MLTFile);
+		
+		System.out.println(":2.2");
+		ARManager arManager = new ARManager();
+		arManager.setARObjectID(ARObjectID);
+		arManager.setTexture(texture);
+		arManager.setMTLID(MLTID);
+		String ARManagerID = arManagerDao.insertOne(arManager);
+		
+		System.out.println(":2.3");
+		Content content = new Content();
+		content.setTargetID(targetID);
+		content.setARManagerID(ARManagerID);
+		content.setType("ARObject");
+		String contentID = contentDao.insertOne(content);
+	}
+	
+	public void addTarget(String userID, InputStream inStream) {
+		String fileID = fileDao.inputFileToDB("tempTarget", inStream);
+		UserTarget userTarget = userTargetDao.findOneUserTarget(userID);
+		if(userTarget == null) {
+			userTarget = new UserTarget();
+			userTarget.setUserID(userID);
+		}
+		List<String> tempTargetIDs = userTarget.getTempTargetIDs();
+		tempTargetIDs.add(fileID);
+		userTarget.setTempTargetIDs(tempTargetIDs);
+		userTarget.setHasTempTarget(true);
+		userTargetDao.update(userTarget);
+	}
+	
+	public List<String> getUserTargetIDs(String userID){
+		return userTargetDao.findUserTargetIDs(userID);
+	}
+	
+	public List<String> getAllUserTargetIDs(String userID){
+		return userTargetDao.findAllUserTargetIDs(userID);
+	}
+	
+	public List<String> getTempTargetIDsByUserID(String userID){
+		return userTargetDao.findAllTempTargetIDs(userID);
+	}
+	
+	public List<Wrapper> getAllTempTarget(){
+		List<Wrapper> allTempTargetIDs = new ArrayList<Wrapper>();
+		List<UserTarget> aimUserTarget = userTargetDao.findHasTempTargetUsers();
+		for(int i = 0; i < aimUserTarget.size(); i++) {
+			List<String> tempIDs = aimUserTarget.get(i).getTempTargetIDs();
+			for(int j = 0; j < tempIDs.size(); j++) {
+				Wrapper pair = new Wrapper();
+				pair.setFirst(aimUserTarget.get(i).getUserID());
+				pair.setSecond(tempIDs.get(j));
+				allTempTargetIDs.add(pair);
+			}
+		}
+		return allTempTargetIDs;
+	}
+	
+	public void ratifyTarget(String userID, String tempTargetID) {
+		//UserTarget userTargetDao.getUserTargetByuserID();
+	}
+	
 	/*GET and SET*/
 	public ContentDao getContentDao() {
 		return contentDao;
@@ -90,5 +163,13 @@ public class ContentServiceImpl implements ContentService {
 	
 	public void setFileDao(FileDao dao) {
 		fileDao = dao;
+	}
+	
+	public UserTargetDao getUserTargetDao() {
+		return userTargetDao;
+	}
+	
+	public void setUserTargetDao(UserTargetDao dao) {
+		userTargetDao = dao;
 	}
 }

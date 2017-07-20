@@ -4,6 +4,7 @@ import java.io.IOException;
 
 import javax.annotation.Resource;
 import javax.servlet.ServletOutputStream;
+import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
@@ -55,12 +56,14 @@ public class UserServiceImpl implements UserService {
 		return false;
 	}
 	
-	public boolean webLogin(String userID, String password) {
+	public int webLogin(String userID, String password) {
 		User user = userDao.findOneByID(userID);
-		if(user == null) return false; //No user match
-		if(!user.getPassword().equals(password)) return false;
-		if(user.getAdmin() != 1) return false;
-		return true;
+		if(user == null) return 0; //No user match
+		if(!user.getPassword().equals(password)) return 0;
+		
+		if(user.getAdmin() == 1) return 1;//Administrator
+		else if(user.getIsMember() == 1 )return 2;//Member
+		return 3;//ordinary user
 	}
 	
 	public int SignUp(JSONObject jsonObj, HttpSession httpSession) {
@@ -80,6 +83,18 @@ public class UserServiceImpl implements UserService {
 		user.setGender(gender);
 		userDao.insert(user);
 		return 0;
+	}
+	
+	public void addHeadPortrait(String userID, HttpServletRequest request) throws IOException {
+		String headPortraitID = fileDao.inputFileToDB("headPortrait", request.getInputStream());
+		User user = userDao.findOneByID(userID);
+		fileDao.removeFile("headPortrait", user.getHeadPortraitID());
+		user.setHeadPortraitID(headPortraitID);
+		userDao.update(user);
+	}
+	
+	public User findOneByID(String userID) {
+		return userDao.findOneByID(userID);
 	}
 	
 	/*GET and SET*/

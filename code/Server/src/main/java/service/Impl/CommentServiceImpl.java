@@ -1,5 +1,10 @@
 package service.Impl;
 
+import org.apache.commons.codec.binary.Base64;
+
+import java.io.BufferedOutputStream;
+import java.io.File;
+import java.io.FileOutputStream;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Date;
@@ -49,7 +54,7 @@ public class CommentServiceImpl implements CommentService {
 		}
 	}
 	
-	public void returnCommentIDsBytargetID(String targetID, int pageNum, int pageIndex, HttpServletResponse response)
+	public void returnCommentIDsByTargetID(String targetID, int pageNum, int pageIndex, HttpServletResponse response)
 			throws IOException{
 		List<Comment> comments = commentDao.getSomeCommentsByTargetID(targetID, pageNum*pageIndex, pageNum);
 		List<JSONObject> ret = new ArrayList<JSONObject>();
@@ -57,6 +62,30 @@ public class CommentServiceImpl implements CommentService {
 			JSONObject jsonObj = new JSONObject();
 			jsonObj.put("type", comments.get(i).getType());
 			jsonObj.put("commentID", comments.get(i).get_id());
+			jsonObj.put("time", comments.get(i).getTime());
+			jsonObj.put("userID", comments.get(i).getUserID());
+			ret.add(jsonObj);
+		}
+		JSONArray jsonArray = new JSONArray(ret);
+		response.getWriter().print(jsonArray.toString());
+	}
+	
+	public void returnCommentIDsByUserID(String userID, int pageIndex, HttpServletResponse response)
+			throws IOException{
+		int pageNum = 10;
+		List<Comment> comments = commentDao.getSomeCommentsByUserID(userID, pageNum*pageIndex, pageNum);
+		List<JSONObject> ret = new ArrayList<JSONObject>();
+		for(int i = 0; i < comments.size(); i++) {
+			JSONObject jsonObj = new JSONObject();
+			
+			byte[] image = fileDao.outputFileToByteByFileName("target", comments.get(i).getTargetID());
+			jsonObj.put("type", comments.get(i).getType());
+			jsonObj.put("commentID", comments.get(i).get_id());
+			jsonObj.put("text", comments.get(i).getText());
+			jsonObj.put("time", comments.get(i).getTime());
+			jsonObj.put("userID", comments.get(i).getUserID());
+			jsonObj.put("targetID", comments.get(i).getTargetID());
+			jsonObj.put("image", Base64.encodeBase64String(image));
 			ret.add(jsonObj);
 		}
 		JSONArray jsonArray = new JSONArray(ret);
