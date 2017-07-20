@@ -8,7 +8,6 @@ public class cloudRecoHandler : MonoBehaviour, ICloudRecoEventHandler
     private ObjectTracker mObjectTracker;
     private ContentManager mContentManager;
     private CloudRecoBehaviour mCloudRecoBehaviour;
-    private bool mIsScanning = false;
 
     // the parent gameobject of the referenced ImageTargetTemplate - reused for all target search results
     private GameObject mParentOfImageTargetTemplate;
@@ -52,7 +51,6 @@ public class cloudRecoHandler : MonoBehaviour, ICloudRecoEventHandler
     }
 
     public void OnStateChanged(bool scanning) {
-        mIsScanning = scanning;
         if (scanning) {
             mObjectTracker.TargetFinder.ClearTrackables(false);
             mCloudRecoBehaviour.CloudRecoEnabled = true;

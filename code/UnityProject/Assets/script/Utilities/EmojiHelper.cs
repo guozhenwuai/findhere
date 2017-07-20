@@ -14,8 +14,6 @@ public class EmojiHelper : MonoBehaviour {
     private Dictionary<string, string> emojiName = new Dictionary<string, string>();
     private List<PosStringTuple> emojiReplacements = new List<PosStringTuple>();
 
-    private static char emSpace = '\u2001';
-
     void Awake()
     {
         #if !UNITY_EDITOR && UNITY_WEBGL
