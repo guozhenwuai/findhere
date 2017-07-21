@@ -39,7 +39,7 @@ public class Connect  {
     public String sendHttpPost(String getUrl, String jsonstr) {
         HttpURLConnection urlConnection = null;
         URL url = null;
-        String str=null;
+        String str="";
         Log.d(TAG, "sendHttpPost: ");
         try {
             url = new URL(getUrl);
@@ -58,6 +58,7 @@ public class Connect  {
             urlConnection.setRequestMethod("POST");
             urlConnection.setRequestProperty("Content-Type", "application/json;charset=UTF-8");
             Log.d(TAG, "sendHttpPost: 13");
+            Log.d("sessionid",sessionid);
             urlConnection.connect();
             Log.d(TAG, "sendHttpPost: 11");
             OutputStream out = urlConnection.getOutputStream();
@@ -69,19 +70,22 @@ public class Connect  {
 
             if (urlConnection.getResponseCode() == HttpURLConnection.HTTP_OK) {
                 InputStream in = urlConnection.getInputStream();
-                BufferedReader br = new BufferedReader(new InputStreamReader(in));
+                BufferedReader br = new BufferedReader(new InputStreamReader(in,"UTF-8"));
                 StringBuffer buffer = new StringBuffer();
                 while ((str = br.readLine()) != null) {
                     buffer.append(str);
                 }
                 str=buffer.toString();
+
                 // 取得sessionid.
-                String cookieval = urlConnection.getHeaderField("Set-Cookie");
-                if (!cookieval.equals("")) {
-                    sessionid = cookieval.substring(0, cookieval.indexOf(";"));
-                    SharedPreferences.Editor editor = sp.edit();
-                    editor.putString("sessionId", sessionid);
-                    editor.commit();
+                if(!isConnected()) {
+                    String cookieval = urlConnection.getHeaderField("Set-Cookie");
+                    if (!cookieval.equals("")) {
+                        sessionid = cookieval.substring(0, cookieval.indexOf(";"));
+                        SharedPreferences.Editor editor = sp.edit();
+                        editor.putString("sessionId", sessionid);
+                        editor.commit();
+                    }
                 }
                 in.close();
                 br.close();
@@ -229,13 +233,15 @@ public class Connect  {
                     editor.commit();
                 }
                 else{return false;}
-                // 取得sessionid.
-                String cookieval = urlConnection.getHeaderField("Set-Cookie");
-                if (!cookieval.equals("")) {
-                    sessionid = cookieval.substring(0, cookieval.indexOf(";"));
-                    SharedPreferences.Editor editor = sp.edit();
-                    editor.putString("sessionId", sessionid);
-                    editor.commit();
+                if(!isConnected()) {
+                    // 取得sessionid.
+                    String cookieval = urlConnection.getHeaderField("Set-Cookie");
+                    if (!cookieval.equals("")) {
+                        sessionid = cookieval.substring(0, cookieval.indexOf(";"));
+                        SharedPreferences.Editor editor = sp.edit();
+                        editor.putString("sessionId", sessionid);
+                        editor.commit();
+                    }
                 }
                 inStream.close();
                 baos.close();
@@ -250,5 +256,49 @@ public class Connect  {
         }
     }
 
+    // get image or sound,return byte[]
+    public byte[] sendHttpPostMedia(String getUrl){
+        HttpURLConnection urlConnection = null;
+        URL url = null;
+        byte[] bytes = null;
+        try {
+            url = new URL(getUrl);
+            urlConnection = (HttpURLConnection) url.openConnection();
+            urlConnection.setConnectTimeout(3000);
+            urlConnection.setUseCaches(false);
+            urlConnection.setInstanceFollowRedirects(true);
+            urlConnection.setReadTimeout(3000);
+            urlConnection.setDoInput(true);
+            urlConnection.setDoOutput(true);
+            urlConnection.setRequestMethod("POST");
+            urlConnection.setRequestProperty("Content-Type", "charset=UTF-8");
+            Log.d("media","1");
+            urlConnection.connect();
+            Log.d("media","2");
+
+            if (urlConnection.getResponseCode() == HttpURLConnection.HTTP_OK) {
+                int length = urlConnection.getContentLength();
+                InputStream inStream = urlConnection.getInputStream();
+                ByteArrayOutputStream baos = new ByteArrayOutputStream();
+                byte[] buff = new byte[4096];
+                int rc = 0;
+                while ((rc = inStream.read(buff, 0, buff.length)) > 0) {
+                    baos.write(buff, 0, rc);
+                    baos.flush();
+                }
+                bytes = baos.toByteArray();
+
+                inStream.close();
+                baos.close();
+            }else{
+                return null;
+            }
+        } catch (Exception e) {
+
+        } finally{
+            urlConnection.disconnect();
+            return bytes;
+        }
+    }
 
 }

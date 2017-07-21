@@ -1,6 +1,6 @@
 -- Merging decision tree log ---
 manifest
-ADDED from D:\Find\src\main\AndroidManifest.xml:2:1-130:12
+ADDED from D:\Find\src\main\AndroidManifest.xml:2:1-131:12
 	package
 		ADDED from D:\Find\src\main\AndroidManifest.xml:3:5-36
 		INJECTED from D:\Find\src\main\AndroidManifest.xml
@@ -24,16 +24,16 @@ ADDED from D:\Find\src\main\AndroidManifest.xml:9:5-11:41
 MERGED from [com.android.support:design:26.0.0-alpha1] C:\Users\asus\.android\build-cache\9926a36909df21df384e4fce808a30ec609d0eea\output\AndroidManifest.xml:21:5-23:62
 MERGED from [com.android.support:appcompat-v7:26.0.0-alpha1] C:\Users\asus\.android\build-cache\19d7ea8401511620fa23c337710829464e6f2217\output\AndroidManifest.xml:21:5-23:78
 MERGED from [com.android.support:animated-vector-drawable:26.0.0-alpha1] C:\Users\asus\.android\build-cache\2a6c7d379d6faeca3a5a779818175e79545936dd\output\AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:support-vector-drawable:26.0.0-alpha1] C:\Users\asus\.android\build-cache\cd6857c83a2d217337314ae3110b3d0b02a6c8bd\output\AndroidManifest.xml:20:5-44
 MERGED from [com.android.support:recyclerview-v7:26.0.0-alpha1] C:\Users\asus\.android\build-cache\e6234a49e7d426fe8214d2bd095b4b678274f14d\output\AndroidManifest.xml:20:5-44
 MERGED from [com.android.support:transition:26.0.0-alpha1] C:\Users\asus\.android\build-cache\a4f0098ff7e35fbb451660f596d078b55bdff4b6\output\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support.constraint:constraint-layout:1.0.2] C:\Users\asus\.android\build-cache\77bedf7a267eca4ab0d75da705497abfd04fbbdc\output\AndroidManifest.xml:5:5-7:41
 MERGED from [com.android.support:support-v4:26.0.0-alpha1] C:\Users\asus\.android\build-cache\e831863d95e326269f25bced3bd42bc6e3b069d0\output\AndroidManifest.xml:21:5-23:54
 MERGED from [com.android.support:support-media-compat:26.0.0-alpha1] C:\Users\asus\.android\build-cache\dee10335381decf1e59e0157a35c8c1361f60ef4\output\AndroidManifest.xml:21:5-23:63
 MERGED from [com.android.support:support-fragment:26.0.0-alpha1] C:\Users\asus\.android\build-cache\9c4d52777249e191e1614a28cfd45830b18168dc\output\AndroidManifest.xml:21:5-23:60
 MERGED from [com.android.support:support-core-ui:26.0.0-alpha1] C:\Users\asus\.android\build-cache\1faeaee35b18122194bff5ac51a37667d1b8acd9\output\AndroidManifest.xml:21:5-23:58
 MERGED from [com.android.support:support-core-utils:26.0.0-alpha1] C:\Users\asus\.android\build-cache\fd280a4c2c0e6c64223815daa1f2a19132bfdd98\output\AndroidManifest.xml:21:5-23:61
+MERGED from [com.android.support:support-vector-drawable:26.0.0-alpha1] C:\Users\asus\.android\build-cache\cd6857c83a2d217337314ae3110b3d0b02a6c8bd\output\AndroidManifest.xml:20:5-44
 MERGED from [com.android.support:support-compat:26.0.0-alpha1] C:\Users\asus\.android\build-cache\74f29e7de35d103925fcc09d0d5ff0c48f805790\output\AndroidManifest.xml:21:5-23:58
-MERGED from [com.android.support.constraint:constraint-layout:1.0.2] C:\Users\asus\.android\build-cache\77bedf7a267eca4ab0d75da705497abfd04fbbdc\output\AndroidManifest.xml:5:5-7:41
 	tools:overrideLibrary
 		ADDED from [com.android.support:design:26.0.0-alpha1] C:\Users\asus\.android\build-cache\9926a36909df21df384e4fce808a30ec609d0eea\output\AndroidManifest.xml:23:9-59
 	android:targetSdkVersion
@@ -59,179 +59,179 @@ ADDED from D:\Find\src\main\AndroidManifest.xml:15:5-20:40
 	android:anyDensity
 		ADDED from D:\Find\src\main\AndroidManifest.xml:16:9-34
 uses-permission#android.permission.INTERNET
-ADDED from D:\Find\src\main\AndroidManifest.xml:23:5-67
+ADDED from D:\Find\src\main\AndroidManifest.xml:22:5-67
 	android:name
-		ADDED from D:\Find\src\main\AndroidManifest.xml:23:22-64
+		ADDED from D:\Find\src\main\AndroidManifest.xml:22:22-64
 uses-permission#android.permission.CAMERA
-ADDED from D:\Find\src\main\AndroidManifest.xml:24:5-65
+ADDED from D:\Find\src\main\AndroidManifest.xml:23:5-65
 	android:name
-		ADDED from D:\Find\src\main\AndroidManifest.xml:24:22-62
+		ADDED from D:\Find\src\main\AndroidManifest.xml:23:22-62
 uses-permission#android.permission.ACCESS_NETWORK_STATE
-ADDED from D:\Find\src\main\AndroidManifest.xml:25:5-79
+ADDED from D:\Find\src\main\AndroidManifest.xml:24:5-79
 	android:name
-		ADDED from D:\Find\src\main\AndroidManifest.xml:25:22-76
+		ADDED from D:\Find\src\main\AndroidManifest.xml:24:22-76
 uses-permission#android.permission.VIBRATE
-ADDED from D:\Find\src\main\AndroidManifest.xml:26:5-66
+ADDED from D:\Find\src\main\AndroidManifest.xml:25:5-66
 	android:name
-		ADDED from D:\Find\src\main\AndroidManifest.xml:26:22-63
+		ADDED from D:\Find\src\main\AndroidManifest.xml:25:22-63
 uses-permission#android.permission.WRITE_EXTERNAL_STORAGE
-ADDED from D:\Find\src\main\AndroidManifest.xml:27:5-81
+ADDED from D:\Find\src\main\AndroidManifest.xml:26:5-81
 	android:name
-		ADDED from D:\Find\src\main\AndroidManifest.xml:27:22-78
+		ADDED from D:\Find\src\main\AndroidManifest.xml:26:22-78
 uses-permission#android.permission.RECORD_AUDIO
-ADDED from D:\Find\src\main\AndroidManifest.xml:28:5-71
+ADDED from D:\Find\src\main\AndroidManifest.xml:27:5-71
 	android:name
-		ADDED from D:\Find\src\main\AndroidManifest.xml:28:22-68
+		ADDED from D:\Find\src\main\AndroidManifest.xml:27:22-68
 uses-feature#0x00020000
-ADDED from D:\Find\src\main\AndroidManifest.xml:30:5-54
+ADDED from D:\Find\src\main\AndroidManifest.xml:29:5-54
 	android:glEsVersion
-		ADDED from D:\Find\src\main\AndroidManifest.xml:30:19-51
+		ADDED from D:\Find\src\main\AndroidManifest.xml:29:19-51
 uses-feature#android.hardware.camera.autofocus
-ADDED from D:\Find\src\main\AndroidManifest.xml:31:5-33:36
+ADDED from D:\Find\src\main\AndroidManifest.xml:30:5-32:36
 	android:required
-		ADDED from D:\Find\src\main\AndroidManifest.xml:33:9-33
+		ADDED from D:\Find\src\main\AndroidManifest.xml:32:9-33
 	android:name
-		ADDED from D:\Find\src\main\AndroidManifest.xml:32:9-57
+		ADDED from D:\Find\src\main\AndroidManifest.xml:31:9-57
 uses-feature#android.hardware.camera.front
-ADDED from D:\Find\src\main\AndroidManifest.xml:34:5-36:36
+ADDED from D:\Find\src\main\AndroidManifest.xml:33:5-35:36
 	android:required
-		ADDED from D:\Find\src\main\AndroidManifest.xml:36:9-33
+		ADDED from D:\Find\src\main\AndroidManifest.xml:35:9-33
 	android:name
-		ADDED from D:\Find\src\main\AndroidManifest.xml:35:9-53
+		ADDED from D:\Find\src\main\AndroidManifest.xml:34:9-53
 uses-permission#android.permission.READ_EXTERNAL_STORAGE
-ADDED from D:\Find\src\main\AndroidManifest.xml:38:5-40:38
+ADDED from D:\Find\src\main\AndroidManifest.xml:37:5-39:38
 	android:maxSdkVersion
-		ADDED from D:\Find\src\main\AndroidManifest.xml:40:9-35
+		ADDED from D:\Find\src\main\AndroidManifest.xml:39:9-35
 	android:name
-		ADDED from D:\Find\src\main\AndroidManifest.xml:39:9-64
+		ADDED from D:\Find\src\main\AndroidManifest.xml:38:9-64
 uses-feature#android.hardware.touchscreen
-ADDED from D:\Find\src\main\AndroidManifest.xml:42:5-44:36
+ADDED from D:\Find\src\main\AndroidManifest.xml:41:5-43:36
 	android:required
-		ADDED from D:\Find\src\main\AndroidManifest.xml:44:9-33
+		ADDED from D:\Find\src\main\AndroidManifest.xml:43:9-33
 	android:name
-		ADDED from D:\Find\src\main\AndroidManifest.xml:43:9-52
+		ADDED from D:\Find\src\main\AndroidManifest.xml:42:9-52
 uses-feature#android.hardware.touchscreen.multitouch
-ADDED from D:\Find\src\main\AndroidManifest.xml:45:5-47:36
+ADDED from D:\Find\src\main\AndroidManifest.xml:44:5-46:36
 	android:required
-		ADDED from D:\Find\src\main\AndroidManifest.xml:47:9-33
+		ADDED from D:\Find\src\main\AndroidManifest.xml:46:9-33
 	android:name
-		ADDED from D:\Find\src\main\AndroidManifest.xml:46:9-63
+		ADDED from D:\Find\src\main\AndroidManifest.xml:45:9-63
 uses-feature#android.hardware.touchscreen.multitouch.distinct
-ADDED from D:\Find\src\main\AndroidManifest.xml:48:5-50:36
+ADDED from D:\Find\src\main\AndroidManifest.xml:47:5-49:36
 	android:required
-		ADDED from D:\Find\src\main\AndroidManifest.xml:50:9-33
+		ADDED from D:\Find\src\main\AndroidManifest.xml:49:9-33
 	android:name
-		ADDED from D:\Find\src\main\AndroidManifest.xml:49:9-72
+		ADDED from D:\Find\src\main\AndroidManifest.xml:48:9-72
 uses-permission#android.permission.GET_ACCOUNTS
+ADDED from D:\Find\src\main\AndroidManifest.xml:51:5-71
+	android:name
+		ADDED from D:\Find\src\main\AndroidManifest.xml:51:22-68
+uses-permission#android.permission.READ_PROFILE
 ADDED from D:\Find\src\main\AndroidManifest.xml:52:5-71
 	android:name
 		ADDED from D:\Find\src\main\AndroidManifest.xml:52:22-68
-uses-permission#android.permission.READ_PROFILE
-ADDED from D:\Find\src\main\AndroidManifest.xml:53:5-71
-	android:name
-		ADDED from D:\Find\src\main\AndroidManifest.xml:53:22-68
 uses-permission#android.permission.READ_CONTACTS
-ADDED from D:\Find\src\main\AndroidManifest.xml:54:5-72
+ADDED from D:\Find\src\main\AndroidManifest.xml:53:5-72
 	android:name
-		ADDED from D:\Find\src\main\AndroidManifest.xml:54:22-69
+		ADDED from D:\Find\src\main\AndroidManifest.xml:53:22-69
 uses-permission#android.permission.READ_PHONE_STATE
-ADDED from D:\Find\src\main\AndroidManifest.xml:55:5-75
+ADDED from D:\Find\src\main\AndroidManifest.xml:54:5-75
 	android:name
-		ADDED from D:\Find\src\main\AndroidManifest.xml:55:22-72
+		ADDED from D:\Find\src\main\AndroidManifest.xml:54:22-72
 uses-permission#android.permission.READ_CALL_LOG
-ADDED from D:\Find\src\main\AndroidManifest.xml:56:5-72
+ADDED from D:\Find\src\main\AndroidManifest.xml:55:5-72
 	android:name
-		ADDED from D:\Find\src\main\AndroidManifest.xml:56:22-69
+		ADDED from D:\Find\src\main\AndroidManifest.xml:55:22-69
 application
-ADDED from D:\Find\src\main\AndroidManifest.xml:58:5-128:19
+ADDED from D:\Find\src\main\AndroidManifest.xml:57:5-129:19
 MERGED from [com.android.support:design:26.0.0-alpha1] C:\Users\asus\.android\build-cache\9926a36909df21df384e4fce808a30ec609d0eea\output\AndroidManifest.xml:29:5-20
 MERGED from [com.android.support:appcompat-v7:26.0.0-alpha1] C:\Users\asus\.android\build-cache\19d7ea8401511620fa23c337710829464e6f2217\output\AndroidManifest.xml:29:5-20
 MERGED from [com.android.support:animated-vector-drawable:26.0.0-alpha1] C:\Users\asus\.android\build-cache\2a6c7d379d6faeca3a5a779818175e79545936dd\output\AndroidManifest.xml:26:5-20
-MERGED from [com.android.support:support-vector-drawable:26.0.0-alpha1] C:\Users\asus\.android\build-cache\cd6857c83a2d217337314ae3110b3d0b02a6c8bd\output\AndroidManifest.xml:26:5-20
 MERGED from [com.android.support:transition:26.0.0-alpha1] C:\Users\asus\.android\build-cache\a4f0098ff7e35fbb451660f596d078b55bdff4b6\output\AndroidManifest.xml:26:5-20
+MERGED from [com.android.support.constraint:constraint-layout:1.0.2] C:\Users\asus\.android\build-cache\77bedf7a267eca4ab0d75da705497abfd04fbbdc\output\AndroidManifest.xml:9:5-20
 MERGED from [com.android.support:support-v4:26.0.0-alpha1] C:\Users\asus\.android\build-cache\e831863d95e326269f25bced3bd42bc6e3b069d0\output\AndroidManifest.xml:29:5-20
 MERGED from [com.android.support:support-media-compat:26.0.0-alpha1] C:\Users\asus\.android\build-cache\dee10335381decf1e59e0157a35c8c1361f60ef4\output\AndroidManifest.xml:29:5-20
 MERGED from [com.android.support:support-fragment:26.0.0-alpha1] C:\Users\asus\.android\build-cache\9c4d52777249e191e1614a28cfd45830b18168dc\output\AndroidManifest.xml:29:5-20
 MERGED from [com.android.support:support-core-ui:26.0.0-alpha1] C:\Users\asus\.android\build-cache\1faeaee35b18122194bff5ac51a37667d1b8acd9\output\AndroidManifest.xml:29:5-20
 MERGED from [com.android.support:support-core-utils:26.0.0-alpha1] C:\Users\asus\.android\build-cache\fd280a4c2c0e6c64223815daa1f2a19132bfdd98\output\AndroidManifest.xml:29:5-20
+MERGED from [com.android.support:support-vector-drawable:26.0.0-alpha1] C:\Users\asus\.android\build-cache\cd6857c83a2d217337314ae3110b3d0b02a6c8bd\output\AndroidManifest.xml:26:5-20
 MERGED from [com.android.support:support-compat:26.0.0-alpha1] C:\Users\asus\.android\build-cache\74f29e7de35d103925fcc09d0d5ff0c48f805790\output\AndroidManifest.xml:29:5-20
-MERGED from [com.android.support.constraint:constraint-layout:1.0.2] C:\Users\asus\.android\build-cache\77bedf7a267eca4ab0d75da705497abfd04fbbdc\output\AndroidManifest.xml:9:5-20
 	android:label
-		ADDED from D:\Find\src\main\AndroidManifest.xml:62:9-41
+		ADDED from D:\Find\src\main\AndroidManifest.xml:61:9-41
 	android:icon
-		ADDED from D:\Find\src\main\AndroidManifest.xml:60:9-42
+		ADDED from D:\Find\src\main\AndroidManifest.xml:59:9-42
 	android:banner
-		ADDED from D:\Find\src\main\AndroidManifest.xml:59:9-46
+		ADDED from D:\Find\src\main\AndroidManifest.xml:58:9-46
 	android:theme
-		ADDED from D:\Find\src\main\AndroidManifest.xml:63:9-67
+		ADDED from D:\Find\src\main\AndroidManifest.xml:62:9-67
 	android:isGame
-		ADDED from D:\Find\src\main\AndroidManifest.xml:61:9-30
+		ADDED from D:\Find\src\main\AndroidManifest.xml:60:9-30
 activity#com.FindHere.activity.ActivitySplashScreen
-ADDED from D:\Find\src\main\AndroidManifest.xml:64:9-74:20
+ADDED from D:\Find\src\main\AndroidManifest.xml:63:9-73:20
 	android:screenOrientation
-		ADDED from D:\Find\src\main\AndroidManifest.xml:68:13-49
+		ADDED from D:\Find\src\main\AndroidManifest.xml:67:13-49
 	android:noHistory
-		ADDED from D:\Find\src\main\AndroidManifest.xml:67:13-37
+		ADDED from D:\Find\src\main\AndroidManifest.xml:66:13-37
 	android:configChanges
-		ADDED from D:\Find\src\main\AndroidManifest.xml:66:13-93
+		ADDED from D:\Find\src\main\AndroidManifest.xml:65:13-93
 	android:name
-		ADDED from D:\Find\src\main\AndroidManifest.xml:65:13-49
+		ADDED from D:\Find\src\main\AndroidManifest.xml:64:13-49
 intent-filter#android.intent.action.MAIN+android.intent.category.LAUNCHER
-ADDED from D:\Find\src\main\AndroidManifest.xml:69:13-73:29
+ADDED from D:\Find\src\main\AndroidManifest.xml:68:13-72:29
 action#android.intent.action.MAIN
-ADDED from D:\Find\src\main\AndroidManifest.xml:70:17-69
+ADDED from D:\Find\src\main\AndroidManifest.xml:69:17-69
 	android:name
-		ADDED from D:\Find\src\main\AndroidManifest.xml:70:25-66
+		ADDED from D:\Find\src\main\AndroidManifest.xml:69:25-66
 category#android.intent.category.LAUNCHER
-ADDED from D:\Find\src\main\AndroidManifest.xml:72:17-77
+ADDED from D:\Find\src\main\AndroidManifest.xml:71:17-77
 	android:name
-		ADDED from D:\Find\src\main\AndroidManifest.xml:72:27-74
+		ADDED from D:\Find\src\main\AndroidManifest.xml:71:27-74
 activity#com.FindHere.activity.MainActivity
-ADDED from D:\Find\src\main\AndroidManifest.xml:75:9-87:20
+ADDED from D:\Find\src\main\AndroidManifest.xml:74:9-86:20
 	android:screenOrientation
-		ADDED from D:\Find\src\main\AndroidManifest.xml:80:13-49
+		ADDED from D:\Find\src\main\AndroidManifest.xml:79:13-49
 	android:label
-		ADDED from D:\Find\src\main\AndroidManifest.xml:78:13-45
+		ADDED from D:\Find\src\main\AndroidManifest.xml:77:13-45
 	android:configChanges
-		ADDED from D:\Find\src\main\AndroidManifest.xml:77:13-186
+		ADDED from D:\Find\src\main\AndroidManifest.xml:76:13-186
 	android:persistent
-		ADDED from D:\Find\src\main\AndroidManifest.xml:79:13-38
+		ADDED from D:\Find\src\main\AndroidManifest.xml:78:13-38
 	android:name
-		ADDED from D:\Find\src\main\AndroidManifest.xml:76:13-41
+		ADDED from D:\Find\src\main\AndroidManifest.xml:75:13-41
 meta-data#unityplayer.UnityActivity
-ADDED from D:\Find\src\main\AndroidManifest.xml:81:13-83:40
+ADDED from D:\Find\src\main\AndroidManifest.xml:80:13-82:40
 	android:value
-		ADDED from D:\Find\src\main\AndroidManifest.xml:83:17-37
+		ADDED from D:\Find\src\main\AndroidManifest.xml:82:17-37
 	android:name
-		ADDED from D:\Find\src\main\AndroidManifest.xml:82:17-57
+		ADDED from D:\Find\src\main\AndroidManifest.xml:81:17-57
 meta-data#unityplayer.ForwardNativeEventsToDalvik
-ADDED from D:\Find\src\main\AndroidManifest.xml:84:13-86:40
+ADDED from D:\Find\src\main\AndroidManifest.xml:83:13-85:40
 	android:value
-		ADDED from D:\Find\src\main\AndroidManifest.xml:86:17-37
+		ADDED from D:\Find\src\main\AndroidManifest.xml:85:17-37
 	android:name
-		ADDED from D:\Find\src\main\AndroidManifest.xml:85:17-71
+		ADDED from D:\Find\src\main\AndroidManifest.xml:84:17-71
 activity#com.unity3d.player.VideoPlayer
-ADDED from D:\Find\src\main\AndroidManifest.xml:88:9-92:52
+ADDED from D:\Find\src\main\AndroidManifest.xml:87:9-91:52
 	android:screenOrientation
-		ADDED from D:\Find\src\main\AndroidManifest.xml:92:13-49
+		ADDED from D:\Find\src\main\AndroidManifest.xml:91:13-49
 	android:label
-		ADDED from D:\Find\src\main\AndroidManifest.xml:91:13-45
+		ADDED from D:\Find\src\main\AndroidManifest.xml:90:13-45
 	android:configChanges
-		ADDED from D:\Find\src\main\AndroidManifest.xml:90:13-170
+		ADDED from D:\Find\src\main\AndroidManifest.xml:89:13-170
 	android:name
-		ADDED from D:\Find\src\main\AndroidManifest.xml:89:13-58
+		ADDED from D:\Find\src\main\AndroidManifest.xml:88:13-58
 uses-library#com.ti.s3d
-ADDED from D:\Find\src\main\AndroidManifest.xml:99:9-101:40
+ADDED from D:\Find\src\main\AndroidManifest.xml:98:9-100:40
 	android:required
-		ADDED from D:\Find\src\main\AndroidManifest.xml:101:13-37
+		ADDED from D:\Find\src\main\AndroidManifest.xml:100:13-37
 	android:name
-		ADDED from D:\Find\src\main\AndroidManifest.xml:100:13-38
+		ADDED from D:\Find\src\main\AndroidManifest.xml:99:13-38
 uses-library#com.osterhoutgroup.api.ext
-ADDED from D:\Find\src\main\AndroidManifest.xml:103:9-105:40
+ADDED from D:\Find\src\main\AndroidManifest.xml:102:9-104:40
 	android:required
-		ADDED from D:\Find\src\main\AndroidManifest.xml:105:13-37
+		ADDED from D:\Find\src\main\AndroidManifest.xml:104:13-37
 	android:name
-		ADDED from D:\Find\src\main\AndroidManifest.xml:104:13-54
+		ADDED from D:\Find\src\main\AndroidManifest.xml:103:13-54
 activity#com.FindHere.activity.RecorderActivity
 ADDED from D:\Find\src\main\AndroidManifest.xml:106:9-108:38
 	android:label
@@ -274,11 +274,18 @@ ADDED from D:\Find\src\main\AndroidManifest.xml:124:9-126:63
 		ADDED from D:\Find\src\main\AndroidManifest.xml:126:13-60
 	android:name
 		ADDED from D:\Find\src\main\AndroidManifest.xml:125:13-45
+activity#com.FindHere.activity.MyCommentActivity
+ADDED from D:\Find\src\main\AndroidManifest.xml:127:9-55
+	android:name
+		ADDED from D:\Find\src\main\AndroidManifest.xml:127:19-52
+activity#com.FindHere.activity.WebActivity
+ADDED from D:\Find\src\main\AndroidManifest.xml:128:9-58
+	android:name
+		ADDED from D:\Find\src\main\AndroidManifest.xml:128:19-46
 meta-data#android.support.VERSION
 ADDED from [com.android.support:design:26.0.0-alpha1] C:\Users\asus\.android\build-cache\9926a36909df21df384e4fce808a30ec609d0eea\output\AndroidManifest.xml:25:5-27:41
 MERGED from [com.android.support:appcompat-v7:26.0.0-alpha1] C:\Users\asus\.android\build-cache\19d7ea8401511620fa23c337710829464e6f2217\output\AndroidManifest.xml:25:5-27:41
 MERGED from [com.android.support:animated-vector-drawable:26.0.0-alpha1] C:\Users\asus\.android\build-cache\2a6c7d379d6faeca3a5a779818175e79545936dd\output\AndroidManifest.xml:22:5-24:41
-MERGED from [com.android.support:support-vector-drawable:26.0.0-alpha1] C:\Users\asus\.android\build-cache\cd6857c83a2d217337314ae3110b3d0b02a6c8bd\output\AndroidManifest.xml:22:5-24:41
 MERGED from [com.android.support:recyclerview-v7:26.0.0-alpha1] C:\Users\asus\.android\build-cache\e6234a49e7d426fe8214d2bd095b4b678274f14d\output\AndroidManifest.xml:22:5-24:41
 MERGED from [com.android.support:transition:26.0.0-alpha1] C:\Users\asus\.android\build-cache\a4f0098ff7e35fbb451660f596d078b55bdff4b6\output\AndroidManifest.xml:22:5-24:41
 MERGED from [com.android.support:support-v4:26.0.0-alpha1] C:\Users\asus\.android\build-cache\e831863d95e326269f25bced3bd42bc6e3b069d0\output\AndroidManifest.xml:25:5-27:41
@@ -286,6 +293,7 @@ MERGED from [com.android.support:support-media-compat:26.0.0-alpha1] C:\Users\as
 MERGED from [com.android.support:support-fragment:26.0.0-alpha1] C:\Users\asus\.android\build-cache\9c4d52777249e191e1614a28cfd45830b18168dc\output\AndroidManifest.xml:25:5-27:41
 MERGED from [com.android.support:support-core-ui:26.0.0-alpha1] C:\Users\asus\.android\build-cache\1faeaee35b18122194bff5ac51a37667d1b8acd9\output\AndroidManifest.xml:25:5-27:41
 MERGED from [com.android.support:support-core-utils:26.0.0-alpha1] C:\Users\asus\.android\build-cache\fd280a4c2c0e6c64223815daa1f2a19132bfdd98\output\AndroidManifest.xml:25:5-27:41
+MERGED from [com.android.support:support-vector-drawable:26.0.0-alpha1] C:\Users\asus\.android\build-cache\cd6857c83a2d217337314ae3110b3d0b02a6c8bd\output\AndroidManifest.xml:22:5-24:41
 MERGED from [com.android.support:support-compat:26.0.0-alpha1] C:\Users\asus\.android\build-cache\74f29e7de35d103925fcc09d0d5ff0c48f805790\output\AndroidManifest.xml:25:5-27:41
 	android:value
 		ADDED from [com.android.support:design:26.0.0-alpha1] C:\Users\asus\.android\build-cache\9926a36909df21df384e4fce808a30ec609d0eea\output\AndroidManifest.xml:27:9-38

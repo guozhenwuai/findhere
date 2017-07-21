@@ -157,6 +157,7 @@ public class RegisterActivity extends Activity {
                         SharedPreferences.Editor editor = sp.edit();
                         editor.putString("userName",userName);
                         editor.putString("gender",gender);
+                        editor.putString("userID",email);
                         editor.commit();
                         Intent intent = new Intent();
                         intent.setClass(RegisterActivity.this,UserActivity.class);

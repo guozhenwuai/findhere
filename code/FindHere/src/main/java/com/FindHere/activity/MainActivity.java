@@ -36,7 +36,7 @@ import static android.content.ContentValues.TAG;
 public class MainActivity extends Activity{
     protected UnityPlayer mUnityPlayer; // don't change the name of this variable; referenced from native code
     private LinearLayout u3dLayout,addMenu;
-    private ImageButton userBtn,cameraBtn,addBtn,seekBtn,setBtn,textBtn,musicBtn,voiceBtn,imageBtn;
+    private ImageButton userBtn,cameraBtn,addBtn,seekBtn,setBtn,textBtn,voiceBtn,imageBtn;
     private RelativeLayout loadLayout;
     private SharedPreferences sp;
     private static String targetID;
@@ -68,7 +68,6 @@ public class MainActivity extends Activity{
 
         addMenu=findViewById(R.id.add_menu);
         textBtn=findViewById(R.id.text);
-        musicBtn=findViewById(R.id.music);
         voiceBtn=findViewById(R.id.sound);
         imageBtn=findViewById(R.id.image);
 
@@ -138,20 +137,34 @@ public class MainActivity extends Activity{
         imageBtn.setOnClickListener(new OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent i = new Intent(
+                targetID = sp.getString("targetID","");
+                sessionid = sp.getString("sessionId","");
+                if(sessionid.equals("")){
+                    Toast.makeText(MainActivity.this,getString(R.string.no_login), Toast.LENGTH_SHORT).show();
+                }
+                if(targetID.equals("")) {
+                    Toast.makeText(MainActivity.this, getString(R.string.no_target), Toast.LENGTH_SHORT).show();
+                }else{
+                    Intent i = new Intent(
                         Intent.ACTION_PICK, android.provider.MediaStore.Images.Media.EXTERNAL_CONTENT_URI);
 
-                startActivityForResult(i, RESULT_LOAD_IMAGE);
+                startActivityForResult(i, RESULT_LOAD_IMAGE);}
             }
         });
         voiceBtn.setOnClickListener(new OnClickListener() {
             @Override
             public void onClick(View v) {
-
-                Intent intent = new Intent();
-                intent.setClass(MainActivity.this, RecorderActivity.class);
-                startActivityForResult(intent, RESULT_RECORD);
-                // UnityPlayer.UnitySendMessage("ForAndroid", "sayHello", "");
+                targetID = sp.getString("targetID","");
+                sessionid = sp.getString("sessionId","");
+                if(sessionid.equals("")){
+                    Toast.makeText(MainActivity.this,getString(R.string.no_login), Toast.LENGTH_SHORT).show();
+                }
+                if(targetID.equals("")){
+                    Toast.makeText(MainActivity.this,getString(R.string.no_target), Toast.LENGTH_SHORT).show();
+                }else{
+                    Intent intent = new Intent();
+                    intent.setClass(MainActivity.this, RecorderActivity.class);
+                    startActivityForResult(intent, RESULT_RECORD);}
             }
         });
 
@@ -198,7 +211,7 @@ public class MainActivity extends Activity{
                     Comment newcom=new Comment();
                     newcom.setImage(image);
                     newcom.setType("image");
-                    newcom.setTargetId("???");
+                    newcom.setTargetId(targetID);
 
 
 
@@ -207,6 +220,7 @@ public class MainActivity extends Activity{
                     restr=myConnect.sendFile(getString(R.string.addfile_url),newcom);
                     //  restr=myConnect.sendImage(getString(R.string.addimage_url),newcom);
                     Log.d("OK", restr);
+                    loadInfoPoint();
                   /*  Message msg = mHandler.obtainMessage();
                     msg.what = 1;
                     mHandler.sendMessage(msg);*/
@@ -241,9 +255,10 @@ public class MainActivity extends Activity{
                         Log.d(TAG, "run:"+wav.length);
                         newcom.setSounds(wav);
                         newcom.setType("sound");
-                        newcom.setTargetId("???");
+                        newcom.setTargetId(targetID);
                         restr = myConnect.sendFile(getString(R.string.addfile_url), newcom);
                         Log.d(TAG, "run: "+restr);
+                        loadInfoPoint();
                     } }).start();
             }
             catch (FileNotFoundException e)
@@ -296,7 +311,8 @@ public class MainActivity extends Activity{
                 String ip = getString(R.string.comment_content)+"?commentID="+commentID;
                 Connect myConnect = new Connect(MainActivity.this);
                 returnStr=myConnect.sendHttpPost(ip,"");
-            }}).start();
+            }
+        }).start();
         return returnStr;
     }
     @Override

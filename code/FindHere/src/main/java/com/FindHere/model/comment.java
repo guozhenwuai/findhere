@@ -1,6 +1,7 @@
 package com.FindHere.model;
 
 import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -12,12 +13,15 @@ import java.util.zip.GZIPOutputStream;
 public class Comment {
     private String type;
     private int id;
-    private int userId;
+    private String userId;
+    private String userName;
     private String targetId;
-    private int contentId;
+    private String contentId;
     private String text;
     private byte[] image;
     private byte[] sounds;
+    private String time;
+    private byte[] targetImage;
 
     public String getType() {
         return type;
@@ -31,17 +35,21 @@ public class Comment {
 
     public void setId(int id){this.id = id;}
 
-    public int getUserId(){return userId;}
+    public String getUserId(){return userId;}
 
-    public void setUserId(int userId){this.userId = userId;}
+    public void setUserId(String userId){this.userId = userId;}
+
+    public String getUserName(){return userName;}
+
+    public void setUserName(String userName){this.userName = userName;}
 
     public String getTargetId(){return targetId;}
 
     public void setTargetId(String targetId){this.targetId = targetId;}
 
-    public int getContentId(){return contentId;}
+    public String getContentId(){return contentId;}
 
-    public void setContentId(int contentId){this.contentId = contentId;}
+    public void setContentId(String contentId){this.contentId = contentId;}
 
     public String getText(){return text;}
 
@@ -55,10 +63,29 @@ public class Comment {
             this.image= Bitmap2Bytes(image);
     }
 
+    // target image
+    public byte[] getTargetImage(){
+        return targetImage;
+    }
+    public void setTargetImage(byte[] targetImage){
+        this.targetImage= targetImage;
+    }
+
     public byte[] Bitmap2Bytes(Bitmap bm) {
         ByteArrayOutputStream baos = new ByteArrayOutputStream();
         bm.compress(Bitmap.CompressFormat.PNG, 100, baos);
         return baos.toByteArray();
+    }
+
+    public Bitmap getImageBitmap(){
+        Bitmap bitmap = BitmapFactory.decodeByteArray(image,0,image.length);
+        return bitmap;
+    }
+
+    // target image
+    public Bitmap getTargetImageBitmap(){
+        Bitmap bitmap = BitmapFactory.decodeByteArray(targetImage,0,targetImage.length);
+        return bitmap;
     }
 
     public byte[] getSounds() {
@@ -128,5 +155,13 @@ public class Comment {
     public boolean hasText(){return !(text==null);}
 
     public boolean hasMusic(){return !(sounds==null);}
+
+    public String getTime(){
+        return time;
+    }
+
+    public void setTime(String time){
+        this.time = time;
+    }
 
 }

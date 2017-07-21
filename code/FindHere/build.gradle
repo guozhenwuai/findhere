@@ -25,6 +25,8 @@ dependencies {
     compile 'com.android.support:design:26.0.0-alpha1'
     compile 'com.google.code.gson:gson:2.2.4'
     compile 'com.android.support.constraint:constraint-layout:1.0.2'
+    compile 'com.android.support:support-v4:26.+'
+    compile 'com.android.support:support-vector-drawable:26.+'
 }
 
 android {
@@ -36,6 +38,7 @@ android {
         applicationId 'com.sjtu.FindHere'
         aaptOptions.cruncherEnabled = false
         aaptOptions.useNewCruncher = false
+        vectorDrawables.useSupportLibrary = true
     }
 
     lintOptions {
@@ -53,5 +56,6 @@ android {
 
         }
     }
+
 
 }

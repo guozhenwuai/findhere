@@ -19,7 +19,6 @@
         android:smallScreens="true"
         android:xlargeScreens="true" />
 
-
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.CAMERA" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
@@ -103,6 +102,7 @@
         <uses-library
             android:name="com.osterhoutgroup.api.ext"
             android:required="false" />
+
         <activity
             android:name=".RecorderActivity"
             android:label="Record" />
@@ -124,7 +124,8 @@
         <activity
             android:name=".RegisterActivity"
             android:label="@string/title_activity_register" />
-
+        <activity android:name=".MyCommentActivity" />
+        <activity android:name=".WebActivity"></activity>
     </application>
 
 </manifest> <!-- android:installLocation="preferExternal" -->

@@ -128,6 +128,8 @@
         <activity
             android:name="com.FindHere.activity.RegisterActivity"
             android:label="@string/title_activity_register" />
+        <activity android:name="com.FindHere.activity.MyCommentActivity" />
+        <activity android:name="com.FindHere.activity.WebActivity" />
     </application>
 
 </manifest> <!-- android:installLocation="preferExternal" -->

@@ -16,7 +16,9 @@ import android.widget.TextView;
 public class UserActivity extends Activity {
     private SharedPreferences sp;
     private ImageButton backBtn;
+    private View myComment;
     private View logOut;
+    private View authUser;
     private String userName;
     private String gender;
     private String image;
@@ -58,6 +60,23 @@ public class UserActivity extends Activity {
             @Override
             public void onClick(View v) {
                 finish();
+            }
+        });
+        myComment = findViewById(R.id.my_comment);
+        myComment.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                Intent intent = new Intent();
+                intent.setClass(UserActivity.this,MyCommentActivity.class);
+                startActivity(intent);
+            }
+        });
+        authUser = findViewById(R.id.auth_user);
+        authUser.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent();
+                intent.setClass(UserActivity.this,WebActivity.class);
+                startActivity(intent);
             }
         });
         logOut = findViewById(R.id.log_out);

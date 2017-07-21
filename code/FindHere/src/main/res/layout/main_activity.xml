@@ -121,17 +121,6 @@
             android:src="@drawable/voice1"
             android:scaleType="fitXY"
             android:id="@+id/sound" />
-        <ImageButton
-            android:layout_width="31dp"
-            android:layout_height="30dp"
-            android:background="@android:color/transparent"
-
-            android:layout_marginTop="14dp"
-            android:layout_marginRight="2dp"
-            android:layout_gravity="center_horizontal"
-            android:src="@drawable/music"
-            android:scaleType="fitXY"
-            android:id="@+id/music" />
 
         <ImageButton
             android:layout_width="33dp"

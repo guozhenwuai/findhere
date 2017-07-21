@@ -106,7 +106,8 @@
                     android:layout_width="match_parent"
                     android:layout_height="50dp"
                     android:layout_marginTop="20dp"
-                    android:background="@color/white">
+                    android:background="@color/white"
+                    android:id = "@+id/history">
                     <ImageView
                         android:layout_width="35dp"
                         android:layout_height="35dp"
@@ -180,7 +181,7 @@
                         android:layout_gravity="center_vertical"/>
                 </LinearLayout>
                 <LinearLayout
-                    android:id="@+id/my_targets"
+                    android:id="@+id/auth_user"
                     android:orientation="horizontal"
                     android:layout_width="match_parent"
                     android:layout_height="50dp"
@@ -195,7 +196,7 @@
                         android:layout_marginLeft="13dp"
                         android:layout_gravity="center_vertical"/>
                     <TextView
-                        android:text="我的目标"
+                        android:text="认证用户"
                         android:textSize="@dimen/about_title"
                         android:textColor="@color/gray"
                         android:fontFamily="serif"

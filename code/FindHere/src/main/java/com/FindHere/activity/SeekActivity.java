@@ -1,67 +1,134 @@
 package com.FindHere.activity;
 
 import android.app.Activity;
-import android.content.Intent;
+import android.content.Context;
+import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.os.Handler;
+import android.os.Message;
+import android.util.Log;
 import android.view.View;
+import android.widget.ImageButton;
+import android.widget.ListView;
 
-/**
- * Created by msi on 2017/6/30.
- */
+import com.FindHere.control.Connect;
+import com.FindHere.control.seekAdapter;
+import com.FindHere.model.Comment;
 
-public class SeekActivity extends Activity implements View.OnClickListener {
-    @Override
-    public void onClick(View view) {
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
 
-    }
+import java.util.LinkedList;
+import java.util.List;
 
-    public SeekActivity() {
-        super();
-    }
+public class SeekActivity extends Activity{
+        private SharedPreferences sp;
+        private String targetID;
+        private ImageButton backBtn;
+        private List<Comment> mData = null;
+        private seekAdapter mAdapter = null;
+        private ListView seek_list;
+        private String jsonStr;
+        private String ip;
+        private String returnStr;
 
-    @Override
-    public Intent getIntent() {
-        return super.getIntent();
-    }
+        @Override
+        protected void onCreate(Bundle savedInstanceState) {
+            super.onCreate(savedInstanceState);
+            setContentView(R.layout.seek_activity);
 
-    @Override
-    public void setIntent(Intent newIntent) {
-        super.setIntent(newIntent);
-    }
+            sp = getSharedPreferences("userInfo", Context.MODE_ENABLE_WRITE_AHEAD_LOGGING);
+            targetID = sp.getString("targetID","");
 
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.seek_activity);
-    }
+            ip = getString(R.string.seek_ip)+"?targetID=f29837c000614152ad7db17e552d855e&pageNum=10&pageIndex=0";
+            seek_list= (ListView)findViewById(R.id.list_view);
+            mData = new LinkedList<Comment>();
+            mAdapter = new seekAdapter((LinkedList<Comment>) mData,this);
+            seek_list.setAdapter(mAdapter);
 
-    @Override
-    protected void onStart() {
-        super.onStart();
-    }
+            new Thread(new Runnable(){
+                @Override
+                public void run() {
+                    Connect myConnect = new Connect(SeekActivity.this);
+                    returnStr=myConnect.sendHttpPost(ip,"");
+                    Message msg = mHandler.obtainMessage();
+                    msg.what = 1;
+                    mHandler.sendMessage(msg);
+                }}).start();
 
-    @Override
-    protected void onRestart() {
-        super.onRestart();
-    }
+            backBtn = (ImageButton)findViewById(R.id.back);
+            backBtn.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    finish();
+                }
+            });
+        }
 
-    @Override
-    protected void onResume() {
-        super.onResume();
-    }
+        public Handler mHandler = new Handler(){
+            public void handleMessage(Message msg) {
+                if(msg.what==1) {
+                    JSONArray myJsonArray;
+                    try
+                    {
+                        Log.d("hhh",returnStr);
+                        myJsonArray = new JSONArray(returnStr);
 
-    @Override
-    protected void onPause() {
-        super.onPause();
-    }
+                        for(int i=0 ; i < myJsonArray.length() ;i++)
+                        {
+                            JSONObject myObject = myJsonArray.getJSONObject(i);
 
-    @Override
-    protected void onStop() {
-        super.onStop();
-    }
+                            String type = myObject.getString("type");
+                            String commentID = myObject.getString("commentID");
+                            String text = myObject.optString("text");
+                            String time = myObject.getString("time");
+                            String userID = myObject.getString("userID");
+                            String targetID = myObject.getString("targetID");
 
-    @Override
-    protected void onDestroy() {
-        super.onDestroy();
-    }
+                            Comment myComment = new Comment();
+                            myComment.setType(type);
+                            myComment.setContentId(commentID);
+                            myComment.setText(text);
+                            myComment.setTime(time);
+                            myComment.setUserId(userID);
+                            myComment.setTargetId(targetID);
+
+                            mData.add(myComment);
+                        }
+                    }
+                    catch (JSONException e)
+                    {
+                    }
+                    mAdapter.notifyDataSetChanged();
+                }
+            }
+        };
+
+        @Override
+        protected void onRestart() {
+            super.onRestart();
+        }
+
+        @Override
+        protected void onStart() {
+            super.onStart();
+        }
+
+        @Override
+        protected void onResume() {
+            super.onResume();
+        }
+
+        @Override
+        protected void onPause() {
+            super.onPause();
+        }
+
+        @Override
+        protected void onDestroy() {
+            super.onDestroy();
+        }
+
 }
+

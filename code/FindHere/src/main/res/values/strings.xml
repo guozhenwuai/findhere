@@ -28,6 +28,7 @@
     <string name="commit">提交</string>
     <string name="error_invalid_username">This username is invalid</string>
     <string name="register_failed">注册失败</string>
+    <string name="title_activity_rigister">RigisterActivity</string>
 
     <!-- Strings related to add -->
     <string name="prompt_upload">Edit here</string>
@@ -41,9 +42,11 @@
     <string name="add_ip">http://192.168.1.8:8080/FindHere/SetComments/text</string>
     <string name="login_ip">http://192.168.1.8:8080/FindHere/Login</string>
     <string name="register_ip">http://192.168.1.8:8080/FindHere/SignUp</string>
-
     <string name="addfile_url">http://192.168.1.8:8080/FindHere/SetComments/file</string>
-    <string name="title_activity_rigister">RigisterActivity</string>
+    <string name="my_comment_ip">http://192.168.1.8:8080/FindHere/GetComments/GetIDsByUserID</string>
+    <string name="getcomment_ip">http://192.168.1.8:8080/FindHere/GetComments/ByID</string>
+    <string name="seek_ip">http://192.168.1.8:8080/FindHere/GetComments/GetIDsByTargetID</string>
+    <string name="web_ip">http://192.168.1.8:8080/FindHere/Apply</string>
 
     <!-- Strings related to targetID -->
     <string name="no_login">未登录</string>
@@ -55,4 +58,6 @@
 
     <!-- Strings related to comments -->
     <string name="text">text</string>
+    <string name="title_activity_sample">Settings</string>
+
 </resources>

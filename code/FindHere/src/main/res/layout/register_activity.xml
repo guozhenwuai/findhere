@@ -72,7 +72,7 @@
                 android:layout_height="wrap_content"
                 android:prompt="@string/prompt_gender"
                 android:layout_marginTop="10dp"
-                android:entries="@array/data"
+                android:entries="@array/gender"
                 android:background="@drawable/shape_input"
                 android:singleLine="true" />
 

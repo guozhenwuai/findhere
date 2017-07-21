@@ -407,6 +407,9 @@ public class LoginActivity extends Activity implements LoaderCallbacks<Cursor> {
 
             if (success) {
                 Toast.makeText(LoginActivity.this,getString(R.string.login_success), Toast.LENGTH_SHORT).show();
+                SharedPreferences.Editor editor = sp.edit();
+                editor.putString("userID",email);
+                editor.commit();
                 mAuthTask = null;
                 finish();
                 Intent intent = new Intent();
