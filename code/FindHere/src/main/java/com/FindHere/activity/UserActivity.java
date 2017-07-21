@@ -17,6 +17,7 @@ public class UserActivity extends Activity {
     private SharedPreferences sp;
     private ImageButton backBtn;
     private View logOut;
+
     private String userName;
     private String gender;
     private String image;
@@ -25,12 +26,12 @@ public class UserActivity extends Activity {
     private ImageView userhead;
     private TextView username;
     private ImageView gender_view;
-
+    private ImageButton edit;
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.user_activity);
-
+        edit=findViewById(R.id.edit_user);
         userhead = findViewById(R.id.userhead);
 
         sp = getSharedPreferences("userInfo", Context.MODE_ENABLE_WRITE_AHEAD_LOGGING);
@@ -69,6 +70,14 @@ public class UserActivity extends Activity {
                 finish();
                 Intent intent = new Intent();
                 intent.setClass(UserActivity.this,LoginActivity.class);
+                startActivity(intent);
+            }
+        });
+        edit.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent();
+                intent.setClass(UserActivity.this,EditUserActivity.class);
                 startActivity(intent);
             }
         });

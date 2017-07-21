@@ -16,9 +16,11 @@ import android.view.KeyEvent;
 import android.view.MotionEvent;
 import android.view.View;
 import android.view.View.OnClickListener;
+import android.widget.CheckBox;
 import android.widget.ImageButton;
 import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
+import android.widget.SeekBar;
 import android.widget.Toast;
 
 import com.FindHere.control.Connect;
@@ -45,7 +47,10 @@ public class MainActivity extends Activity{
     private  String restr;
     private static int RESULT_LOAD_IMAGE = 1;
     private static int RESULT_RECORD = 2;
-
+    private  static int comment_num;
+    private CheckBox location;
+    private SeekBar com_num;
+    private  LinearLayout set_menu;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -68,9 +73,13 @@ public class MainActivity extends Activity{
 
         addMenu=findViewById(R.id.add_menu);
         textBtn=findViewById(R.id.text);
-        musicBtn=findViewById(R.id.music);
         voiceBtn=findViewById(R.id.sound);
         imageBtn=findViewById(R.id.image);
+
+        location=findViewById(R.id.location);
+        com_num=findViewById(R.id.com_num);
+
+        set_menu=findViewById(R.id.set_menu);
 
 
         userBtn.setOnClickListener(new OnClickListener() {
@@ -166,13 +175,72 @@ public class MainActivity extends Activity{
         setBtn.setOnClickListener(new OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent();
+                if(set_menu.getVisibility() == View.GONE){
+                    set_menu.setVisibility(View.VISIBLE);
+                }
+                else{
+                    set_menu.setVisibility(View.GONE);
+                }
+                /*Intent intent = new Intent();
                 intent.setClass(MainActivity.this, SettingsActivity.class);
-                startActivity(intent);
+                startActivity(intent);*/
             }
         });
+        com_num.setMax(20);
+/*
+        com_num.setMin(10);
+*/
+
+        com_num.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
+            @Override
+            public void onProgressChanged(SeekBar seekBar, int progress, boolean b) {
+                Log.d(TAG, "seekid:"+seekBar.getId()+", progess"+progress);
+                SharedPreferences.Editor editor =sp.edit();
+                comment_num=progress;
+            }
+
+            @Override
+            public void onStartTrackingTouch(SeekBar seekBar) {
+
+            }
+
+            @Override
+            public void onStopTrackingTouch(SeekBar seekBar) {
+
+            }
+        });
+
     }
 
+
+
+    public void onCheckboxClicked(View view) {
+        // Is the view now checked?
+        boolean checked =( (CheckBox) view).isChecked();
+
+        // Check which checkbox was clicked
+        switch(view.getId()) {
+            case R.id.location:
+                if (checked)
+                {
+                    Log.d(TAG, "onCheckboxClicked: "+checked);
+                        SharedPreferences.Editor editor = sp.edit();
+                        editor.putString("location", "true");
+                        editor.commit();
+
+
+                }
+                else
+                {
+                    Log.d(TAG, "onCheckboxClicked: "+checked);
+                    SharedPreferences.Editor editor = sp.edit();
+                    editor.putString("location","false");
+                    editor.commit();
+                }
+                break;
+
+        }
+    }
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
         Log.d(TAG, "onActivityResult:OK "+requestCode+" "+resultCode+" "+(data==null));
@@ -198,7 +266,7 @@ public class MainActivity extends Activity{
                     Comment newcom=new Comment();
                     newcom.setImage(image);
                     newcom.setType("image");
-                    newcom.setTargetId("???");
+                    newcom.setTargetId(targetID);
 
 
 
@@ -276,7 +344,7 @@ public class MainActivity extends Activity{
 
     // Unity uses this function to get {commentID:commentType}
     public String getCommentType(final String targetID,final int pageIndex){
-        String ip = getString(R.string.comment_type)+"?targetID="+targetID+"&pageNum=20&pageIndex="+pageIndex;
+        String ip = getString(R.string.comment_type)+"?targetID="+targetID+"&pageNum="+comment_num+"&pageIndex="+pageIndex;
         //String ip = "http://115.159.184.211:8080/FindHere/GetComments/GetIDsByTargetID?targetID=1&pageNum=20&pageIndex=0";
         Connect myConnect = new Connect(MainActivity.this);
         returnStr=myConnect.sendHttpPost(ip,"");

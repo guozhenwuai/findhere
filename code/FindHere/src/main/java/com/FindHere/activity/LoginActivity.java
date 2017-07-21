@@ -20,6 +20,7 @@ import android.provider.ContactsContract;
 import android.support.annotation.NonNull;
 import android.support.design.widget.Snackbar;
 import android.text.TextUtils;
+import android.util.Log;
 import android.view.KeyEvent;
 import android.view.View;
 import android.view.View.OnClickListener;
@@ -168,6 +169,7 @@ public class LoginActivity extends Activity implements LoaderCallbacks<Cursor> {
     protected void onStart(){
         super.onStart();
         if(isLogged()){
+            Log.d("login","LOGINED"+sp.getString("sessionId",""));
             finish();
             Intent intent= new Intent();
             intent.setClass(LoginActivity.this,UserActivity.class);
