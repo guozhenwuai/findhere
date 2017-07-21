@@ -1,0 +1,13 @@
+.longLabel{
+	display:inline-block;
+	width:100px;
+}
+
+.shortLabel{
+	display:inline-block;
+	width:10px;
+}
+
+.positionInput{
+	width:50px;
+}

@@ -2,6 +2,7 @@ package controller;
 
 import java.io.IOException;
 import java.io.InputStream;
+import java.net.URISyntaxException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -14,7 +15,9 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
+import model.User;
 import service.ContentService;
+import service.VuforiaService;
 import tool.Wrapper;
 
 @Controller
@@ -24,6 +27,17 @@ public class VerifyTarget {
 	
 	@Resource
 	private ContentService contentService;
+	
+	@Resource
+	private VuforiaService vuforiaService;
+	
+	@RequestMapping("/Test")
+	public String executeT(HttpServletRequest request, HttpServletResponse response, HttpSession httpSession)
+			throws IOException, URISyntaxException {
+		String s = "f29837c000614152ad7db17e552d855e";
+		vuforiaService.getTarget(s);
+		return null;
+	}
 	
 	@RequestMapping("/Verify")
 	public String execute(@RequestParam("pageIndex")int pageIndex,
@@ -45,7 +59,7 @@ public class VerifyTarget {
 	public String execute2(@RequestParam("userID") String userID,
 			@RequestParam("tempTargetID") String tempTargetID,
 			HttpServletRequest request, HttpServletResponse response, HttpSession httpSession) 
-			throws IOException{
+			throws IOException, URISyntaxException{
 		contentService.ratifyTarget(userID, tempTargetID);
 		return null;
 	}
@@ -57,5 +71,13 @@ public class VerifyTarget {
 	
 	public void setMongoDBService(ContentService s){
 		contentService = s;
+	}
+	
+	public VuforiaService getVuforiaService() {
+		return vuforiaService;
+	}
+	
+	public void setVuforiaService(VuforiaService s) {
+		vuforiaService = s;
 	}
 }

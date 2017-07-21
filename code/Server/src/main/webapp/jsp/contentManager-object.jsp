@@ -8,8 +8,26 @@
 	<meta http-equiv="Content-type" content="text/html; charset=utf-8" />
 	<title>FindHere Member</title>
 	<link rel="stylesheet" href="/FindHere/css/style.css" type="text/css" media="all" />
+	<link rel="stylesheet" href="/FindHere/css/myStyle.css" type="text/css" media="all" />
 </head>
 <body>
+
+<script type="text/javascript">
+var num = 1;
+function addTarget(){
+	var el = document.getElementById('add');
+	el.parentNode.removeChild(el);
+	
+	var fileName = "textureFile" + num;
+	num = num + 1;
+	var append = "<br>"+
+	"<br>"+
+	"<span style='display:inline-block; width:100px'>Texture File</span><input type='file' name='"+fileName+"'>"+
+		"<div id='add' style='display:inline-block;'><span style='display:inline-block; width:5px'></span><a href='javascript:addTarget();'><img width='13px' height='13px' src='/FindHere/css/images/add.gif' /></a></div>";
+	document.getElementById("texture").innerHTML += append;
+}
+</script>
+
 <!-- Header -->
 <div id="header">
 	<div class="shell">
@@ -72,13 +90,34 @@
 						</select>
 						<br>
 						<br>
+						<span class="longLabel">Position: </span>
+						<span class="shortLabel">X </span><input class="positionInput" type="text" name="Px" >
+						<span class="shortLabel">Y </span><input class="positionInput" type="text" name="Py" >
+						<span class="shortLabel">Z </span><input class="positionInput" type="text" name="Pz" >
+						<br>
+						<br>
+						<span class="longLabel">Rotation: </span>
+						<span class="shortLabel">X </span><input class="positionInput" type="text" name="Rx" >
+						<span class="shortLabel">Y </span><input class="positionInput" type="text" name="Ry" >
+						<span class="shortLabel">Z </span><input class="positionInput" type="text" name="Rz" >
+						<br>
+						<br>
+						<span class="longLabel">Scale: </span>
+						<span class="shortLabel">X </span><input class="positionInput" type="text" name="Sx" >
+						<span class="shortLabel">Y </span><input class="positionInput" type="text" name="Sy" >
+						<span class="shortLabel">Z </span><input class="positionInput" type="text" name="Sz" >
+						<br>
+						<br>
 						<span style="display:inline-block; width:100px">Object File</span><input type="file" name="objectFile">
 						<br>
 						<br>
-						<span style="display:inline-block; width:100px">Texture File</span><input type="file" name="textureFile">
-						<br>
-						<br>
 						<span style="display:inline-block; width:100px">MTL File</span><input type="file" name="MTLFile">
+						<div id="texture">
+						<br>
+						<br>
+						<span style="display:inline-block; width:100px">Texture File</span><input type="file" name="textureFile0">
+							<div id="add" style="display:inline-block;"><span style='display:inline-block; width:5px'></span><a href='javascript:addTarget();'><img width='13px' height='13px' src='/FindHere/css/images/add.gif' /></a></div>
+						</div>
 						<br>
 						<br>
 						<input type="submit" value="SUBMIT">

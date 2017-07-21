@@ -67,6 +67,9 @@
 	<bean id="readService" class="service.Impl.ReadServiceImpl">
 	</bean>
 	
+	<bean id="vuforiaService" class="service.Impl.VuforiaServiceImpl">
+	</bean>
+	
 	<bean id="commentDao" class="dao.Impl.CommentDaoImpl">
 		<property name="fileDao" ref="fileDao"/>
 	</bean>

@@ -53,7 +53,8 @@ public class Login {
 			httpSession.setAttribute("userID", userID);
 			return "redirect:/MemberWelcome";
 		}else if(result == 3) {//ordinary user
-			return "login";
+			httpSession.setAttribute("userID", userID);
+			return "register";
 		}
 		return "login";
 	}

@@ -23,6 +23,7 @@ import com.mongodb.gridfs.GridFSDBFile;
 import com.mongodb.gridfs.GridFSInputFile;
 
 import dao.FileDao;
+import tool.ByteFileWithName;
 
 public class FileDaoImpl implements FileDao{
 	
@@ -66,9 +67,33 @@ public class FileDaoImpl implements FileDao{
 		return id;
 	}
 	
+	public String inputFileToDBWithName(String gfsName, String filename, InputStream inStream) {
+		db = mongoTemplate.getDb();
+		gfsInput = new GridFS(db, gfsName).createFile(inStream);
+		gfsInput.setFilename(filename);
+		gfsInput.save();
+		String id = gfsInput.getId().toString();
+		return id;
+	}
+	
+	public String inputFileToDBWithName(String gfsName, String filename, byte[] data) {
+		db = mongoTemplate.getDb();
+		gfsInput = new GridFS(db, gfsName).createFile(data);
+		gfsInput.setFilename(filename);
+		gfsInput.save();
+		String id = gfsInput.getId().toString();
+		return id;
+	}
+	
 	public boolean removeFile(String gfsName, String fileID) {
 		db = mongoTemplate.getDb();
 		new GridFS(db, gfsName).remove(new ObjectId(fileID));
+		return true;
+	}
+	
+	public boolean removeFileByName(String gfsName, String fileName) {
+		db = mongoTemplate.getDb();
+		new GridFS(db, gfsName).remove(fileName);
 		return true;
 	}
 	
@@ -100,6 +125,24 @@ public class FileDaoImpl implements FileDao{
 			swapStream.write(buff, 0, rc);
 		}
 		byte[] file = swapStream.toByteArray(); 
+		return file;
+	}
+	
+	public ByteFileWithName outputFileToByteWithName(String gfsName, String fileID) throws IOException {
+		ByteFileWithName file = new ByteFileWithName();
+		db = mongoTemplate.getDb();
+		gfsFile = new GridFS(db, gfsName).findOne(new ObjectId(fileID));
+		if(gfsFile == null) return null;
+		InputStream inStream = gfsFile.getInputStream();
+		ByteArrayOutputStream swapStream = new ByteArrayOutputStream();
+		byte[] buff = new byte[100]; 
+		int rc = 0;
+		while ((rc = inStream.read(buff, 0, 100)) > 0) {
+			swapStream.write(buff, 0, rc);
+		}
+		
+		file.setFileName(gfsFile.getFilename());
+		file.setByteElement(swapStream.toByteArray()); 
 		return file;
 	}
 	

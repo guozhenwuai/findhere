@@ -31,7 +31,13 @@
     		<mvc:mapping path="/MemberContent"/>
     		<mvc:mapping path="/MemberTarget"/>
     		<mvc:mapping path="/SetContents"/>
+    		<mvc:mapping path="/MemberVerifyTarget"/>
     		<bean class="controller.MemberLoginInterceptor"></bean>
+    	</mvc:interceptor>
+    	<mvc:interceptor>
+    		<mvc:mapping path="/webSignUp"/>
+    		<mvc:mapping path="/Apply"/>
+    		<bean class="controller.userLoginInterceptor"></bean>
     	</mvc:interceptor>
     </mvc:interceptors>
 

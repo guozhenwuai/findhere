@@ -85,10 +85,10 @@
 							for(int i = 0; i < targetIDList.size(); i++){
 							%>
 							<tr>
-								<td></td>
+								<td><img width="20px" height="20px" src="/FindHere/GetContent/GetTarget?targetID=<%=targetIDList.get(i) %>"/></td>
 								<td><h3><%=targetIDList.get(i) %></h3></td>
 								<td>
-									<a href="/FindHere/RejectApply?
+									<a href="/FindHere/MemberTarget/DeleteTarget?
 										targetID=<%=targetIDList.get(i) %>
 										&pageIndex=<%=pageIndex %>" class="ico del">Delete</a>
 								</td>
@@ -107,14 +107,14 @@
 								int previous = (pageIndex-1<0)? 0:pageIndex-1;
 								int next = pageIndex + 1;
 								%>
-								<a href="/FindHere/ConfirmMember?pageIndex=0">Start</a>
-								<a href="/FindHere/ConfirmMember?pageIndex=<%=previous %>">Previous</a>
-								<a href="/FindHere/ConfirmMember?pageIndex=<%=pageIndex %>"><font color="red"><%=pageIndex+1 %></font></a>
-								<a href="/FindHere/ConfirmMember?pageIndex=<%=pageIndex+1 %>"><%=pageIndex+2 %></a>
-								<a href="/FindHere/ConfirmMember?pageIndex=<%=pageIndex+2 %>"><%=pageIndex+3 %></a>
-								<a href="/FindHere/ConfirmMember?pageIndex=<%=pageIndex+3 %>"><%=pageIndex+4 %></a>
+								<a href="/FindHere/MemberTarget?pageIndex=0">Start</a>
+								<a href="/FindHere/MemberTarget?pageIndex=<%=previous %>">Previous</a>
+								<a href="/FindHere/MemberTarget?pageIndex=<%=pageIndex %>"><font color="red"><%=pageIndex+1 %></font></a>
+								<a href="/FindHere/MemberTarget?pageIndex=<%=pageIndex+1 %>"><%=pageIndex+2 %></a>
+								<a href="/FindHere/MemberTarget?pageIndex=<%=pageIndex+2 %>"><%=pageIndex+3 %></a>
+								<a href="/FindHere/MemberTarget?pageIndex=<%=pageIndex+3 %>"><%=pageIndex+4 %></a>
 								<span>...</span>
-								<a href="/FindHere/ConfirmMember?pageIndex=<%=next %>">Next</a>
+								<a href="/FindHere/MemberTarget?pageIndex=<%=next %>">Next</a>
 							</div>
 						</div>
 						<!-- End Pagging -->

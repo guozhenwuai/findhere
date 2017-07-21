@@ -28,7 +28,7 @@
 		<div id="navigation">
 			<ul>
 			    <li><a href="#" class="active"><span>Member</span></a></li>
-			    <li><a href="/FindHere/VerifyTarget/Verify"><span>New Articles</span></a></li>
+			    <li><a href="/FindHere/VerifyTarget/Verify?pageIndex=0"><span>Verify Target</span></a></li>
 			</ul>
 		</div>
 		<!-- End Main Nav -->

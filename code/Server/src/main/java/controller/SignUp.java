@@ -12,6 +12,7 @@ import org.json.JSONObject;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+import service.ApplyService;
 import service.ReadService;
 import service.UserService;
 
@@ -24,6 +25,9 @@ public class SignUp {
 	
 	@Resource
 	private ReadService readService;
+	
+	@Resource
+	private ApplyService applyService;
 	
 	@RequestMapping("/SignUp")
 	public String execute(HttpServletRequest request, HttpServletResponse response, HttpSession httpSession) 
@@ -51,6 +55,23 @@ public class SignUp {
 		return null;
 	}
 	
+	@RequestMapping("/Apply")
+	public String execute1(HttpServletRequest request, HttpServletResponse response, HttpSession httpSession) 
+			throws IOException {
+		return "register";
+	}
+	
+	@RequestMapping("/webSignUp")
+	public String execute2(HttpServletRequest request, HttpServletResponse response, HttpSession httpSession) 
+			throws IOException {
+		String realName = request.getParameter("realName");
+		String nationalID = request.getParameter("nationalID");
+		String incorporation = request.getParameter("incorporation");
+		String userID = (String)httpSession.getAttribute("userID");
+		applyService.addApply(userID, realName, nationalID, incorporation);
+		return "waitForVerifying";
+	}
+	
 	/*GET and SET*/
 	public UserService getMongoDBService(){
 		return userService;
@@ -66,5 +87,13 @@ public class SignUp {
 	
 	public void setReadService(ReadService s) {
 		readService = s;
+	}
+	
+	public ApplyService getApplyService() {
+		return applyService;
+	}
+	
+	public void setApplyService(ApplyService s) {
+		this.applyService = s;
 	}
 }
