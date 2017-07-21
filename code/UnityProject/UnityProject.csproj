@@ -131,14 +131,24 @@
     <Compile Include="Assets\script\InfoLoader.cs" />
     <Compile Include="Assets\script\InfoPointMoveManager.cs" />
     <Compile Include="Assets\script\Model\Comment.cs" />
+    <Compile Include="Assets\script\Model\Content.cs" />
     <Compile Include="Assets\script\Model\TextContent.cs" />
     <Compile Include="Assets\script\ScanLine.cs" />
     <Compile Include="Assets\script\TrackableEventHandler.cs" />
+    <Compile Include="Assets\script\Utilities\DataSet.cs" />
+    <Compile Include="Assets\script\Utilities\EditorUtil.cs" />
     <Compile Include="Assets\script\Utilities\EmojiAtlasBaker.cs" />
     <Compile Include="Assets\script\Utilities\EmojiHelper.cs" />
+    <Compile Include="Assets\script\Utilities\ImportOptions.cs" />
     <Compile Include="Assets\script\Utilities\JsonHelper.cs" />
-    <Compile Include="Assets\script\Utilities\ObjMaterial.cs" />
-    <Compile Include="Assets\script\Utilities\ObjMesh.cs" />
+    <Compile Include="Assets\script\Utilities\Loader.cs" />
+    <Compile Include="Assets\script\Utilities\LoaderObj.cs" />
+    <Compile Include="Assets\script\Utilities\LoadingProgress.cs" />
+    <Compile Include="Assets\script\Utilities\MaterialData.cs" />
+    <Compile Include="Assets\script\Utilities\ModelUtil.cs" />
+    <Compile Include="Assets\script\Utilities\ObjectBuilder.cs" />
+    <Compile Include="Assets\script\Utilities\ObjectImporter.cs" />
+    <Compile Include="Assets\script\Utilities\TextureLoader.cs" />
     <Compile Include="Assets\script\cloudRecoHandler.cs" />
   </ItemGroup>
   <ItemGroup>

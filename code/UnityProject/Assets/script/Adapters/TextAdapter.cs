@@ -8,7 +8,6 @@ public class TextAdapter : MonoBehaviour {
     public EmojiHelper emojiHelper;
 
     private TextMesh text;
-    private static char emSpace = '\u2001';
 
     // Use this for initialization
     void Start () {

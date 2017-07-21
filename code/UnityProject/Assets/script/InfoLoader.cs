@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using AsImpL;
+using System.Collections;
 using System.Collections.Generic;
 using System.Drawing;
 using System.Drawing.Imaging;
@@ -17,6 +18,7 @@ public class InfoLoader : MonoBehaviour {
     public GameObject infoPointPool;
     public RawImage loadingSpinner;
     public InfoPointMoveManager infoPointMoveManager;
+    public AsImpL.ObjectImporter objImporter;
 
     private AndroidJavaObject androidPlugin;
     private bool isLoadingImage;
@@ -28,6 +30,8 @@ public class InfoLoader : MonoBehaviour {
     private int pageIndex;
     private bool isLastPage;
     private bool emptyPage;
+    private Content[] contents;
+    private int contentIndex;
 
     // Use this for initialization
     void Start () {
@@ -38,7 +42,7 @@ public class InfoLoader : MonoBehaviour {
         isLoadingAudio = false;
         pageIndex = 0;
         isLastPage = false;
-        emptyPage = false;
+        contentIndex = 0;
     }
 
     void Update()
@@ -146,7 +150,7 @@ public class InfoLoader : MonoBehaviour {
 
     public void SetTargetId(string id)
     {
-        androidPlugin.Call("setTargetID", id);
+        //androidPlugin.Call("setTargetID", id);
     }
 
     private void ResetInfoPool()
@@ -162,7 +166,7 @@ public class InfoLoader : MonoBehaviour {
     public void NextPost(string targetId)
     {
         string str;
-        if (emptyPage)
+        if (isLastPage)
         {
             androidPlugin.Call("setToast", "没有更多信息了~");
             str = GetCommentsFromAndroid(targetId);
@@ -172,7 +176,7 @@ public class InfoLoader : MonoBehaviour {
         infoPointMoveManager.ZoomingIn();
         pageIndex++;
         str = GetCommentsFromAndroid(targetId);
-        if (str == "")
+        if (str == "" || str == "[]")
         {
             androidPlugin.Call("setToast", "没有更多信息了~");
             pageIndex--;
@@ -208,7 +212,61 @@ public class InfoLoader : MonoBehaviour {
         pageIndex = 0;
     }
 
-    public void FirstLoadInfoPoint(string targetId)
+    public void LoadInfo(string targetId)
+    {
+        LoadContents(targetId);
+        FirstLoadInfoPoint(targetId);
+        if (contents != null && contents.Length > 0)
+        {
+            LoadOneContent();
+        }
+    }
+
+    private void NextContent()
+    {
+        if(contents!=null && contentIndex + 1 < contents.Length)
+        {
+            contentIndex++;
+            LoadOneContent();
+        }
+        else
+        {
+            androidPlugin.Call("setToast", "没有更多信息了~");
+        }
+    }
+
+    private void LastContent()
+    {
+        if(contents!=null&&contentIndex > 0&&contentIndex - 1 < contents.Length)
+        {
+            contentIndex--;
+            LoadOneContent();
+        }
+        else
+        {
+            androidPlugin.Call("setToast", "没有更多信息了~");
+        }
+    }
+
+    private void LoadOneContent()
+    {
+        Content content = contents[contentIndex];
+        string type = content.GetContentType();
+        switch (type)
+        {
+            case "ARObject":
+                ImportOptions options = new ImportOptions();
+                options = new ImportOptions();
+                options.modelScaling = 1f;
+                objImporter.ImportModelAsync(content.GetContentID(), content.GetContentID(), infoPoint.transform.parent, options);
+                break;
+            default:
+                Debug.Log("cannot load content type:" + type);
+                break;
+        }
+    }
+
+    private void FirstLoadInfoPoint(string targetId)
     {
         Debug.Log("load info point " + targetId);
         ResetInfoPool();
@@ -216,15 +274,15 @@ public class InfoLoader : MonoBehaviour {
         //string str = GetCommentsFromAndroid(targetId);
         string str = GetTestComments();
 
-        if (str == "")
+        if (str == ""||str=="[]")
         {
-            emptyPage = true;
+            isLastPage = true;
             androidPlugin.Call("setToast", "此处还没有信息哦~快来发布吧！");
         }
         else
         {
-            emptyPage = false;
-            androidPlugin.Call("setToast", "识别成功！");
+            isLastPage = false;
+            //androidPlugin.Call("setToast", "识别成功！");
             ParseInfoPoint(str);
             infoPointMoveManager.ZoomingOut();
         }
@@ -237,16 +295,37 @@ public class InfoLoader : MonoBehaviour {
 
         string str = GetCommentsFromAndroid(targetId);
 
-        if (str != "")
+        if (str != "" && str != "[]")
         {
-            emptyPage = false;
+            isLastPage = false;
             ParseInfoPoint(str);
             infoPointMoveManager.ZoomingOut();
         }
         else
         {
-            emptyPage = true;
+            isLastPage = true;
         }
+    }
+
+    public void LoadContents(string targetId)
+    {
+        contents = null;
+        contentIndex = 0;
+        string str = GetContents(targetId);
+
+        if (str != "" && str !="[]")
+        {
+            Debug.Log("contents:" + str);
+            contents = JsonHelper.FromJson<Content>(fixJson(str));
+        }
+    }
+
+    private string GetContents(string targetId)
+    {
+        WWW www = new WWW("http://192.168.1.8:8080/FindHere/GetContent/ByTargetID?targetID=" + targetId);
+        while (!www.isDone) ;
+        string str = www.text;
+        return str;
     }
 
     private string GetTestComments()

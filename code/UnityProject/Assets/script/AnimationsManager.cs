@@ -1,5 +1,6 @@
 using UnityEngine;
 using System.Collections;
+using Vuforia;
 
 
 public class AnimationsManager : MonoBehaviour
@@ -22,7 +23,7 @@ public class AnimationsManager : MonoBehaviour
         if (Screen.dpi > 260)
         {
             OverlayPosition.transform.localPosition = new Vector3(0, 0, 1.5f);
-        }  
+        }
     }
     
     void Update () 

@@ -321,7 +321,7 @@ public class ContentManager : MonoBehaviour,ITrackableEventHandler {
         keepTargetId = target;
         status = 1;
         infoLoader.ResetPageIndex();
-        infoLoader.FirstLoadInfoPoint(target);
+        infoLoader.LoadInfo(target);
 
         /*for(int i = 0; i < 10; i++)
         {
