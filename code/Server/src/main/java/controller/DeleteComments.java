@@ -22,6 +22,7 @@ public class DeleteComments {
 	@Resource
 	private CommentService commentService;
 	
+	@RequestMapping("/ByID")
 	public String execute(@RequestParam("commentID")String commentID, 
 			HttpServletRequest request, HttpServletResponse response, HttpSession httpSession) 
 			throws IOException{

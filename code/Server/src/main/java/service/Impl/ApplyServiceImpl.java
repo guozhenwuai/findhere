@@ -33,6 +33,15 @@ public class ApplyServiceImpl implements ApplyService {
 		applyDao.removeApply(applyID);
 	}
 	
+	public void addApply(String userID, String realName, String nationalID, String incorporation) {
+		Apply apply = new Apply();
+		apply.setUserID(userID);
+		apply.setName(realName);
+		apply.setNationalID(nationalID);
+		apply.setInc(incorporation);
+		applyDao.addApply(apply);
+	}
+	
 	/*GET and SET*/
 	public ApplyDao getMongoTemplate() {
 		return applyDao;

@@ -64,9 +64,12 @@ public class CommentServiceImpl implements CommentService {
 			jsonObj.put("commentID", comments.get(i).get_id());
 			jsonObj.put("time", comments.get(i).getTime());
 			jsonObj.put("userID", comments.get(i).getUserID());
+			jsonObj.put("text", comments.get(i).getText());
+			jsonObj.put("targetID", comments.get(i).getTargetID());
 			ret.add(jsonObj);
 		}
 		JSONArray jsonArray = new JSONArray(ret);
+		response.setContentType("text/html;charset=UTF-8");
 		response.getWriter().print(jsonArray.toString());
 	}
 	
@@ -89,6 +92,7 @@ public class CommentServiceImpl implements CommentService {
 			ret.add(jsonObj);
 		}
 		JSONArray jsonArray = new JSONArray(ret);
+		response.setContentType("text/html;charset=UTF-8");
 		response.getWriter().print(jsonArray.toString());
 	}
 	

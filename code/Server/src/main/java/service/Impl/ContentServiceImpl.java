@@ -2,14 +2,18 @@ package service.Impl;
 
 import java.io.IOException;
 import java.io.InputStream;
+import java.net.URISyntaxException;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import javax.annotation.Resource;
 import javax.servlet.http.HttpServletResponse;
 
 import org.json.JSONArray;
 import org.json.JSONObject;
+import org.springframework.web.multipart.MultipartFile;
 
 import dao.ARManagerDao;
 import dao.ContentDao;
@@ -19,6 +23,8 @@ import model.ARManager;
 import model.Content;
 import model.UserTarget;
 import service.ContentService;
+import service.VuforiaService;
+import tool.ByteFileWithName;
 import tool.Wrapper;
 
 public class ContentServiceImpl implements ContentService {
@@ -31,6 +37,9 @@ public class ContentServiceImpl implements ContentService {
 	private FileDao fileDao;
 	@Resource
 	private UserTargetDao userTargetDao;
+	
+	@Resource
+	private VuforiaService vuforiaService;
 	
 	public void returnContentByID(String contentID, String type, HttpServletResponse response) throws IOException {
 		Content content = contentDao.findOneByID(contentID);
@@ -52,7 +61,7 @@ public class ContentServiceImpl implements ContentService {
 			if(type.equals("object")) {
 				fileDao.outputFileToStream("ARObject", arManager.getARObectID(), response.getOutputStream());
 			}else if(type.equals("texture")) {
-				fileDao.outputFileToStream("texture", arManager.getTexture(), response.getOutputStream());
+				//fileDao.outputFileToStream("texture", arManager.getTexture(), response.getOutputStream());
 			}else if(type.equals("MTL")) {
 				fileDao.outputFileToStream("MTL", content.getAudioID(), response.getOutputStream());
 			}
@@ -66,25 +75,75 @@ public class ContentServiceImpl implements ContentService {
 		for(int i = 0; i < contents.size(); i++) {
 			JSONObject jsonObj = new JSONObject();
 			jsonObj.put("type", contents.get(i).getType());
-			jsonObj.put("contentID", contents.get(i).getId());
+			switch(contents.get(i).getType()) {
+			case("text"):
+				jsonObj.put("contentID", contents.get(i).getId());
+				jsonObj.put("text", contents.get(i).getText());
+				break;
+			case("image"):
+				jsonObj.put("contentID", contents.get(i).getImageID());
+				break;
+			case("audio"):
+				jsonObj.put("contentID", contents.get(i).getAudioID());
+				break;
+			case("ARObject"):
+				jsonObj.put("contentID", contents.get(i).getARManagerID());
+				break;
+			}
 			ret.add(jsonObj);
 		}
 		JSONArray jsonArray = new JSONArray(ret);
 		response.getWriter().print(jsonArray.toString());
 	}
 	
-	public void addARObject(String targetID, InputStream objectFile, InputStream textureFile, InputStream MLTFile) 
+	public void returnContentObjectByARID(String ARManagerID, HttpServletResponse response) throws IOException {
+		ARManager arManager = arManagerDao.findOneByID(ARManagerID);
+		fileDao.outputFileToStream("ARObject", arManager.getARObectID(), response.getOutputStream());
+	}
+	
+	public void returnContentMTL(String ARManagerID, String name, HttpServletResponse response)
+			throws IOException{
+		ARManager arManager = arManagerDao.findOneByID(ARManagerID);
+		String id = arManager.getMTLID().get(name.replace('.', '_'));
+		fileDao.outputFileToStream("MTL", id, response.getOutputStream());
+	}
+	
+	public void returnContentTexture(String ARManagerID, String name, HttpServletResponse response)
+			throws IOException{
+		ARManager arManager = arManagerDao.findOneByID(ARManagerID);
+		String id = arManager.getTexture().get(name.replace('.', '_'));
+		fileDao.outputFileToStream("texture", id, response.getOutputStream());
+	}
+	
+	public void returnContentObjectPosition(String ARManagerID, HttpServletResponse response)
+			throws IOException{
+		ARManager arManager = arManagerDao.findOneByID(ARManagerID);
+		response.getOutputStream().print(arManager.getPosition().toString());
+	}
+	
+	public void addARObject(String targetID, MultipartFile objectFile, MultipartFile MTLFile, Map<String, MultipartFile> textureFiles, JSONObject position)
 			throws IOException{
 		System.out.println(":2.1");
-		String ARObjectID = fileDao.inputFileToDB("ARObject", objectFile);
-		String texture = fileDao.inputFileToDB("texture", textureFile);
-		String MLTID = fileDao.inputFileToDB("MLT", MLTFile);
+		String ARObjectID = fileDao.inputFileToDBWithName("ARObject", objectFile.getOriginalFilename(), objectFile.getInputStream());
+		String MTLID = fileDao.inputFileToDBWithName("MTL", MTLFile.getOriginalFilename(), MTLFile.getInputStream());
 		
 		System.out.println(":2.2");
+		Map<String, String> MTLMap = new HashMap<String, String>();
+		Map<String, String> textureMap = new HashMap<String, String>();
+		MTLMap.put(MTLFile.getOriginalFilename().replace('.', '_'), MTLID);
+		System.out.println(":2.2.1");
+		
+		for (Map.Entry<String, MultipartFile> entry : textureFiles.entrySet()) {
+			String textureID = fileDao.inputFileToDBWithName("texture", entry.getValue().getOriginalFilename(), entry.getValue().getInputStream());
+			textureMap.put(entry.getValue().getOriginalFilename().replace('.', '_'), textureID);
+		}
+		System.out.println(":2.2.2");
 		ARManager arManager = new ARManager();
 		arManager.setARObjectID(ARObjectID);
-		arManager.setTexture(texture);
-		arManager.setMTLID(MLTID);
+		arManager.setTexture(textureMap);
+		arManager.setMTLID(MTLMap);
+		arManager.setPosition(position);
+		System.out.println(":2.2.3");
 		String ARManagerID = arManagerDao.insertOne(arManager);
 		
 		System.out.println(":2.3");
@@ -95,8 +154,8 @@ public class ContentServiceImpl implements ContentService {
 		String contentID = contentDao.insertOne(content);
 	}
 	
-	public void addTarget(String userID, InputStream inStream) {
-		String fileID = fileDao.inputFileToDB("tempTarget", inStream);
+	public void addTarget(String userID, String filename, InputStream inStream) {
+		String fileID = fileDao.inputFileToDBWithName("tempTarget", filename, inStream);
 		UserTarget userTarget = userTargetDao.findOneUserTarget(userID);
 		if(userTarget == null) {
 			userTarget = new UserTarget();
@@ -106,6 +165,32 @@ public class ContentServiceImpl implements ContentService {
 		tempTargetIDs.add(fileID);
 		userTarget.setTempTargetIDs(tempTargetIDs);
 		userTarget.setHasTempTarget(true);
+		userTargetDao.update(userTarget);
+	}
+	
+	public void deleteTarget(String userID, String targetID) {
+		fileDao.removeFileByName("target", targetID);
+		UserTarget userTarget = userTargetDao.findOneUserTarget(userID);
+		List<String> targetIDs = userTarget.getTargetIDs();
+		for(int i = 0; i < targetIDs.size(); i++) {
+			if(targetIDs.get(i).equals(targetID)) {
+				targetIDs.remove(i);
+			}
+		}
+		userTarget.setTargetIDs(targetIDs);
+		userTargetDao.update(userTarget);
+	}
+	
+	public void deleteTempTarget(String userID, String tempTargetID) {
+		fileDao.removeFile("tempTarget", tempTargetID);
+		UserTarget userTarget = userTargetDao.findOneUserTarget(userID);
+		List<String> targetIDs = userTarget.getTempTargetIDs();
+		for(int i = 0; i < targetIDs.size(); i++) {
+			if(targetIDs.get(i).equals(tempTargetID)) {
+				targetIDs.remove(i);
+			}
+		}
+		userTarget.setTempTargetIDs(targetIDs);
 		userTargetDao.update(userTarget);
 	}
 	
@@ -136,8 +221,44 @@ public class ContentServiceImpl implements ContentService {
 		return allTempTargetIDs;
 	}
 	
-	public void ratifyTarget(String userID, String tempTargetID) {
-		//UserTarget userTargetDao.getUserTargetByuserID();
+	public void ratifyTarget(String userID, String tempTargetID) throws IOException, URISyntaxException {
+		UserTarget userTarget = userTargetDao.getUserTargetByuserID(userID);
+		List<String> tempIDs = userTarget.getTempTargetIDs();
+		
+		ByteFileWithName target = fileDao.outputFileToByteWithName("tempTarget", tempTargetID);
+		String newTargetID = "";
+		//do {
+			newTargetID = vuforiaService.uploadImage(target);
+		//}while(newTargetID.length() == 0);
+		
+		//set new target to userTarget and target files
+		List<String> targetIDs = userTarget.getTargetIDs();
+		targetIDs.add(newTargetID);
+		
+		fileDao.inputFileToDBWithName("target", newTargetID, target.getByteElement());
+		
+		//clear
+		for(int i = 0; i < tempIDs.size(); i++) {
+			if(tempIDs.get(i).equals(tempTargetID)) {
+				tempIDs.remove(i);
+			}
+		}
+		userTarget.setTempTargetIDs(tempIDs);
+		if(tempIDs.size() == 0) {
+			userTarget.setHasTempTarget(false);
+		}
+		userTargetDao.update(userTarget);
+		
+		fileDao.removeFile("tempTarget", tempTargetID);
+	}
+	
+	public void getTarget(String targetID, HttpServletResponse response) throws IOException {
+		fileDao.outputFileToStreamByFileName("target", targetID, response.getOutputStream());
+	}
+	
+	public void getTempTarget(String tempTargetID, HttpServletResponse response)
+			throws IOException{
+		fileDao.outputFileToStream("tempTarget", tempTargetID, response.getOutputStream());
 	}
 	
 	/*GET and SET*/
@@ -171,5 +292,13 @@ public class ContentServiceImpl implements ContentService {
 	
 	public void setUserTargetDao(UserTargetDao dao) {
 		userTargetDao = dao;
+	}
+	
+	public VuforiaService getVuforiaService() {
+		return vuforiaService;
+	}
+	
+	public void setVuforiaService(VuforiaService s) {
+		vuforiaService = s;
 	}
 }

@@ -1,6 +1,7 @@
 package service.Impl;
 
 import java.io.IOException;
+import java.io.InputStream;
 
 import javax.annotation.Resource;
 import javax.servlet.ServletOutputStream;
@@ -95,6 +96,20 @@ public class UserServiceImpl implements UserService {
 	
 	public User findOneByID(String userID) {
 		return userDao.findOneByID(userID);
+	}
+	
+	public void updateUser(String userID, JSONObject jsonObj, InputStream inStream) {
+		User user = userDao.findOneByID(userID);
+		String headPortraitID = user.getHeadPortraitID();
+		fileDao.removeFile("headPortrait", headPortraitID);
+		
+		headPortraitID = fileDao.inputFileToDB("headPortrait", inStream);
+		user.setHeadPortraitID(headPortraitID);
+		user.setName(jsonObj.getString("userName"));
+		user.setGender(jsonObj.getString("gender"));
+		user.setWeixin(jsonObj.getString("weixin"));
+		user.setQq(jsonObj.getString("QQ"));
+		userDao.update(user);
 	}
 	
 	/*GET and SET*/

@@ -1,6 +1,7 @@
 package service;
 
 import java.io.IOException;
+import java.io.InputStream;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -16,4 +17,5 @@ public interface UserService {
 	public int SignUp(JSONObject jsonObj, HttpSession httpSession);
 	public User findOneByID(String userID);
 	public void addHeadPortrait(String userID, HttpServletRequest request) throws IOException;
+	public void updateUser(String userID, JSONObject jsonObj, InputStream inStream);
 }

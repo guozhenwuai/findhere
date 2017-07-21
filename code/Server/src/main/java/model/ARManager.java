@@ -1,8 +1,10 @@
 package model;
 
 import java.io.Serializable;
+import java.util.Map;
 
 import org.bson.types.ObjectId;
+import org.json.JSONObject;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 import org.springframework.data.mongodb.core.mapping.Field;
@@ -16,9 +18,11 @@ public class ARManager implements Serializable {
 	@Field("ARObjectID")
 	private String ARObjectID;
 	@Field("texture")
-	private String texture;
+	private Map<String, String> texture;
 	@Field("MTLID")
-	private String MTLID;
+	private Map<String, String> MTLID;
+	@Field("position")
+	private JSONObject position;
 	
 	public ARManager(){}
 	
@@ -39,19 +43,27 @@ public class ARManager implements Serializable {
 		ARObjectID = s;
 	}
 	
-	public String getTexture() {
+	public Map<String, String> getTexture() {
 		return texture;
 	}
 	
-	public void setTexture(String s) {
+	public void setTexture(Map<String, String> s) {
 		texture = s;
 	}
 	
-	public String getMTLID() {
+	public Map<String, String> getMTLID() {
 		return MTLID;
 	}
 	
-	public void setMTLID(String s) {
+	public void setMTLID(Map<String, String> s) {
 		MTLID = s;
+	}
+	
+	public JSONObject getPosition() {
+		return position;
+	}
+	
+	public void setPosition(JSONObject s) {
+		position = s;
 	}
 }

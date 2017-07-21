@@ -11,4 +11,5 @@ public interface UserTargetDao {
 	public void update(UserTarget userTarget);
 	public List<String> findAllTempTargetIDs(String userID);
 	public List<UserTarget> findHasTempTargetUsers();
+	public UserTarget getUserTargetByuserID(String userID);
 }

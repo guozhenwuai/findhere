@@ -83,6 +83,24 @@ public class MemberWelcome {
 		return "contentManager-verifying";
 	}
 	
+	@RequestMapping("/MemberTarget/DeleteTarget")
+	public String execute5(@RequestParam("targetID")String targetID, @RequestParam("pageIndex")int pageIndex,
+			HttpServletRequest request, HttpServletResponse response, HttpSession httpSession)
+			throws IOException {
+		String userID = (String) httpSession.getAttribute("userID");
+		contentService.deleteTarget(userID, targetID);
+		return null;
+	}
+	
+	@RequestMapping("/MemberTarget/deleteTempTarget")
+	public String execute6(@RequestParam("tempTargetID")String tempTargetID, @RequestParam("pageIndex")int pageIndex,
+			HttpServletRequest request, HttpServletResponse response, HttpSession httpSession)
+			throws IOException {
+		String userID = (String) httpSession.getAttribute("userID");
+		contentService.deleteTempTarget(userID, tempTargetID);
+		return null;
+	}
+	
 	/*GET and SET*/
 	public UserService getUserService(){
 		return userService;

@@ -7,4 +7,5 @@ import model.Apply;
 public interface ApplyDao {
 	public List<Apply> getAPageApply(int pageIndex);
 	public void removeApply(String applyID);
+	public void addApply(Apply apply);
 }

@@ -34,6 +34,10 @@ public class ApplyDaoImpl implements ApplyDao {
 		mongoTemplate.remove(new Query(Criteria.where("_id").is(id)), Apply.class);
 	}
 	
+	public void addApply(Apply apply) {
+		mongoTemplate.save(apply);
+	}
+	
 	/*GET and SET*/
 	public MongoTemplate getMongoTemplate() {
 		return mongoTemplate;

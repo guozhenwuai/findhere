@@ -31,6 +31,7 @@ public class GetComments {
 	public String execute1(@RequestParam("commentID")String commentID,  
 			HttpServletRequest request, HttpServletResponse response, HttpSession httpSession) 
 			throws IOException{
+		System.out.println("ByID");
 		commentService.returnCommentByID(commentID, response);
 		return null;
 	}
@@ -41,6 +42,7 @@ public class GetComments {
 			@RequestParam("pageIndex")int pageIndex,
 			HttpServletRequest request, HttpServletResponse response, HttpSession httpSession) 
 			throws IOException{
+		System.out.println("ByTargetID");
 		commentService.returnCommentIDsByTargetID(targetID, pageNum, pageIndex, response);
 		return null;
 	}
@@ -48,7 +50,6 @@ public class GetComments {
 	@RequestMapping("/GetIDsByUserID")
 	public String execute3(HttpServletRequest request, HttpServletResponse response, HttpSession httpSession) 
 			throws IOException{
-		System.out.println("ok");
 		ServletInputStream inStream = request.getInputStream();
 		String commentJson = readService.inputStreamToString(inStream);
 		JSONObject jsonObj = new JSONObject(commentJson);
