@@ -5,17 +5,12 @@
     android:id="@+id/main_activity"
     android:orientation="vertical">
 
-
-
     <LinearLayout
         android:id="@+id/unity3d"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical">
-
-
     </LinearLayout>
-
     <RelativeLayout
         android:id="@+id/loading_layout"
         android:layout_width="wrap_content"
@@ -32,7 +27,12 @@
             android:layout_centerHorizontal="true"
             android:layout_centerVertical="true" />
 
+
+
     </RelativeLayout>
+
+
+
 
 
     <ImageButton
@@ -116,33 +116,93 @@
             android:layout_height="33dp"
             android:background="@android:color/transparent"
 
-            android:layout_marginTop="14dp"
+            android:layout_marginTop="18dp"
             android:layout_gravity="center_horizontal"
             android:src="@drawable/voice1"
             android:scaleType="fitXY"
             android:id="@+id/sound" />
-        <ImageButton
-            android:layout_width="31dp"
-            android:layout_height="30dp"
-            android:background="@android:color/transparent"
 
-            android:layout_marginTop="14dp"
-            android:layout_marginRight="2dp"
-            android:layout_gravity="center_horizontal"
-            android:src="@drawable/music"
-            android:scaleType="fitXY"
-            android:id="@+id/music" />
 
         <ImageButton
             android:layout_width="33dp"
             android:layout_height="33dp"
             android:background="@android:color/transparent"
 
-            android:layout_marginTop="12dp"
+            android:layout_marginTop="18dp"
             android:layout_gravity="center_horizontal"
             android:src="@drawable/image"
             android:id="@+id/image" />
 
     </LinearLayout>
+
+  <LinearLayout
+      android:id="@+id/set_menu"
+        android:layout_width="180dp"
+        android:layout_height="100dp"
+        android:orientation="vertical"
+      android:layout_alignParentRight="true"
+      android:layout_marginRight="10dp"
+      android:background="#60FFFFFF"
+      android:layout_marginTop="60dp"
+      android:visibility="invisible">
+      <TextView
+            android:layout_width="match_parent"
+            android:layout_height="20dp"
+            android:layout_marginTop="10dp"
+            android:text="信息点密度"
+            android:textColor="@color/light_blue"
+            android:paddingLeft="10dp"
+            />
+
+      <SeekBar
+          android:layout_width="match_parent"
+          android:layout_height="16dp"
+          android:focusable="true"
+          android:maxHeight="4.0dip"
+          android:minHeight="4.0dip"
+          android:id="@+id/com_num"
+          android:paddingLeft="10dp"
+          android:layout_marginRight="5dp"
+          android:layout_marginLeft="5dp"
+
+          android:progressBackgroundTint="@color/soft_blue"
+          android:thumb="@drawable/touch_point"
+          />
+      <LinearLayout
+
+          android:layout_width="match_parent"
+          android:layout_height="70dp"
+          android:orientation="horizontal"
+          android:layout_marginTop="10dp"
+          android:weightSum="1">
+          <TextView
+              android:layout_width="100dp"
+              android:layout_height="25dp"
+              android:layout_marginTop="10dp"
+              android:text="开启地理位置"
+              android:textColor="@color/light_blue"
+              android:paddingLeft="8dp"
+              />
+
+          <!--android:thumb=""-->
+          <!--android:switchTextAppearance=""-->
+          <!--android:checked=""-->
+        <CheckBox
+            android:id="@+id/location"
+            android:layout_marginTop="10dp"
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            android:button="@null"
+            android:background="@drawable/checkbox"
+            />
+
+
+
+          </LinearLayout>
+
+
+      </LinearLayout>
+
+
 
 </RelativeLayout>

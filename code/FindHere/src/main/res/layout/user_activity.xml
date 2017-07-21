@@ -21,13 +21,17 @@
             android:id="@+id/background"
             >
 
+
+
             <ImageView
                 android:id="@+id/userhead"
                 android:layout_width="98dp"
                 android:layout_height="98dp"
-                android:src="@drawable/baoman"
+                android:background="@drawable/baoman"
                 android:layout_marginTop="50dp"
-                android:layout_gravity="center"/>
+                android:layout_gravity="center"
+                android:src="@drawable/round_mask"
+                />
 
             <RelativeLayout
                 android:layout_width="match_parent"
@@ -81,7 +85,7 @@
                     android:layout_height="25dp"
                     android:layout_marginLeft="8dp"
                     android:scaleType="fitXY"
-                    android:src="@drawable/github"/>
+                    android:src="@drawable/weixin"/>
                 <ImageView
                     android:layout_width="25dp"
                     android:layout_height="25dp"
@@ -114,7 +118,8 @@
                         android:src="@drawable/history2"
 
                         android:layout_marginLeft="10dp"
-                        android:layout_gravity="center_vertical"/>
+                        android:layout_gravity="center_vertical"
+                        />
                     <TextView
                         android:text="历史扫描"
                         android:textSize="@dimen/about_title"
@@ -153,8 +158,10 @@
                         android:layout_gravity="center_vertical"/>
 
                 </LinearLayout>
+
+
                 <LinearLayout
-                    android:id="@+id/my_like"
+                    android:id="@+id/my_targets"
                     android:orientation="horizontal"
                     android:layout_width="match_parent"
                     android:layout_height="50dp"
@@ -165,32 +172,6 @@
                         android:layout_height="32dp"
                         android:scaleType="fitXY"
                         android:src="@drawable/star"
-
-                        android:layout_marginLeft="13dp"
-                        android:layout_gravity="center_vertical"/>
-                    <TextView
-                        android:text="我的收藏"
-                        android:textSize="@dimen/about_title"
-                        android:textColor="@color/gray"
-                        android:fontFamily="serif"
-
-                        android:layout_marginLeft="6dp"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_gravity="center_vertical"/>
-                </LinearLayout>
-                <LinearLayout
-                    android:id="@+id/my_targets"
-                    android:orientation="horizontal"
-                    android:layout_width="match_parent"
-                    android:layout_height="50dp"
-                    android:layout_marginTop="1dp"
-                    android:background="@color/white">
-                    <ImageView
-                        android:layout_width="30dp"
-                        android:layout_height="30dp"
-                        android:scaleType="fitXY"
-                        android:src="@drawable/target"
 
                         android:layout_marginLeft="13dp"
                         android:layout_gravity="center_vertical"/>
@@ -210,7 +191,7 @@
                     android:orientation="horizontal"
                     android:layout_width="match_parent"
                     android:layout_height="50dp"
-                    android:layout_marginTop="1dp"
+                    android:layout_marginTop="30dp"
                     android:background="@color/white">
                     <ImageView
                         android:layout_width="30dp"
@@ -256,6 +237,7 @@
            />
 
         <ImageButton
+            android:id="@+id/edit_user"
             android:layout_width="27dp"
             android:layout_height="27dp"
             android:src="@drawable/edit"
