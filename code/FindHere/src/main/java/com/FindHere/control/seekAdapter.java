@@ -1,6 +1,8 @@
 package com.FindHere.control;
 
+import android.app.AlertDialog;
 import android.content.Context;
+import android.content.DialogInterface;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.Color;
@@ -19,9 +21,11 @@ import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.PopupWindow;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.FindHere.activity.R;
 import com.FindHere.model.Comment;
+import com.FindHere.view.LeftDeleteView;
 
 import java.util.LinkedList;
 
@@ -30,10 +34,16 @@ public class seekAdapter extends BaseAdapter {
     private Context mContext;
     private AudioTrack trackplayer = null;
     private byte[] bytes;
+    private LinkedList<LeftDeleteView> mView = new LinkedList<LeftDeleteView>();
+    private int index;
 
     public seekAdapter(LinkedList<Comment> mData, Context mContext) {
         this.mData = mData;
         this.mContext = mContext;
+    }
+
+    public LinkedList<LeftDeleteView> getMyView(){
+        return mView;
     }
 
     @Override
@@ -54,6 +64,7 @@ public class seekAdapter extends BaseAdapter {
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
         convertView = LayoutInflater.from(mContext).inflate(R.layout.seek_list,parent,false);
+        index = position;
 
         TextView userID = convertView.findViewById(R.id.userID);
 
@@ -67,15 +78,42 @@ public class seekAdapter extends BaseAdapter {
         userID.setText(mData.get(position).getUserId());
         time_view.setText(mData.get(position).getTime());
         String type = mData.get(position).getType();
+        final String contentID = mData.get(position).getContentId();
+
+        ImageButton delBtn = convertView.findViewById(R.id.delete);
+        delBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                new AlertDialog.Builder(mContext).setTitle(mContext.getString(R.string.prompt)).setMessage("确认删除？")
+                        .setPositiveButton(mContext.getString(R.string.ok), new DialogInterface.OnClickListener() {
+                            public void onClick(DialogInterface dialog, int which) {
+                                final String ip = mContext.getString(R.string.del_ip)+"?commentID="+contentID;
+                                new Thread(new Runnable() {
+                                    @Override
+                                    public void run() {
+                                        Connect myConnect = new Connect(mContext);
+                                        String str = myConnect.sendHttpPost(ip,"");
+                                        Message msg = mHandler.obtainMessage();
+                                        msg.what = 3;
+                                        mHandler.sendMessage(msg);
+                                    }
+                                }).start();
+                            }
+                        })
+                        .setNegativeButton(mContext.getString(R.string.cancel),new DialogInterface.OnClickListener() {
+                            @Override
+                            public void onClick(DialogInterface dialogInterface, int i) {
+                            }
+                        }).show();
+            }
+        });
+
         if(type.equals("text")){
             textView.setVisibility(View.VISIBLE);
             textView.setText(mData.get(position).getText());
         }else if(type.equals("picture")){
             imageButton.setVisibility(View.VISIBLE);
-            String contentID = mData.get(position).getContentId();
             final String ip = mContext.getString(R.string.getcomment_ip)+"?commentID="+contentID;
-            //System.out.println(ip);
-            // send commentID return picture byte
             imageButton.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
@@ -93,10 +131,7 @@ public class seekAdapter extends BaseAdapter {
             });
             }else if(type.equals("sound")){
                     soundButton.setVisibility(View.VISIBLE);
-                    String contentID = mData.get(position).getContentId();
                     final String ip = mContext.getString(R.string.getcomment_ip)+"?commentID="+contentID;
-                    //System.out.println(ip);
-                    // send commentID and return sound byte
                     soundButton.setOnClickListener(new View.OnClickListener() {
                         @Override
                         public void onClick(View view) {
@@ -129,6 +164,7 @@ public class seekAdapter extends BaseAdapter {
                         }
                     });
         }
+        mView.add((LeftDeleteView)convertView);
         return convertView;
     }
 
@@ -156,6 +192,12 @@ public class seekAdapter extends BaseAdapter {
                 trackplayer.write(bytes, 0, bytes.length);
                 trackplayer.stop();
                 trackplayer.release();
+            }
+            else if(msg.what==3){
+                mData.remove(index);
+                mView.remove(index);
+                notifyDataSetChanged();
+                Toast.makeText(mContext,mContext.getString(R.string.del_success), Toast.LENGTH_SHORT);
             }
         }
     };

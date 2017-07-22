@@ -14,6 +14,7 @@ import android.widget.ListView;
 import com.FindHere.control.Connect;
 import com.FindHere.control.seekAdapter;
 import com.FindHere.model.Comment;
+import com.FindHere.view.LeftDeleteView;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -26,9 +27,11 @@ public class SeekActivity extends Activity{
         private SharedPreferences sp;
         private String targetID;
         private ImageButton backBtn;
+        private ImageButton delBtn;
         private List<Comment> mData = null;
         private seekAdapter mAdapter = null;
         private ListView seek_list;
+        private boolean isOpen = false;
         private String jsonStr;
         private String ip;
         private String returnStr;
@@ -41,11 +44,38 @@ public class SeekActivity extends Activity{
             sp = getSharedPreferences("userInfo", Context.MODE_ENABLE_WRITE_AHEAD_LOGGING);
             targetID = sp.getString("targetID","");
 
-            ip = getString(R.string.seek_ip)+"?targetID=f29837c000614152ad7db17e552d855e&pageNum=10&pageIndex=0";
+            backBtn = (ImageButton)findViewById(R.id.back);
+            backBtn.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    finish();
+                }
+            });
+
+            ip = getString(R.string.seek_ip)+"?targetID="+targetID+"&pageNum=10&pageIndex=0";
             seek_list= (ListView)findViewById(R.id.list_view);
             mData = new LinkedList<Comment>();
             mAdapter = new seekAdapter((LinkedList<Comment>) mData,this);
             seek_list.setAdapter(mAdapter);
+
+            delBtn = (ImageButton)findViewById(R.id.delete);
+            delBtn.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    LinkedList<LeftDeleteView> mView = mAdapter.getMyView();
+                    if(!isOpen){
+                        for(LeftDeleteView convertView:mView){
+                            convertView.leftScroll();
+                            isOpen = true;
+                        }
+                    }else{
+                        for(LeftDeleteView convertView:mView){
+                            convertView.rightScroll();
+                            isOpen = false;
+                        }
+                    }
+                }
+            });
 
             new Thread(new Runnable(){
                 @Override
@@ -56,14 +86,6 @@ public class SeekActivity extends Activity{
                     msg.what = 1;
                     mHandler.sendMessage(msg);
                 }}).start();
-
-            backBtn = (ImageButton)findViewById(R.id.back);
-            backBtn.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
-                    finish();
-                }
-            });
         }
 
         public Handler mHandler = new Handler(){

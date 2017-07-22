@@ -15,6 +15,7 @@ import android.widget.ListView;
 import com.FindHere.control.Connect;
 import com.FindHere.control.myCommentAdapter;
 import com.FindHere.model.Comment;
+import com.FindHere.view.LeftDeleteView;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -27,9 +28,11 @@ public class MyCommentActivity extends Activity {
     private SharedPreferences sp;
     private String userID;
     private ImageButton backBtn;
+    private ImageButton delBtn;
     private List<Comment> mData = null;
     private myCommentAdapter mAdapter = null;
     private ListView mycomment_list;
+    private boolean isOpen = false;
     private String jsonStr;
     private String ip;
     private String returnStr;
@@ -55,6 +58,25 @@ public class MyCommentActivity extends Activity {
         mData = new LinkedList<Comment>();
         mAdapter = new myCommentAdapter((LinkedList<Comment>) mData,this);
         mycomment_list.setAdapter(mAdapter);
+
+        delBtn = (ImageButton)findViewById(R.id.delete);
+        delBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                LinkedList<LeftDeleteView> mView = mAdapter.getMyView();
+                if(!isOpen){
+                    for(LeftDeleteView convertView:mView){
+                        convertView.leftScroll();
+                        isOpen = true;
+                    }
+                }else{
+                    for(LeftDeleteView convertView:mView){
+                        convertView.rightScroll();
+                        isOpen = false;
+                    }
+                }
+            }
+        });
 
         JSONObject object = new JSONObject();
         try {

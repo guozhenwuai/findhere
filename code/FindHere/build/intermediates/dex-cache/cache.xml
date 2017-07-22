@@ -2,49 +2,31 @@
 <items version="2" >
 
     <item
-        is-multidex="true"
-        jar="D:\Find\libs\unity-classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="26.0.0"
-        sha1="51f46611e716600d0a9d36ff5f7c2dddde43688c">
-        <dex dex="D:\Find\build\intermediates\transforms\dex\debug\folders\1000\2\unity-classes_0488e4fd8a425ed6fd5bbe528def51d9bbc81234\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="D:\Find\build\intermediates\incremental-classes\debug\instant-run-bootstrap.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="26.0.0"
-        sha1="5da9e82e3a9e31caf4681b3bc0e340abbf2f9324">
-        <dex dex="D:\Find\build\intermediates\transforms\dex\debug\folders\1000\10000\instant-run-bootstrap_717ca6f101da9e538a76bac97cab53eaecd15fb1\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="D:\Find\libs\VuforiaUnityPlayer.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="26.0.0"
-        sha1="95f5205a17a7546c265d4a27d1e6f8be7b6f3f03">
-        <dex dex="D:\Find\build\intermediates\transforms\dex\debug\folders\1000\2\VuforiaUnityPlayer_c70dc393905943e3dbab073d635431cd71e1f99b\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
+        is-multidex="false"
         jar="D:\Find\libs\Vuforia.jar"
-        jumboMode="true"
+        jumboMode="false"
         optimize="true"
         revision="26.0.0"
         sha1="be3db5d282d7094986c342631085ca4d84c02603">
-        <dex dex="D:\Find\build\intermediates\transforms\dex\debug\folders\1000\2\Vuforia_d998292c754c825353e382f9c887990dc3f9540c\classes.dex" />
+        <dex dex="D:\Find\build\intermediates\pre-dexed\debug\Vuforia_d998292c754c825353e382f9c887990dc3f9540c.jar" />
     </item>
     <item
-        is-multidex="true"
-        jar="D:\Find\build\intermediates\incremental-runtime-classes\debug\instant-run.jar"
-        jumboMode="true"
+        is-multidex="false"
+        jar="D:\Find\libs\VuforiaUnityPlayer.jar"
+        jumboMode="false"
         optimize="true"
         revision="26.0.0"
-        sha1="3be78ebc2706b2e1fe2f12d5726887a92d6c183b">
-        <dex dex="D:\Find\build\intermediates\transforms\dex\debug\folders\1000\10000\instant-run_57ec2be895ff7abe3fd990489b9c2340925b3313\classes.dex" />
+        sha1="95f5205a17a7546c265d4a27d1e6f8be7b6f3f03">
+        <dex dex="D:\Find\build\intermediates\pre-dexed\debug\VuforiaUnityPlayer_c70dc393905943e3dbab073d635431cd71e1f99b.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="D:\Find\libs\unity-classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="26.0.0"
+        sha1="51f46611e716600d0a9d36ff5f7c2dddde43688c">
+        <dex dex="D:\Find\build\intermediates\pre-dexed\debug\unity-classes_0488e4fd8a425ed6fd5bbe528def51d9bbc81234.jar" />
     </item>
 
 </items>

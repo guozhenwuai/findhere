@@ -12,12 +12,12 @@
         "source": "D:\\Find\\src\\main\\res\\layout\\web_activity.xml"
     },
     {
-        "merged": "D:\\Find\\build\\intermediates\\res\\merged\\debug\\layout\\add_activity.xml",
-        "source": "D:\\Find\\src\\main\\res\\layout\\add_activity.xml"
-    },
-    {
         "merged": "D:\\Find\\build\\intermediates\\res\\merged\\debug\\layout\\abc_popup_menu_item_layout.xml",
         "source": "C:\\Users\\asus\\.android\\build-cache\\19d7ea8401511620fa23c337710829464e6f2217\\output\\res\\layout\\abc_popup_menu_item_layout.xml"
+    },
+    {
+        "merged": "D:\\Find\\build\\intermediates\\res\\merged\\debug\\layout\\add_activity.xml",
+        "source": "D:\\Find\\src\\main\\res\\layout\\add_activity.xml"
     },
     {
         "merged": "D:\\Find\\build\\intermediates\\res\\merged\\debug\\layout\\abc_screen_content_include.xml",
@@ -32,16 +32,16 @@
         "source": "D:\\Find\\src\\main\\res\\layout\\mycomment_list.xml"
     },
     {
-        "merged": "D:\\Find\\build\\intermediates\\res\\merged\\debug\\layout\\notification_template_part_chronometer.xml",
-        "source": "C:\\Users\\asus\\.android\\build-cache\\19d7ea8401511620fa23c337710829464e6f2217\\output\\res\\layout\\notification_template_part_chronometer.xml"
+        "merged": "D:\\Find\\build\\intermediates\\res\\merged\\debug\\layout\\abc_action_menu_layout.xml",
+        "source": "C:\\Users\\asus\\.android\\build-cache\\19d7ea8401511620fa23c337710829464e6f2217\\output\\res\\layout\\abc_action_menu_layout.xml"
     },
     {
         "merged": "D:\\Find\\build\\intermediates\\res\\merged\\debug\\layout\\design_layout_tab_icon.xml",
         "source": "C:\\Users\\asus\\.android\\build-cache\\9926a36909df21df384e4fce808a30ec609d0eea\\output\\res\\layout\\design_layout_tab_icon.xml"
     },
     {
-        "merged": "D:\\Find\\build\\intermediates\\res\\merged\\debug\\layout\\abc_action_menu_layout.xml",
-        "source": "C:\\Users\\asus\\.android\\build-cache\\19d7ea8401511620fa23c337710829464e6f2217\\output\\res\\layout\\abc_action_menu_layout.xml"
+        "merged": "D:\\Find\\build\\intermediates\\res\\merged\\debug\\layout\\notification_template_part_chronometer.xml",
+        "source": "C:\\Users\\asus\\.android\\build-cache\\19d7ea8401511620fa23c337710829464e6f2217\\output\\res\\layout\\notification_template_part_chronometer.xml"
     },
     {
         "merged": "D:\\Find\\build\\intermediates\\res\\merged\\debug\\layout\\user_activity.xml",

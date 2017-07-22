@@ -131,7 +131,6 @@ public class MainActivity extends Activity{
                     intent.setClass(MainActivity.this, AddActivity.class);
                     startActivity(intent);
                 }
-                // UnityPlayer.UnitySendMessage("ForAndroid", "sayHello", "");
             }
         });
         imageBtn.setOnClickListener(new OnClickListener() {
@@ -171,9 +170,14 @@ public class MainActivity extends Activity{
         seekBtn.setOnClickListener(new OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent();
-                intent.setClass(MainActivity.this, SeekActivity.class);
-                startActivity(intent);
+                targetID = sp.getString("targetID","");
+                if(targetID.equals("")) {
+                    Toast.makeText(MainActivity.this, getString(R.string.no_target), Toast.LENGTH_SHORT).show();
+                }else {
+                    Intent intent = new Intent();
+                    intent.setClass(MainActivity.this, SeekActivity.class);
+                    startActivity(intent);
+                }
             }
         });
         setBtn.setOnClickListener(new OnClickListener() {
@@ -292,7 +296,6 @@ public class MainActivity extends Activity{
     // Unity uses this function to get {commentID:commentType}
     public String getCommentType(final String targetID,final int pageIndex){
         String ip = getString(R.string.comment_type)+"?targetID="+targetID+"&pageNum=20&pageIndex="+pageIndex;
-        //String ip = "http://115.159.184.211:8080/FindHere/GetComments/GetIDsByTargetID?targetID=1&pageNum=20&pageIndex=0";
         Connect myConnect = new Connect(MainActivity.this);
         returnStr=myConnect.sendHttpPost(ip,"");
 
