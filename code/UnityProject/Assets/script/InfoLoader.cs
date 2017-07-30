@@ -11,6 +11,7 @@ public class InfoLoader : MonoBehaviour {
     public TextAdapter textAdapter;
     public ImageAdapter imageAdapter;
     public AudioAdapter audioAdapter;
+    public GameObject VerifyContent;
     public GameObject infoPoint;
     public GameObject textInfo;
     public GameObject imageInfo;
@@ -18,7 +19,7 @@ public class InfoLoader : MonoBehaviour {
     public GameObject infoPointPool;
     public RawImage loadingSpinner;
     public InfoPointMoveManager infoPointMoveManager;
-    public AsImpL.ObjectImporter objImporter;
+    public ObjectImporter objImporter;
 
     private AndroidJavaObject androidPlugin;
     private bool isLoadingImage;
@@ -29,9 +30,11 @@ public class InfoLoader : MonoBehaviour {
     private WWW audioContent;
     private int pageIndex;
     private bool isLastPage;
-    private bool emptyPage;
     private Content[] contents;
     private int contentIndex;
+    private bool isLoadingObject;
+    private bool hasContents;
+    private bool endLoad;
 
     // Use this for initialization
     void Start () {
@@ -43,6 +46,9 @@ public class InfoLoader : MonoBehaviour {
         pageIndex = 0;
         isLastPage = false;
         contentIndex = 0;
+        isLoadingObject = false;
+        hasContents = false;
+        endLoad = false;
     }
 
     void Update()
@@ -60,6 +66,27 @@ public class InfoLoader : MonoBehaviour {
             LoadText();
         }
         SetLoadingSpinner(isLoadingImage || isLoadingText || isLoadingAudio);
+    }
+
+    public void ObjectLoadFinish()
+    {
+        isLoadingObject = false;
+        endLoad = true;
+    }
+
+    public bool EndObjectLoad()
+    {
+        return endLoad;
+    }
+
+    public void ResetObjectLoad()
+    {
+        endLoad = false;
+    }
+
+    public bool ShowContents()
+    {
+        return hasContents && !isLoadingObject;
     }
 
     public bool isLoading()
@@ -92,7 +119,7 @@ public class InfoLoader : MonoBehaviour {
     public void LoadText(string id)
     {
         //string url = "http://115.159.184.211:8080/FindHere/GetComments/ByID?commentID=" + id;
-        string url = "http://192.168.1.8:8080/FindHere/GetComments/ByID?commentID=" + id;
+        string url = "http://115.159.184.211:8080/FindHere/GetComments/ByID?commentID=" + id;
         incompatibleContent = new WWW(url);
         isLoadingText = true;
         //string content = www.text;
@@ -122,7 +149,7 @@ public class InfoLoader : MonoBehaviour {
 
     public void LoadImage(string id)
     {
-        string url = "http://192.168.1.8:8080/FindHere/GetComments/ByID?commentID=" + id;
+        string url = "http://115.159.184.211:8080/FindHere/GetComments/ByID?commentID=" + id;
         incompatibleContent = new WWW(url);
         isLoadingImage = true;   
     }
@@ -143,14 +170,14 @@ public class InfoLoader : MonoBehaviour {
 
     public void LoadAudio(GameObject obj)
     {
-        audioContent = new WWW("http://192.168.1.8:8080/FindHere/GetComments/ByID?commentID="+obj.name);
+        audioContent = new WWW("http://115.159.184.211:8080/FindHere/GetComments/ByID?commentID=" + obj.name);
         audioFrom = obj;
         isLoadingAudio = true;
     }
 
     public void SetTargetId(string id)
     {
-        //androidPlugin.Call("setTargetID", id);
+        androidPlugin.Call("setTargetID", id);
     }
 
     private void ResetInfoPool()
@@ -224,7 +251,7 @@ public class InfoLoader : MonoBehaviour {
 
     private void NextContent()
     {
-        if(contents!=null && contentIndex + 1 < contents.Length)
+        if(hasContents && contentIndex + 1 < contents.Length)
         {
             contentIndex++;
             LoadOneContent();
@@ -237,7 +264,7 @@ public class InfoLoader : MonoBehaviour {
 
     private void LastContent()
     {
-        if(contents!=null&&contentIndex > 0&&contentIndex - 1 < contents.Length)
+        if(hasContents&&contentIndex > 0&&contentIndex - 1 < contents.Length)
         {
             contentIndex--;
             LoadOneContent();
@@ -255,10 +282,17 @@ public class InfoLoader : MonoBehaviour {
         switch (type)
         {
             case "ARObject":
+                isLoadingObject = true;
+                WWW www = new WWW("http://115.159.184.211:8080/FindHere/GetContent/Options?ARManagerID=" + content.GetContentID());
+                while (!www.isDone) ;
+                string str = www.text;
+                ObjectTransform objTransform = JsonUtility.FromJson<ObjectTransform>(str);
                 ImportOptions options = new ImportOptions();
                 options = new ImportOptions();
-                options.modelScaling = 1f;
-                objImporter.ImportModelAsync(content.GetContentID(), content.GetContentID(), infoPoint.transform.parent, options);
+                options.localScale = objTransform.GetObjectScale();
+                options.localEulerAngles = objTransform.GetObjectRotation();
+                options.localPosition = objTransform.GetObjectPosition();
+                objImporter.ImportModelAsync(content.GetContentID(), content.GetContentID(), VerifyContent.transform, options);
                 break;
             default:
                 Debug.Log("cannot load content type:" + type);
@@ -271,8 +305,8 @@ public class InfoLoader : MonoBehaviour {
         Debug.Log("load info point " + targetId);
         ResetInfoPool();
 
-        //string str = GetCommentsFromAndroid(targetId);
-        string str = GetTestComments();
+        string str = GetCommentsFromAndroid(targetId);
+        //string str = GetTestComments(targetId);
 
         if (str == ""||str=="[]")
         {
@@ -315,6 +349,7 @@ public class InfoLoader : MonoBehaviour {
 
         if (str != "" && str !="[]")
         {
+            hasContents = true;
             Debug.Log("contents:" + str);
             contents = JsonHelper.FromJson<Content>(fixJson(str));
         }
@@ -322,17 +357,25 @@ public class InfoLoader : MonoBehaviour {
 
     private string GetContents(string targetId)
     {
-        WWW www = new WWW("http://192.168.1.8:8080/FindHere/GetContent/ByTargetID?targetID=" + targetId);
+        WWW www = new WWW("http://115.159.184.211:8080/FindHere/GetContent/ByTargetID?targetID=" + targetId);
         while (!www.isDone) ;
+        if (www.error != null)
+        {
+            return "";
+        }
         string str = www.text;
         return str;
     }
 
-    private string GetTestComments()
+    private string GetTestComments(string targetId)
     {
-        WWW www = new WWW("http://192.168.1.8:8080/FindHere/GetComments/GetIDsByTargetID?targetID=8b98be35577b42ed8db301e8b729f7cf&pageNum=20&pageIndex=0");
+        WWW www = new WWW("http://115.159.184.211:8080/FindHere/GetComments/GetIDsByTargetID?targetID="+targetId+"&pageNum=20&pageIndex=0");
         while (!www.isDone) ;
         //记录取得的comments中各类型的id
+        if (www.error != null)
+        {
+            return "";
+        }
         string str = www.text;
         return str;
     }
@@ -426,7 +469,10 @@ public class InfoLoader : MonoBehaviour {
     {
         for(int i = 0; i < num; i++)
         {
-            Instantiate(prototype);
+            GameObject newPoint = Instantiate(prototype);
+            newPoint.tag = "InfoPoint";
+            Transform newSphere = newPoint.transform.GetChild(0);
+            newSphere.tag = prototype.name;
         }
     }
 

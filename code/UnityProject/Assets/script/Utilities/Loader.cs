@@ -212,6 +212,7 @@ namespace AsImpL
                 );
             totalProgress.fileProgress.Remove(objLoadingProgress);
             OnLoaded(loadedModels[objectId], objectId);
+            GameObject.FindObjectOfType<InfoLoader>().ObjectLoadFinish();
         }
 
         /// <summary>
@@ -444,6 +445,8 @@ namespace AsImpL
                 {
                     ModelLoaded(obj, absolutePath);
                 }
+
+               
             }
         }
 
@@ -496,8 +499,16 @@ namespace AsImpL
         /// <returns>URL of the texture</returns>
         private string GetTextureUrl(string objectId, string texturePath)
         {
-            string texName = Path.GetFileName(texturePath);
-            string texPath = "http://192.168.1.8:8080/FindHere/GetContent/Texture?ARManagerID="+objectId+"&name="+texName;
+            //string texName = Path.GetFileName(texturePath);
+            if (texturePath.Contains("/"))
+            {
+                texturePath = texturePath.Substring(texturePath.LastIndexOf("/") + 1);
+            }
+            else if (texturePath.Contains("\\"))
+            {
+                texturePath = texturePath.Substring(texturePath.LastIndexOf("\\") + 1);
+            }
+            string texPath = "http://115.159.184.211:8080/FindHere/GetContent/Texture?ARManagerID="+objectId+"&name="+texturePath;
             Debug.Log("textureUrl:" + texPath);
             objLoadingProgress.message = "Loading textures...\n" + texPath;
             return texPath;

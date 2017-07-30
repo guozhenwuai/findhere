@@ -84,7 +84,7 @@ namespace AsImpL
 
         protected override IEnumerator LoadModelFile(string objectId)
         {
-            string url = "http://192.168.1.8:8080/FindHere/GetContent/Object/ByID?ARManagerID=" + objectId;
+            string url = "http://115.159.184.211:8080/FindHere/GetContent/Object/ByID?ARManagerID=" + objectId;
             Debug.Log("modelUrl:" + url);
             WWW www = new WWW(url);
             yield return www;
@@ -104,7 +104,7 @@ namespace AsImpL
 
         protected override IEnumerator LoadMaterialLibrary(string objectId)
         {
-            string mtlUrl = "http://192.168.1.8:8080/FindHere/GetContent/MTL?ARManagerID=" + objectId+"&name="+mtlLib;
+            string mtlUrl = "http://115.159.184.211:8080/FindHere/GetContent/MTL?ARManagerID=" + objectId+"&name="+mtlLib;
             Debug.Log("mtlUrl:" + mtlUrl);
             WWW loader = new WWW(mtlUrl);
             yield return loader;
@@ -276,6 +276,14 @@ namespace AsImpL
                     case "mtllib":
                         if (!string.IsNullOrEmpty(parameters))
                         {
+                            if (parameters.Contains("/"))
+                            {
+                                parameters = parameters.Substring(parameters.LastIndexOf("/") + 1);
+                            }
+                            else if (parameters.Contains("\\"))
+                            {
+                                parameters = parameters.Substring(parameters.LastIndexOf("\\") + 1);
+                            }
                             mtlLib = parameters;
                         }
                         break;

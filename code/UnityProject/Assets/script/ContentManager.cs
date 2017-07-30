@@ -24,6 +24,7 @@ public class ContentManager : MonoBehaviour,ITrackableEventHandler {
     private float ySpeed = 0.01f;
     private float zSpeed = 0.01f;
 
+    public GameObject VerifyContent;
     public GameObject infoPoint;
     public GameObject TextField;
     public GameObject ImageField;
@@ -51,6 +52,12 @@ public class ContentManager : MonoBehaviour,ITrackableEventHandler {
 
     void Update()
     {
+        //模型显示
+        if (status == 1 && isTrackable && infoLoader.EndObjectLoad())
+        {
+            ShowField(VerifyContent,true);
+            infoLoader.ResetObjectLoad();
+        }
         //声音停止后喇叭消失
         if (AudioField.GetComponent<AudioSource>()!=null&&!AudioField.GetComponent<AudioSource>().isPlaying&&isAudioShow)
         {
@@ -250,7 +257,10 @@ public class ContentManager : MonoBehaviour,ITrackableEventHandler {
         if (status == 1)
         {
             ShowField(infoPoint,tf);
-            //AudioPlaying(false);
+            if (infoLoader.ShowContents())
+            {
+                ShowField(VerifyContent, tf);
+            }
         }
         else if (status== 2)
         {

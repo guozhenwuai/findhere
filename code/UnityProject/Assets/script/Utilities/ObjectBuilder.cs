@@ -434,6 +434,7 @@ namespace AsImpL
 
             MeshFilter meshFilter = go.AddComponent<MeshFilter>();
             go.AddComponent<MeshRenderer>();
+            go.GetComponent<Renderer>().enabled = false;
 
             Mesh mesh = new Mesh();
             mesh.name = go.name;
