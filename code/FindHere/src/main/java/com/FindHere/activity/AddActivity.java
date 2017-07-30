@@ -75,7 +75,7 @@ public class AddActivity extends Activity {
 
         sp = getSharedPreferences("userInfo", Context.MODE_ENABLE_WRITE_AHEAD_LOGGING);
         targetID = sp.getString("targetID","");
-        targetID = "f29837c000614152ad7db17e552d855e";
+        //targetID = "f29837c000614152ad7db17e552d855e";
         ip = getString(R.string.add_ip);
         upload = findViewById(R.id.upload);
         backBtn = findViewById(R.id.back);
