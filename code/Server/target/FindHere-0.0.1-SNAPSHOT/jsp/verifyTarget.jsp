@@ -82,7 +82,7 @@
 							for(int i = 0; i < targetIDList.size(); i++){
 							%>
 							<tr>
-								<td><img width="20px" height="20px" src="/FindHere/GetContent/GetTempTarget?tempTargetID=<%=targetIDList.get(i) %>"/></td>
+								<td><img width="20px" height="20px" src="/FindHere/GetContent/GetTempTarget?tempTargetID=<%=targetIDList.get(i).getSecond() %>"/></td>
 								<th><%=targetIDList.get(i).getFirst() %></th>
 								<td><h3><%=targetIDList.get(i).getSecond() %></h3></td>
 								<td>

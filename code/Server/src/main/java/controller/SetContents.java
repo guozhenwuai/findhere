@@ -2,6 +2,7 @@ package controller;
 
 import java.io.IOException;
 import java.io.InputStream;
+import java.util.Date;
 import java.util.Map;
 
 import javax.annotation.Resource;
@@ -51,7 +52,7 @@ public class SetContents {
 			Sy = Double.parseDouble(request.getParameter("Sy"));
 			Sz = Double.parseDouble(request.getParameter("Sz"));
 		}catch(Exception e) {
-			return "contentManager-object";
+			return "redirect:/MemberContent";
 		}
 		
 		JSONObject position = new JSONObject();
@@ -68,14 +69,15 @@ public class SetContents {
 		Map<String, MultipartFile> files = multiRequest.getFileMap();
 		MultipartFile object = files.remove("objectFile");
 		MultipartFile MTL = files.remove("MTLFile");
+		String textName = request.getParameter("textName");
 		String name = object.getOriginalFilename();
 		String MtlName = MTL.getOriginalFilename();
 		if(!name.substring(name.lastIndexOf('.'), name.length()).equals(".obj")) {
-			return "contentManager-object";
+			return "redirect:/MemberContent";
 		}else if(!MtlName.substring(MtlName.lastIndexOf('.'), MtlName.length()).equals(".mtl")) {
-			return "contentManager-object";
+			return "redirect:/MemberContent";
 		}
-		contentService.addARObject(targetID, object, MTL, files, position);
+		contentService.addARObject(targetID, textName, object, MTL, files, position);
 		return "uploadSuccess";
 	}
 	
@@ -83,8 +85,9 @@ public class SetContents {
 	public String execute3(@RequestParam("newTarget") MultipartFile newTarget,
 			HttpServletRequest request, HttpServletResponse response, HttpSession httpSession) 
 			throws IOException{
+		Date now = new Date();
 		String userID = (String) httpSession.getAttribute("userID");
-		String filename = newTarget.getName();
+		String filename = userID + "--" + now.toString();
 		InputStream inStream = newTarget.getInputStream();
 		contentService.addTarget(userID, filename, inStream);
 		return "redirect:/MemberVerifyTarget?pageIndex=0";

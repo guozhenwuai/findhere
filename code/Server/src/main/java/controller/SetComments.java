@@ -11,6 +11,7 @@ import javax.servlet.http.HttpSession;
 import org.json.JSONObject;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import service.CommentService;
 import service.ReadService;
@@ -97,8 +98,8 @@ public class SetComments {
 		ServletInputStream inStream = request.getInputStream();
 		String commentJson = readService.inputStreamToString(inStream);
 		JSONObject jsonObj = new JSONObject(commentJson);
-		JSONObject ret = new JSONObject();
 		String userID = (String) httpSession.getAttribute("userID");
+		JSONObject ret = new JSONObject();
 		if(userID.length() == 0) {
 			ret.put("status", "failure");
 			response.getOutputStream().print(ret.toString());
@@ -107,6 +108,30 @@ public class SetComments {
 		
 		commentService.updateTextComment(jsonObj, userID);
 		ret.put("status", "success");
+		response.getOutputStream().print(ret.toString());
+		return null;
+	}
+	
+	@RequestMapping("/TestText")
+	public String TestExecute(@RequestParam("text") String text,
+			HttpServletRequest request, HttpServletResponse response, HttpSession httpSession) 
+			throws IOException{
+		String commentJson = "{\"type\":\"text\", \"targetID\":\"8b98be35577b42ed8db301e8b729f7cf\"}";
+		JSONObject jsonObj = new JSONObject(commentJson);
+		jsonObj.put("text", text);
+		JSONObject ret = new JSONObject();
+		String userID = "971137346@qq.com";
+		System.out.println(jsonObj.toString());
+		
+		String commentID = commentService.saveTextComment(jsonObj, userID);
+		if(commentID == null || commentID.length() == 0) {
+			ret.put("status", "failure");
+			response.getOutputStream().print(ret.toString());
+			return null;
+		}
+		
+		ret.put("status", "success");
+		ret.put("commentID", commentID);
 		response.getOutputStream().print(ret.toString());
 		return null;
 	}

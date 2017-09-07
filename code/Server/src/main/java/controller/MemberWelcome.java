@@ -43,7 +43,10 @@ public class MemberWelcome {
 		System.out.println(":1");
 		String userID = (String) httpSession.getAttribute("userID");
 		System.out.println(":2");
-		List<String> targetIDs = contentService.getAllUserTargetIDs(userID);
+		List<String> targetIDs = contentService.getUserTargetIDs(userID);
+		if(targetIDs == null) {
+			targetIDs = new ArrayList<String>();
+		}
 		System.out.println(":3");
 		request.setAttribute("targetIDs", targetIDs);
 		return "contentManager-object";
@@ -56,6 +59,9 @@ public class MemberWelcome {
 		int pageNum = 12;
 		String userID = (String) httpSession.getAttribute("userID");
 		List<String> allTargetIDs = contentService.getUserTargetIDs(userID);
+		if(allTargetIDs == null) {
+			allTargetIDs = new ArrayList<String>();
+		}
 		List<String> targetIDs = new ArrayList<String>();
 		
 		for(int i = pageNum*pageIndex; (i < allTargetIDs.size()) && (i < pageNum*pageIndex + 12); i++) {
@@ -73,6 +79,9 @@ public class MemberWelcome {
 		int pageNum = 12;
 		String userID = (String) httpSession.getAttribute("userID");
 		List<String> allTempTargetIDs = contentService.getTempTargetIDsByUserID(userID);
+		if(allTempTargetIDs == null) {
+			allTempTargetIDs = new ArrayList<String>();
+		}
 		List<String> tempTargetIDs = new ArrayList<String>();
 		
 		for(int i = pageNum*pageIndex; (i < allTempTargetIDs.size()) && (i < pageNum*pageIndex + 12); i++) {
@@ -89,7 +98,7 @@ public class MemberWelcome {
 			throws IOException {
 		String userID = (String) httpSession.getAttribute("userID");
 		contentService.deleteTarget(userID, targetID);
-		return null;
+		return "redirect:/MemberTarget?pageIndex="+pageIndex;
 	}
 	
 	@RequestMapping("/MemberTarget/deleteTempTarget")
@@ -98,7 +107,7 @@ public class MemberWelcome {
 			throws IOException {
 		String userID = (String) httpSession.getAttribute("userID");
 		contentService.deleteTempTarget(userID, tempTargetID);
-		return null;
+		return "redirect:/MemberVerifyTarget?pageIndex="+pageIndex;
 	}
 	
 	/*GET and SET*/

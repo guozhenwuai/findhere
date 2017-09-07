@@ -52,7 +52,7 @@ public class VerifyTarget {
 		}
 		request.setAttribute("targetIDs", tempTargetIDs);
 		request.setAttribute("pageIndex", pageIndex);
-		return "verifyTarget";
+		return "Admin-verifyTarget";
 	}
 	
 	@RequestMapping("/RatifyTarget")
@@ -61,7 +61,7 @@ public class VerifyTarget {
 			HttpServletRequest request, HttpServletResponse response, HttpSession httpSession) 
 			throws IOException, URISyntaxException{
 		contentService.ratifyTarget(userID, tempTargetID);
-		return null;
+		return "uploadSuccess";
 	}
 	
 	/*GET and SET*/

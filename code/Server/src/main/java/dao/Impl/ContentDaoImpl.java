@@ -12,6 +12,7 @@ import org.springframework.data.mongodb.core.query.Criteria;
 import org.springframework.data.mongodb.core.query.Query;
 
 import dao.ContentDao;
+import model.Comment;
 import model.Content;
 
 public class ContentDaoImpl implements ContentDao {
@@ -35,6 +36,11 @@ public class ContentDaoImpl implements ContentDao {
 	public String insertOne(Content content) {
 		mongoTemplate.insert(content);
 		return content.getId().toString();
+	}
+	
+	public void deleteOne(String contentID) {
+		mongoTemplate.remove(
+				new Query(Criteria.where("_id").is(contentID)), Content.class);
 	}
 	
 	/*GET and SET*/

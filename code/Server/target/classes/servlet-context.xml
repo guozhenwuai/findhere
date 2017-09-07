@@ -32,6 +32,8 @@
     		<mvc:mapping path="/MemberTarget"/>
     		<mvc:mapping path="/SetContents"/>
     		<mvc:mapping path="/MemberVerifyTarget"/>
+    		<mvc:mapping path="/MemberARModel"/>
+    		<mvc:mapping path="/MemberARModel/View"/>
     		<bean class="controller.MemberLoginInterceptor"></bean>
     	</mvc:interceptor>
     	<mvc:interceptor>
