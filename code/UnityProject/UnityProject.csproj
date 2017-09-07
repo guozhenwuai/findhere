@@ -132,6 +132,7 @@
     <Compile Include="Assets\script\InfoPointMoveManager.cs" />
     <Compile Include="Assets\script\Model\Comment.cs" />
     <Compile Include="Assets\script\Model\Content.cs" />
+    <Compile Include="Assets\script\Model\ObjectTransform.cs" />
     <Compile Include="Assets\script\Model\TextContent.cs" />
     <Compile Include="Assets\script\ScanLine.cs" />
     <Compile Include="Assets\script\TrackableEventHandler.cs" />
