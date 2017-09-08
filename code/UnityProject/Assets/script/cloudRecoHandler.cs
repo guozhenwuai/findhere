@@ -55,8 +55,8 @@ public class cloudRecoHandler : MonoBehaviour, ICloudRecoEventHandler
             mObjectTracker.TargetFinder.ClearTrackables(false);
             mCloudRecoBehaviour.CloudRecoEnabled = true;
             mContentManager.RemoveAll();
+            mContentManager.ResetKeepTargetId();
         }
-
         ShowScanLine(scanning);
     }
 

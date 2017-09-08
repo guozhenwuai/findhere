@@ -5,13 +5,14 @@ using UnityEngine.UI;
 using Vuforia;
 
 public class ContentManager : MonoBehaviour,ITrackableEventHandler {
-    //0:scanning 1:infopoint 2:textfield 3:imagefield
+    //0:scanning 1:infopoint 2:textfield 3:imagefield 4:model
     private int status;
     private bool isTrackable;
     private string keepTargetId;
     private string targetId;
     private bool isAudioShow;
     private Transform pickedObject = null;
+    private bool showModelStatus;
 
     //左右滑动事件两指的坐标
     private Vector2 position;
@@ -48,12 +49,13 @@ public class ContentManager : MonoBehaviour,ITrackableEventHandler {
         targetId = "";
         isTrackable = false;
         isAudioShow = false;
+        showModelStatus = false;
     }
 
     void Update()
     {
         //模型显示
-        if (status == 1 && isTrackable && infoLoader.EndObjectLoad())
+        if (showModelStatus && isTrackable && infoLoader.EndObjectLoad())
         {
             ShowField(VerifyContent,true);
             infoLoader.ResetObjectLoad();
@@ -112,7 +114,7 @@ public class ContentManager : MonoBehaviour,ITrackableEventHandler {
                 TrackerManager.Instance.GetTracker<ObjectTracker>().Start();
             }
         }
-        if(status==1||(status==3&&AnimationsManager.IsShowingOverlay()))DragEvent();       //信息点的拖拽事件
+        if(status==1||(status==3&&AnimationsManager.IsShowingOverlay()))DragEvent();       //拖拽事件
         if(status==3&&AnimationsManager.IsShowingOverlay())ImageZoomEvent();      //图片的放大缩小事件
     }
 
@@ -207,6 +209,7 @@ public class ContentManager : MonoBehaviour,ITrackableEventHandler {
                 }
                 else if (status == 1&&targetId!="")
                 {
+                    //左右滑动
                     Vector2 newPos = touch.position;
                     int result = DragDirection(position, newPos);
                     if (result == 1)
@@ -247,20 +250,19 @@ public class ContentManager : MonoBehaviour,ITrackableEventHandler {
         }
     }
 
-    public void GetTargetId(string target)
-    {
-        target = targetId;
-    }
-
     public void Show(bool tf)
     {
-        if (status == 1)
+        if (showModelStatus)
         {
-            ShowField(infoPoint,tf);
             if (infoLoader.ShowContents())
             {
                 ShowField(VerifyContent, tf);
             }
+            return;
+        }
+        if (status == 1)
+        {
+            ShowField(infoPoint,tf);
         }
         else if (status== 2)
         {
@@ -331,7 +333,7 @@ public class ContentManager : MonoBehaviour,ITrackableEventHandler {
         keepTargetId = target;
         status = 1;
         infoLoader.ResetPageIndex();
-        infoLoader.LoadInfo(target);
+        infoLoader.LoadInfo(target,showModelStatus);
 
         /*for(int i = 0; i < 10; i++)
         {
@@ -357,6 +359,67 @@ public class ContentManager : MonoBehaviour,ITrackableEventHandler {
         }
         imageInfo.SetActive(false);
         */
+    }
+
+    public void ResetInfo()
+    {
+        if (!showModelStatus && keepTargetId != "")
+        {
+            Show(false);
+            infoLoader.ResetInfo(keepTargetId);
+        }
+    }
+
+    public void ResetKeepTargetId()
+    {
+        keepTargetId = "";
+    }
+
+    public void LoadInfo(string targetId)
+    {
+        if (!showModelStatus)
+        {
+            infoLoader.LoadInfoPoint(targetId);
+        }
+    }
+
+    public void SwitchModelStatus()
+    {
+        if (showModelStatus)
+        {
+            Show(false);
+            showModelStatus = false;
+            if (status != 0)
+            {
+                status = 1;
+                if (keepTargetId != "")
+                {
+                    infoLoader.FirstLoadInfoPoint(keepTargetId);
+                }
+            }
+        }
+        else
+        {
+            if (infoLoader.isLoading())
+            {
+                infoLoader.stopLoading();
+            }
+            Show(false);
+            showModelStatus = true;
+            if (status != 0)
+            {
+                if (!infoLoader.EmptyContent())
+                {
+                    infoLoader.ContentMessage(true);
+                    infoLoader.LoadOneContent();
+                }
+                else
+                {
+                    infoLoader.ContentMessage(false);
+                }
+                status = 4;
+            }
+        }
     }
 
     public void RemoveAll()
