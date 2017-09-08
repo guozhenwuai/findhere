@@ -7,6 +7,7 @@ import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.UnsupportedEncodingException;
+import java.net.URLDecoder;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
@@ -100,8 +101,10 @@ public class CommentServiceImpl implements CommentService {
 	
 	public String saveTextComment(JSONObject jsonObj, String userID) throws UnsupportedEncodingException, JSONException {
 		String type = jsonObj.getString("type");
-		String text = new String(jsonObj.getString("text").getBytes("ISO-8859-1"), "UTF-8");
+		String text = jsonObj.getString("text");
+		text = URLDecoder.decode(text, "UTF-8");
 		String targetID = jsonObj.getString("targetID");
+		System.out.println(jsonObj.toString());
 		Date time = new Date();
 		if( type.equals("text") && text != null) {
 			Comment comment = new Comment();
