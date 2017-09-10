@@ -16,8 +16,8 @@
     <!-- Login progress -->
     <ImageButton
         android:id="@+id/back"
-        android:layout_width="30dp"
-        android:layout_height="30dp"
+        android:layout_width="27dp"
+        android:layout_height="29dp"
         android:src="@drawable/back_w"
         android:scaleType="fitXY"
         android:background="@android:color/transparent"
@@ -37,6 +37,16 @@
         android:layout_height="match_parent"
         android:layout_gravity="center"
         android:orientation="vertical">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="编辑用户信息"
+            android:layout_gravity="center_horizontal"
+            android:id="@+id/textView"
+            android:textColor="@color/white"
+            android:textSize="25dp"
+            android:layout_marginTop="@dimen/about_title"
+            />
         <LinearLayout
             android:id="@+id/email_register_form"
             android:layout_width="250dp"
@@ -46,15 +56,7 @@
             android:layout_marginTop="100dp">
 
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/add_info"
-                android:layout_gravity="center_horizontal"
-                android:id="@+id/textView"
-                android:textColor="@color/white"
-                android:textSize="30dp"
-                />
+
 
             <EditText
                 android:id="@+id/username"

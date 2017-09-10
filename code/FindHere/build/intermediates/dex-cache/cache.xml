@@ -3,30 +3,30 @@
 
     <item
         is-multidex="false"
-        jar="D:\Find\libs\Vuforia.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="26.0.0"
-        sha1="be3db5d282d7094986c342631085ca4d84c02603">
-        <dex dex="D:\Find\build\intermediates\pre-dexed\debug\Vuforia_d998292c754c825353e382f9c887990dc3f9540c.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="D:\Find\libs\VuforiaUnityPlayer.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="26.0.0"
-        sha1="95f5205a17a7546c265d4a27d1e6f8be7b6f3f03">
-        <dex dex="D:\Find\build\intermediates\pre-dexed\debug\VuforiaUnityPlayer_c70dc393905943e3dbab073d635431cd71e1f99b.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="D:\Find\libs\unity-classes.jar"
+        jar="D:\findhere\code\FindHere\libs\unity-classes.jar"
         jumboMode="false"
         optimize="true"
         revision="26.0.0"
         sha1="51f46611e716600d0a9d36ff5f7c2dddde43688c">
-        <dex dex="D:\Find\build\intermediates\pre-dexed\debug\unity-classes_0488e4fd8a425ed6fd5bbe528def51d9bbc81234.jar" />
+        <dex dex="D:\findhere\code\FindHere\build\intermediates\pre-dexed\debug\unity-classes_0fdb9c361ff3063bc6835b48276aced72112257a.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="D:\findhere\code\FindHere\libs\VuforiaUnityPlayer.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="26.0.0"
+        sha1="95f5205a17a7546c265d4a27d1e6f8be7b6f3f03">
+        <dex dex="D:\findhere\code\FindHere\build\intermediates\pre-dexed\debug\VuforiaUnityPlayer_5eb1a867d5aded753afc49db4edf99750fb41799.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="D:\findhere\code\FindHere\libs\Vuforia.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="26.0.0"
+        sha1="be3db5d282d7094986c342631085ca4d84c02603">
+        <dex dex="D:\findhere\code\FindHere\build\intermediates\pre-dexed\debug\Vuforia_0dc67bbf417f65aee4dbec6da48813c7389ecf1a.jar" />
     </item>
 
 </items>

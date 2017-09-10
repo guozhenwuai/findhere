@@ -6,6 +6,7 @@ import android.util.Base64;
 import android.util.Log;
 
 import com.FindHere.model.Comment;
+import com.FindHere.model.User;
 
 import org.json.JSONObject;
 
@@ -171,17 +172,93 @@ public class Connect  {
         }
         return "true";
     }
+    public String sendFile(String urlHost, User user){
+       /* String endString = "\r\n";
+        String twoHyphen = "--";
+        String boundary = "*****";*/
+        try {
+            URL url = new URL(urlHost);
+            Log.d(TAG, "sendFile: "+urlHost);
+            HttpURLConnection urlConnection = (HttpURLConnection) url.openConnection();
+            if(isConnected()) {
+                urlConnection.setRequestProperty("cookie", sessionid);
+            }
+            urlConnection.setDoInput(true);
+            urlConnection.setDoOutput(true);
+            urlConnection.setUseCaches(false);
+
+            urlConnection.setRequestMethod("POST");
+
+            urlConnection.setRequestProperty("Connection", "Keep-Alive");
+            urlConnection.setConnectTimeout(3000);
+            urlConnection.setInstanceFollowRedirects(true);
+            urlConnection.setRequestMethod("POST");
+            urlConnection.setRequestProperty("Content-Type", "application/json;charset=UTF-8");
+
+
+            if(!isConnected()) {
+                String cookieval = urlConnection.getHeaderField("set-cookie");
+                if (cookieval != null) {
+                    sessionid = cookieval.substring(0, cookieval.indexOf(";"));
+                    SharedPreferences.Editor editor = sp.edit();
+                    editor.putString("sessionId", sessionid);
+                    editor.commit();
+                }
+            }
+            DataOutputStream dsDataOutputStream = new DataOutputStream(urlConnection.getOutputStream());
+
+            BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(dsDataOutputStream));
+
+            bw.write(user.toJson());
+            Log.d(TAG, "send:"+user.toJson());
+            bw.flush();
+
+            Log.d(TAG, "sendImage:"+(user.getUserhead()==null));
+            if(user.getUserhead()!=null) dsDataOutputStream.write(user.getUserhead(), 0, user.getUserhead().length);
+
+            dsDataOutputStream.close();
+            bw.close();
+          /*  dsDataOutputStream.writeBytes(endString);
+            dsDataOutputStream.writeBytes(twoHyphen + boundary + twoHyphen + endString);*/
+
+            dsDataOutputStream.close();
+
+            int cah = urlConnection.getResponseCode();
+            if (cah == 200) {
+                Log.d(TAG, "send: "+cah);
+                InputStream isInputStream = urlConnection.getInputStream();
+                int ch;
+                StringBuffer buffer = new StringBuffer();
+                while ((ch = isInputStream.read()) != -1) {
+                    buffer.append((char) ch);
+                }
+                return buffer.toString();
+            } else {
+                Log.d(TAG, "send: "+cah);
+                return "false";
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return "true";
+    }
+
+
+
+
 
     // get jsonStr+bytes and save them in sharedpreferences,return boolean
     public boolean sendHttpPostByte(String getUrl, String jsonstr) {
         HttpURLConnection urlConnection = null;
         URL url = null;
+        boolean result = true;
         try {
             url = new URL(getUrl);
             urlConnection = (HttpURLConnection) url.openConnection();
             if(isConnected()) {
                 urlConnection.setRequestProperty("Cookie",sessionid);
             }
+            Log.d("OK", "sendHttpPostByte: "+getUrl+jsonstr);
             urlConnection.setConnectTimeout(3000);
             urlConnection.setUseCaches(false);
             urlConnection.setInstanceFollowRedirects(true);
@@ -197,13 +274,13 @@ public class Connect  {
             bw.flush();
             out.close();
             bw.close();
-
+            Log.d(TAG, "sendHttpPostByte: "+urlConnection.getResponseCode());
             if (urlConnection.getResponseCode() == HttpURLConnection.HTTP_OK) {
                 InputStream inStream = urlConnection.getInputStream();
                 String rawJson = "";
                 int ch = 0;
                 if((char)(ch = inStream.read()) != '{') {
-                    return false;
+                    result = false;
                 }
                 rawJson += (char)ch;//'{'
 
@@ -211,7 +288,7 @@ public class Connect  {
                     rawJson += (char)ch;
                 }
                 rawJson += (char)ch;//'}'
-
+                Log.d("OK", "sendHttpPostByte: "+rawJson);
                 ByteArrayOutputStream baos = new ByteArrayOutputStream();
                 byte[] buff = new byte[4096];
                 int rc = 0;
@@ -224,16 +301,18 @@ public class Connect  {
                 JSONObject jsonObj = new JSONObject(rawJson);
                 String status = jsonObj.getString("status");
                 if (status.equals("success")){
+
                     String userName = jsonObj.getString("userName");
+                    Log.d("OK", "sendHttpPostByte: Success"+userName);
                     String gender = jsonObj.getString("gender");
                     SharedPreferences.Editor editor = sp.edit();
                     editor.putString("userName",userName);
                     editor.putString("gender",gender);
                     editor.putString("image",strImage);
                     editor.commit();
-                }
-                else{return false;}
-                if(!isConnected()) {
+                } else{
+                    result = false;}
+                if(!isConnected() && result) {
                     // 取得sessionid.
                     String cookieval = urlConnection.getHeaderField("Set-Cookie");
                     if (!cookieval.equals("")) {
@@ -246,13 +325,13 @@ public class Connect  {
                 inStream.close();
                 baos.close();
             }else{
-                return false;
+                result = false;
             }
         } catch (Exception e) {
 
         } finally{
             urlConnection.disconnect();
-            return true;
+            return result;
         }
     }
 

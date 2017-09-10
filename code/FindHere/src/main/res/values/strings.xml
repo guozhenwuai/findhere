@@ -42,7 +42,9 @@
     <string name="add_ip">http://115.159.184.211:8080/FindHere/SetComments/text</string>
     <string name="login_ip">http://115.159.184.211:8080/FindHere/Login</string>
     <string name="register_ip">http://115.159.184.211:8080/FindHere/SignUp</string>
+
     <string name="addfile_url">http://115.159.184.211:8080/FindHere/SetComments/file</string>
+    <string name="updateuser_url">http://115.159.184.211:8080/FindHere/UpdateUser</string>
     <string name="my_comment_ip">http://115.159.184.211:8080/FindHere/GetComments/GetIDsByUserID</string>
     <string name="getcomment_ip">http://115.159.184.211:8080/FindHere/GetComments/ByID</string>
     <string name="seek_ip">http://115.159.184.211:8080/FindHere/GetComments/GetIDsByTargetID</string>
@@ -64,4 +66,7 @@
     <!-- Strings related to delete -->
     <string name="cancel">取消</string>
     <string name="del_success">删除成功</string>
+    <string name="title_activity_location">LocationActivity</string>
+    <string name="title_activity_edit_user">EditUserActivity</string>
+    <string name="title_activity_my_target">myTargetActivity</string>
 </resources>

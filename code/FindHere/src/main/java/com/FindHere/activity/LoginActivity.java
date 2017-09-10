@@ -20,6 +20,7 @@ import android.provider.ContactsContract;
 import android.support.annotation.NonNull;
 import android.support.design.widget.Snackbar;
 import android.text.TextUtils;
+import android.util.Log;
 import android.view.KeyEvent;
 import android.view.View;
 import android.view.View.OnClickListener;
@@ -41,6 +42,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import static android.Manifest.permission.READ_CONTACTS;
+import static android.content.ContentValues.TAG;
 
 /**
  * A login screen that offers login via email/password.
@@ -105,6 +107,7 @@ public class LoginActivity extends Activity implements LoaderCallbacks<Cursor> {
             public void onClick(View view) {
                 String email = mEmailView.getText().toString();
                 String password = mPasswordView.getText().toString();
+                Log.d(TAG, "onClick: "+email+password);
                 // Reset errors.
                 mEmailView.setError(null);
                 mPasswordView.setError(null);
@@ -138,6 +141,7 @@ public class LoginActivity extends Activity implements LoaderCallbacks<Cursor> {
                     intent.setClass(LoginActivity.this,RegisterActivity.class);
                     intent.putExtra("email",email);
                     intent.putExtra("password",password);
+
                     startActivity(intent);
                 }
             }
@@ -237,7 +241,7 @@ public class LoginActivity extends Activity implements LoaderCallbacks<Cursor> {
         // Store values at the time of the login attempt.
         String email = mEmailView.getText().toString();
         String password = mPasswordView.getText().toString();
-
+        Log.d(TAG, "onClick: "+email+password);
         boolean cancel = false;
         View focusView = null;
 
@@ -393,12 +397,15 @@ public class LoginActivity extends Activity implements LoaderCallbacks<Cursor> {
             try {
                 object.put("email", email);
                 object.put("password", password);
+                Log.d(TAG, "login "+email+password);
                 jsonStr = object.toString();
             } catch (JSONException e) {
                 e.printStackTrace();
             }
             Connect myConnect = new Connect(LoginActivity.this);
-            return myConnect.sendHttpPostByte(ip,jsonStr);
+            Boolean ret=myConnect.sendHttpPostByte(ip,jsonStr);
+            Log.d("OK", "doInBackground: "+ret);
+            return ret;
         }
 
         @Override

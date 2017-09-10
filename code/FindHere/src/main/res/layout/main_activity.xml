@@ -2,6 +2,8 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+
+    xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/main_activity"
     android:orientation="vertical">
 
@@ -37,74 +39,78 @@
 
     <ImageButton
         android:id="@+id/camera_btn"
-        android:src="@drawable/camera_b"
+        android:src="@drawable/camera_kong"
         android:background="@android:color/transparent"
-        android:layout_width="66dp"
-        android:layout_height="66dp"
+        android:layout_width="70dp"
+        android:layout_height="70dp"
         android:scaleType="fitXY"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginBottom="5dp"
+        android:layout_marginBottom="10dp"
         />
 
     <ImageButton
         android:id="@+id/add_btn"
         android:src="@drawable/add1"
         android:background="@android:color/transparent"
-        android:layout_width="40dp"
-        android:layout_height="40dp"
+        android:layout_height="35dp"
+        android:layout_width="35dp"
+        android:scaleType="fitXY"
         android:layout_alignParentRight="true"
         android:layout_alignParentBottom="true"
-        android:layout_marginRight="16dp"
-        android:layout_marginBottom="15dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginBottom="20dp"
         />
     <ImageButton
         android:id="@+id/showcom_btn"
         android:src="@drawable/comments"
-        android:layout_width="40dp"
-        android:layout_height="40dp"
+        android:layout_height="35dp"
+        android:layout_width="35dp"
+        android:scaleType="fitXY"
         android:background="@android:color/transparent"
         android:layout_alignParentBottom="true"
-        android:layout_marginLeft="16dp"
-        android:layout_marginBottom="12dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginBottom="18dp"
         />
     <ImageButton
         android:id="@+id/user_btn"
         android:src="@drawable/user1"
         android:background="@android:color/transparent"
-        android:layout_height="40dp"
-        android:layout_width="40dp"
+        android:layout_height="35dp"
+        android:layout_width="35dp"
+        android:scaleType="fitXY"
         android:layout_alignParentTop="true"
-        android:layout_marginLeft="16dp"
-        android:layout_marginTop="16dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="20dp"
         />
     <ImageButton
         android:id="@+id/set_btn"
         android:src="@drawable/setting_64"
         android:background="@android:color/transparent"
-        android:layout_height="40dp"
-        android:layout_width="40dp"
+        android:layout_height="35dp"
+        android:layout_width="35dp"
+        android:scaleType="fitXY"
         android:layout_alignParentTop="true"
         android:layout_alignParentRight="true"
-        android:layout_marginRight="16dp"
-        android:layout_marginTop="16dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginTop="20dp"
         />
     <LinearLayout
         android:id="@+id/add_menu"
         android:orientation="vertical"
         android:layout_width="40dp"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="16dp"
+        android:layout_marginBottom="20dp"
         android:layout_above="@+id/add_btn"
-        android:layout_marginRight="16dp"
+        android:layout_marginRight="18dp"
         android:layout_alignParentRight="true"
         android:layout_alignParentEnd="true"
         android:visibility="gone">
 
         <ImageButton
 
-            android:layout_width="26dp"
-            android:layout_height="28dp"
+            android:layout_height="30dp"
+            android:layout_width="30dp"
             android:scaleType="fitXY"
             android:background="@android:color/transparent"
             android:src="@drawable/edit1"
@@ -112,26 +118,96 @@
             android:id="@+id/text" />
 
         <ImageButton
-            android:layout_width="33dp"
-            android:layout_height="33dp"
+            android:layout_height="35dp"
+            android:layout_width="35dp"
+            android:scaleType="fitXY"
+            android:src="@drawable/voice1"
+
+            android:id="@+id/sound"
             android:background="@android:color/transparent"
 
-            android:layout_marginTop="14dp"
+            android:layout_marginTop="12dp"
             android:layout_gravity="center_horizontal"
-            android:src="@drawable/voice1"
-            android:scaleType="fitXY"
-            android:id="@+id/sound" />
+            />
 
         <ImageButton
-            android:layout_width="33dp"
-            android:layout_height="33dp"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
             android:background="@android:color/transparent"
-
+            android:scaleType="fitXY"
             android:layout_marginTop="12dp"
             android:layout_gravity="center_horizontal"
             android:src="@drawable/image"
             android:id="@+id/image" />
 
     </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/set_menu"
+        android:layout_width="180dp"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_alignParentRight="true"
+        android:layout_marginRight="10dp"
+        android:background="#60FFFFFF"
+        android:layout_marginTop="60dp"
+        android:divider="@drawable/divider"
+        android:showDividers = "middle"
+        android:visibility="invisible">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="10dp"
+            android:orientation="vertical">
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="20dp"
+
+            android:text="评论密度"
+            android:textSize="@dimen/about_title"
+            android:textColor="@color/light_blue"
+            android:paddingLeft="10dp"
+            />
+
+        <SeekBar
+            android:layout_width="match_parent"
+            android:layout_height="24dp"
+            android:focusable="true"
+            android:maxHeight="4.0dip"
+            android:minHeight="4.0dip"
+            android:id="@+id/com_num"
+            android:layout_marginTop="5dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginLeft="5dp"
+            android:paddingLeft="10dp"
+            android:progressBackgroundTint="@color/soft_blue"
+            android:thumb="@drawable/touch_point"
+            />
+        </LinearLayout>
+            <TextView
+                android:id="@+id/showAllcom_btn"
+                android:layout_width="match_parent"
+                android:layout_height="30dp"
+                android:text="查看全部评论"
+                android:textSize="@dimen/about_title"
+                android:textColor="@color/light_blue"
+                android:layout_marginTop="10dp"
+                android:paddingLeft="10dp"
+                android:layout_marginBottom="5dp"
+         />
+        <TextView
+            android:id="@+id/location"
+            android:layout_width="match_parent"
+            android:layout_height="30dp"
+            android:text="附近信息源"
+            android:paddingLeft="10dp"
+            android:textSize="@dimen/about_title"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="5dp"
+            android:textColor="@color/light_blue"/>
+    </LinearLayout>
+
+
 
 </RelativeLayout>

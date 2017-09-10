@@ -1,18 +1,21 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:layout_width="300dp"
-    android:layout_height="400dp"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
     android:orientation="vertical"
     android:layout_gravity="center"
 
-    android:background="@android:color/transparent">
+    android:background="@color/white"
+    android:weightSum="1">
 
     <LinearLayout
-        android:layout_width="300dp"
+        android:layout_width="200dp"
         android:layout_height="300dp"
-        android:layout_gravity="center"
-        android:background="@android:color/transparent">
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="150dp"
+        android:background="@android:color/white"
+        android:layout_weight="0.09">
 
     </LinearLayout>
     <com.FindHere.model.RecordButton
@@ -20,14 +23,17 @@
         android:id="@+id/begin_record"
         android:layout_width="150dp"
         android:layout_height="50dp"
-        android:text="按住录音"
-        android:textSize="@dimen/menu_title"
-        android:textColor="@color/soft_blue"
-        android:background="@drawable/shape_input"
-        android:layout_margin="0dp"
-        android:layout_gravity="center"
 
-        android:layout_marginBottom="0dp" />
+        android:text="按住录音"
+        android:textSize="25dp"
+        android:textColor="@color/white"
+        android:background="@drawable/shape_handin"
+
+
+        android:layout_gravity="center_horizontal"
+        android:layout_marginBottom = "10dp"
+
+       />
 
 
 </LinearLayout>

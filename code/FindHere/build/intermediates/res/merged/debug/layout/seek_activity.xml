@@ -11,7 +11,7 @@
     <RelativeLayout
         android:id="@+id/tabbar"
         android:layout_width="match_parent"
-        android:layout_height="70dp"
+        android:layout_height="55dp"
         android:background="@color/soft_blue">
         <ImageButton
             android:id="@+id/back"

@@ -102,7 +102,15 @@
         <uses-library
             android:name="com.osterhoutgroup.api.ext"
             android:required="false" />
-
+        <activity
+            android:name=".MyTargetActivity"
+            android:label="MyTarget" />
+        <activity
+            android:name=".EditUserActivity"
+            android:label="@string/title_activity_edit_user" />
+        <activity
+            android:name=".SeekActivity"
+            android:label="Seek" />
         <activity
             android:name=".RecorderActivity"
             android:label="Record" />
@@ -111,9 +119,6 @@
             android:label="@string/title_activity_login" />
         <activity
             android:name=".AddActivity"
-            android:label="@string/title_activity_login" />
-        <activity
-            android:name=".SeekActivity"
             android:label="@string/title_activity_login" />
         <activity
             android:name=".SettingsActivity"
@@ -125,7 +130,11 @@
             android:name=".RegisterActivity"
             android:label="@string/title_activity_register" />
         <activity android:name=".MyCommentActivity" />
-        <activity android:name=".WebActivity"></activity>
+        <activity android:name=".WebActivity" />
+        <activity
+            android:name=".LocationActivity"
+            android:label="@string/title_activity_location" />
+
     </application>
 
 </manifest> <!-- android:installLocation="preferExternal" -->

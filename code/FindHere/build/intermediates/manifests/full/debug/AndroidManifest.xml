@@ -108,6 +108,15 @@
             android:required="false" />
 
         <activity
+            android:name="com.FindHere.activity.MyTargetActivity"
+            android:label="MyTarget" />
+        <activity
+            android:name="com.FindHere.activity.EditUserActivity"
+            android:label="@string/title_activity_edit_user" />
+        <activity
+            android:name="com.FindHere.activity.SeekActivity"
+            android:label="Seek" />
+        <activity
             android:name="com.FindHere.activity.RecorderActivity"
             android:label="Record" />
         <activity
@@ -115,9 +124,6 @@
             android:label="@string/title_activity_login" />
         <activity
             android:name="com.FindHere.activity.AddActivity"
-            android:label="@string/title_activity_login" />
-        <activity
-            android:name="com.FindHere.activity.SeekActivity"
             android:label="@string/title_activity_login" />
         <activity
             android:name="com.FindHere.activity.SettingsActivity"
@@ -130,6 +136,9 @@
             android:label="@string/title_activity_register" />
         <activity android:name="com.FindHere.activity.MyCommentActivity" />
         <activity android:name="com.FindHere.activity.WebActivity" />
+        <activity
+            android:name="com.FindHere.activity.LocationActivity"
+            android:label="@string/title_activity_location" />
     </application>
 
 </manifest> <!-- android:installLocation="preferExternal" -->
