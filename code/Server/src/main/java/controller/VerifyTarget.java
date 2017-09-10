@@ -56,12 +56,12 @@ public class VerifyTarget {
 	}
 	
 	@RequestMapping("/RatifyTarget")
-	public String execute2(@RequestParam("userID") String userID,
+	public void execute2(@RequestParam("userID") String userID,
 			@RequestParam("tempTargetID") String tempTargetID,
 			HttpServletRequest request, HttpServletResponse response, HttpSession httpSession) 
 			throws IOException, URISyntaxException{
 		contentService.ratifyTarget(userID, tempTargetID);
-		return "uploadSuccess";
+		response.getWriter().print("success");
 	}
 	
 	/*GET and SET*/

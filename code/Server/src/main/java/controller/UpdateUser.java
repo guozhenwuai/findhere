@@ -28,20 +28,27 @@ public class UpdateUser {
 	@RequestMapping("/UpdateUser")
 	public String execute(HttpServletRequest request, HttpServletResponse response, HttpSession httpSession) 
 			throws IOException{
+		System.out.println(":updateUser");
+		System.out.println(":1");
 		ServletInputStream inStream = request.getInputStream();
 		JSONObject jsonObj = readService.inputStreamReadJson(inStream);
+		System.out.println(":2");
 		JSONObject ret = new JSONObject();
 		String userID = (String) httpSession.getAttribute("userID");
+		System.out.println(":3");
 		if(userID == null) {
 			ret.put("status", "failure");
 			response.getOutputStream().print(ret.toString());
 			return null;
 		}
+		System.out.println(":4");
 		
 		userService.updateUser(userID, jsonObj, inStream);
+		System.out.println(":5");
 		
 		ret.put("status", "success");
 		response.getOutputStream().print(ret.toString());
+		System.out.println(":6");
 		return null;
 		}
 	

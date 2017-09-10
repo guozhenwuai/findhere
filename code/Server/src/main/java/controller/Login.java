@@ -31,8 +31,8 @@ public class Login {
 		System.out.println("perparing login");
 		ServletInputStream inStream = request.getInputStream();
 		String jsonString = readService.inputStreamToString(inStream);
+		System.out.println(jsonString);
 		JSONObject jsonObj = new JSONObject(jsonString);
-		JSONObject ret = new JSONObject(jsonString);
 		userService.login(jsonObj, response, httpSession);
 		System.out.println(httpSession.getId());
 		return null;

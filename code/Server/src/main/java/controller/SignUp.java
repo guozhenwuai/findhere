@@ -62,14 +62,14 @@ public class SignUp {
 	}
 	
 	@RequestMapping("/webSignUp")
-	public String execute2(HttpServletRequest request, HttpServletResponse response, HttpSession httpSession) 
+	public void execute2(HttpServletRequest request, HttpServletResponse response, HttpSession httpSession) 
 			throws IOException {
 		String realName = request.getParameter("realName");
 		String nationalID = request.getParameter("nationalID");
 		String incorporation = request.getParameter("incorporation");
 		String userID = (String)httpSession.getAttribute("userID");
 		applyService.addApply(userID, realName, nationalID, incorporation);
-		return "waitForVerifying";
+		response.getWriter().print("success");
 	}
 	
 	/*GET and SET*/

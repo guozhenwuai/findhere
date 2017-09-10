@@ -175,6 +175,10 @@ public class ContentServiceImpl implements ContentService {
 		List<String> targetIDs = userTarget.getTargetIDs();
 		for(int i = 0; i < targetIDs.size(); i++) {
 			if(targetIDs.get(i).equals(targetID)) {
+				List<Content> contents = contentDao.getContentsByTargetID(targetID);
+				for(int j = 0; j<contents.size(); j++) {
+					deleteContent(contents.get(j).getId().toString());
+				}
 				targetIDs.remove(i);
 			}
 		}

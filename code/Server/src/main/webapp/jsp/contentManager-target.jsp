@@ -56,7 +56,7 @@
 			<!-- Content -->
 			<div id="content">
 				
-				<form action="/FindHere/SetContents/addTarget" method="post" enctype="multipart/form-data">
+				<form id="uploadTarget" action="/FindHere/SetContents/addTarget" method="post" enctype="multipart/form-data">
 					<label><font size="4px">add New Target</font></label>
 					<input type="file" class="field" name="newTarget" />
 					<input type="submit" class="button" value="add" style="height:35px" />

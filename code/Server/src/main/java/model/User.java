@@ -32,6 +32,11 @@ public class User implements Serializable {
 	public User() {
 		isMember = 0;
 		Admin = 0;
+		name = "";
+		gender = "";
+		headPortraitID = "";
+		qq = "";
+		weixin = "";
 	}
 	
 	/*GET and SET*/

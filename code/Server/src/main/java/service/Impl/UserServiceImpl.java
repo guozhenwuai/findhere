@@ -51,7 +51,7 @@ public class UserServiceImpl implements UserService {
 		outStream.print(ret.toString());
 		
 		//headPortrait
-		if(user.getHeadPortraitID() != null) {
+		if(user.getHeadPortraitID() != null && !user.getHeadPortraitID().equals("")) {
 			fileDao.outputFileToStream("headPortrait", user.getHeadPortraitID(), outStream);
 		}
 		return false;
@@ -99,16 +99,22 @@ public class UserServiceImpl implements UserService {
 	}
 	
 	public void updateUser(String userID, JSONObject jsonObj, InputStream inStream) {
+		System.out.println(":4.1");
 		User user = userDao.findOneByID(userID);
 		String headPortraitID = user.getHeadPortraitID();
-		fileDao.removeFile("headPortrait", headPortraitID);
+		if(headPortraitID != null && !headPortraitID.equals("")) {
+			fileDao.removeFile("headPortrait", headPortraitID);
+		}
+		System.out.println(":4.2");
 		
 		headPortraitID = fileDao.inputFileToDB("headPortrait", inStream);
+		System.out.println(":4.3");
 		user.setHeadPortraitID(headPortraitID);
 		user.setName(jsonObj.getString("userName"));
 		user.setGender(jsonObj.getString("gender"));
 		user.setWeixin(jsonObj.getString("weixin"));
 		user.setQq(jsonObj.getString("QQ"));
+		System.out.println(":4.4");
 		userDao.update(user);
 	}
 	

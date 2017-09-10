@@ -28,7 +28,7 @@ public class SetContents {
 	private ContentService contentService;
 	
 	@RequestMapping("/Object")
-	public String execute2(@RequestParam("targetID") String targetID,
+	public void execute2(@RequestParam("targetID") String targetID,
 			MultipartHttpServletRequest multiRequest,
 			HttpServletRequest request, HttpServletResponse response, HttpSession httpSession) 
 			throws IOException{
@@ -52,7 +52,7 @@ public class SetContents {
 			Sy = Double.parseDouble(request.getParameter("Sy"));
 			Sz = Double.parseDouble(request.getParameter("Sz"));
 		}catch(Exception e) {
-			return "redirect:/MemberContent";
+			response.getWriter().print("Format Error");
 		}
 		
 		JSONObject position = new JSONObject();
@@ -73,12 +73,13 @@ public class SetContents {
 		String name = object.getOriginalFilename();
 		String MtlName = MTL.getOriginalFilename();
 		if(!name.substring(name.lastIndexOf('.'), name.length()).equals(".obj")) {
-			return "redirect:/MemberContent";
+			response.getWriter().print("You should upload a .obj file");
 		}else if(!MtlName.substring(MtlName.lastIndexOf('.'), MtlName.length()).equals(".mtl")) {
-			return "redirect:/MemberContent";
+			response.getWriter().print("You should upload a .mtl file");
 		}
 		contentService.addARObject(targetID, textName, object, MTL, files, position);
-		return "uploadSuccess";
+		response.getWriter().print("success");
+		//return null;
 	}
 	
 	@RequestMapping("/addTarget")

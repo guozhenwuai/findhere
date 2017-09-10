@@ -39,6 +39,7 @@
 						</div>
 						<div class="bottom">
 							<input type="submit" value="Login"></input>
+							<!--<a href="/FindHere/Apply" rel="Register" class="linkform">Want to be our member? Register in here</a>-->
 							<div class="clear"></div>
 						</div>
 					</form>

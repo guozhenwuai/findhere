@@ -9,8 +9,27 @@
 	<meta http-equiv="Content-type" content="text/html; charset=utf-8" />
 	<title>FindHere Administrator</title>
 	<link rel="stylesheet" href="/FindHere/css/style.css" type="text/css" media="all" />
+	<script type="text/javascript" src="/FindHere/js/jQuery.js"></script>
 </head>
 <body>
+<script type="text/javascript">
+function ajaxQuery(num, userID, tempTargetID) {
+	document.getElementById("operation"+num).innerHTML = "<a>waiting</a>";
+	$.ajax({
+		url:"/FindHere/VerifyTarget/RatifyTarget?userID=" + userID + "&tempTargetID=" + tempTargetID,
+   		success:function(msg){
+   			if(msg == 'success'){
+   				alert("SUCCESS");
+   				location.reload(true);
+    		}else{
+    			alert(msg);
+    			location.reload(true);
+    		}
+    	}
+    }); 
+};
+</script>
+
 <!-- Header -->
 <div id="header">
 	<div class="shell">
@@ -85,11 +104,10 @@
 								<td><img width="20px" height="20px" src="/FindHere/GetContent/GetTempTarget?tempTargetID=<%=targetIDList.get(i).getSecond() %>"/></td>
 								<th><%=targetIDList.get(i).getFirst() %></th>
 								<td><h3><%=targetIDList.get(i).getSecond() %></h3></td>
-								<td>
+								<td id="operation<%=i%>">
 									<a href="#" class="ico del">Delete</a>
-									<a href="/FindHere/VerifyTarget/RatifyTarget?
-										userID=<%=targetIDList.get(i).getFirst() %>
-										&tempTargetID=<%=targetIDList.get(i).getSecond() %>" class="ico ok">Agree</a>
+									<a onclick="ajaxQuery(<%=i %>, '<%=targetIDList.get(i).getFirst() %>', '<%=targetIDList.get(i).getSecond() %>');" 
+									 class="ico ok">Agree</a>
 								</td>
 							</tr>
 							<%
