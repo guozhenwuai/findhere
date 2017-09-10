@@ -239,14 +239,43 @@ public class InfoLoader : MonoBehaviour {
         pageIndex = 0;
     }
 
-    public void LoadInfo(string targetId)
+    public void ResetInfo(string targetId)
+    {
+        ResetPageIndex();
+        LoadInfoPoint(targetId);
+    }
+
+    public void LoadInfo(string targetId,bool loadModelStatus)
     {
         LoadContents(targetId);
-        FirstLoadInfoPoint(targetId);
-        if (contents != null && contents.Length > 0)
+        if (loadModelStatus)
         {
-            LoadOneContent();
+            if (!EmptyContent())
+            {
+                LoadOneContent();
+            }
         }
+        else
+        {
+            FirstLoadInfoPoint(targetId);
+        }
+    }
+
+    public void ContentMessage(bool b)
+    {
+        if (b)
+        {
+            androidPlugin.Call("setToast", "耐心等待模型加载~");
+        }
+        else
+        {
+            androidPlugin.Call("setToast", "没有投放的模型~");
+        }
+    }
+
+    public bool EmptyContent()
+    {
+        return !hasContents;
     }
 
     private void NextContent()
@@ -275,7 +304,7 @@ public class InfoLoader : MonoBehaviour {
         }
     }
 
-    private void LoadOneContent()
+    public void LoadOneContent()
     {
         Content content = contents[contentIndex];
         string type = content.GetContentType();
@@ -300,7 +329,7 @@ public class InfoLoader : MonoBehaviour {
         }
     }
 
-    private void FirstLoadInfoPoint(string targetId)
+    public void FirstLoadInfoPoint(string targetId)
     {
         Debug.Log("load info point " + targetId);
         ResetInfoPool();
@@ -352,6 +381,10 @@ public class InfoLoader : MonoBehaviour {
             hasContents = true;
             Debug.Log("contents:" + str);
             contents = JsonHelper.FromJson<Content>(fixJson(str));
+        }
+        else
+        {
+            hasContents = false;
         }
     }
 

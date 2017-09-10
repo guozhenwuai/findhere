@@ -3,8 +3,13 @@ package tool;
 public class Wrapper {
 	private String first;
 	private String second;
+	private String third;
 	
-	public Wrapper(){}
+	public Wrapper(){
+		first = null;
+		second = null;
+		third = null;
+	}
 	
 	/*GET and SET*/
 	public String getFirst() {
@@ -21,5 +26,13 @@ public class Wrapper {
 	
 	public void setSecond(String s) {
 		second = s;
+	}
+	
+	public String getThird() {
+		return third;
+	}
+	
+	public void setThird(String s) {
+		third = s;
 	}
 }

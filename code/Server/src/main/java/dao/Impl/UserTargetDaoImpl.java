@@ -27,15 +27,6 @@ public class UserTargetDaoImpl implements UserTargetDao {
 		return userTarget.getTargetIDs();
 	}
 	
-	public List<String> findAllUserTargetIDs(String userID){
-		UserTarget userTarget = mongoTemplate.findOne(
-				new Query(Criteria.where("_id").is(userID)), UserTarget.class);
-		if(userTarget == null) {
-			return null;
-		}
-		return userTarget.getTargetIDs();
-	}
-	
 	public UserTarget findOneUserTarget(String userID){
 		UserTarget userTarget = mongoTemplate.findOne(
 				new Query(Criteria.where("_id").is(userID)), UserTarget.class);

@@ -6,6 +6,8 @@ import java.io.BufferedOutputStream;
 import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;
+import java.io.UnsupportedEncodingException;
+import java.net.URLDecoder;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
@@ -13,6 +15,7 @@ import javax.annotation.Resource;
 import javax.servlet.ServletInputStream;
 import javax.servlet.http.HttpServletResponse;
 import org.json.JSONArray;
+import org.json.JSONException;
 import org.json.JSONObject;
 
 import dao.CommentDao;
@@ -96,16 +99,19 @@ public class CommentServiceImpl implements CommentService {
 		response.getWriter().print(jsonArray.toString());
 	}
 	
-	public String saveTextComment(JSONObject jsonObj, String userID) {
+	public String saveTextComment(JSONObject jsonObj, String userID) throws UnsupportedEncodingException, JSONException {
 		String type = jsonObj.getString("type");
 		String text = jsonObj.getString("text");
+		text = URLDecoder.decode(text, "UTF-8");
 		String targetID = jsonObj.getString("targetID");
+		System.out.println(jsonObj.toString());
 		Date time = new Date();
 		if( type.equals("text") && text != null) {
 			Comment comment = new Comment();
 			comment.setUserID(userID);
 			comment.setType(type);
 			comment.setText(text);
+			System.out.println("text = "+text);
 			comment.setTargetID(targetID);
 			comment.setTime(time);
 			String id = commentDao.insert(comment);

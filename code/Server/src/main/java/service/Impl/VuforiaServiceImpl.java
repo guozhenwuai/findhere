@@ -83,6 +83,7 @@ public class VuforiaServiceImpl implements VuforiaService {
 	}
 	
 	public void setRequestBody(JSONObject requestBody, ByteFileWithName target){
+		System.out.println("name:" + target.getFileName());
 		requestBody.put("name", target.getFileName()); // Mandatory
 		requestBody.put("width", 1); // Mandatory
 		requestBody.put("image", Base64.encodeBase64String(target.getByteElement())); // Mandatory

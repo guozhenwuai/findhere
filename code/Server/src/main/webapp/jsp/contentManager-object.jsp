@@ -49,7 +49,7 @@ function addTarget(){
 			    <li><a href="/FindHere/MemberTarget?pageIndex=0"><span>Upload Target</span></a></li>
 			    <li><a href="#" class="active"><span>Upload Object</span></a></li>
 			    <li><a href="/FindHere/MemberVerifyTarget?pageIndex=0"><span>Verifying Target</span></a></li>
-			    <li><a href="#"><span>Manage Content</span></a></li>
+			    <li><a href="/FindHere/MemberARModel/View?pageIndex=0"><span>Model Manager</span></a></li>
 			</ul>
 		</div>
 		<!-- End Main Nav -->
@@ -88,6 +88,9 @@ function addTarget(){
 							}
 							%>
 						</select>
+						<br>
+						<br>
+						<span style="display:inline-block; width:100px">Name</span><input type="text" name="textName">
 						<br>
 						<br>
 						<span class="longLabel">Position: </span>

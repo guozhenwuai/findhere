@@ -2,7 +2,6 @@
     pageEncoding="ISO-8859-1"%>
 <%@ page import="java.util.List" %>
 <%@ page import="model.Apply" %>
-<%@ page import="tool.Wrapper" %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
@@ -28,8 +27,8 @@
 		<!-- Main Nav -->
 		<div id="navigation">
 			<ul>
-			    <li><a href="/FindHere/ConfirmMember?pageIndex=0"><span>Member</span></a></li>
-			    <li><a href="#" class="active"><span>Verify Target</span></a></li>
+			    <li><a href="#" class="active"><span>Member</span></a></li>
+			    <li><a href="/FindHere/VerifyTarget/Verify?pageIndex=0"><span>Verify Target</span></a></li>
 			</ul>
 		</div>
 		<!-- End Main Nav -->
@@ -61,8 +60,11 @@
 				<div class="box" style="width:1000px; height:500px">
 					<!-- Box Head -->
 					<div class="box-head">
-						<h2 class="left">Verify Target</h2>
+						<h2 class="left">Current application</h2>
 						<div class="right">
+							<label>search articles</label>
+							<input type="text" class="field small-field" />
+							<input type="submit" class="button" value="search" />
 						</div>
 					</div>
 					<!-- End Box Head -->	
@@ -71,25 +73,33 @@
 					<div class="table">
 						<table width="100%" border="0" cellspacing="0" cellpadding="0">
 							<tr>
-								<th>image</th>
+								<th width="13"><input type="checkbox" class="checkbox" /></th>
 								<th>userID</th>
-								<th>Temp TargetID</th>
+								<th>name</th>
+								<th>inc</th>
+								<th>nationalID</th>
 								<th width="110" class="ac">Content Control</th>
 							</tr>
 							<%
-							List<Wrapper> targetIDList = (List<Wrapper>)request.getAttribute("targetIDs");
+							List<Apply> applyList = (List<Apply>)request.getAttribute("applyList");
 							int pageIndex = Integer.parseInt(request.getAttribute("pageIndex").toString());
-							for(int i = 0; i < targetIDList.size(); i++){
+							for(int i = 0; i < applyList.size(); i++){
+								String odd = (i%2 == 1) ? "odd":"";
 							%>
-							<tr>
-								<td><img width="20px" height="20px" src="/FindHere/GetContent/GetTempTarget?tempTargetID=<%=targetIDList.get(i) %>"/></td>
-								<th><%=targetIDList.get(i).getFirst() %></th>
-								<td><h3><%=targetIDList.get(i).getSecond() %></h3></td>
+							<tr class=<%=odd %> >
+								<td><input type="checkbox" class="checkbox" /></td>
+								<td><h3><%=applyList.get(i).getUserID() %></h3></td>
+								<td><%=applyList.get(i).getName() %></td>
+								<td><%=applyList.get(i).getInc() %></td>
+								<td><%=applyList.get(i).getNationalID() %></td>
 								<td>
-									<a href="#" class="ico del">Delete</a>
-									<a href="/FindHere/VerifyTarget/RatifyTarget?
-										userID=<%=targetIDList.get(i).getFirst() %>
-										&tempTargetID=<%=targetIDList.get(i).getSecond() %>" class="ico ok">Agree</a>
+									<a href="/FindHere/RejectApply?
+										applyID=<%=applyList.get(i).getId().toString() %>
+										&pageIndex=<%=pageIndex %>" class="ico del">Delete</a>
+									<a href="/FindHere/AgreeMember?
+										userID=<%=applyList.get(i).getUserID() %>
+										&applyID=<%=applyList.get(i).getId().toString() %>
+										&pageIndex=<%=pageIndex %>" class="ico ok">Agree</a>
 								</td>
 							</tr>
 							<%

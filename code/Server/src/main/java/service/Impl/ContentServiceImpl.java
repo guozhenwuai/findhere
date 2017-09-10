@@ -121,7 +121,7 @@ public class ContentServiceImpl implements ContentService {
 		response.getOutputStream().print(arManager.getPosition().toString());
 	}
 	
-	public void addARObject(String targetID, MultipartFile objectFile, MultipartFile MTLFile, Map<String, MultipartFile> textureFiles, JSONObject position)
+	public void addARObject(String targetID, String textName, MultipartFile objectFile, MultipartFile MTLFile, Map<String, MultipartFile> textureFiles, JSONObject position)
 			throws IOException{
 		System.out.println(":2.1");
 		String ARObjectID = fileDao.inputFileToDBWithName("ARObject", objectFile.getOriginalFilename(), objectFile.getInputStream());
@@ -150,6 +150,7 @@ public class ContentServiceImpl implements ContentService {
 		Content content = new Content();
 		content.setTargetID(targetID);
 		content.setARManagerID(ARManagerID);
+		content.setText(textName);
 		content.setType("ARObject");
 		String contentID = contentDao.insertOne(content);
 	}
@@ -196,10 +197,6 @@ public class ContentServiceImpl implements ContentService {
 	
 	public List<String> getUserTargetIDs(String userID){
 		return userTargetDao.findUserTargetIDs(userID);
-	}
-	
-	public List<String> getAllUserTargetIDs(String userID){
-		return userTargetDao.findAllUserTargetIDs(userID);
 	}
 	
 	public List<String> getTempTargetIDsByUserID(String userID){
@@ -259,6 +256,35 @@ public class ContentServiceImpl implements ContentService {
 	public void getTempTarget(String tempTargetID, HttpServletResponse response)
 			throws IOException{
 		fileDao.outputFileToStream("tempTarget", tempTargetID, response.getOutputStream());
+	}
+	
+	public List<Wrapper> getmodelsByUserID(String userID){
+		UserTarget userTarget = userTargetDao.findOneUserTarget(userID);
+		List<String> targetIDs = userTarget.getTargetIDs();
+		List<Wrapper> modelIDs = new ArrayList<Wrapper>();
+		for(int i = 0; i < targetIDs.size(); i++) {
+			List<Content> contents = contentDao.getContentsByTargetID(targetIDs.get(i));
+			for(int j = 0; j < contents.size(); j++) {
+				if(contents.get(j).getType().equals("ARObject")) {
+					Wrapper bag = new Wrapper();
+					bag.setFirst(contents.get(j).getText());
+					bag.setSecond(targetIDs.get(i));
+					bag.setThird(contents.get(j).getId().toString());
+					modelIDs.add(bag);
+				}
+			}
+		}
+		return modelIDs;
+	}
+	
+	public void deleteContent(String contentID) {
+		Content aim = contentDao.findOneByID(contentID);
+		switch(aim.getType()) {
+		case("ARObject"):
+			arManagerDao.deleteOne(aim.getARManagerID());
+			break;
+		}
+		contentDao.deleteOne(contentID);
 	}
 	
 	/*GET and SET*/

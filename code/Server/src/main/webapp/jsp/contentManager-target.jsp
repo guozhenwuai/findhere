@@ -31,7 +31,7 @@
 			    <li><a href="#" class="active"><span>Upload Target</span></a></li>
 			    <li><a href="/FindHere/MemberContent"><span>Upload Object</span></a></li>
 			    <li><a href="/FindHere/MemberVerifyTarget?pageIndex=0"><span>Verifying Target</span></a></li>
-			    <li><a href="#"><span>Manage Content</span></a></li>
+			    <li><a href="/FindHere/MemberARModel/View?pageIndex=0"><span>Model Manager</span></a></li>
 			</ul>
 		</div>
 		<!-- End Main Nav -->
@@ -56,17 +56,18 @@
 			<!-- Content -->
 			<div id="content">
 				
+				<form action="/FindHere/SetContents/addTarget" method="post" enctype="multipart/form-data">
+					<label><font size="4px">add New Target</font></label>
+					<input type="file" class="field" name="newTarget" />
+					<input type="submit" class="button" value="add" style="height:35px" />
+				</form>
 				<!-- Box -->
 				<div class="box" style="width:1000px; height:500px">
 					<!-- Box Head -->
 					<div class="box-head" style="height:45px">
 						<h2 class="left">Your Targets</h2>
 						<div class="right">
-							<form action="/FindHere/SetContents/addTarget" method="post" enctype="multipart/form-data">
-							<label><font size="4px">add New Target</font></label>
-							<input type="file" class="field" name="newTarget" />
-							<input type="submit" class="button" value="add" style="height:35px" />
-							</form>
+							
 						</div>
 					</div>
 					<!-- End Box Head -->	
