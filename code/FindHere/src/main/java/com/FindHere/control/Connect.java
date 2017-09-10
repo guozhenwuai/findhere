@@ -176,6 +176,7 @@ public class Connect  {
     public boolean sendHttpPostByte(String getUrl, String jsonstr) {
         HttpURLConnection urlConnection = null;
         URL url = null;
+        boolean result = true;
         try {
             url = new URL(getUrl);
             urlConnection = (HttpURLConnection) url.openConnection();
@@ -203,7 +204,7 @@ public class Connect  {
                 String rawJson = "";
                 int ch = 0;
                 if((char)(ch = inStream.read()) != '{') {
-                    return false;
+                    result = false;
                 }
                 rawJson += (char)ch;//'{'
 
@@ -231,9 +232,9 @@ public class Connect  {
                     editor.putString("gender",gender);
                     editor.putString("image",strImage);
                     editor.commit();
-                }
-                else{return false;}
-                if(!isConnected()) {
+                } else{
+                    result = false;}
+                if(!isConnected() && result) {
                     // 取得sessionid.
                     String cookieval = urlConnection.getHeaderField("Set-Cookie");
                     if (!cookieval.equals("")) {
@@ -246,13 +247,13 @@ public class Connect  {
                 inStream.close();
                 baos.close();
             }else{
-                return false;
+                result = false;
             }
         } catch (Exception e) {
 
         } finally{
             urlConnection.disconnect();
-            return true;
+            return result;
         }
     }
 
