@@ -13,9 +13,12 @@ public class ContentManager : MonoBehaviour,ITrackableEventHandler {
     private bool isAudioShow;
     private Transform pickedObject = null;
     private bool showModelStatus;
+    private bool isModelSpinning;
 
     //左右滑动事件两指的坐标
     private Vector2 position;
+    //左右滑动距离
+    private float dist;
     //双指触控时，两指的坐标。用于实现图片的两指放大
     private Vector2 oldPosition1;
     private Vector2 oldPosition2;
@@ -50,6 +53,8 @@ public class ContentManager : MonoBehaviour,ITrackableEventHandler {
         isTrackable = false;
         isAudioShow = false;
         showModelStatus = false;
+        isModelSpinning = false;
+        dist = 5;
     }
 
     void Update()
@@ -59,6 +64,10 @@ public class ContentManager : MonoBehaviour,ITrackableEventHandler {
         {
             ShowField(VerifyContent,true);
             infoLoader.ResetObjectLoad();
+        }
+        if(showModelStatus && isModelSpinning)
+        {
+            VerifyContent.transform.GetChild(0).Rotate(Vector3.up * Time.deltaTime * 5.0f);
         }
         //声音停止后喇叭消失
         if (AudioField.GetComponent<AudioSource>()!=null&&!AudioField.GetComponent<AudioSource>().isPlaying&&isAudioShow)
@@ -103,6 +112,18 @@ public class ContentManager : MonoBehaviour,ITrackableEventHandler {
                     Debug.Log("touch audio field");
                     AudioPlaying(false);
                 }
+                else if(hitObject.name == "model")
+                {
+                    Debug.Log("touch model");
+                    if (isModelSpinning)
+                    {
+                        isModelSpinning = false;
+                    }
+                    else
+                    {
+                        isModelSpinning = true;
+                    }
+                }
                 else
                 {
                     Debug.Log(hitObject.name);
@@ -116,6 +137,7 @@ public class ContentManager : MonoBehaviour,ITrackableEventHandler {
         }
         if(status==1||(status==3&&AnimationsManager.IsShowingOverlay()))DragEvent();       //拖拽事件
         if(status==3&&AnimationsManager.IsShowingOverlay())ImageZoomEvent();      //图片的放大缩小事件
+        if (status == 4&&infoLoader.ShowContents()&&isTrackable) ObjectZoomEvent();      //模型的放大缩小
     }
 
     private void ImageZoomEvent()
@@ -147,6 +169,40 @@ public class ContentManager : MonoBehaviour,ITrackableEventHandler {
                     }
                 }
                 AnimationsManager.SetDistance(distance);
+
+                oldPosition1 = tempPosition1;
+                oldPosition2 = tempPosition2;
+            }
+        }
+    }
+
+    private void ObjectZoomEvent()
+    {
+        if (Input.touchCount > 1)
+        {
+            if (Input.GetTouch(0).phase == TouchPhase.Moved || Input.GetTouch(1).phase == TouchPhase.Moved)
+            {
+                Vector2 tempPosition1 = Input.GetTouch(0).position;
+                Vector2 tempPosition2 = Input.GetTouch(1).position;
+
+                if (IsEnlarge(oldPosition1, oldPosition2, tempPosition1, tempPosition2))
+                {
+                    if (dist < 10)
+                    {
+                        dist += 0.1f;
+                        Vector3 body = ImageField.transform.localScale;
+                        ImageField.transform.localScale += new Vector3(body.x * Time.deltaTime, body.y * Time.deltaTime, body.z * Time.deltaTime);
+                    }
+                }
+                else
+                {
+                    if (dist > 1)
+                    {
+                        dist -= 0.1f;
+                        Vector3 body = ImageField.transform.localScale;
+                        ImageField.transform.localScale += new Vector3(-body.x * Time.deltaTime, -body.y * Time.deltaTime, -body.z * Time.deltaTime);
+                    }
+                }
 
                 oldPosition1 = tempPosition1;
                 oldPosition2 = tempPosition2;
@@ -252,14 +308,6 @@ public class ContentManager : MonoBehaviour,ITrackableEventHandler {
 
     public void Show(bool tf)
     {
-        if (showModelStatus)
-        {
-            if (infoLoader.ShowContents())
-            {
-                ShowField(VerifyContent, tf);
-            }
-            return;
-        }
         if (status == 1)
         {
             ShowField(infoPoint,tf);
@@ -285,6 +333,11 @@ public class ContentManager : MonoBehaviour,ITrackableEventHandler {
             {
                 AnimationsManager.PlayAnimationTo2D(ImageField);
             }
+        }
+        else if (status == 4)
+        {
+            Debug.Log("show status 4");
+            ShowField(VerifyContent, tf);
         }
     }
 
@@ -331,7 +384,14 @@ public class ContentManager : MonoBehaviour,ITrackableEventHandler {
     public void TargetCreated(string target)
     {
         keepTargetId = target;
-        status = 1;
+        if (showModelStatus)
+        {
+            status = 4;
+        }
+        else
+        {
+            status = 1;
+        }
         infoLoader.ResetPageIndex();
         infoLoader.LoadInfo(target,showModelStatus);
 
@@ -363,10 +423,22 @@ public class ContentManager : MonoBehaviour,ITrackableEventHandler {
 
     public void ResetInfo()
     {
-        if (!showModelStatus && keepTargetId != "")
+        if(!showModelStatus && status != 0)
         {
+            if (infoLoader.isLoading())
+            {
+                infoLoader.stopLoading();
+            }
             Show(false);
-            infoLoader.ResetInfo(keepTargetId);
+            infoLoader.ResetPageIndex();
+            if (isTrackable)
+            {
+                infoLoader.LoadInfoPoint(targetId);
+            }
+            else
+            {
+                infoLoader.LoadInfoPointInvisible(targetId);
+            }
         }
     }
 
@@ -385,25 +457,26 @@ public class ContentManager : MonoBehaviour,ITrackableEventHandler {
 
     public void SwitchModelStatus()
     {
+        if (infoLoader.isLoading())
+        {
+            infoLoader.stopLoading();
+        }
         if (showModelStatus)
         {
             Show(false);
             showModelStatus = false;
+            isModelSpinning = false;
             if (status != 0)
             {
                 status = 1;
-                if (keepTargetId != "")
+                if (isTrackable)
                 {
-                    infoLoader.FirstLoadInfoPoint(keepTargetId);
+                    infoLoader.FirstLoadInfoPoint(targetId);
                 }
             }
         }
         else
         {
-            if (infoLoader.isLoading())
-            {
-                infoLoader.stopLoading();
-            }
             Show(false);
             showModelStatus = true;
             if (status != 0)
@@ -447,7 +520,17 @@ public class ContentManager : MonoBehaviour,ITrackableEventHandler {
             ShowField(ImageField, false);
             AnimationsManager.PlayAnimationTo3D(ImageField);
         }
+        else if (status == 4)
+        {
+            ShowField(VerifyContent, false);
+        }
         status = 0;
+        ResetKeepTargetId();
+        targetId = "";
+        isTrackable = false;
+        isAudioShow = false;
+        isModelSpinning = false;
+        dist = 5;
     }
 
     public void OnCancel()

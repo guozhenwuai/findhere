@@ -171,6 +171,8 @@ namespace AsImpL
                 yield return newObj;
                 OnCreated(newObj, objectId);
                 newObj.name = objName;
+                newObj.tag = "model";
+                newObj.AddComponent<MeshCollider>();
 
                 if (parentObj != null) newObj.transform.parent = parentObj.transform;
                 totalProgress.fileProgress.Remove(objLoadingProgress);

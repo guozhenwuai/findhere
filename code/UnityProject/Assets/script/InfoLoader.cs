@@ -17,6 +17,7 @@ public class InfoLoader : MonoBehaviour {
     public GameObject imageInfo;
     public GameObject audioInfo;
     public GameObject infoPointPool;
+    public GameObject verifyContentPool;
     public RawImage loadingSpinner;
     public InfoPointMoveManager infoPointMoveManager;
     public ObjectImporter objImporter;
@@ -65,7 +66,7 @@ public class InfoLoader : MonoBehaviour {
         {
             LoadText();
         }
-        SetLoadingSpinner(isLoadingImage || isLoadingText || isLoadingAudio);
+        SetLoadingSpinner(isLoadingImage || isLoadingText || isLoadingAudio || isLoadingObject);
     }
 
     public void ObjectLoadFinish()
@@ -91,7 +92,7 @@ public class InfoLoader : MonoBehaviour {
 
     public bool isLoading()
     {
-        return isLoadingImage || isLoadingText ;
+        return isLoadingImage || isLoadingText || isLoadingObject;
     }
 
     public void stopLoading()
@@ -99,6 +100,7 @@ public class InfoLoader : MonoBehaviour {
         isLoadingImage = false;
         isLoadingText = false;
         incompatibleContent = null;
+        EndObjectLoad();
     }
 
     private void LoadText()
@@ -190,6 +192,16 @@ public class InfoLoader : MonoBehaviour {
         }
     }
 
+    private void ResetVerifyContentPool()
+    {
+        GameObject[] models = GameObject.FindGameObjectsWithTag("model");
+        foreach (GameObject model in models)
+        {
+            Show(model, false);
+            model.transform.parent = verifyContentPool.transform;
+        }
+    }
+
     public void NextPost(string targetId)
     {
         string str;
@@ -237,6 +249,7 @@ public class InfoLoader : MonoBehaviour {
     public void ResetPageIndex()
     {
         pageIndex = 0;
+        isLastPage = false;
     }
 
     public void ResetInfo(string targetId)
@@ -306,7 +319,16 @@ public class InfoLoader : MonoBehaviour {
 
     public void LoadOneContent()
     {
+        ResetVerifyContentPool();
         Content content = contents[contentIndex];
+        GameObject obj = GameObject.Find(content.GetContentID());
+        if (obj != null && obj.transform.parent == verifyContentPool)
+        {
+            Debug.Log(obj.name);
+            obj.transform.parent = VerifyContent.transform;
+            Show(obj, true);
+            return;
+        }
         string type = content.GetContentType();
         switch (type)
         {
@@ -345,7 +367,7 @@ public class InfoLoader : MonoBehaviour {
         else
         {
             isLastPage = false;
-            //androidPlugin.Call("setToast", "识别成功！");
+            androidPlugin.Call("setToast", "识别成功！");
             ParseInfoPoint(str);
             infoPointMoveManager.ZoomingOut();
         }
@@ -370,6 +392,26 @@ public class InfoLoader : MonoBehaviour {
         }
     }
 
+    public void LoadInfoPointInvisible(string targetId)
+    {
+        Debug.Log("load info point " + targetId);
+        ResetInfoPool();
+
+        string str = GetCommentsFromAndroid(targetId);
+
+        if (str != "" && str != "[]")
+        {
+            isLastPage = false;
+            ParseInfoPoint(str);
+            Show(infoPoint,false);
+            infoPointMoveManager.ZoomingOut();
+        }
+        else
+        {
+            isLastPage = true;
+        }
+    }
+
     public void LoadContents(string targetId)
     {
         contents = null;
@@ -385,6 +427,7 @@ public class InfoLoader : MonoBehaviour {
         else
         {
             hasContents = false;
+            Debug.Log("no content");
         }
     }
 
@@ -514,6 +557,24 @@ public class InfoLoader : MonoBehaviour {
         value = "{\"Items\":" + value + "}";
         Debug.Log(value);
         return value;
+    }
+
+    private void Show(GameObject go, bool visible)
+    {
+        Renderer[] rendererComponents = go.GetComponentsInChildren<Renderer>();
+        Collider[] colliderComponents = go.GetComponentsInChildren<Collider>();
+
+        // Enable rendering:
+        foreach (Renderer component in rendererComponents)
+        {
+            component.enabled = visible;
+        }
+
+        // Enable colliders:
+        foreach (Collider component in colliderComponents)
+        {
+            component.enabled = visible;
+        }
     }
 
 }
