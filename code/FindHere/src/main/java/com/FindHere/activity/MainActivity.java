@@ -16,12 +16,16 @@ import android.view.KeyEvent;
 import android.view.MotionEvent;
 import android.view.View;
 import android.view.View.OnClickListener;
+import android.widget.CheckBox;
 import android.widget.ImageButton;
 import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
+import android.widget.SeekBar;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.FindHere.control.Connect;
+import com.FindHere.imageUtil;
 import com.FindHere.model.Comment;
 import com.unity3d.player.UnityPlayer;
 
@@ -32,11 +36,12 @@ import java.io.FileNotFoundException;
 import java.io.IOException;
 
 import static android.content.ContentValues.TAG;
+import static com.FindHere.activity.R.id.visible;
 
 public class MainActivity extends Activity{
     protected UnityPlayer mUnityPlayer; // don't change the name of this variable; referenced from native code
     private LinearLayout u3dLayout,addMenu;
-    private ImageButton userBtn,cameraBtn,addBtn,seekBtn,setBtn,textBtn,voiceBtn,imageBtn;
+    private ImageButton userBtn,cameraBtn,addBtn,setBtn,textBtn,voiceBtn,imageBtn;
     private RelativeLayout loadLayout;
     private SharedPreferences sp;
     private static String targetID;
@@ -46,6 +51,13 @@ public class MainActivity extends Activity{
     private static int RESULT_LOAD_IMAGE = 1;
     private static int RESULT_RECORD = 2;
 
+    private ImageButton showcom;
+
+    private SeekBar com_num;
+    private  LinearLayout set_menu;
+    private TextView seekBtn,location;
+    private boolean ComShow=false;
+    private  static int comment_num;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -62,7 +74,8 @@ public class MainActivity extends Activity{
         userBtn =  findViewById(R.id.user_btn);
         cameraBtn =  findViewById(R.id.camera_btn);
         addBtn =  findViewById(R.id.add_btn);
-        seekBtn = findViewById(R.id.showcom_btn);
+        seekBtn = findViewById(R.id.showAllcom_btn);
+        showcom=findViewById(R.id.showcom_btn);
         setBtn = findViewById(R.id.set_btn);
         loadLayout =  findViewById(R.id.loading_layout);
 
@@ -70,8 +83,17 @@ public class MainActivity extends Activity{
         textBtn=findViewById(R.id.text);
         voiceBtn=findViewById(R.id.sound);
         imageBtn=findViewById(R.id.image);
-
-
+        com_num=findViewById(R.id.com_num);
+        location=findViewById(R.id.location);
+        set_menu=findViewById(R.id.set_menu);
+        location.setOnClickListener(new OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent();
+                intent.setClass(MainActivity.this,LocationActivity.class);
+                startActivity(intent);
+            }
+        });
         userBtn.setOnClickListener(new OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -102,6 +124,8 @@ public class MainActivity extends Activity{
             @Override
             public void onClick(View view) {
                 UnityPlayer.UnitySendMessage("CloudRecognition","RestartScanning","");
+                addBtn.setVisibility(View.GONE);
+                addMenu.setVisibility(View.GONE);
             }
         });
         addBtn.setOnClickListener(new OnClickListener() {
@@ -180,12 +204,62 @@ public class MainActivity extends Activity{
                 }
             }
         });
+
         setBtn.setOnClickListener(new OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent();
+                if(set_menu.getVisibility() == View.GONE){
+                    set_menu.setVisibility(View.VISIBLE);
+                }
+                else{
+                    set_menu.setVisibility(View.GONE);
+                }
+                /*Intent intent = new Intent();
                 intent.setClass(MainActivity.this, SettingsActivity.class);
-                startActivity(intent);
+                startActivity(intent);*/
+            }
+        });
+        showcom.setOnClickListener(new OnClickListener() {
+            @Override
+
+            public void onClick(View view) {
+                targetID = sp.getString("targetID","");
+                Log.d(TAG, "onClick: "+targetID);
+                if(targetID.equals("")) {
+                    Toast.makeText(MainActivity.this,getString(R.string.no_target), Toast.LENGTH_SHORT).show();
+                }else {
+                    Log.d(TAG, "onClick: showcom"+targetID);
+
+                    if(ComShow==true){ ComShow=false;}
+                    else {ComShow=true;}
+                    Log.d(TAG, "onClick: showcom1"+ComShow);
+                    if(ComShow){showcom.setImageResource(R.drawable.arscan2);}
+                    else {showcom.setImageResource(R.drawable.comments);}
+                    UnityPlayer.UnitySendMessage("ContentManager", "SwitchModelStatus", "");
+
+                }
+            }
+        });
+        com_num.setMax(20);
+        com_num.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
+            @Override
+            public void onProgressChanged(SeekBar seekBar, int progress, boolean b) {
+                Log.d(TAG, "seekid:"+seekBar.getId()+", progess"+progress);
+                SharedPreferences.Editor editor =sp.edit();
+                Log.d(TAG, "...onProgressChanged: "+comment_num);
+                comment_num=progress;
+                Log.d(TAG, "...onProgressChanged: "+comment_num);
+                UnityPlayer.UnitySendMessage("ContentManager","ResetInfo",targetID);
+            }
+
+            @Override
+            public void onStartTrackingTouch(SeekBar seekBar) {
+
+            }
+
+            @Override
+            public void onStopTrackingTouch(SeekBar seekBar) {
+
             }
         });
     }
@@ -205,7 +279,7 @@ public class MainActivity extends Activity{
             String picturePath = cursor.getString(columnIndex);
             cursor.close();
 
-            final Bitmap image= BitmapFactory.decodeFile(picturePath);
+            final Bitmap image= imageUtil.decodeSampledBitmapFromFilePath(picturePath,1024,1024);
 
             new Thread(new Runnable(){
                 @Override
@@ -281,9 +355,10 @@ public class MainActivity extends Activity{
         }
     }
 
+
     // Unity uses this function to load infoPoint
     protected static void loadInfoPoint(){
-        UnityPlayer.UnitySendMessage("InfoLoader","LoadInfoPoint",targetID);
+        UnityPlayer.UnitySendMessage("ContentManager","LoadInfo",targetID);
     }
 
     // Unity uses this function to set sp:targetID
@@ -291,11 +366,12 @@ public class MainActivity extends Activity{
         SharedPreferences.Editor editor = sp.edit();
         editor.putString("targetID",targetID);
         editor.commit();
+        addBtn.setVisibility(View.VISIBLE);
     }
 
     // Unity uses this function to get {commentID:commentType}
     public String getCommentType(final String targetID,final int pageIndex){
-        String ip = getString(R.string.comment_type)+"?targetID="+targetID+"&pageNum=20&pageIndex="+pageIndex;
+        String ip = getString(R.string.comment_type)+"?targetID="+targetID+"&pageNum="+comment_num+"&pageIndex="+pageIndex;
         Connect myConnect = new Connect(MainActivity.this);
         returnStr=myConnect.sendHttpPost(ip,"");
 

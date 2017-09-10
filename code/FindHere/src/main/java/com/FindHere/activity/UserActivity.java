@@ -8,10 +8,13 @@ import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.os.Bundle;
 import android.util.Base64;
+import android.util.Log;
 import android.view.View;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
+
+import static android.content.ContentValues.TAG;
 
 public class UserActivity extends Activity {
     private SharedPreferences sp;
@@ -19,6 +22,8 @@ public class UserActivity extends Activity {
     private View myComment;
     private View logOut;
     private View authUser;
+
+    private ImageButton edit;
     private String userName;
     private String gender;
     private String image;
@@ -32,10 +37,11 @@ public class UserActivity extends Activity {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.user_activity);
-
+        edit=findViewById(R.id.edit_user);
         userhead = findViewById(R.id.userhead);
 
         sp = getSharedPreferences("userInfo", Context.MODE_ENABLE_WRITE_AHEAD_LOGGING);
+        Log.d("USER", "USER"+sp.getString("userID","")+sp.getString("userName","")+sp.getString("gender","")+sp.getString("image",""));
         userName = sp.getString("userName","");
         gender = sp.getString("gender","");
         image = sp.getString("image","");
@@ -88,6 +94,14 @@ public class UserActivity extends Activity {
                 finish();
                 Intent intent = new Intent();
                 intent.setClass(UserActivity.this,LoginActivity.class);
+                startActivity(intent);
+            }
+        });
+        edit.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent();
+                intent.setClass(UserActivity.this,EditUserActivity.class);
                 startActivity(intent);
             }
         });

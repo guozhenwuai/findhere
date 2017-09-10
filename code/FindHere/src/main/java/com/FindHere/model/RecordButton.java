@@ -63,8 +63,8 @@ public class RecordButton extends Button  {
     private OnFinishedRecordListener finishedListener;
     private static long startTime;
     private Dialog recordDialog;
-    private static int[] res = { R.drawable.voice, R.drawable.voice1, R.drawable.voice,
-            R.drawable.voice1, R.drawable.voice };
+    private static int[] res = { R.drawable.record0, R.drawable.record1, R.drawable.record0,
+            R.drawable.record1, R.drawable.record0};
     private static ImageView view;
     private MediaRecorder recorder;
     private ObtainDecibelThread thread;

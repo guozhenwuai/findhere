@@ -18,6 +18,9 @@ import com.FindHere.control.Connect;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import java.io.UnsupportedEncodingException;
+import java.net.URLEncoder;
+
 public class AddActivity extends Activity {
     private ImageButton commitBtn;
     public String ip;
@@ -90,7 +93,13 @@ public class AddActivity extends Activity {
         commitBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                String text=upload.getText().toString();
+                String text=null;
+                try {
+                    text = URLEncoder.encode(upload.getText().toString(), "UTF-8");
+                }
+                catch(UnsupportedEncodingException e){
+                    e.printStackTrace();
+                }
                 if(text.equals(""))
                 {
                     msgbox(getString(R.string.not_empty));

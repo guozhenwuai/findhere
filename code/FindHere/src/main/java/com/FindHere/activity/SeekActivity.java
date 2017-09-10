@@ -24,133 +24,132 @@ import java.util.LinkedList;
 import java.util.List;
 
 public class SeekActivity extends Activity{
-        private SharedPreferences sp;
-        private String targetID;
-        private ImageButton backBtn;
-        private ImageButton delBtn;
-        private List<Comment> mData = null;
-        private seekAdapter mAdapter = null;
-        private ListView seek_list;
-        private boolean isOpen = false;
-        private String jsonStr;
-        private String ip;
-        private String returnStr;
+    private SharedPreferences sp;
+    private String targetID;
+    private ImageButton backBtn;
+    private ImageButton delBtn;
+    private List<Comment> mData = null;
+    private seekAdapter mAdapter = null;
+    private ListView seek_list;
+    private boolean isOpen = false;
+    private String jsonStr;
+    private String ip;
+    private String returnStr;
 
-        @Override
-        protected void onCreate(Bundle savedInstanceState) {
-            super.onCreate(savedInstanceState);
-            setContentView(R.layout.seek_activity);
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.seek_activity);
 
-            sp = getSharedPreferences("userInfo", Context.MODE_ENABLE_WRITE_AHEAD_LOGGING);
-            targetID = sp.getString("targetID","");
+        sp = getSharedPreferences("userInfo", Context.MODE_ENABLE_WRITE_AHEAD_LOGGING);
+        targetID = sp.getString("targetID","");
 
-            backBtn = (ImageButton)findViewById(R.id.back);
-            backBtn.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
-                    finish();
-                }
-            });
+        backBtn = (ImageButton)findViewById(R.id.back);
+        backBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                finish();
+            }
+        });
 
-            ip = getString(R.string.seek_ip)+"?targetID="+targetID+"&pageNum=10&pageIndex=0";
-            seek_list= (ListView)findViewById(R.id.list_view);
-            mData = new LinkedList<Comment>();
-            mAdapter = new seekAdapter((LinkedList<Comment>) mData,this);
-            seek_list.setAdapter(mAdapter);
+        ip = getString(R.string.seek_ip)+"?targetID="+targetID+"&pageNum="+10+"&pageIndex=0";
+        seek_list= (ListView)findViewById(R.id.list_view);
+        mData = new LinkedList<Comment>();
+        mAdapter = new seekAdapter((LinkedList<Comment>) mData,this);
+        seek_list.setAdapter(mAdapter);
 
-            delBtn = (ImageButton)findViewById(R.id.delete);
-            delBtn.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View view) {
-                    LinkedList<LeftDeleteView> mView = mAdapter.getMyView();
-                    if(!isOpen){
-                        for(LeftDeleteView convertView:mView){
-                            convertView.leftScroll();
-                            isOpen = true;
-                        }
-                    }else{
-                        for(LeftDeleteView convertView:mView){
-                            convertView.rightScroll();
-                            isOpen = false;
-                        }
+        delBtn = (ImageButton)findViewById(R.id.delete);
+        delBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                LinkedList<LeftDeleteView> mView = mAdapter.getMyView();
+                if(!isOpen){
+                    for(LeftDeleteView convertView:mView){
+                        convertView.leftScroll();
+                        isOpen = true;
                     }
-                }
-            });
-
-            new Thread(new Runnable(){
-                @Override
-                public void run() {
-                    Connect myConnect = new Connect(SeekActivity.this);
-                    returnStr=myConnect.sendHttpPost(ip,"");
-                    Message msg = mHandler.obtainMessage();
-                    msg.what = 1;
-                    mHandler.sendMessage(msg);
-                }}).start();
-        }
-
-        public Handler mHandler = new Handler(){
-            public void handleMessage(Message msg) {
-                if(msg.what==1) {
-                    JSONArray myJsonArray;
-                    try
-                    {
-                        Log.d("hhh",returnStr);
-                        myJsonArray = new JSONArray(returnStr);
-
-                        for(int i=0 ; i < myJsonArray.length() ;i++)
-                        {
-                            JSONObject myObject = myJsonArray.getJSONObject(i);
-
-                            String type = myObject.getString("type");
-                            String commentID = myObject.getString("commentID");
-                            String text = myObject.optString("text");
-                            String time = myObject.getString("time");
-                            String userID = myObject.getString("userID");
-                            String targetID = myObject.getString("targetID");
-
-                            Comment myComment = new Comment();
-                            myComment.setType(type);
-                            myComment.setContentId(commentID);
-                            myComment.setText(text);
-                            myComment.setTime(time);
-                            myComment.setUserId(userID);
-                            myComment.setTargetId(targetID);
-
-                            mData.add(myComment);
-                        }
+                }else{
+                    for(LeftDeleteView convertView:mView){
+                        convertView.rightScroll();
+                        isOpen = false;
                     }
-                    catch (JSONException e)
-                    {
-                    }
-                    mAdapter.notifyDataSetChanged();
                 }
             }
-        };
+        });
 
-        @Override
-        protected void onRestart() {
-            super.onRestart();
-        }
+        new Thread(new Runnable(){
+            @Override
+            public void run() {
+                Connect myConnect = new Connect(SeekActivity.this);
+                returnStr=myConnect.sendHttpPost(ip,"");
+                Message msg = mHandler.obtainMessage();
+                msg.what = 1;
+                mHandler.sendMessage(msg);
+            }}).start();
+    }
 
-        @Override
-        protected void onStart() {
-            super.onStart();
-        }
+    public Handler mHandler = new Handler(){
+        public void handleMessage(Message msg) {
+            if(msg.what==1) {
+                JSONArray myJsonArray;
+                try
+                {
+                    Log.d("hhh",returnStr);
+                    myJsonArray = new JSONArray(returnStr);
 
-        @Override
-        protected void onResume() {
-            super.onResume();
-        }
+                    for(int i=0 ; i < myJsonArray.length() ;i++)
+                    {
+                        JSONObject myObject = myJsonArray.getJSONObject(i);
 
-        @Override
-        protected void onPause() {
-            super.onPause();
-        }
+                        String type = myObject.getString("type");
+                        String commentID = myObject.getString("commentID");
+                        String text = myObject.optString("text");
+                        String time = myObject.getString("time");
+                        String userID = myObject.getString("userID");
+                        String targetID = myObject.getString("targetID");
 
-        @Override
-        protected void onDestroy() {
-            super.onDestroy();
+                        Comment myComment = new Comment();
+                        myComment.setType(type);
+                        myComment.setContentId(commentID);
+                        myComment.setText(text);
+                        myComment.setTime(time);
+                        myComment.setUserId(userID);
+                        myComment.setTargetId(targetID);
+
+                        mData.add(myComment);
+                    }
+                }
+                catch (JSONException e)
+                {
+                }
+                mAdapter.notifyDataSetChanged();
+            }
         }
+    };
+
+    @Override
+    protected void onRestart() {
+        super.onRestart();
+    }
+
+    @Override
+    protected void onStart() {
+        super.onStart();
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+    }
+
+    @Override
+    protected void onPause() {
+        super.onPause();
+    }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+    }
 
 }
-

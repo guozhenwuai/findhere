@@ -3,69 +3,80 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:scrollbars="none">
+    android:scrollbars="none"
+    android:paddingLeft="5dp">
     <LinearLayout
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:orientation="horizontal">
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="380dp"
-    android:layout_height="wrap_content"
-    android:orientation="horizontal">
+        android:orientation="horizontal"
+        >
+
 
     <LinearLayout android:id="@+id/target"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:paddingLeft="15dp"
-        android:paddingRight="5dp"
-        android:paddingTop="5dp"
-        android:paddingBottom="5dp"
+
+        android:layout_marginTop="5dp"
+        android:layout_marginBottom="5dp"
         android:layout_alignParentLeft="true"
-        android:layout_marginRight="5dp">
+
+        >
 
         <ImageView
             android:id="@+id/target_image"
             android:layout_width="50dp"
-            android:layout_height="50dp" />
+            android:layout_height="50dp"
+            android:scaleType="fitXY"
+            android:background="@drawable/image"
+            android:src="@drawable/round_mask1"/>
 
     </LinearLayout>
 
     <LinearLayout
         android:id="@+id/content"
-        android:layout_width="wrap_content"
+        android:layout_width="300dp"
         android:layout_height="50dp"
         android:layout_alignParentTop="true"
         android:layout_marginTop="5dp"
+        android:layout_marginBottom="5dp"
         android:orientation="horizontal"
         android:layout_toRightOf="@id/target"
-        android:layout_toLeftOf="@id/text"
-        android:background="@drawable/shape_input">
+
+        android:background="@drawable/shape_1">
 
         <TextView
             android:id="@+id/text_content"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:gravity="center_vertical"
+            android:layout_gravity="center_vertical"
             android:textColor="@color/black"
-            android:textSize="15dp"
+            android:text="23333333333333"
+            android:textSize="24dp"
             android:visibility="gone"/>
-        <ImageButton
+
+        <ImageView
             android:id="@+id/image_content"
-            android:layout_width="30dp"
-            android:layout_height="30dp"
+            android:layout_width="33dp"
+            android:layout_height="33dp"
+            android:scaleType="fitXY"
             android:src="@drawable/image"
-            android:background="@android:color/transparent"
-            android:visibility="gone"/>
+            android:layout_gravity="center_vertical"
+
+
+            android:visibility="visible"/>
         <ImageButton
             android:id="@+id/sound_content"
-            android:layout_width="30dp"
-            android:layout_height="30dp"
+            android:layout_width="33dp"
+            android:layout_height="33dp"
+            android:layout_gravity="center_vertical"
+            android:scaleType="fitXY"
             android:src="@drawable/sound1"
             android:background="@android:color/transparent"
             android:visibility="gone"/>
     </LinearLayout>
 
-    <LinearLayout
+   <!-- <LinearLayout
         android:id="@+id/text"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -77,21 +88,27 @@
         android:layout_marginRight="5dp">
         <TextView
             android:id="@+id/time"
-            android:layout_width="50dp"
+            android:layout_width="match_parent"
             android:layout_height="50dp"
             android:textColor="@color/black"/>
-    </LinearLayout>
-</RelativeLayout>
+    </LinearLayout>-->
+
         <LinearLayout
             android:layout_width="50dp"
             android:layout_height="50dp"
-            android:orientation="horizontal"
-            android:layout_toRightOf="@id/text">
+           android:layout_marginLeft="5dp"
+           android:gravity="center"
+            android:layout_gravity="center_vertical"
+            android:layout_toRightOf="@id/content"
+            android:background="@color/gray">
             <ImageButton
                 android:id="@+id/delete"
-                android:layout_width="50dp"
-                android:layout_height="50dp"
-                android:src="@drawable/back_b"/>
+                android:layout_width="35dp"
+                android:layout_height="35dp"
+                android:src="@drawable/delete"
+
+                android:scaleType="fitXY"
+                android:background="@android:color/transparent"/>
         </LinearLayout>
     </LinearLayout>
 </com.FindHere.view.LeftDeleteView>
