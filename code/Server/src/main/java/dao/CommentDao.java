@@ -13,4 +13,5 @@ public interface CommentDao {
 	public List<Comment> getSomeCommentsByUserID(String userID, int skipNum, int num);
 	public boolean remove(String commentID, String userID);
 	public boolean removeCascaded(String commentID, String userID);
+	public boolean removeCascadedByTargetID(String targetID);
 }

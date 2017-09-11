@@ -101,6 +101,35 @@ public class CommentDaoImpl implements CommentDao {
 		return true;
 	}
 	
+	public boolean removeCascadedByTargetID(String targetID) {
+		do{
+			Comment comment = mongoTemplate.findOne(new Query(Criteria
+				.where("targetID").is(targetID))
+				, Comment.class);
+			if(comment == null ) break;
+			String type = comment.getType();
+			String fileID = "";
+			switch(type) {
+			case("picture"):
+				fileID = comment.getPictureID();
+				break;
+			case("sound"):
+				fileID = comment.getSoundID();
+				break;
+			}
+			
+			int influenced = mongoTemplate.remove(new Query(Criteria
+					.where("_id").is(comment.get_id()))
+					, Comment.class).getN();
+			if(influenced == 0 ) return false;
+			
+			if(fileID.length() != 0) {
+				fileDao.removeFile(type, fileID);
+			}
+		}while(true);
+		return true;
+	}
+	
 	/*GET and SET*/
 	public MongoTemplate getMongoTemplate() {
 		return mongoTemplate;
