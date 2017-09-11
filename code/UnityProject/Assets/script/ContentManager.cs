@@ -54,7 +54,7 @@ public class ContentManager : MonoBehaviour,ITrackableEventHandler {
         isAudioShow = false;
         showModelStatus = false;
         isModelSpinning = false;
-        dist = 5;
+        dist = 2;
     }
 
     void Update()
@@ -67,7 +67,7 @@ public class ContentManager : MonoBehaviour,ITrackableEventHandler {
         }
         if(showModelStatus && isModelSpinning)
         {
-            VerifyContent.transform.GetChild(0).Rotate(Vector3.up * Time.deltaTime * 5.0f);
+            VerifyContent.transform.GetChild(0).Rotate(Vector3.forward * Time.deltaTime * 20.0f);
         }
         //声音停止后喇叭消失
         if (AudioField.GetComponent<AudioSource>()!=null&&!AudioField.GetComponent<AudioSource>().isPlaying&&isAudioShow)
@@ -112,7 +112,7 @@ public class ContentManager : MonoBehaviour,ITrackableEventHandler {
                     Debug.Log("touch audio field");
                     AudioPlaying(false);
                 }
-                else if(hitObject.name == "model")
+                else if(hitObject.tag == "modelPart")
                 {
                     Debug.Log("touch model");
                     if (isModelSpinning)
@@ -129,13 +129,17 @@ public class ContentManager : MonoBehaviour,ITrackableEventHandler {
                     Debug.Log(hitObject.name);
                 }
             }
-            else
+            else if(status==2||status==3)
             {
                 OnCancel();
                 TrackerManager.Instance.GetTracker<ObjectTracker>().Start();
             }
+            else
+            {
+                Debug.Log("meaningless touch");
+            }
         }
-        if(status==1||(status==3&&AnimationsManager.IsShowingOverlay()))DragEvent();       //拖拽事件
+        if(status==1||status==4||(status==3&&AnimationsManager.IsShowingOverlay()))DragEvent();       //拖拽事件
         if(status==3&&AnimationsManager.IsShowingOverlay())ImageZoomEvent();      //图片的放大缩小事件
         if (status == 4&&infoLoader.ShowContents()&&isTrackable) ObjectZoomEvent();      //模型的放大缩小
     }
@@ -189,18 +193,20 @@ public class ContentManager : MonoBehaviour,ITrackableEventHandler {
                 {
                     if (dist < 10)
                     {
-                        dist += 0.1f;
-                        Vector3 body = ImageField.transform.localScale;
-                        ImageField.transform.localScale += new Vector3(body.x * Time.deltaTime, body.y * Time.deltaTime, body.z * Time.deltaTime);
+                        dist += 1f;
+                        Transform tf = VerifyContent.transform.GetChild(0);
+                        Vector3 body = tf.transform.localScale;
+                        tf.transform.localScale += new Vector3(body.x * Time.deltaTime, body.y * Time.deltaTime, body.z * Time.deltaTime);
                     }
                 }
                 else
                 {
                     if (dist > 1)
                     {
-                        dist -= 0.1f;
-                        Vector3 body = ImageField.transform.localScale;
-                        ImageField.transform.localScale += new Vector3(-body.x * Time.deltaTime, -body.y * Time.deltaTime, -body.z * Time.deltaTime);
+                        dist -= 1f;
+                        Transform tf = VerifyContent.transform.GetChild(0);
+                        Vector3 body = tf.transform.localScale;
+                        tf.transform.localScale += new Vector3(-body.x * Time.deltaTime, -body.y * Time.deltaTime, -body.z * Time.deltaTime);
                     }
                 }
 
@@ -336,7 +342,6 @@ public class ContentManager : MonoBehaviour,ITrackableEventHandler {
         }
         else if (status == 4)
         {
-            Debug.Log("show status 4");
             ShowField(VerifyContent, tf);
         }
     }
@@ -471,7 +476,11 @@ public class ContentManager : MonoBehaviour,ITrackableEventHandler {
                 status = 1;
                 if (isTrackable)
                 {
-                    infoLoader.FirstLoadInfoPoint(targetId);
+                    infoLoader.LoadInfoPoint(targetId);
+                }
+                else
+                {
+                    infoLoader.LoadInfoPointInvisible(targetId);
                 }
             }
         }
@@ -481,16 +490,15 @@ public class ContentManager : MonoBehaviour,ITrackableEventHandler {
             showModelStatus = true;
             if (status != 0)
             {
+                status = 4;
                 if (!infoLoader.EmptyContent())
                 {
-                    infoLoader.ContentMessage(true);
                     infoLoader.LoadOneContent();
                 }
                 else
                 {
                     infoLoader.ContentMessage(false);
                 }
-                status = 4;
             }
         }
     }

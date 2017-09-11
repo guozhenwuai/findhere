@@ -36,6 +36,7 @@ public class InfoLoader : MonoBehaviour {
     private bool isLoadingObject;
     private bool hasContents;
     private bool endLoad;
+    private bool loadingModelBackground;
 
     // Use this for initialization
     void Start () {
@@ -50,6 +51,7 @@ public class InfoLoader : MonoBehaviour {
         isLoadingObject = false;
         hasContents = false;
         endLoad = false;
+        loadingModelBackground = false;
     }
 
     void Update()
@@ -73,6 +75,7 @@ public class InfoLoader : MonoBehaviour {
     {
         isLoadingObject = false;
         endLoad = true;
+        loadingModelBackground = false;
     }
 
     public bool EndObjectLoad()
@@ -100,7 +103,8 @@ public class InfoLoader : MonoBehaviour {
         isLoadingImage = false;
         isLoadingText = false;
         incompatibleContent = null;
-        EndObjectLoad();
+        ObjectLoadFinish();
+        loadingModelBackground = true;
     }
 
     private void LoadText()
@@ -319,16 +323,20 @@ public class InfoLoader : MonoBehaviour {
 
     public void LoadOneContent()
     {
+        if (loadingModelBackground)
+        {
+            return;
+        }
         ResetVerifyContentPool();
         Content content = contents[contentIndex];
         GameObject obj = GameObject.Find(content.GetContentID());
-        if (obj != null && obj.transform.parent == verifyContentPool)
+        if (obj != null && obj.transform.parent == verifyContentPool.transform)
         {
-            Debug.Log(obj.name);
             obj.transform.parent = VerifyContent.transform;
             Show(obj, true);
             return;
         }
+        ContentMessage(true);
         string type = content.GetContentType();
         switch (type)
         {
@@ -384,11 +392,13 @@ public class InfoLoader : MonoBehaviour {
         {
             isLastPage = false;
             ParseInfoPoint(str);
+            Show(infoPoint,true);
             infoPointMoveManager.ZoomingOut();
         }
         else
         {
             isLastPage = true;
+            androidPlugin.Call("setToast", "此处还没有信息哦~快来发布吧！");
         }
     }
 
@@ -521,7 +531,7 @@ public class InfoLoader : MonoBehaviour {
         }
         if (visible)
         {
-            loadingSpinner.rectTransform.Rotate(Vector3.forward, 240.0f * Time.deltaTime);
+            loadingSpinner.rectTransform.Rotate(Vector3.forward, -240.0f * Time.deltaTime);
         }
     }
 

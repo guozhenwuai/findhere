@@ -170,9 +170,6 @@ namespace AsImpL
                 GameObject newObj = Instantiate(loadedModels[objectId]);
                 yield return newObj;
                 OnCreated(newObj, objectId);
-                newObj.name = objName;
-                newObj.tag = "model";
-                newObj.AddComponent<MeshCollider>();
 
                 if (parentObj != null) newObj.transform.parent = parentObj.transform;
                 totalProgress.fileProgress.Remove(objLoadingProgress);
@@ -442,6 +439,12 @@ namespace AsImpL
                     obj.transform.localPosition = buildOptions.localPosition;
                     obj.transform.localRotation = Quaternion.Euler(buildOptions.localEulerAngles); ;
                     obj.transform.localScale = buildOptions.localScale;
+                    obj.tag = "model";
+                    foreach(Transform transform in obj.transform)
+                    {
+                        transform.gameObject.AddComponent<MeshCollider>();
+                        transform.tag = "modelPart";
+                    }
                 }
                 if (ModelLoaded != null)
                 {
