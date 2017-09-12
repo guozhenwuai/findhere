@@ -4,9 +4,9 @@ using UnityEngine;
 
 public class ObjectTransform {
 
-    public int Sx, Sy, Sz;
-    public int Rx, Ry, Rz;
-    public int Px, Py, Pz;
+    public float Sx, Sy, Sz;
+    public float Rx, Ry, Rz;
+    public float Px, Py, Pz;
 
     public Vector3 GetObjectPosition()
     {
