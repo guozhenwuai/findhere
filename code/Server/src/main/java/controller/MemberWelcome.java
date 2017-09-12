@@ -1,6 +1,7 @@
 package controller;
 
 import java.io.IOException;
+import java.net.URISyntaxException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -95,7 +96,7 @@ public class MemberWelcome {
 	@RequestMapping("/MemberTarget/DeleteTarget")
 	public String execute5(@RequestParam("targetID")String targetID, @RequestParam("pageIndex")int pageIndex,
 			HttpServletRequest request, HttpServletResponse response, HttpSession httpSession)
-			throws IOException {
+			throws IOException, URISyntaxException {
 		String userID = (String) httpSession.getAttribute("userID");
 		contentService.deleteTarget(userID, targetID);
 		return "redirect:/MemberTarget?pageIndex="+pageIndex;

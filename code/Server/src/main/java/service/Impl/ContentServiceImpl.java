@@ -11,17 +11,20 @@ import java.util.Map;
 import javax.annotation.Resource;
 import javax.servlet.http.HttpServletResponse;
 
+import org.apache.http.client.ClientProtocolException;
 import org.json.JSONArray;
 import org.json.JSONObject;
 import org.springframework.web.multipart.MultipartFile;
 
 import dao.ARManagerDao;
+import dao.CommentDao;
 import dao.ContentDao;
 import dao.FileDao;
 import dao.UserTargetDao;
 import model.ARManager;
 import model.Content;
 import model.UserTarget;
+import service.CommentService;
 import service.ContentService;
 import service.VuforiaService;
 import tool.ByteFileWithName;
@@ -37,6 +40,8 @@ public class ContentServiceImpl implements ContentService {
 	private FileDao fileDao;
 	@Resource
 	private UserTargetDao userTargetDao;
+	@Resource
+	private CommentDao commentDao;
 	
 	@Resource
 	private VuforiaService vuforiaService;
@@ -169,7 +174,10 @@ public class ContentServiceImpl implements ContentService {
 		userTargetDao.update(userTarget);
 	}
 	
-	public void deleteTarget(String userID, String targetID) {
+	public void deleteTarget(String userID, String targetID) throws ClientProtocolException, URISyntaxException, IOException {
+		if(!vuforiaService.deleteTarget(targetID)) {
+			return;
+		}
 		fileDao.removeFileByName("target", targetID);
 		UserTarget userTarget = userTargetDao.findOneUserTarget(userID);
 		List<String> targetIDs = userTarget.getTargetIDs();
@@ -184,6 +192,7 @@ public class ContentServiceImpl implements ContentService {
 		}
 		userTarget.setTargetIDs(targetIDs);
 		userTargetDao.update(userTarget);
+		commentDao.removeCascadedByTargetID(targetID);
 	}
 	
 	public void deleteTempTarget(String userID, String tempTargetID) {
@@ -306,6 +315,14 @@ public class ContentServiceImpl implements ContentService {
 	
 	public void setARManagerDao(ARManagerDao s) {
 		arManagerDao = s;
+	}
+	
+	public CommentDao getCommentDao() {
+		return commentDao;
+	}
+	
+	public void setCommentDao(CommentDao c) {
+		commentDao = c;
 	}
 	
 	public FileDao getFileDao() {
