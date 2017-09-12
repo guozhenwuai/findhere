@@ -11,8 +11,8 @@
 	<link rel="stylesheet" href="/FindHere/css/myStyle.css" type="text/css" media="all" /> 
 	<script type="text/javascript" src="/FindHere/js/jQuery.js"></script>
 	<script type="text/javascript" src="/FindHere/js/jquery.form.js"></script>
-	<script src="/FindHere/webgl/TemplateData/UnityProgress.js"></script>  
-    <script src="/FindHere/webgl/Build/UnityLoader.js"></script>
+	<script src="/FindHere/js/webgl/TemplateData/UnityProgress.js"></script>  
+    <script src="/FindHere/js/webgl/Build/UnityLoader.js"></script>
     <script>
       var gameInstance = UnityLoader.instantiate("gameContainer", "/FindHere/webgl/Build/webgl.json", {onProgress: UnityProgress});
     </script>
