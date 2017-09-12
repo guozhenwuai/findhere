@@ -11,6 +11,11 @@
 	<link rel="stylesheet" href="/FindHere/css/myStyle.css" type="text/css" media="all" /> 
 	<script type="text/javascript" src="/FindHere/js/jQuery.js"></script>
 	<script type="text/javascript" src="/FindHere/js/jquery.form.js"></script>
+	<script src="/FindHere/js/webgl/TemplateData/UnityProgress.js"></script>  
+    <script src="/FindHere/js/webgl/Build/UnityLoader.js"></script>
+    <script>
+      var gameInstance = UnityLoader.instantiate("gameContainer", "/FindHere/webgl/Build/webgl.json", {onProgress: UnityProgress});
+    </script>
 </head>
 <body>
 
@@ -87,7 +92,21 @@ function extractNumber(obj, decimalPlaces, allowNegative) {
 
 
 	    obj.value = temp;
-	}  
+	} 
+function validate(){
+	var map = {};
+	map["Px"] = document.getElementsByName("Px")[0].value-0;
+	map["Py"] = document.getElementsByName("Py")[0].value-0;
+	map["Pz"] = document.getElementsByName("Pz")[0].value-0;
+	map["Rx"] = document.getElementsByName("Rx")[0].value-0;
+	map["Ry"] = document.getElementsByName("Ry")[0].value-0;
+	map["Rz"] = document.getElementsByName("Rz")[0].value-0;
+	map["Sx"] = document.getElementsByName("Sx")[0].value-0;
+	map["Sy"] = document.getElementsByName("Sy")[0].value-0;
+	map["Sz"] = document.getElementsByName("Sz")[0].value-0;
+	var json = JSON.stringify(map);
+	gameInstance.SendMessage("PlaceController","SetTransform",json);
+}
 
 </script>
 
@@ -139,6 +158,7 @@ function extractNumber(obj, decimalPlaces, allowNegative) {
 				
 				<!-- Box -->
 				<div class="box" style="width:1000px; height:500px">
+				<div  style="display:inline-block;width:400px; height:400px;padding-left:20px;">
 					<form id="uploadObject" action="/FindHere/SetContents/Object" method="post" enctype="multipart/form-data">
 						<br>
 						<span style="display:inline-block; width:100px">TargetID</span><select name="targetID">
@@ -157,21 +177,21 @@ function extractNumber(obj, decimalPlaces, allowNegative) {
 						<br>
 						<br>
 						<span class="longLabel">Position: </span>
-						<span class="shortLabel">X </span><input class="positionInput" type="text" name="Px" onkeyup="extractNumber(this, 2, true);" >
-						<span class="shortLabel">Y </span><input class="positionInput" type="text" name="Py" onkeyup="extractNumber(this, 2, true);" >
-						<span class="shortLabel">Z </span><input class="positionInput" type="text" name="Pz" onkeyup="extractNumber(this, 2, true);" >
+						<span class="shortLabel">X </span><input class="positionInput" type="text" name="Px" onkeyup="extractNumber(this, 2, true);" value=0>
+						<span class="shortLabel">Y </span><input class="positionInput" type="text" name="Py" onkeyup="extractNumber(this, 2, true);" value=0>
+						<span class="shortLabel">Z </span><input class="positionInput" type="text" name="Pz" onkeyup="extractNumber(this, 2, true);" value=0>
 						<br>
 						<br>
 						<span class="longLabel">Rotation: </span>
-						<span class="shortLabel">X </span><input class="positionInput" type="text" name="Rx" onkeyup="extractNumber(this, 2, true);" >
-						<span class="shortLabel">Y </span><input class="positionInput" type="text" name="Ry" onkeyup="extractNumber(this, 2, true);" >
-						<span class="shortLabel">Z </span><input class="positionInput" type="text" name="Rz" onkeyup="extractNumber(this, 2, true);" >
+						<span class="shortLabel">X </span><input class="positionInput" type="text" name="Rx" onkeyup="extractNumber(this, 2, true);" value=0>
+						<span class="shortLabel">Y </span><input class="positionInput" type="text" name="Ry" onkeyup="extractNumber(this, 2, true);" value=0>
+						<span class="shortLabel">Z </span><input class="positionInput" type="text" name="Rz" onkeyup="extractNumber(this, 2, true);" value=0>
 						<br>
 						<br>
 						<span class="longLabel">Scale: </span>
-						<span class="shortLabel">X </span><input class="positionInput" type="text" name="Sx" onkeyup="extractNumber(this, 2, true);" >
-						<span class="shortLabel">Y </span><input class="positionInput" type="text" name="Sy" onkeyup="extractNumber(this, 2, true);" >
-						<span class="shortLabel">Z </span><input class="positionInput" type="text" name="Sz" onkeyup="extractNumber(this, 2, true);" >
+						<span class="shortLabel">X </span><input class="positionInput" type="text" name="Sx" onkeyup="extractNumber(this, 2, true);" value=1>
+						<span class="shortLabel">Y </span><input class="positionInput" type="text" name="Sy" onkeyup="extractNumber(this, 2, true);" value=1>
+						<span class="shortLabel">Z </span><input class="positionInput" type="text" name="Sz" onkeyup="extractNumber(this, 2, true);" value=1>
 						<br>
 						<br>
 						<span style="display:inline-block; width:100px">Object File</span><input type="file" name="objectFile">
@@ -186,8 +206,17 @@ function extractNumber(obj, decimalPlaces, allowNegative) {
 						</div>
 						<br>
 						<br>
+						<input type="button" value="APPLY" style="margin-right:10px;" onclick="validate()">
 						<input id="submitButton" type="submit" value="SUBMIT">
 					</form>
+					<br><br><br>
+					</div>
+					
+					<div style="display:inline-block;width:560px; height:400px;">
+						<br>
+						<br>
+						<div id="gameContainer" style="width: 560px; height: 400px"></div>
+					</div>
 				</div>
 				<!-- End Box -->
 				
