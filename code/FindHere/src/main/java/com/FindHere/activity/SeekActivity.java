@@ -107,6 +107,7 @@ public class SeekActivity extends Activity{
                         String time = myObject.getString("time");
                         String userID = myObject.getString("userID");
                         String targetID = myObject.getString("targetID");
+                        String headPortrait = myObject.optString("headPortrait");
 
                         Comment myComment = new Comment();
                         myComment.setType(type);
@@ -115,6 +116,7 @@ public class SeekActivity extends Activity{
                         myComment.setTime(time);
                         myComment.setUserId(userID);
                         myComment.setTargetId(targetID);
+                        myComment.setHeadPortrait(Base64.decode(headPortrait,Base64.DEFAULT));
 
                         mData.add(myComment);
                     }
