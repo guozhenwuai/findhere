@@ -20,13 +20,17 @@ import org.json.JSONObject;
 
 import dao.CommentDao;
 import dao.FileDao;
+import dao.UserDao;
 import model.Comment;
+import model.User;
 import service.CommentService;
 
 public class CommentServiceImpl implements CommentService {
 	
 	@Resource
 	private CommentDao commentDao;
+	@Resource
+	private UserDao userDao;
 	@Resource
 	private FileDao fileDao;
 	
@@ -62,11 +66,15 @@ public class CommentServiceImpl implements CommentService {
 		List<Comment> comments = commentDao.getSomeCommentsByTargetID(targetID, pageNum*pageIndex, pageNum);
 		List<JSONObject> ret = new ArrayList<JSONObject>();
 		for(int i = 0; i < comments.size(); i++) {
+			User user = userDao.findOneByID(comments.get(i).getUserID());
+			byte[] headPortrait = fileDao.outputFileToByte("headPortrait", user.getHeadPortraitID());
 			JSONObject jsonObj = new JSONObject();
 			jsonObj.put("type", comments.get(i).getType());
 			jsonObj.put("commentID", comments.get(i).get_id());
 			jsonObj.put("time", comments.get(i).getTime());
 			jsonObj.put("userID", comments.get(i).getUserID());
+			jsonObj.put("userName", user.getName());
+			jsonObj.put("headPortrait", Base64.encodeBase64String(headPortrait));
 			jsonObj.put("text", comments.get(i).getText());
 			jsonObj.put("targetID", comments.get(i).getTargetID());
 			ret.add(jsonObj);
@@ -175,6 +183,14 @@ public class CommentServiceImpl implements CommentService {
 	
 	public void setCommentDao(CommentDao c) {
 		commentDao = c;
+	}
+	
+	public UserDao getUserDao() {
+		return userDao;
+	}
+	
+	public void setUserDao(UserDao dao) {
+		userDao = dao;
 	}
 	
 	public FileDao getFileDao() {

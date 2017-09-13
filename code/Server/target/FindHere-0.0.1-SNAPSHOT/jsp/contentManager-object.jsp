@@ -34,16 +34,54 @@ $(document).ready(function() {
 
 var num = 1;
 function addTarget(){
-	var el = document.getElementById('add');
+	var el = document.getElementById('sign');
 	el.parentNode.removeChild(el);
 	
 	var fileName = "textureFile" + num;
 	num = num + 1;
-	var append = "<br>"+
-	"<br>"+
-	"<span style='display:inline-block; width:100px'>Texture File</span><input type='file' name='"+fileName+"'>"+
-		"<div id='add' style='display:inline-block;'><span style='display:inline-block; width:5px'></span><a href='javascript:addTarget();'><img width='13px' height='13px' src='/FindHere/css/images/add.gif' /></a></div>";
+	if(num==4){
+		var append =
+			"<div id=t"+ num +">"+
+			"<br>"+
+			"<br>"+
+			"<span style='display:inline-block; width:100px'>Texture File</span><input type='file' name='"+fileName+"'>"+
+				"<div id='sign' style='display:inline-block;'>"+
+				"<span style='display:inline-block; width:5px'></span> "+
+				"<a href='javascript:minusTarget();'><img width='13px' height='13px' src='/FindHere/css/images/minus.gif' /></a>"+
+				"</div>"+
+			"</div>";
+	}
+	else{
+		var append =
+			"<div id=t"+ num +">"+
+			"<br>"+
+			"<br>"+
+			"<span style='display:inline-block; width:100px'>Texture File</span><input type='file' name='"+fileName+"'>"+
+				"<div id='sign' style='display:inline-block;'>"+
+				"<span style='display:inline-block; width:5px'></span> "+
+				"<a href='javascript:addTarget();'><img width='13px' height='13px' src='/FindHere/css/images/add.gif' /></a>"+
+				"<a href='javascript:minusTarget();'><img width='13px' height='13px' src='/FindHere/css/images/minus.gif' /></a>"+
+				"</div>"+
+			"</div>";
+	}
 	document.getElementById("texture").innerHTML += append;
+}
+
+function minusTarget(){
+	if(num==1){
+		return;
+	}
+	var el = document.getElementById('t'+num);
+	el.parentNode.removeChild(el);
+	
+	num = num - 1;
+	var append = 
+		"<div id='sign' style='display:inline-block;'>"+
+		"<span style='display:inline-block; width:5px'></span> "+
+		"<a href='javascript:addTarget();'><img width='13px' height='13px' src='/FindHere/css/images/add.gif' /></a>"+
+		"<a href='javascript:minusTarget();'><img width='13px' height='13px' src='/FindHere/css/images/minus.gif' /></a>"+
+		"</div>";
+	document.getElementById("t"+num).innerHTML += append;
 }
 
 function extractNumber(obj, decimalPlaces, allowNegative) {
@@ -157,7 +195,7 @@ function validate(){
 			<div id="content">
 				
 				<!-- Box -->
-				<div class="box" style="width:1000px; height:500px">
+				<div class="box" style="position:relative; width:1000px; height:500px">
 				<div  style="display:inline-block;width:400px; height:400px;padding-left:20px;">
 					<form id="uploadObject" action="/FindHere/SetContents/Object" method="post" enctype="multipart/form-data">
 						<br>
@@ -199,10 +237,16 @@ function validate(){
 						<br>
 						<span style="display:inline-block; width:100px">MTL File</span><input type="file" name="MTLFile">
 						<div id="texture">
+						<div id="t1">
 						<br>
 						<br>
 						<span style="display:inline-block; width:100px">Texture File</span><input type="file" name="textureFile0">
-							<div id="add" style="display:inline-block;"><span style='display:inline-block; width:5px'></span><a href='javascript:addTarget();'><img width='13px' height='13px' src='/FindHere/css/images/add.gif' /></a></div>
+							<div id="sign" style="display:inline-block;">
+							<span style='display:inline-block; width:5px'></span>
+							<a href='javascript:addTarget();'><img width='13px' height='13px' src='/FindHere/css/images/add.gif' /></a>
+							<a href='javascript:minusTarget();'><img width='13px' height='13px' src='/FindHere/css/images/minus.gif' /></a>
+							</div>
+						</div>
 						</div>
 						<br>
 						<br>
@@ -211,16 +255,14 @@ function validate(){
 					</form>
 					<br><br><br>
 					</div>
-					
-					<div style="display:inline-block;width:560px; height:400px;">
+					<div style="position:absolute; top:10px; right:30px; width:560px; height:400px;">
 						<br>
 						<br>
 						<div id="gameContainer" style="width: 560px; height: 400px"></div>
 					</div>
 				</div>
 				<!-- End Box -->
-				
-
+					
 			</div>
 			<!-- End Content -->
 			
