@@ -66,8 +66,30 @@ public class CommentServiceImpl implements CommentService {
 		List<Comment> comments = commentDao.getSomeCommentsByTargetID(targetID, pageNum*pageIndex, pageNum);
 		List<JSONObject> ret = new ArrayList<JSONObject>();
 		for(int i = 0; i < comments.size(); i++) {
+			JSONObject jsonObj = new JSONObject();
+			jsonObj.put("type", comments.get(i).getType());
+			jsonObj.put("commentID", comments.get(i).get_id());
+			jsonObj.put("time", comments.get(i).getTime());
+			jsonObj.put("userID", comments.get(i).getUserID());
+			jsonObj.put("text", comments.get(i).getText());
+			jsonObj.put("targetID", comments.get(i).getTargetID());
+			ret.add(jsonObj);
+		}
+		JSONArray jsonArray = new JSONArray(ret);
+		response.setContentType("text/html;charset=UTF-8");
+		response.getWriter().print(jsonArray.toString());
+	}
+	
+	public void returnAllCommentIDsByTargetID(String targetID, HttpServletResponse response)
+			throws IOException{
+		List<Comment> comments = commentDao.getAllCommentsByTargetID(targetID);
+		List<JSONObject> ret = new ArrayList<JSONObject>();
+		for(int i = 0; i < comments.size(); i++) {
 			User user = userDao.findOneByID(comments.get(i).getUserID());
-			byte[] headPortrait = fileDao.outputFileToByte("headPortrait", user.getHeadPortraitID());
+			byte[] headPortrait = null; 
+			if(user.getHeadPortraitID() != null && !user.getHeadPortraitID().equals("")) {
+				headPortrait = fileDao.outputFileToByte("headPortrait", user.getHeadPortraitID());
+			}
 			JSONObject jsonObj = new JSONObject();
 			jsonObj.put("type", comments.get(i).getType());
 			jsonObj.put("commentID", comments.get(i).get_id());

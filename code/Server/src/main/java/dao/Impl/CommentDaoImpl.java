@@ -55,6 +55,13 @@ public class CommentDaoImpl implements CommentDao {
 		return comments;
 	}
 	
+	public List<Comment> getAllCommentsByTargetID(String targetID){
+		List<Comment> comments = mongoTemplate.find(
+				new Query(Criteria.where("targetID").is(targetID))
+				.with(new Sort(Direction.DESC, "time")), Comment.class);
+		return comments;
+	}
+	
 	public List<Comment> getSomeCommentsByUserID(String userID, int skipNum, int num){
 		List<Comment> comments = mongoTemplate.find(
 				new Query(Criteria.where("userID").is(userID))

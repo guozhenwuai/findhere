@@ -13,6 +13,7 @@ public interface CommentService {
 	public String getCommentText(String commentID);
 	public void returnCommentByID(String commentID, HttpServletResponse response) throws IOException;
 	public void returnCommentIDsByTargetID(String targetID, int pageNum, int pageIndex, HttpServletResponse response) throws IOException;
+	public void returnAllCommentIDsByTargetID(String targetID, HttpServletResponse response)throws IOException;
 	public void returnCommentIDsByUserID(String userID, int pageIndex, HttpServletResponse response) throws IOException;
 	public String saveTextComment(JSONObject jsonObj, String userID) throws UnsupportedEncodingException, JSONException;
 	public String updateTextComment(JSONObject jsonObj, String userID);

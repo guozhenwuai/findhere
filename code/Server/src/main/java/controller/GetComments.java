@@ -47,6 +47,15 @@ public class GetComments {
 		return null;
 	}
 	
+	@RequestMapping("/GetAllIDsByTargetID")
+	public String execute2(@RequestParam("targetID")String targetID, 
+			HttpServletRequest request, HttpServletResponse response, HttpSession httpSession) 
+			throws IOException{
+		System.out.println("ByTargetID");
+		commentService.returnAllCommentIDsByTargetID(targetID, response);
+		return null;
+	}
+	
 	@RequestMapping("/GetIDsByUserID")
 	public String execute3(HttpServletRequest request, HttpServletResponse response, HttpSession httpSession) 
 			throws IOException{
