@@ -1,8 +1,15 @@
 package controller;
 
+import java.awt.Image;
+import java.awt.image.BufferedImage;
+import java.io.ByteArrayInputStream;
+import java.io.ByteArrayOutputStream;
+import java.io.File;
+import java.io.FileOutputStream;
 import java.io.IOException;
 
 import javax.annotation.Resource;
+import javax.imageio.ImageIO;
 import javax.servlet.ServletInputStream;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -27,6 +34,24 @@ public class GetComments {
 	@Resource
 	private ReadService readService;
 
+	@RequestMapping("/Test")
+	public String execute0(HttpServletRequest request, HttpServletResponse response, HttpSession httpSession) 
+			throws IOException{
+		File file = new File("D:/star.jpg");
+		BufferedImage buf = ImageIO.read(file);
+		//Image image = buf.getScaledInstance(256, 256, Image.SCALE_DEFAULT);
+		
+		BufferedImage img = new BufferedImage(256, 256, BufferedImage.TYPE_INT_RGB);
+		//img.getGraphics().drawImage(buf, 256, 256, null);
+		img.getGraphics().drawImage(buf.getScaledInstance(256, 256, Image.SCALE_SMOOTH), 0, 0, null);
+		
+		FileOutputStream out = new FileOutputStream("D:/ss.png");
+		ImageIO.write(img, "PNG", out);
+		img.getGraphics().dispose();
+		out.close();
+		return null;
+	}
+	
 	@RequestMapping("/ByID")
 	public String execute1(@RequestParam("commentID")String commentID,  
 			HttpServletRequest request, HttpServletResponse response, HttpSession httpSession) 

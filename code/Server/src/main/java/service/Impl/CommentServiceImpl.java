@@ -2,7 +2,12 @@ package service.Impl;
 
 import org.apache.commons.codec.binary.Base64;
 
+import java.awt.Image;
+import java.awt.Toolkit;
+import java.awt.image.BufferedImage;
 import java.io.BufferedOutputStream;
+import java.io.ByteArrayInputStream;
+import java.io.ByteArrayOutputStream;
 import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;
@@ -12,6 +17,7 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 import javax.annotation.Resource;
+import javax.imageio.ImageIO;
 import javax.servlet.ServletInputStream;
 import javax.servlet.http.HttpServletResponse;
 import org.json.JSONArray;
@@ -109,19 +115,32 @@ public class CommentServiceImpl implements CommentService {
 	public void returnCommentIDsByUserID(String userID, int pageIndex, HttpServletResponse response)
 			throws IOException{
 		int pageNum = 10;
+		System.out.println(":1");
 		List<Comment> comments = commentDao.getSomeCommentsByUserID(userID, pageNum*pageIndex, pageNum);
 		List<JSONObject> ret = new ArrayList<JSONObject>();
 		for(int i = 0; i < comments.size(); i++) {
 			JSONObject jsonObj = new JSONObject();
 			
-			byte[] image = fileDao.outputFileToByteByFileName("target", comments.get(i).getTargetID());
+			byte[] byteImg = fileDao.outputFileToByteByFileName("target", comments.get(i).getTargetID());
+			
+			BufferedImage buf = ImageIO.read(new ByteArrayInputStream(byteImg, 0, byteImg.length));
+			
+			BufferedImage img = new BufferedImage(128, 128, BufferedImage.TYPE_INT_RGB);
+			img.getGraphics().drawImage(buf.getScaledInstance(128, 128, Image.SCALE_SMOOTH), 0, 0, null);
+			
+			ByteArrayOutputStream out = new ByteArrayOutputStream();
+			ImageIO.write(img, "PNG", out);
+			byteImg = out.toByteArray();
+			img.getGraphics().dispose();
+			out.close();
+			
 			jsonObj.put("type", comments.get(i).getType());
 			jsonObj.put("commentID", comments.get(i).get_id());
 			jsonObj.put("text", comments.get(i).getText());
 			jsonObj.put("time", comments.get(i).getTime());
 			jsonObj.put("userID", comments.get(i).getUserID());
 			jsonObj.put("targetID", comments.get(i).getTargetID());
-			jsonObj.put("image", Base64.encodeBase64String(image));
+			jsonObj.put("image", Base64.encodeBase64String(byteImg));
 			ret.add(jsonObj);
 		}
 		JSONArray jsonArray = new JSONArray(ret);
